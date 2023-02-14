@@ -20,8 +20,8 @@
     <footer class="border-top pt-4 container">
       <div class="row">
         <div class="col-4">
-          <img
-            src="../image/unused/RETOREE_logo1.png"
+         <img
+            src="../../../resources/static/img/RETOREE_logo1.png"
             alt=""
             srcset=""
             width="80%"

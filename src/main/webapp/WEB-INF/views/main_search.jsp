@@ -85,7 +85,7 @@
                   <div class="">
                     <span>
                     
-                      <select name="cars" id="">
+                      <select name="cars" id=""class="">
                         <option value="
                         manufacturer">제조사</option>
                         <optgroup label="
@@ -114,7 +114,7 @@
                       </select>
                     </span>
                     <span>
-                      <select name="cars" id="" >
+                      <select name="cars" id="" class="">
                         <option value="
                         model">모델</option>
                         <option value="
@@ -129,7 +129,7 @@
                         genesis">스타렉스</option>
                     
                       </select>
-                      <select name="cars" id="" >
+                      <select name="cars" id="" class=">
                         <option value="
                         model">세부모델</option>
                         <option value="
@@ -150,7 +150,7 @@
                     </span>
                     <span>
                     <a href="" target="_self">
-                    <button type="submit" class="button"  style="float:right">검색</button>
+                    <button type="submit" class="btn btn-primary btn-sm mx-2"  style="float:right">검색</button>
                       </a>
                       </span>
                     </div>
@@ -173,10 +173,10 @@
         </td>
         <td>
          
-            <div class="fw-bold "><a href="../html/car_detail_change.html">-링크 테스트용-현대 투싼 하이브리드 (4세대)</a></div>
+            <div class="fw-bold"><a href="../html/car_detail_change.html">-링크 테스트용-현대 투싼 하이브리드 (4세대)</a></div>
             <div>
                 <span class="fs-5 fw-bold ">
-                  <a href="" class="car_price"> 3,510만원</a>
+                  <a href="" class="car_price text-dark"> 3,510만원</a>
                 </span>
                 <div class="fw-normal small">
                   <span><a href="">20년 11월식</a></span>
@@ -195,7 +195,7 @@
           <div class="fw-bold"><a href="">기아 K5 3세대 가솔린 터보</a></div>
           <div>
             <span class="fs-5 fw-bold ">
-              <a href="" class="car_price">    2,690만원</a>
+              <a href="" class="car_price text-dark">    2,690만원</a>
               </span>
               <div class="fw-normal small ">
                    <span><a href=""> 20년 03월식</a></span>
@@ -214,7 +214,7 @@
       <div class="fw-bold"><a href="">현대 그랜저 HG300</a></div>
       <div>
         <span class="fs-5 fw-bold ">
-          <a href="" class="car_price">    1,250만원</a>
+          <a href="" class="car_price text-dark">    1,250만원</a>
           </span>
           <div class="fw-normal small ">
              <span><a href=""> 14년 12월식</a></span>
@@ -241,7 +241,7 @@
             <div class="fw-bold"><a href="">현대 아반떼 N 2.0 터보</a></div>
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price">2,820만원</a>
+                <a href=""class="car_price text-dark">2,820만원</a>
                 </span>
                 <div class="fw-normal small ">
                   <span><a href="">22년 04월식</a></span>
@@ -261,7 +261,7 @@
 
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price">5,650만원</a>
+                <a href=""class="car_price text-dark">5,650만원</a>
                 </span>
                 <div class="fw-normal small ">
                   <span><a href=""> 22년 09월식</a></span>
@@ -280,7 +280,7 @@
             <div class="fw-bold"><a href="">현대 캐스퍼 가솔린 1.0 터보 밴 스마트 </a></div>
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price">1,330만원</a>
+                <a href=""class="car_price text-dark">1,330만원</a>
                 </span>
                 <div class="fw-normal small ">
                   <span><a href="">22년 08월식</a></span>
@@ -308,7 +308,7 @@
     <div class="fw-bold"> <a href=""> 현대 그랜저 HG240</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price">     1,420만원</a>
+        <a href="" class="car_price text-dark">     1,420만원</a>
         </span>
         <div class="fw-normal small ">
             <span><a href="">15년 06월식</a></span>
@@ -327,7 +327,7 @@
     <div class="fw-bold"><a href="">기아 K5 2세대 MX프레스티지</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price">  1,240만원</a>
+        <a href="" class="car_price text-dark">  1,240만원</a>
         </span>
         <div class="fw-normal small ">
             <span><a href="">17년 03월식</span>
@@ -346,7 +346,7 @@
     <div class="fw-bold"><a href="">기아 모하비 더 마스터 디젤</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price"> 4,480만원</a>
+        <a href="" class="car_price text-dark"> 4,480만원</a>
         </span>
         <div class="fw-normal small ">
               <span><a href=""> 21년 01월식</a></span>
@@ -373,7 +373,7 @@
               <div class="fw-bold"><a href="">벤츠 E-클래스 W213</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price">   4,800만원</a>
+                  <a href=""class="car_price text-dark">   4,800만원</a>
                   </span>
                   <div class="fw-normal small ">
                     <span><a href="">19년 06월식</a></span>
@@ -392,7 +392,7 @@
               <div class="fw-bold"><a href="">미니 쿠퍼 컨버터블(3세대)</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price">   4,900만원</a>
+                  <a href=""class="car_price text-dark">   4,900만원</a>
                   </span>
                   <div class="fw-normal small ">
                     <span><a href=""> 22년 02월식</a></span>
@@ -411,7 +411,7 @@
               <div class="fw-bold"><a href=""> 볼보 XC60 2세대 T6 인스크입션</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price"> 5,050만원</a>
+                  <a href=""class="car_price text-dark"> 5,050만원</a>
                   </span>
                   <div class="fw-normal small ">
                     <span><a href=""> 18년 12월식</a></span>

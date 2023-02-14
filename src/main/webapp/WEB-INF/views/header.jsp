@@ -45,7 +45,7 @@
                 href="./main_search.html"
                 class="fs-5 nav-link px-2 link-dark"
                 <img
-                src="../image/unused/RETOREE_crop.png"
+                src="../../../resources/static/img/RETOREE_crop.png"
                 alt="Brand"
                 class="img-responsive"
                 height="60rem"
