@@ -1,0 +1,11 @@
+.magin_right {
+  margin-right: auto;
+  margin-left: auto;
+}
+.border {
+  border-radius: 10px;
+  margin-top: 90px;
+}
+.padding {
+  padding-right: 70px;
+}

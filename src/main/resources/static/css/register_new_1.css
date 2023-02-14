@@ -1,0 +1,77 @@
+*{
+    /* border: 1px solid gray; */
+}
+.register_step{
+    margin: 0px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.register_step > h5 {
+    padding: 5px 1rem;
+    border-bottom: 2px solid gainsboro;
+}
+
+#active_step {
+    border-bottom: 2px solid navy;
+    color: navy;
+}
+
+table{
+    margin: 0px auto;
+    width: 40rem;
+}
+
+#termsAndConditionsContent, #regulationContent{
+    font-size: 14px;
+}
+
+.nextBtn{
+    padding: 10px 50px;
+    border-radius: 10rem;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: gainsboro;
+    color: navy;
+}
+
+.nextBtn:hover{
+    background-color: navy;
+    color: white;
+}
+
+/* 2 */
+
+.register_form{
+    
+}
+
+.submitBtn, .resetBtn{
+    margin: 10px;
+    width: 150px;
+    height: 50px;
+    border-radius: 10rem;
+    text-decoration: none;
+    font-weight: 600;
+    background-color: gainsboro;
+    color: navy;
+    border: 0px;
+}
+
+.submitBtn:hover, .resetBtn:hover{
+    background-color: navy;
+    color: white;
+}
+
+#addressCity, #addressDistrict{
+    width: 200px;
+    margin-right: 1rem;
+}
+
+/* 3 */
+.loginBtn > a{
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+}
+

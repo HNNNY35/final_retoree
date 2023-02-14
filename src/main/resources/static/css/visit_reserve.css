@@ -1,0 +1,16 @@
+.temp-box {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #dee3eb;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}
+
+.car_check {
+  text-decoration: none;
+  color: inherit;
+}

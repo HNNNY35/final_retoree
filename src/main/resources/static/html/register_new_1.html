@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/register_new_1.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+  crossorigin="anonymous"
+/>
+</head>
+<body>
+<!-- 바꾼 헤더 -->
+<header class="p-3 mb-3 border-bottom">
+    <div class="container marketing">
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+      >
+        <a
+          href="./main_search.html"
+          class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+        >
+          <!-- <h1 class="img-responsive">리투리 로고</h1> -->
+          <img
+            src="../image/unused/RETOREE_crop.png"
+            alt="Brand"
+            class="img-responsive"
+            height="60rem"
+          />
+        </a>
+
+        <ul
+          class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+        >
+          <li>
+            <a
+              href="./main_search.html"
+              class="fs-5 nav-link px-2 link-dark"
+              <img
+              src="../image/unused/RETOREE_crop.png"
+              alt="Brand"
+              class="img-responsive"
+              height="60rem"
+            ></a>
+          </li>
+
+          <li>
+            <a href="./main_search.html" class="fs-5 nav-link px-2 link-dark"
+              >HOME</a
+            >
+          </li>
+          <li>
+            <a href="./search.html" class="fs-5 nav-link ps-5 link-dark"
+              >검색
+            </a>
+          </li>
+          <li>
+            <a href="./price_check.html" class="fs-5 nav-link ps-5 link-dark"
+              >시세</a
+            >
+          </li>
+          <li>
+            <a href="./event.html" class="fs-5 nav-link ps-5 link-dark"
+              >이벤트</a
+            >
+          </li>
+          <li>
+            <a href="./cs_main.html" class="fs-5 nav-link ps-5 link-dark"
+              >고객센터</a
+            >
+          </li>
+          <li>
+            <a href="./notice.html" class="fs-5 nav-link ps-5 link-dark"
+                >공지사항</a
+              >
+          </li>
+        </ul>
+
+        <div class="dropdown text-end">
+          <a
+            href="#"
+            class="d-block link-dark text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1705/tuktukdesign170500020/77461809-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B2%A1%ED%84%B0-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%ED%94%84%EB%A1%9C%ED%95%84-%EC%95%84%EB%B0%94%ED%83%80-%EA%B8%80%EB%A6%AC%ED%94%84-%ED%94%BD%ED%86%A0%EA%B7%B8%EB%9E%A8-%EC%8B%AC%EB%B3%BC-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg?ver=6"
+              alt="mdo"
+              width="32"
+              height="32"
+              class="rounded-circle"
+            />
+          </a>
+          <ul class="dropdown-menu text-small">
+            <li>
+              <a class="dropdown-item" href="./myPage.html">마이페이지</a>
+            </li>
+            <li><a class="dropdown-item" href="#">방문예약 확인</a></li>
+            <li><a class="dropdown-item" href="#">찜 차량</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">로그아웃</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+    <div class="container">
+        <!-- 본문 타이틀 -->
+        <!-- <hr class="featurette-divider" /> -->
+        <h2 class="text-center">
+            회원가입
+        </h2>
+        <div class="register_step">
+            <h5 id="active_step">약관동의</h5>
+            <h5>정보입력</h5>
+            <h5>가입완료</h5>
+        </div>
+        <!-- <hr /> -->
+        <br />
+        <table>
+            <tr>
+                <td>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="allAccept" onclick="checkAll();">
+                        <label class="form-check-label" for="allAccept">전체 동의하기(필수/선택항목)</label>
+                    </div>
+                    <hr />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="termsAndConditions" name="checkRow">
+                        <label class="form-check-label" for="termsAndConditions">이용약관(필수)</label>
+                        <!-- 이용약관 전문 모달 -->
+                        <a href="#modalTarget1" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
+                        <div class="modal" id="modalTarget1">
+                            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title">이용약관</div>
+                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body small">
+                                        <div>엔카 관련 제반 서비스의 이용과 관련하여 필요한 사항을 규정합니다.
+
+                                            제1조 ( 목 적 )
+                                            이 약관은 엔카닷컴(주)가 운영하는 엔카 웹사이트(http://www.encar.com, 이하 "엔카"라 한다)에서 제공하는 인터넷 관련 서비스 및 기타 부대서비스를 이용함에 있어 엔카닷컴(주)와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.
+
+                                            제2조 ( 정 의 )
+                                            ① "엔카"란 엔카닷컴(주)가 운영하는 가상의 사업장(http://www.encar.com)을 말하며, 아울러 가상의 사업장을 운영하는 사업자의 의미로도 사용합니다.
+                                            ② "서비스"란 "엔카"가 제공하는 재화의 공급 및 용역이행을 말합니다.
+                                            ③ "이용자"란 "엔카"에 접속하여 이 약관에 따라 "엔카"가 제공하는 서비스를 받는 회원 및 비회원을 말합니다.
+                                            ④ "회원"이라 함은 "엔카"에 개인정보를 제공하여 회원등록을 한 자로서, "엔카"의 정보를 지속적으로 제공받으며, "엔카"가 제공하는 서비스를 계속적으로 이용할 수 있는 자를 말합니다.
+                                            ⑤ "비회원"이라 함은 회원에 가입하지 않고 "엔카"가 제공하는 서비스를 이용하는 자를 말합니다.
+                                            ⑥ "쿠폰"이라 함은 회원에게 “엔카”에서 제공되는 유료 “서비스” 결제 시 일정금액 또는 일정비율을 할인 받을 수 있는 사이버 쿠폰을 말합니다.
+                                            ⑦ “포인트”라 함은 회원이 “엔카”에서 제공되는 유료 “서비스” 결제 시 현금처럼 사용할 수 있는 "엔카" 전용의 사이버 화폐를 말합니다.
+                                            제3조 ( 약관의 명시와 개정 )
+                                            ① "엔카"는 이 약관의 내용과 상호, 영업소 소재지, 대표자의 성명, 연락처(전화, 팩스, 전자우편 주소등) 등을 이용자가 알 수 있도록 엔카의 초기화면에 게시합니다.
+                                            ② "엔카"는 “전자상거래등에서의소비자보호에관한법률”, "약관의규제에관한법률", "전자문서및전자거래기본법", "전자서명법", “개인정보보호법”, "정보통신망이용촉진및정보보호등에관한법률", "방문판매등에관한법률", "소비자기본법" 등 관련법을 위배하지 않는 범위에서 이 약관을 개정할 수 있습니다.
+                                            ③ "엔카"가 약관을 개정할 경우에는 적용일자 및 개정사유를 명시하여 현행약관과 함께 엔카의 초기화면에 그 적용일자 7일 이전부터 적용일자 전일까지 공지합니다.
+                                            ④ "엔카"가 약관을 개정할 경우에는 그 개정약관은 그 적용일자 이후에 체결되는 계약에만 적용되고 그 이전에 이미 체결된 계약에 대해서는 개정 전의 약관조항이 그대로 적용됩니다. 다만 이미 계약을 체결한 이용자가 개정약관 조항의 적용을 원하는 뜻을 제3항에 의한 개정약관의 공지기간 내에 "엔카"에 송신하여 "엔카"의 동의를 받은 경우에는 개정약관 조항이 적용됩니다.
+                                            ⑤ 이 약관에서 정하지 아니한 사항과 이 약관의 해석에 관하여는 정부가 제정한 "전자상거래등에서의소비자보호지침" 및 관계법령 또는 상관례에 따릅니다.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <textarea class="form-control" id="termsAndConditionsContent" cols="30" rows="3" readonly>제1조 (목적)
+    이 약관은 리투리(주)가 운영하는 리투리 웹사이트 (http://www.encar.com, 이하 '리투리'라 한다)에서 제공하는 인터넷 관련 서비스 및 기타 부대서비스를 이용함에 있어 리투리(주)와 이용자의 권리, 의무 및 책임사항을 규정함을 목적으로 합니다.</textarea>
+                        <br>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="personalInforRequired" name="checkRow">
+                        <label class="form-check-label" for="personalInforRequired">개인정보 수집/이용에 대한 안내(필수)</label>
+                        <!-- 개인정보 전문 모달 -->
+                        <a href="#modalTarget2" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
+                        <div class="modal" id="modalTarget2">
+                            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title">개인정보 수집/이용에 대한 안내(필수)</div>
+                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body small">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <th scope="col">수집 및 이용 목적</th>
+                                                <th scope="col">수집 및 이용 항목</th>
+                                                <th scope="col">보유 및 이용 기간</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>회원제 서비스 이용에 따른 본인 확인절차에 이용</td>
+                                                    <td>
+                                                        <div>
+                                                            <개인회원>
+                                                        </div>
+                                                        <div>
+
+                                                            이름, 아이디, 비밀번호, 중복가입확인정보(DI), 아이핀번호(아이핀 이용시), 이용자고유식별자
+                                                        </div>
+                                                        <div>
+                                                            <개인회원(소셜가입)>
+                                                        </div>
+                                                        <div>
+                                                            네이버 : 이용자고유식별자, 이름, 이메일, 성별, 생일
+                                                        </div>
+                                                        <div>
+
+                                                            카카오 : 이용자고유식별자, 프로필 정보(닉네임/프로필 사진), 카카오계정(이메일)
+                                                        </div>
+                                                        <div>
+
+                                                            구글 : 이용자고유식별자, 이름, 이메일, 언어 환경설정, 프로필사진
+                                                        </div>
+                                                        <div>
+                                                            Apple : 이용자고유식별자
+                                                        </div>
+                                                        </td>
+                                                        <td rowspan="6">
+                                                            <div class="fw-bold">
+                                                                회원 탈퇴 요청시까지
+                                                            </div>
+                                                            <div class="fw-bold">
+                                                                * 단, 관계법령에 의해 보관해야 하는 정보는 법령이 정한 기간 동안 보관
+                                                            </div>
+                                                            <div class="fw-bold">* 부정 이용 방지를 위하여 회사 내부 방침에서 정한 기간 동안 보관</div>
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>고지사항 전달 및 본인의사확인, 불만처리, 사용자 구분 등 원활한 의사소통 경로의 확보</td>
+                                                    <td>
+                                                        <div>
+                                                            <개인회원>
+                                                        </div>
+                                                        <div>
+                                                            이메일, 연락처(휴대전화번호)
+                                                        </div>
+                                                        <div>
+                                                            <개인회원(소셜가입)>
+                                                        </div>
+                                                        <div>
+                                                            네이버, 카카오, 구글 : 이메일, 연락처(휴대전화번호)
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>
+                                                        14세 미만 가입방지
+                                                    </td>
+                                                    <td>
+                                                        <div>
+                                                            <개인회원>
+                                                        </div>
+                                                        <div>생년월일</div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>회원의 서비스 이용에 대한 통계 분석</td>
+                                                    <td>
+                                                        <div><개인회원></div>
+                                                        <div>생년월일, 성별, 주소(시/구)</div>
+                                                        <div><개인회원(소셜가입)></div>
+                                                        <div>네이버 : 성별</div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>엔카 모바일 앱(App) 알림서비스 제공, 통계학적 특성에 따른 맞춤서비스 제공(* 모바일앱 이용시에만 해당)</td>
+                                                    <td>
+                                                        <div><개인회원>, <개인회원(소셜가입)></div>
+                                                        <div>UUID(앱ID), PushID</div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td>차량광고시 지역 검색 결과 노출에 이용</td>
+                                                    <td>주소기반추출 좌푯값(위도,경도)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="small m-2">개인정보 수집/이용에 대한 동의를 거부할 수 있으며, 이 경우 회원가입이 제한됩니다.</div>
+                    <br>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="personalInforOptional" name="checkRow">
+                        <label class="form-check-label" for="personalInforOptional">개인정보 수집/이용에 대한 안내(선택)</label> 
+                        <!-- 개인정보 전문 모달 -->
+                        <a href="#modalTarget3" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
+                        <div class="modal" id="modalTarget3">
+                            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title">개인정보 수집/이용에 대한 안내(선택)</div>
+                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body small">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <th scope="col">수집 및 이용 목적</th>
+                                                <th scope="col">수집 및 이용 항목</th>
+                                                <th scope="col">보유 및 이용 기간</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>고지사항 전달 및 본인의사확인, 불만처리, 사용자 구분 등 원활한 의사소통 경로의 확보</td>
+                                                    <td>
+                                                        <div><개인회원></div>
+                                                        <div>연락처(전화번호)</div>
+                                                    </td>
+                                                    <td rowspan="2">
+                                                        <div class="fw-bold">
+                                                            회원탈퇴시 또는 동의철회시
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>회원의 서비스 이용에 대한 통계 분석</td>
+                                                    <td>
+                                                        <div><개인회원(소셜가입)></div>
+                                                        <div>카카오 : 성별, 생일</div>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div>
+                        <br>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="regulation" name="checkRow">
+                        <label class="form-check-label" for="regulation">리투리 규정에 대한 안내(필수)</label>
+                        <!-- 리투리 규정 모달 -->
+                        <a href="#modalTarget4" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
+                        <div class="modal" id="modalTarget4">
+                            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title">리투리 규정에 대한 안내</div>
+                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body small">
+                                        엔카닷컴(주)에 회원가입 신청하시는 분께 차량 광고등록에 관련한 제한사항에 대해 안내해 드리니, 자세히 읽은 후 동의해 주시기 바랍니다.
+
+광고제한
+1) 허위매물로 신고가 접수되어 관리자에 의해 확인된 차량
+2) 딜러 회원이 개인 ID를 생성하여 등록한 개인 위장 매물
+3) 차량의 실 소유주(차주)에게 허위매물로 신고된 차량
+4) 차량이 판매되었으나 삭제하지 않은 모든 차량
+5) 사이트 이용정지 시 등록되어 있는 모든 차량
+6) 딜러 회원이 소속된 단지 차량이 아닌 타 단지에 등록된 차량
+7) 실소유주(차주) 또는 동일 상사 직원이 감가 사유 없이 현저히 낮은 금액으로 광고하는 차량
+8) 소속 조합에 정상 제시되지 않은 차량
+9) 사진상 차량번호와 광고에 입력된 차량번호가 다른 차량
+10) 개인 정보를 실제와 다르게 입력한 회원의 등록된 모든 차량
+11) 판매 약관, 이용약관 및 관리자의 안내에 반하여 사이트에 등록된 모든 차량
+※ 허위매물 신고 접수 후 7일 이내 관리자 요청 서류를 통한 소명 가능, 기간 이후 신고 삭제 불가
+
+사이트 이용 정지
+- 1년 이용 정지
+1) 관리자에 의해 허위매물 등록자로 확인된 경우 신고 횟수에 상관없이 1년 이용정지
+2) 허위매물 신고 5회 받을 시 1년 이용정지
+3) 자동 업데이트, 차량등록 프로그램 등 서버에 무리를 주는 불법 프로그램 사용 적발 시 허위매물 신고와 상관없이 1년 이용정지
+4) 사이트 내의 게시판 혹은 회원 광고 차량 구매 문의에 과도한 매입 광고를 한 경우 1년 이용정지
+5) 타인의 개인 연락처를 도용하여 사용하는 경우 1년 이용정지
+- 영구 이용 정지
+1) 기존 이용 정지자가 다른 ID를 사용해서 차량을 등록하거나, 등록 시도를 하는 경우 신고 횟수와 상관없이 영구 이용정지
+2) 기존 이용 정지자의 정보를 입력하거나 사용 또는 사용 시도 하는 경우 영구 이용정지
+3) 명백한 사기행위, 공서양속에 반하는 행위를 한 이용자의 경우 영구 이용정지
+4) 이용정지 2회 누적 시 영구 이용정지
+5) 이용정지 상태가 아닌 허위매물 신고 누적 횟수가 4회 이상일 땐 환불 요청이 가능하지만, 해당 ID 영구 이용정지 조치 후 환불 규정에 따라 환불 처리
+※ 이용정지시 로그인, 차량등록 제한 및 등록차량 삭제, 등록비 등 일체 비용 환불 불가
+
+상사 제한
+동일 상사에 소속된 딜러 회원 중 이용 정지자가 3명 이상 발생한 경우 아래와 같이 처리
+
+1) 해당 상사에서 보유한 모든 차량, 엔카 광고등록 제한
+2) 해당 상사에 소속된 모든 회원, 엔카 이용 제한
+※ 명백한 사기행위, 공서양속에 반하는 행위를 한 상사 직원 확인 시 정지자 수 상관없이 상사 제한 가능
+
+개인정보 도용
+타인의 주민등록번호를 도용하여 ID를 생성한 경우 신고횟수와 상관없이 영구 제명되며 형사고발을 통해 처벌될 수 있음
+※2006년 9월 24일 개정된 주민등록법 제21조 2항 제9호에 의거, 3년 이하의 징역 또는 1천만 원 이하의 벌금 부과
+
+허위 신고자 이용제한 및 허위 신고 기준
+1) 보복성으로 허위 신고를 한 경우 허위 신고 횟수에 상관없이 1년 이용정지
+2) 신고 내용에 의미 없는 내용으로만 작성하여 신고한 경우
+3) 신고내용이 사실과 다른 경우
+4) 허위매물 허위 신고가 5건 누적되는 경우 1년 이용정지
+5) 관리자에 의해 악의적인 허위신고라 판단되는 경우 신고 횟수와 상관없이 1년 이용정지
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small m-2">
+                        리투리(주)에 회원가입 신청하시는 분께 차량 광고등록에 관련한 제한사항에 대해 안내해 드리니, 자세히 읽은 후 동의해 주시기 바랍니다.</div>
+                    <br>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="regulation" name="checkRow">
+                        <label class="form-check-label" for="regulation">마케팅 정보 수신 및 활용 동의(선택)</label>
+                        <!-- 마케팅 수신 모달 -->
+                        <a href="#modalTarget5" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
+                        <div class="modal" id="modalTarget5">
+                            <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <div class="modal-title">마케팅 정보 수신 및 활용 동의</div>
+                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+                                    <div class="modal-body small">
+                                        <table class="table table-bordered">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <th scope="col">수집 및 이용 목적</th>
+                                                    <th scope="col">수집 및 이용 항목</th>
+                                                    <th scope="col">보유 및 이용 기간</th>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>
+                                                            신규 서비스 및 이벤트 정보 안내, 사은품 발송, 통계학적 특성에 따른 서비스 제공, 이용자의 서비스이용에 대한 통계
+                                                        </td>
+                                                        <td>이름, 생년월일, 성별, 연락처(휴대전화번호, 전화번호), 이메일, 주소</td>
+                                                        <td class="fw-bold">회원탈퇴시 또는 동의철회시</td>
+                                                    </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="small m-2">개인정보 수집/이용에 대한 동의를 거부할 수 있으며, 이 경우 회원가입이 제한됩니다.</div>
+                    <br>
+                </td>
+            </tr>
+        </table>
+        <div class="text-center m-3" >
+            <a href="./register_new_2.html" class="nextBtn">다음</a>
+        </div>
+    </div>
+    
+
+      
+       <!-- 푸터 -->
+       <footer class="border-top pt-4 container">
+        <div class="row">
+          <div class="col-4">
+            <img
+              src="../image/unused/RETOREE_logo1.png"
+              alt=""
+              srcset=""
+              width="80%"
+              height="50%"
+            />
+            <!-- <small class="text-muted text-center"> <div>© 2023</div></small> -->
+          </div>
+          <div class="col-8">
+            <ul class="list-unstyled text-small">
+              <li class="text-secondary mb-1">
+                리투리 주식회사(주) | 대표자: 리투리 | 서울특별시 강남구 논현동
+              </li>
+              <li class="text-secondary mb-1">
+                사업자 등록번호 : 123-12-12345 | 통신판매업신고:서울논현동-00000
+              </li>
+              <li class="text-secondary mb-1">
+                리투리주식회사(주)는 통신판매중개자이며, 통신판매의 당사자가
+                아닙니다.
+              </li>
+              <li class="text-secondary mb-1">
+                상품, 상품정보제공 및 거래에 관한 의무와 책임은 판매자에게
+                있습니다.
+              </li>
+              <li class="text-secondary mb-1">
+                COPYRIGHT (C) RETOREE CAR CO., LTD. ALL RIGHTS RESERVED.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+</body>
+</html>

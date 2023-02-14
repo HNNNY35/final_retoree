@@ -1,0 +1,10 @@
+@font-face {
+  font-family: SCDream4;
+  src: url("./SCDream4.otf");
+}
+* {
+  font-family: SCDream4;
+}
+a {
+  text-decoration: none !important;
+}

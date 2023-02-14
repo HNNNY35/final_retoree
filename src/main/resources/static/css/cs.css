@@ -1,0 +1,79 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"); */
+
+/* *{
+    font-family: 'Noto Serif KR', serif;
+    border: 1px solid gray; 
+}*/
+/* .cs-main{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.nav{
+    font-family: 'Do Hyeon', sans-serif;
+} */
+.cs_input {
+  color: #000;
+  border: none;
+  background: #f6f8fa;
+  height: 2.8rem;
+  font-size: 1rem !important;
+  border-radius: 0.8rem;
+  font-weight: 400;
+  line-height: 1.43;
+  letter-spacing: -0.4px;
+  padding: 0 5rem 0 1.2rem;
+  box-sizing: border-box;
+  display: inline-block;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+}
+.contents {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.delete-btn {
+  position: relative;
+  left: 87%;
+}
+
+.btn-back {
+  position: relative;
+  left: 87%;
+}
+
+.wid {
+  width: 150px;
+}
+.cs_ul {
+  margin-top: 20px;
+  list-style: none;
+}
+
+.cs_a {
+  text-decoration-line: none;
+  font-size: 1.2rem;
+}
+.cs_li {
+  padding-bottom: 10px;
+}
+a:link {
+  color: black;
+}
+a:visited {
+  color: black;
+}
+a:hover {
+  color: gray;
+}
+a:active {
+  color: gray;
+}
+@font-face {
+  font-family: SCDream4;
+  src: url("./SCDream4.otf");
+}
+* {
+  font-family: SCDream4;
+}

@@ -1,0 +1,35 @@
+.searchSelect{
+    margin: 10px auto;
+}
+
+.filterName {
+    font-size: 14px;
+    margin: 10px 0;
+}
+* {
+    /* border: 1px solid gray; */
+}
+
+.carInfo {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+.brandLogo{
+    margin: 20px;
+}
+
+.searchResultTitle{
+    margin: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceCheckTable{
+    width: 100%;
+}
+
+/* .listpage {
+    color: black;
+} */
