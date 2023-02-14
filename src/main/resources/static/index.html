@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <div><a href="./docs/html/car_detail_change.html">차량 상세 조회</a></div>
+
+    <div><a href="./docs/html/cscomment.html">cs comment</a></div>
+    <div><a href="./docs/html/cslist.html">cs list</a></div>
+    <div><a href="./docs/html/csreview.html">cs review</a></div>
+    <div>
+      <a href="./docs/html/price_check.html">차량 상세 시세 조회</a>
+      <div><a href="./docs/html/register_new_1.html">회원가입</a></div>
+    </div>
+    <div><a href="./docs/html/search.html">search</a></div>
+    <div><a href="./docs/html/parkIndex.html">cs index</a></div>
+    <div><a href="./docs/html/myPage.html">마이페이지</a></div> -->
+  </body>
+
+  <script type="text/javascript">
+    window.location = "./docs/html/main_search.html";
+  </script>
+</html>

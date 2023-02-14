@@ -1,0 +1,76 @@
+@font-face {
+  font-family: SCDream4;
+  src: url("./SCDream4.otf");
+}
+* {
+  font-family: SCDream4;
+}
+
+.logofont {
+  font-family: "Georgia, " 맑은 고딕 ", serif";
+}
+
+.menu {
+  background-color: rgb(245, 244, 241);
+}
+
+.footer {
+  background-color: rgb(245, 244, 241);
+  font-size: 0.8rem;
+}
+
+.fontcolor > a {
+  color: rgb(51, 79, 171);
+}
+
+select {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background: #fafafa;
+  color: rgb(72, 72, 210);
+  border: 1px solid rgb(148, 161, 232);
+  padding-left: 8px;
+  border-radius: 9px;
+  margin-right: 20px;
+
+  width: 150px;
+  height: 50px;
+}
+.button {
+  color: rgb(72, 72, 210);
+  background: #fafafa;
+  border: 1px solid rgb(177, 177, 227);
+  border-radius: 9px;
+  padding: 4px;
+  margin-left: 8px;
+  margin-top: 3px;
+  width: 50px;
+  height: 45px;
+}
+.navmenu {
+  margin-bottom: 10px;
+}
+.carouselslide {
+  margin-top: 50px;
+}
+
+div > a {
+  text-decoration: none !important;
+  color: rgb(10, 43, 208);
+}
+span > a {
+  text-decoration: none !important;
+  color: rgb(40, 40, 225);
+}
+a:hover {
+  text-decoration: none !important;
+}
+.car_price {
+  color: black;
+}
+.choice {
+  font-weight: 900;
+}
+.text-align {
+  text-align: align;
+}
