@@ -32,8 +32,8 @@
     <div class="d-flex container">
         <div class="">
             <ul class="wid cs_ul">
-                <li class="cs_li"><a href="./cs_FNA_page01.html" class="cs_a">자주하는 질문</a></li>
-                <li class="cs_li"><a href="./cs_question.html" class="cs_a">문의</a></li>
+                <li class="cs_li"><a href="./cs_FNA_page01" class="cs_a">자주하는 질문</a></li>
+                <li class="cs_li"><a href="./cs_question" class="cs_a">문의</a></li>
             </ul>
             
         </div>

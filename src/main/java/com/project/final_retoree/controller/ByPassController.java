@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ByPassController {
 
-    @RequestMapping(value = { "/**" })
-    public void byPass() {
-        int i = 0;
+    // @RequestMapping(value = { "/**" })
+    // public void byPass() {
+    // int i = 0;
 
-    }
+    // }
 
 }

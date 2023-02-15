@@ -53,7 +53,7 @@
                   <a href="" class="text-decoration-none">차량 등록/관리</a>
                 </li>
                 <li id="">
-                  <a href="./myPage_modify.html" class="text-decoration-none">회원정보수정</a>
+                  <a href="./myPage_modify" class="text-decoration-none">회원정보수정</a>
                 </li>
               </ul>
             </li>
@@ -129,7 +129,7 @@
                                         <td>2023-02-07</td>
                                         <td>17:30</td>
                                         <td>현대 펠리세이드 디젤 2.2 2WD 익스클루시브</td>
-                                        <td><a href="./visit_reserve.html" class="btn btn-outline-dark">상세보기</a></td>
+                                        <td><a href="./visit_reserve" class="btn btn-outline-dark">상세보기</a></td>
                                     </tr>
                                     <tr class="text-center">
                                         <td>2023-02-13</td>

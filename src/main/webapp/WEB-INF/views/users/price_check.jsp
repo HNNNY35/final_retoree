@@ -204,7 +204,7 @@
                                 </td>
                                 <td>
                                     <div class="fw-bold">
-                                        <a href="./car_detail_change.html" class="text-black">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
+                                        <a href="./car_detail_change" class="text-black">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
                                     </div>
                                     <div class="fw-light small text-secondary">
                                         <span>2022년 02월</span>
@@ -267,70 +267,7 @@
                                 </td>
                                 <td>
                                     <div class="fw-bold">
-                                        <a href="./car_detail_change.html" class="text-black">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
-                                    </div>
-                                    <div class="fw-light small text-secondary">
-                                        <span>2022년 02월</span>
-                                        <span>14,391km</span>
-                                        <span>경기</span>
-                                    </div>
-                                    <div>
-                                        <span class="fs-5 fw-bold text-danger">
-                                            2,566
-                                        </span>
-                                        <span class="small">만원</span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="text-center my-2">
-                                        <div class="small">시세대비
-                                            <span class="text-primary">가격 낮음</span>
-                                        </div>
-
-                                    </div>
-                                    <div class="text-center my-2">
-                                        <div class="small">판매가능성
-                                            <span class="text-primary">높음</span>
-                                        </div>
-
-                                    </div>
-                                    <div class="text-center my-2">
-                                        <div class="small">신뢰도
-                                            <span class="text-primary">보통</span>
-                                        </div>
-                                    </div>
-                                </td>
-                                <!-- 시세리포트 모달 -->
-                                <td>
-                                    <div class="mx-3">
-                                        <a href="#modalTarget1" class="btn btn-outline-danger rounded-pill fw-bold" data-bs-toggle="modal">시세 리포트</a>
-                                        <div class="modal" id="modalTarget1">
-                                            <div class="modal-dialog modal-dialog-scrollable">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <div class="modal-title fs-5 fw-bold">
-                                                            시세 리포트
-                                                        </div>
-                                                        <button class="btn-close" data-bs-dismiss="modal"></button>
-                                                    </div>
-                                                    <div class="modal-body"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-
-                            <tr class="border-bottom">
-                                <td>
-                                    <!-- 차량 이미지 -->
-                                    <a href="">
-                                        <img src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png" alt="" width="150px" class="m-2">
-                                    </a>
-                                </td>
-                                <td>
-                                    <div class="fw-bold">
-                                        <a href="./car_detail_change.html" class="text-black ">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
+                                        <a href="./car_detail_change" class="text-black">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
                                     </div>
                                     <div class="fw-light small text-secondary">
                                         <span>2022년 02월</span>
@@ -393,7 +330,70 @@
                                 </td>
                                 <td>
                                     <div class="fw-bold">
-                                        <a href="./car_detail_change.html" class="text-black">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
+                                        <a href="./car_detail_change" class="text-black ">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
+                                    </div>
+                                    <div class="fw-light small text-secondary">
+                                        <span>2022년 02월</span>
+                                        <span>14,391km</span>
+                                        <span>경기</span>
+                                    </div>
+                                    <div>
+                                        <span class="fs-5 fw-bold text-danger">
+                                            2,566
+                                        </span>
+                                        <span class="small">만원</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="text-center my-2">
+                                        <div class="small">시세대비
+                                            <span class="text-primary">가격 낮음</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="text-center my-2">
+                                        <div class="small">판매가능성
+                                            <span class="text-primary">높음</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="text-center my-2">
+                                        <div class="small">신뢰도
+                                            <span class="text-primary">보통</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!-- 시세리포트 모달 -->
+                                <td>
+                                    <div class="mx-3">
+                                        <a href="#modalTarget1" class="btn btn-outline-danger rounded-pill fw-bold" data-bs-toggle="modal">시세 리포트</a>
+                                        <div class="modal" id="modalTarget1">
+                                            <div class="modal-dialog modal-dialog-scrollable">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <div class="modal-title fs-5 fw-bold">
+                                                            시세 리포트
+                                                        </div>
+                                                        <button class="btn-close" data-bs-dismiss="modal"></button>
+                                                    </div>
+                                                    <div class="modal-body"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr class="border-bottom">
+                                <td>
+                                    <!-- 차량 이미지 -->
+                                    <a href="">
+                                        <img src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png" alt="" width="150px" class="m-2">
+                                    </a>
+                                </td>
+                                <td>
+                                    <div class="fw-bold">
+                                        <a href="./car_detail_change" class="text-black">현대 더 뉴 그랜저 IG 하이브리드 르블랑</a>
                                     </div>
                                     <div class="fw-light small text-secondary">
                                         <span>2022년 02월</span>

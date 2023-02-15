@@ -40,7 +40,7 @@
       </div>
       <!-- <hr /> -->
       <br />
-      <form method="post" action="./register_new_3.html">
+      <form method="post" action="./register_new_3">
         <table class="register_form">
           <thead>
             <tr>

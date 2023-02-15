@@ -42,12 +42,12 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         <div>감사합니다.</div>
         <br />
         <div>
-          <img src="../../../../img/약관변경.png" alt="" />
+          <img src="/img/약관변경.png" alt="" />
         </div>
       </div>
       <div>
         <div class="text-center">
-          <a href="./notice.html" class="btn btn-dark mt-5">목록</a>
+          <a href="./notice" class="btn btn-dark mt-5">목록</a>
         </div>
       </div>
     </div>

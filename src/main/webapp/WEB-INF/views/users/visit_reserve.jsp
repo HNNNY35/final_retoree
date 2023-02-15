@@ -64,7 +64,7 @@
             <tr>
                 <th>주소</th>
                 <div class="pb-2">
-                    <img src="../image/지도.png" alt="" width="100%" height="100%">
+                    <img src="../../../../img/지도.png" alt="" width="100%" height="100%">
                 </div>
                 <td><a href="https://map.kakao.com/link/search/서울 강남구 테헤란로14길 6 남도빌딩">서울 강남구 테헤란로14길 6 남도빌딩 KH 자동차</a></td>
             </tr>
@@ -77,12 +77,12 @@
             
             <tbody>
                 <tr>
-                    <th><a href="./car_detail_change.html">
+                    <th><a href="./car_detail_change">
                     <img height="100px" src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png" alt="">   
                     </a>
                 </th>
                 <td>
-                  <a class="car_check" href="./car_detail_change.html">현대 그랜저 하이브리드</a>                
+                  <a class="car_check" href="./car_detail_change">현대 그랜저 하이브리드</a>                
                 </td>
                 <td>
                    2018년식

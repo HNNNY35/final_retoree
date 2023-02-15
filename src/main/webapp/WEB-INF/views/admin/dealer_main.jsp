@@ -58,7 +58,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
           <!-- 회원 정보 부분 -->
           <div class="userInfoBox">
             <div>
-              <img src="../image/profile.jpg" alt="" class="profileImg" />
+              <img src="/img/profile.jpg" alt="" class="profileImg" />
             </div>
             <div class="userInfo">
               <div>양파쿵야</div>
@@ -67,7 +67,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <div>서울시 강남구</div>
             </div>
             <div>
-              <a href="./dealer_info_modify.html">정보 수정하기</a>
+              <a href="./dealer_info_modify">정보 수정하기</a>
             </div>
           </div>
           <hr />

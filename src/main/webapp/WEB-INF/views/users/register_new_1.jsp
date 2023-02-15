@@ -388,7 +388,7 @@
             </tr>
         </table>
         <div class="text-center m-3" >
-            <a href="./register_new_2.html" class="nextBtn">다음</a>
+            <a href="./register_new_2" class="nextBtn">다음</a>
         </div>
     </div>
     

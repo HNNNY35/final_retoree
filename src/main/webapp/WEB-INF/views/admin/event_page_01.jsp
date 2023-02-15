@@ -39,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       />
       <br /><br />
       <div class="list-btn">
-        <a class="btn btn-secondary" href="./event.html">목록으로</a>
+        <a class="btn btn-secondary" href="./event">목록으로</a>
       </div>
     </div>
     <%@ include file="../footer.jsp" %>

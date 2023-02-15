@@ -29,7 +29,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         <div class="p-lg-5 mx-auto my-5">
           <h1 class="display-4 fw-normal">2023 내 차 사기 이벤트</h1>
           <p class="lead fw-normal">자세한 내용이 궁금하다면?</p>
-          <a class="btn btn-outline-secondary" href="./event_page_01.html"
+          <a class="btn btn-outline-secondary" href="./event_page_01"
             >이벤트 보러가기</a
           >
         </div>
@@ -46,7 +46,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         <div class="p-lg-5 mx-auto my-5">
           <h1 class="display-4 fw-normal">2023 차량등록 이벤트</h1>
           <p class="lead fw-normal">차량번호 입력하고 공기청정기 받자!</p>
-          <a class="btn btn-outline-secondary" href="./event_page_02.html"
+          <a class="btn btn-outline-secondary" href="./event_page_02"
             >이벤트 보러가기</a
           >
         </div>
