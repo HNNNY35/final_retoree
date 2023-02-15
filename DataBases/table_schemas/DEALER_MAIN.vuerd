@@ -1,0 +1,254 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": 0,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "DEALER_MAIN",
+        "comment": "딜러 메인페이지",
+        "columns": [
+          {
+            "name": "UNIQUE_ID",
+            "comment": "UID",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.7890625,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "db2459fb-c8d3-4017-a23d-3f8343ef9750"
+          },
+          {
+            "name": "NAME",
+            "comment": "이름",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "5876cf5f-a056-4f0e-92fa-873414cb50d0"
+          },
+          {
+            "name": "CELL_NUMBER",
+            "comment": "전화번호",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 98.08447265625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "4254eb73-1360-47c8-807e-f78e73648da5"
+          },
+          {
+            "name": "EMAIL",
+            "comment": "이메일",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "2fbe58e6-0d9a-448a-bfec-53992045b3db"
+          },
+          {
+            "name": "ADDR_CITY",
+            "comment": "주소(시도)",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.67724609375,
+              "widthComment": 62.658203125,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "a46dbe59-155d-494b-a899-560ce67854b9"
+          },
+          {
+            "name": "ADDR_DISTRICT",
+            "comment": "주소(시군구)",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 106.00634765625,
+              "widthComment": 75.658203125,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "304aedb7-6b1e-4352-913c-f4b39904e03d"
+          },
+          {
+            "name": "DTL_IMG_CAR",
+            "comment": "차량 이미지",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 93.01904296875,
+              "widthComment": 70.61181640625,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "b7a33eb9-2474-47b6-a53e-ee3aecead30f"
+          },
+          {
+            "name": "",
+            "comment": "",
+            "dataType": "",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "edeb87be-7617-4868-9ed7-db7cf31eadd4"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 190,
+          "top": 108,
+          "zIndex": 19,
+          "widthName": 93.7490234375,
+          "widthComment": 96.61181640625
+        },
+        "visible": true,
+        "id": "95d92bd1-2ed9-42af-8d6a-6c744e113a9b"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": []
+  }
+}

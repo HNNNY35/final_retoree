@@ -60,7 +60,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     </div>
     <div>
       <div class="text-center">
-        <a href="./notice.html" class="btn btn-dark mt-5">목록</a>
+        <a href="./notice" class="btn btn-dark mt-5">목록</a>
       </div>
     </div>
     <%@ include file="../footer.jsp" %>

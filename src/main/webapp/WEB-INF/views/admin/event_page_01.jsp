@@ -1,6 +1,6 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %> <%@
-taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> <%@ taglib
-uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +39,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       />
       <br /><br />
       <div class="list-btn">
-        <a class="btn btn-secondary" href="./event.html">목록으로</a>
+        <a class="btn btn-secondary" href="./event">목록으로</a>
       </div>
     </div>
     <%@ include file="../footer.jsp" %>

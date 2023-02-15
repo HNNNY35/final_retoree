@@ -52,7 +52,7 @@
             <h3>딜러 정보 수정</h3>
             <hr>
 
-            <form action="./dealer_info_modify.html" method="post">
+            <form action="./dealer_info_modify" method="post">
 
 
             <table class="modify_form">
@@ -61,7 +61,7 @@
                         <th>
                             <h6 class="fw-bold">프로필 이미지</h6>
                             <td>
-                                <img src="../image/profile.jpg" alt="" class="profileImg" />
+                                <img src="/img/profile.jpg" alt="" class="profileImg" />
                                 <div class="input-group mb-3 profileImgUpload">
                                     <input type="file" class="form-control" id="profileImg">
                                     <label class="input-group-text" for="profileImgUpload">Upload</label>

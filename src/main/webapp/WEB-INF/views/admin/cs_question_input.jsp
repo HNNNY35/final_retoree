@@ -30,8 +30,8 @@
     <div class="d-flex container">
         <div class="">
             <ul class="wid cs_ul">
-                <li class="cs_li"><a href="./cs_question_mylist.html" class="cs_a">나의 문의내역</a></li>
-                <li class="cs_li"><a href="./cs_question_input.html" class="cs_a">문의 하기</a></li>
+                <li class="cs_li"><a href="./cs_question_mylist" class="cs_a">나의 문의내역</a></li>
+                <li class="cs_li"><a href="./cs_question_input" class="cs_a">문의 하기</a></li>
             </ul>
             
         </div>

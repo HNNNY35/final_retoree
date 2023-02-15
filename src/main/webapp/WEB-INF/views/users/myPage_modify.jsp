@@ -53,7 +53,7 @@
                 <ul class="sub">
                     </li>
                     <li id="">
-                        <a href="./myPage_modify.html" class="text-decoration-none text-dark">회원정보수정</a>
+                        <a href="./myPage_modify" class="text-decoration-none text-dark">회원정보수정</a>
                     </li>
                 </ul>
             </li>
@@ -127,7 +127,7 @@
           </div>
         </div>
             <div class="text-center m-5">
-                <a href="./main_search.html" class="btn btn-primary">수정하기</a>
+                <a href="./main_search" class="btn btn-primary">수정하기</a>
             </div>
         </div>
         </main>

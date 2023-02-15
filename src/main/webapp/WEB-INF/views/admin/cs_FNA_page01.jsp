@@ -30,7 +30,7 @@
     <div class="d-flex container">
         <div class="">
             <ul class="wid cs_ul">
-                <li class="cs_li"><a href="./cs_FNA_page01.html" class="cs_a">내차사기</a></li>
+                <li class="cs_li"><a href="./cs_FNA_page01" class="cs_a">내차사기</a></li>
                 <li class="cs_li"><a href="#" class="cs_a">내차팔기</a></li>
                 <li class="cs_li"> <a href="#" class="cs_a">기타</a></li>
             </ul>
