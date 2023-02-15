@@ -42,7 +42,7 @@
           >
             <li>
               <a
-                href="./main_search.jsp"
+                href="../main_search"
                 class="fs-5 nav-link px-2 link-dark"
                 <img
                 src="/img/RETOREE_crop.png"
@@ -53,31 +53,31 @@
             </li>
 
             <li>
-              <a href="./main_search.jsp" class="fs-5 nav-link px-2 link-dark"
+              <a href="../main_search" class="fs-5 nav-link px-2 link-dark"
                 >HOME</a
               >
             </li>
             <li>
-              <a href="./search.jsp" class="fs-5 nav-link ps-5 link-dark"
+              <a href="../search" class="fs-5 nav-link ps-5 link-dark"
                 >검색
               </a>
             </li>
             <li>
-              <a href="./price_check.jsp" class="fs-5 nav-link ps-5 link-dark"
+              <a href="../price_check" class="fs-5 nav-link ps-5 link-dark"
                 >시세</a
               >
             </li>
             <li>
-              <a href="./event.jsp" class="fs-5 nav-link ps-5 link-dark"
+              <a href="../event" class="fs-5 nav-link ps-5 link-dark"
                 >이벤트</a
               >
             </li>
             <li>
-              <a href="./cs_main.jsp" class="fs-5 nav-link ps-5 link-dark"
+              <a href="../cs_main" class="fs-5 nav-link ps-5 link-dark"
                 >고객센터</a
               >
             </li>
-           <a href="./notice.jsp" class="fs-5 nav-link ps-5 link-dark"
+           <a href="../notice" class="fs-5 nav-link ps-5 link-dark"
                 >공지사항</a
               >
             </li>
@@ -100,7 +100,7 @@
             </a>
             <ul class="dropdown-menu text-small">
               <li>
-                <a class="dropdown-item" href="./myPage.html">마이페이지</a>
+                <a class="dropdown-item" href="../myPage">마이페이지</a>
               </li>
               <li><a class="dropdown-item" href="#">방문예약 확인</a></li>
               <li><a class="dropdown-item" href="#">찜 차량</a></li>
