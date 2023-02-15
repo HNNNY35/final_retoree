@@ -1,0 +1,254 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -1,
+    "scrollLeft": -1,
+    "zoomLevel": 0.9,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "SIMULATION",
+        "comment": "할부금 모의 계산",
+        "columns": [
+          {
+            "id": "8981a2fe-530d-482a-a8ed-5c55b1691150",
+            "name": "uid",
+            "comment": "모의 계산아이디",
+            "dataType": "int",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 84.13395690917969,
+              "widthDataType": 60,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "3a0e9d46-93f1-4235-ae48-3678dd94e269",
+            "name": "vehicle_price",
+            "comment": "차량 가격",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 71.36790466308594,
+              "widthComment": 60,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "1184dd81-d932-422a-87d6-fccc2b806d74",
+            "name": "registration_tax",
+            "comment": "등록세(5%)",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 85.62881469726562,
+              "widthComment": 61.0069580078125,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "962c782f-8817-43a3-92ef-6d08f5da16c7",
+            "name": "acquisition_tax",
+            "comment": "취득세(2%)",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 81.88484191894531,
+              "widthComment": 61.53993225097656,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "a018362c-4b5b-4ba8-811f-c3ec990ae732",
+            "name": "public_purchase_cost",
+            "comment": "공채매입비",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 115.60682678222656,
+              "widthComment": 60,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "733cdcfb-e976-4b53-8042-2ba336ae4b1b",
+            "name": "increase_rent",
+            "comment": "증지대",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 73.681884765625,
+              "widthComment": 60,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "60105e5d-1765-447a-a598-2c9a67fff2c7",
+            "name": "stamp_duty",
+            "comment": "인지대",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 64.763916015625,
+              "widthComment": 60,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          },
+          {
+            "id": "239426e8-212a-4723-9be0-ab9a93880293",
+            "name": "total_price",
+            "comment": "총 가격",
+            "dataType": "varchar(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 73.77284240722656,
+              "widthDefault": 60
+            }
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 50,
+          "top": 50,
+          "zIndex": 4,
+          "widthName": 72.45991516113281,
+          "widthComment": 87.55294799804688
+        },
+        "visible": true,
+        "id": "e009ec8d-d538-46cd-aabe-c088bf5d3ed7"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": []
+  }
+}
