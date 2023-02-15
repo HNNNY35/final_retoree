@@ -3,7 +3,7 @@ CREATE TABLE `CSFNA` (
   `QUESTION` VARCHAR(45) NOT NULL,
   `ANSWER` VARCHAR(200) NOT NULL,
   `QUESTIONTYPE` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`questionid`));
+  PRIMARY KEY (`FNAID`));
 
  INSERT INTO `CSFNA` (`FNAID`, `QUESTION`, `ANSWER`, `QUESTIONTYPE`) 
  VALUES ('f1','내차사기 홈서비스 결제는 어떻게 하나요?','내차사기 홈서비스 결제는 현금, 카드 등 총 2가지 방식으로 할 수 있습니다.','buycar'),
@@ -16,7 +16,7 @@ CREATE TABLE `CSQUESTION` (
   `QUESTIONCONTENT` VARCHAR(200) NOT NULL,
   `ANSWER` VARCHAR(200),
   `USERID` VARCHAR(45) NOT NULL,
-  PRIMARY KEY (`questionid`));
+  PRIMARY KEY (`QUESTIONID`));
   
  INSERT INTO `CSQUESTION` (`QUESTIONID`, `QUESTIONTITLE`, `QUESTIONCONTENT`, `ANSWER`, `USERID`) 
  VALUES ('q1','딜러 문의합니다.','딜러 문의합니다. 엄복동 딜러가 연락이 닿질 않습니다. 어떡해야 하나요?','안녕하세요. 리투리카 고객센터입니다. 인사팀에 인계하여, 엄복동 딜러 연락조치 취하도록 하겠습니다.','작성자1'),
