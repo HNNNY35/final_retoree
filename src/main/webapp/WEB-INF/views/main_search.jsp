@@ -131,7 +131,7 @@
                       </select>
                      <select name="cars" id="" >
                         <option value="
-                        model">세부모델</option>
+                        model">상세모델</option>
                         <option value="
                         hyundai">쏘나타N</option>
                         <option value="
@@ -161,7 +161,7 @@
         </form>
       </div>
 <!-- 차 -->
-      <div class="fs-4 fw-bold">
+       <div class="fs-4 fw-bold">
        특가
       </div>
            <hr> 
@@ -173,16 +173,16 @@
         </td>
         <td>
          
-            <div class="fw-bold"><a href="./car_detail_change">-링크 테스트용-현대 투싼 하이브리드 (4세대)</a></div>
+            <div class="fw-bold "><a href="../html/car_detail_change.html">-링크 테스트용-현대 투싼 하이브리드(4세대)</a></div>
             <div>
                 <span class="fs-5 fw-bold ">
-                  <a href="" class="car_price text-dark"> 3,510만원</a>
+                  <a href="" class="car_price"> 3,510만원</a>
                 </span>
                 <div class="fw-normal small">
-                  <span><a href="">20년 11월식</a></span>
+                  <span><a href="">2020년</a></span>
                     <span><a href=""> 14,391km</a></span>
                      <span><a href=""> 가솔린</a></span>
-                      <span><a href=""> 경기전시장</a></span>
+                      <span><a href=""> 경기</a></span>
                 </div>
             </div>
         </td>
@@ -195,13 +195,13 @@
           <div class="fw-bold"><a href="">기아 K5 3세대 가솔린 터보</a></div>
           <div>
             <span class="fs-5 fw-bold ">
-              <a href="" class="car_price text-dark">    2,690만원</a>
+              <a href="" class="car_price">    2,690만원</a>
               </span>
               <div class="fw-normal small ">
-                   <span><a href=""> 20년 03월식</a></span>
+                   <span><a href=""> 2020년</a></span>
                  <span><a href=""> 22,928km</a></span>
                       <span><a href=""> 가솔린</a></span>
-                      <span><a href=""> 해운대전시장</a></span>
+                      <span><a href=""> 부산</a></span>
               </div>
           </div>
         </td>
@@ -214,13 +214,13 @@
       <div class="fw-bold"><a href="">현대 그랜저 HG300</a></div>
       <div>
         <span class="fs-5 fw-bold ">
-          <a href="" class="car_price text-dark">    1,250만원</a>
+          <a href="" class="car_price">    1,250만원</a>
           </span>
           <div class="fw-normal small ">
-             <span><a href=""> 14년 12월식</a></span>
+             <span><a href=""> 2014년</a></span>
                 <span><a href=""> 99,328km</a></span>
                  <span><a href=""> 가솔린</a></span>
-                    <span><a href=""> 김포공항전시장</a></span>
+                    <span><a href=""> 경기</a></span>
           </div>
       </div>
     </td>
@@ -241,13 +241,13 @@
             <div class="fw-bold"><a href="">현대 아반떼 N 2.0 터보</a></div>
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price text-dark">2,820만원</a>
+                <a href=""class="car_price">2,820만원</a>
                 </span>
                 <div class="fw-normal small ">
-                  <span><a href="">22년 04월식</a></span>
+                  <span><a href="">2020년</a></span>
                   <span><a href="">10,330km</a></span>
                   <span><a href="">가솔린</a></span>
-                  <span><a href="">화곡전시장</a></span>
+                  <span><a href="">서울</a></span>
                 </div>
             </div>
           </td>
@@ -261,13 +261,13 @@
 
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price text-dark">5,650만원</a>
+                <a href=""class="car_price">5,650만원</a>
                 </span>
                 <div class="fw-normal small ">
-                  <span><a href=""> 22년 09월식</a></span>
+                  <span><a href=""> 2022년</a></span>
                   <span><a href=""> 8,339km</a></span>
                   <span><a href=""> 가솔린</a></span>
-                  <span><a href="">일산전시장</a></span>
+                  <span><a href="">경기</a></span>
                 </div>
             </div>
           </td>
@@ -280,13 +280,13 @@
             <div class="fw-bold"><a href="">현대 캐스퍼 가솔린 1.0 터보 밴 스마트 </a></div>
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price text-dark">1,330만원</a>
+                <a href=""class="car_price">1,330만원</a>
                 </span>
                 <div class="fw-normal small ">
-                  <span><a href="">22년 08월식</a></span>
+                  <span><a href="">2022년</a></span>
                   <span><a href=""> 5,097km</a></span>
                   <span><a href=""> 가솔린</a></span>
-                  <span><a href=""> 부산전시장</a></span>
+                  <span><a href=""> 부산</a></span>
                 </div>
             </div>
           </td>
@@ -308,13 +308,13 @@
     <div class="fw-bold"> <a href=""> 현대 그랜저 HG240</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price text-dark">     1,420만원</a>
+        <a href="" class="car_price">     1,420만원</a>
         </span>
         <div class="fw-normal small ">
-            <span><a href="">15년 06월식</a></span>
+            <span><a href="">2015년</a></span>
                <span><a href="">72,056km</a></span>
                  <span><a href="">가솔린</a></span>
-                  <span><a href=""> 대구전시장</a></span>
+                  <span><a href=""> 대구</a></span>
         </div>
     </div>
   </td>
@@ -327,13 +327,13 @@
     <div class="fw-bold"><a href="">기아 K5 2세대 MX프레스티지</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price text-dark">  1,240만원</a>
+        <a href="" class="car_price">  1,240만원</a>
         </span>
         <div class="fw-normal small ">
-            <span><a href="">17년 03월식</span>
+            <span><a href="">2017년</span>
                <span><a href="">104,028km</span>
                  <span><a href="">가솔린</span>
-                 <span> <a href=""> 의정부전시장</span>
+                 <span> <a href="">경기</span>
         </div>
     </div>
   </td>
@@ -346,13 +346,13 @@
     <div class="fw-bold"><a href="">기아 모하비 더 마스터 디젤</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price text-dark"> 4,480만원</a>
+        <a href="" class="car_price"> 4,480만원</a>
         </span>
         <div class="fw-normal small ">
-              <span><a href=""> 21년 01월식</a></span>
+              <span><a href=""> 2021년</a></span>
                <span><a href=""> 30,979km</a></span>
                   <span><a href="">디젤</a></span>
-                  <span><a href=""> 청주전시장</a></span>
+                  <span><a href=""> 청주</a></span>
         </div>
     </div>
   </td>
@@ -373,13 +373,13 @@
               <div class="fw-bold"><a href="">벤츠 E-클래스 W213</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price text-dark">   4,800만원</a>
+                  <a href=""class="car_price">   4,800만원</a>
                   </span>
                   <div class="fw-normal small ">
-                    <span><a href="">19년 06월식</a></span>
+                    <span><a href="">2019년</a></span>
                     <span><a href="">25,708km</a></span>
                     <span><a href="">디젤</a></span>
-                    <span><a href="">순천전시장</a></span>
+                    <span><a href="">순천</a></span>
                   </div>
               </div>
             </td>
@@ -392,13 +392,13 @@
               <div class="fw-bold"><a href="">미니 쿠퍼 컨버터블(3세대)</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price text-dark">   4,900만원</a>
+                  <a href=""class="car_price">   4,900만원</a>
                   </span>
                   <div class="fw-normal small ">
-                    <span><a href=""> 22년 02월식</a></span>
+                    <span><a href=""> 2022년</a></span>
                     <span><a href=""> 1,948km</a></span>
                     <span><a href=""> 가솔린</a></span>
-                    <span><a href=""> 일산전시장</a></span>
+                    <span><a href=""> 경기</a></span>
                   </div>
               </div>
             </td>
@@ -411,21 +411,19 @@
               <div class="fw-bold"><a href=""> 볼보 XC60 2세대 T6 인스크입션</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price text-dark"> 5,050만원</a>
+                  <a href=""class="car_price"> 5,050만원</a>
                   </span>
                   <div class="fw-normal small ">
-                    <span><a href=""> 18년 12월식</a></span>
+                    <span><a href=""> 2018년</a></span>
                     <span><a href=""> 45,275km</a></span>
                     <span><a href=""> 가솔린</a></span>
-                    <span><a href=""> 김포전시장</a></span>
+                    <span><a href="">경기</a></span>
                   </div>
               </div>
             </td>
           </div>
           </tr>
         </table>
- 
-      </main>
 
        <%@ include file="./footer.jsp" %>
     <script
