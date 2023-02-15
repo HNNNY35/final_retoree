@@ -33,7 +33,7 @@
             <div class="numbertext">1 / 6</div>
             <img
               class="car-img"
-              src="/image/grandeur_design_front.png"
+              src="../../../../img/grandeur_design_front.png"
               width="100%"
               height="600px"
             />
@@ -532,7 +532,7 @@
           </table>
         </div>
         <div class="col-md-5">
-          <img src="../image/주요 골격.png" alt="" width="400" />
+          <img src="../../../../img/주요 골격.png" alt="" width="400" />
           <!-- <svg
             class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
             width="500"

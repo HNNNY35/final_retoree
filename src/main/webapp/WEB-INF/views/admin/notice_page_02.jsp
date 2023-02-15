@@ -42,7 +42,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         <div>감사합니다.</div>
         <br />
         <div>
-          <img src="../image/약관변경.png" alt="" />
+          <img src="../../../../img/약관변경.png" alt="" />
         </div>
       </div>
       <div>
