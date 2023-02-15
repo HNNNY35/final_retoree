@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="/css/header.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -25,7 +25,7 @@
           class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
         >
           <a
-            href="./main_search.html"
+            href="./main_search"
             class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
           >
             <!-- <h1 class="img-responsive">리투리 로고</h1> -->

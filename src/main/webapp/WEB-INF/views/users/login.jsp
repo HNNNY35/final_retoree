@@ -19,7 +19,7 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/price_check_header.css" />
+    <link rel="stylesheet" href="/css/price_check_header.css" />
   </head>
 
   <body>

@@ -29,4 +29,16 @@ public class ByPassController {
 
     }
 
+    @RequestMapping(value = { "/admin/car_detail_change" })
+    public void car_detail_change() {
+        int i = 0;
+
+    }
+
+    @RequestMapping(value = { "/admin/cs_main" })
+    public void cs_main() {
+        int i = 0;
+
+    }
+
 }
