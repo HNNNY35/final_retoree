@@ -101,7 +101,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="../image/grandeur_design_front.png"
+              src="/img/grandeur_design_front.png"
               style="width: 30%"
               onclick="currentSlide(1)"
               alt="앞면"

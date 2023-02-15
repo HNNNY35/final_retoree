@@ -93,7 +93,7 @@ public class AdminController {
 
     @RequestMapping(value = "/event_page_02")
     public ModelAndView event_page_02(ModelAndView modelAndView) {
-        modelAndView.setViewName("/event_page_02");
+        modelAndView.setViewName("/admin/event_page_02");
         return modelAndView;
 
     }

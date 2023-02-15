@@ -173,7 +173,7 @@
         </td>
         <td>
          
-            <div class="fw-bold"><a href="../html/car_detail_change.html">-링크 테스트용-현대 투싼 하이브리드 (4세대)</a></div>
+            <div class="fw-bold"><a href="./car_detail_change">-링크 테스트용-현대 투싼 하이브리드 (4세대)</a></div>
             <div>
                 <span class="fs-5 fw-bold ">
                   <a href="" class="car_price text-dark"> 3,510만원</a>

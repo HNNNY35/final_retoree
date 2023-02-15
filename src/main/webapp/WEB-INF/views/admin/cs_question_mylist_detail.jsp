@@ -61,7 +61,7 @@
               </div>
               <div>
                 <div class="text-center">
-                  <a href="./cs_question_mylist.html" class="btn btn-outline-dark">확인</a>
+                  <a href="./cs_question_mylist" class="btn btn-outline-dark">확인</a>
                 </div>
               </div>
             </div>
