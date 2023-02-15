@@ -21,7 +21,7 @@
       <div class="row">
         <div class="col-4">
          <img
-            src="../../../resources/static/img/RETOREE_logo1.png"
+            src="/img/RETOREE_logo1.png"
             alt=""
             srcset=""
             width="80%"

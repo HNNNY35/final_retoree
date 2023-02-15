@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search</title>
-    <link rel="stylesheet" href="../../../resources/static/css/main_search.css" />
+    <link rel="stylesheet" href="css/main_search.css" />
     
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -129,7 +129,7 @@
                         genesis">스타렉스</option>
                     
                       </select>
-                      <select name="cars" id="" class=">
+                     <select name="cars" id="" >
                         <option value="
                         model">세부모델</option>
                         <option value="
@@ -150,7 +150,7 @@
                     </span>
                     <span>
                     <a href="" target="_self">
-                    <button type="submit" class="btn btn-primary btn-sm mx-2"  style="float:right">검색</button>
+                    <button type="submit" class="button"  style="float:right">검색</button>
                       </a>
                       </span>
                     </div>
