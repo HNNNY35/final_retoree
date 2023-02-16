@@ -347,10 +347,10 @@
           }
         ],
         "ui": {
-          "active": true,
+          "active": false,
           "left": 8,
           "top": 8,
-          "zIndex": 86,
+          "zIndex": 3,
           "widthName": 100.90388488769531,
           "widthComment": 76.30795288085938
         },
@@ -550,7 +550,7 @@
           "active": false,
           "left": 14.8334,
           "top": 354.778,
-          "zIndex": 78,
+          "zIndex": 2,
           "widthName": 60,
           "widthComment": 60
         },
@@ -842,12 +842,212 @@
           "active": false,
           "left": 445,
           "top": 267,
-          "zIndex": 17,
+          "zIndex": 1,
           "widthName": 96.23689270019531,
           "widthComment": 60
         },
         "visible": true,
         "id": "49938af5-ed85-400a-99be-80bb850d5a2b"
+      },
+      {
+        "name": "SIMULATION",
+        "comment": "할부금 모의 계산",
+        "columns": [
+          {
+            "name": "SIM_UID",
+            "comment": "모의 계산아이디",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 84.13395690917969,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "e8869f10-15fa-41cc-a558-d62480855216"
+          },
+          {
+            "name": "VEHICLE_PRICE",
+            "comment": "차량 가격",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 87.12388610839844,
+              "widthComment": 60,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "fbfaccd3-2f6e-40d2-8ccc-3c49e8cca6b2"
+          },
+          {
+            "name": "REGISTRATION_TAX",
+            "comment": "등록세(5%)",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 110.88786315917969,
+              "widthComment": 61.0069580078125,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "8aa179df-b073-4368-b286-cf3b4250d0c9"
+          },
+          {
+            "name": "ACQUISITION_TAX",
+            "comment": "취득세(2%)",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 102.02188110351562,
+              "widthComment": 61.53993225097656,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "5af0ce83-4877-4988-ab29-654a9db81c86"
+          },
+          {
+            "name": "PUBLIC_PURCHASE_COST",
+            "comment": "공채매입비",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 142.15284729003906,
+              "widthComment": 60,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "6700ce90-81ab-436b-b83b-7e0baf2080cc"
+          },
+          {
+            "name": "INCREASE_RENT",
+            "comment": "증지대",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 92.42788696289062,
+              "widthComment": 60,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "2ea6db2f-037c-44ff-8fab-1c4452e81e81"
+          },
+          {
+            "name": "STAMP_DUTY",
+            "comment": "인지대",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.91793823242188,
+              "widthComment": 60,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "a71cc33a-baa4-40ac-8fe9-4f57a1ab910c"
+          },
+          {
+            "name": "TOTAL_PRICE",
+            "comment": "총 가격",
+            "dataType": "VARCHAR(200)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.74891662597656,
+              "widthComment": 60,
+              "widthDataType": 87.44886779785156,
+              "widthDefault": 60
+            },
+            "id": "cf1c1843-3082-4840-a82a-a42ccd299ddb"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 467,
+          "top": 8,
+          "zIndex": 99,
+          "widthName": 72.45991516113281,
+          "widthComment": 87.55294799804688
+        },
+        "visible": true,
+        "id": "5bd12a99-f879-42c7-9685-cba9752bd1be"
       }
     ],
     "indexes": []
