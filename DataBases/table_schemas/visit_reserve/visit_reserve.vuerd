@@ -396,7 +396,7 @@
           "active": false,
           "left": 126,
           "top": 49,
-          "zIndex": 1,
+          "zIndex": 5,
           "widthName": 85.22587585449219,
           "widthComment": 76.30795288085938
         },

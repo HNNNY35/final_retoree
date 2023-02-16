@@ -4,7 +4,7 @@
     "width": 2000,
     "height": 2000,
     "scrollTop": 0,
-    "scrollLeft": 0,
+    "scrollLeft": -4,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -43,12 +43,12 @@
   "table": {
     "tables": [
       {
-        "name": "EVENT_PAGE",
-        "comment": "이벤트 부속 페이지",
+        "name": "DEALER_SALES",
+        "comment": "딜러 매출내역",
         "columns": [
           {
-            "name": "EVENT_UID",
-            "comment": "이벤트 아이디",
+            "name": "UNIQUE_ID",
+            "comment": "UID",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
@@ -62,116 +62,93 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 64.50393676757812,
-              "widthComment": 72.88896179199219,
-              "widthDataType": 87.44886779785156,
+              "widthName": 72.7890625,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "c2dc6787-4363-48ac-85a0-21062680f046"
+            "id": "f2e6b7b0-4d2f-421b-9d12-a8bfac0c9f11"
           },
           {
-            "name": "TITLE",
-            "comment": "이벤트 제목",
+            "name": "SALES_DATE",
+            "comment": "매출일",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 61.64396667480469,
-              "widthDataType": 87.44886779785156,
+              "widthName": 84.849609375,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "83a2c04c-e68f-42e1-b5ea-86c51ad1f6b0"
+            "id": "c016acf9-1700-408f-80bc-06ab0ac2e05a"
           },
           {
-            "name": "DATE",
-            "comment": "이벤트 진행 날짜",
+            "name": "SALES_PRICE",
+            "comment": "매출액",
+            "dataType": "INT",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.87353515625,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "9d9e2c11-6a7d-4a80-b5a2-74c2f179a5a4"
+          },
+          {
+            "name": "DETAILED_MODEL",
+            "comment": "상세모델",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
               "primaryKey": false,
               "unique": false,
-              "notNull": true
+              "notNull": false
             },
             "ui": {
               "active": false,
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 87.55294799804688,
-              "widthDataType": 87.44886779785156,
+              "widthName": 118.06689453125,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "5649f12c-ef28-4609-9c8e-bb8ca63dc04c"
-          },
-          {
-            "name": "CONTENT",
-            "comment": "이벤트 내용",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 61.64396667480469,
-              "widthDataType": 87.44886779785156,
-              "widthDefault": 60
-            },
-            "id": "103a2a4b-c273-45b2-a835-549a48566d1f"
-          },
-          {
-            "name": "ING_END",
-            "comment": "이벤트 진행여부",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 84.13395690917969,
-              "widthDataType": 87.44886779785156,
-              "widthDefault": 60
-            },
-            "id": "81d13758-3c40-4f0f-b3c9-9895565eccf9"
+            "id": "8f0f63ac-6b53-4b9b-988c-646684d2b04e"
           }
         ],
         "ui": {
           "active": true,
-          "left": 12,
-          "top": 17,
-          "zIndex": 7,
-          "widthName": 73.94192504882812,
-          "widthComment": 98.79794311523438
+          "left": 188,
+          "top": 106,
+          "zIndex": 27,
+          "widthName": 103.16259765625,
+          "widthComment": 83.61181640625
         },
         "visible": true,
-        "id": "81ad5fea-5f43-4ba3-aecc-f1f8d92e8f72"
+        "id": "949632b4-d04b-4eac-b720-56f55e378c26"
       }
     ],
     "indexes": []

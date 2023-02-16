@@ -43,10 +43,11 @@
   "table": {
     "tables": [
       {
-        "name": "EVENT_PAGE",
-        "comment": "이벤트 부속 페이지",
+        "name": "EVENT",
+        "comment": "이벤트",
         "columns": [
           {
+            "id": "f96607cb-9acf-4e06-a6b3-cd42883d850e",
             "name": "EVENT_UID",
             "comment": "이벤트 아이디",
             "dataType": "VARCHAR(200)",
@@ -66,10 +67,10 @@
               "widthComment": 72.88896179199219,
               "widthDataType": 87.44886779785156,
               "widthDefault": 60
-            },
-            "id": "c2dc6787-4363-48ac-85a0-21062680f046"
+            }
           },
           {
+            "id": "19ec0c33-409f-449d-8fb7-0649d1f34992",
             "name": "TITLE",
             "comment": "이벤트 제목",
             "dataType": "VARCHAR(200)",
@@ -89,33 +90,10 @@
               "widthComment": 61.64396667480469,
               "widthDataType": 87.44886779785156,
               "widthDefault": 60
-            },
-            "id": "83a2c04c-e68f-42e1-b5ea-86c51ad1f6b0"
+            }
           },
           {
-            "name": "DATE",
-            "comment": "이벤트 진행 날짜",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 87.55294799804688,
-              "widthDataType": 87.44886779785156,
-              "widthDefault": 60
-            },
-            "id": "5649f12c-ef28-4609-9c8e-bb8ca63dc04c"
-          },
-          {
+            "id": "a9093407-9948-4341-8d39-4094ddc8a9a0",
             "name": "CONTENT",
             "comment": "이벤트 내용",
             "dataType": "VARCHAR(200)",
@@ -135,43 +113,19 @@
               "widthComment": 61.64396667480469,
               "widthDataType": 87.44886779785156,
               "widthDefault": 60
-            },
-            "id": "103a2a4b-c273-45b2-a835-549a48566d1f"
-          },
-          {
-            "name": "ING_END",
-            "comment": "이벤트 진행여부",
-            "dataType": "VARCHAR(200)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 84.13395690917969,
-              "widthDataType": 87.44886779785156,
-              "widthDefault": 60
-            },
-            "id": "81d13758-3c40-4f0f-b3c9-9895565eccf9"
+            }
           }
         ],
         "ui": {
-          "active": true,
-          "left": 12,
-          "top": 17,
-          "zIndex": 7,
-          "widthName": 73.94192504882812,
-          "widthComment": 98.79794311523438
+          "active": false,
+          "left": 51,
+          "top": 18,
+          "zIndex": 2,
+          "widthName": 60,
+          "widthComment": 60
         },
         "visible": true,
-        "id": "81ad5fea-5f43-4ba3-aecc-f1f8d92e8f72"
+        "id": "3ef352bb-f38f-4eaa-a2c1-638b07153620"
       }
     ],
     "indexes": []
