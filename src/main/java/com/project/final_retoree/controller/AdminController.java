@@ -21,6 +21,13 @@ public class AdminController {
 
     }
 
+    @RequestMapping(value = "/car_detail_k5")
+    public ModelAndView car_detail_k5(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_k5");
+        return modelAndView;
+
+    }
+
     @RequestMapping(value = "/cs_FNA_page01")
     public ModelAndView cs_FNA_page01(ModelAndView modelAndView) {
         modelAndView.setViewName("/cs/cs_FNA_page01");
@@ -143,6 +150,13 @@ public class AdminController {
     @RequestMapping(value = "/notice_edit")
     public ModelAndView notice_edit(ModelAndView modelAndView) {
         modelAndView.setViewName("/notice/notice_edit");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/notice_modify")
+    public ModelAndView notice_modify(ModelAndView modelAndView) {
+        modelAndView.setViewName("/notice/notice_modify");
         return modelAndView;
 
     }

@@ -90,7 +90,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     </table>
                     <hr>
                     <div class="text-center">
-                      <button type="submit" class=" btn btn-primary ">
+                      <button type="submit" class="btn btn-outline-primary">
                         등록
                       </button>
                     </div>

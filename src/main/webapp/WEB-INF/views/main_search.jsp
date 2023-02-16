@@ -173,7 +173,7 @@
         </td>
         <td>
          
-            <div class="fw-bold "><a href="../html/car_detail_change.html">-링크 테스트용-현대 투싼 하이브리드(4세대)</a></div>
+            <div class="fw-bold "><a href="/car_detail_change">-링크 테스트용-현대 투싼 하이브리드(4세대)</a></div>
             <div>
                 <span class="fs-5 fw-bold ">
                   <a href="" class="car_price"> 3,510만원</a>
@@ -192,7 +192,7 @@
           <a href=""  >   <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60774973_045.jpg" alt="" width="150px" class="m-2"></a>
       </td>
       <td>
-          <div class="fw-bold"><a href="">기아 K5 3세대 가솔린 터보</a></div>
+          <div class="fw-bold"><a href="/car_detail_k5">기아 K5 3세대 가솔린 터보</a></div>
           <div>
             <span class="fs-5 fw-bold ">
               <a href="" class="car_price">    2,690만원</a>
