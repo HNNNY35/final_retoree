@@ -22,26 +22,13 @@
   </head>
   <body>
     <%@ include file="../header.jsp" %>
-  <body>
-    <div class="container">
+  
+     <div class="container">
         <div class="fs-1 text-center fw-bold mt-5">공지사항</div>
 
-      <div class="input-group justify-content-center mt-5">
-        <div>
-          <input
-            type="text"
-            class="form-control"
-            name=""
-            id=""
-            placeholder=""
-          />
-        </div>
-        <div class="ms-3">
-            <button class="btn btn-primary center">검색</button>
-          </div>
-        </div>
+       
       <table class="table">
-        <hr>
+        <hr class="mt-5">
         <thead>
           <tr>
             <th scope="col">No</th>
