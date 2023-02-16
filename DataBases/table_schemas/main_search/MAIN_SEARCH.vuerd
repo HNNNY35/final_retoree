@@ -47,23 +47,23 @@
         "comment": "메인검색",
         "columns": [
           {
-            "name": "UNIQUE_ID",
-            "comment": "UID",
+            "name": "MAIN_SEARCH_ID",
+            "comment": "메인검색ID",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
-              "primaryKey": false,
+              "primaryKey": true,
               "unique": false,
               "notNull": true
             },
             "ui": {
               "active": false,
-              "pk": false,
+              "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 72.7890625,
-              "widthComment": 60,
+              "widthName": 116.13720703125,
+              "widthComment": 67,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
@@ -279,9 +279,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 190.8334,
-          "top": 5.0002,
-          "zIndex": 173,
+          "left": 231.0411,
+          "top": 196.0423,
+          "zIndex": 5,
           "widthName": 95.9072265625,
           "widthComment": 60
         },

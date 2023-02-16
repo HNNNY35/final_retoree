@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -254.33332326677152,
-    "scrollLeft": -196.3333256509572,
-    "zoomLevel": 0.8,
+    "scrollTop": -135.99999463558208,
+    "scrollLeft": -128.83332833316612,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -47,8 +47,8 @@
         "comment": "차량검색",
         "columns": [
           {
-            "name": "UNIQUE_ID",
-            "comment": "UID",
+            "name": "SEARCH_ID",
+            "comment": "검색ID",
             "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
@@ -62,7 +62,7 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 72.7890625,
+              "widthName": 76.4072265625,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -394,9 +394,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 94,
-          "top": 156.3334,
-          "zIndex": 1,
+          "left": 95.8518,
+          "top": 153.5556,
+          "zIndex": 8,
           "widthName": 60,
           "widthComment": 60
         },
