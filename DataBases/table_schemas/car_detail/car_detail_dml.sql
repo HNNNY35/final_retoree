@@ -21,3 +21,4 @@ VALUES ('1', '정상', '교환', '정상', '정상', '정상', '정상', '정상
 
 INSERT INTO `retoree_FinalProject`.`PANEL` (`PANEL_UID`, `HOOD`, `FRONT_FENDER`, `DOOR`, `SIDE_PANEL`, `TRUNK_LID`, `ROOF_PANEL`, `QUARTER_PANEL`) 
 VALUES ('2', '정상', '정상', '정상', '정상', '정상', '정상', '정상');
+

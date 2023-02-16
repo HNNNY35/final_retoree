@@ -350,7 +350,7 @@
           "active": false,
           "left": 8,
           "top": 8,
-          "zIndex": 3,
+          "zIndex": 102,
           "widthName": 100.90388488769531,
           "widthComment": 76.30795288085938
         },
