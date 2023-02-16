@@ -49,22 +49,22 @@
           {
             "name": "NOTICE_ID",
             "comment": "공지사항ID",
-            "dataType": "VARCHAR(200)",
+            "dataType": "VARCHAR(200)VA(0)0000VA(00V0)ㄱㄱㄱ",
             "default": "",
             "option": {
               "autoIncrement": false,
-              "primaryKey": false,
+              "primaryKey": true,
               "unique": false,
               "notNull": true
             },
             "ui": {
               "active": false,
-              "pk": false,
+              "pk": true,
               "fk": false,
               "pfk": false,
               "widthName": 71.341796875,
               "widthComment": 67,
-              "widthDataType": 94.94873046875,
+              "widthDataType": 250.52978515625,
               "widthDefault": 60
             },
             "id": "e2bb7ade-c11f-4fad-82fe-c0d8721b485f"
@@ -140,10 +140,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 49.1668,
           "top": 203.3333,
-          "zIndex": 84,
+          "zIndex": 1,
           "widthName": 60,
           "widthComment": 60
         },
