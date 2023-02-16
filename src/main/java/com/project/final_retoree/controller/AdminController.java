@@ -139,4 +139,11 @@ public class AdminController {
         return modelAndView;
 
     }
+
+    @RequestMapping(value = "/notice_edit")
+    public ModelAndView notice_edit(ModelAndView modelAndView) {
+        modelAndView.setViewName("/notice/notice_edit");
+        return modelAndView;
+
+    }
 }
