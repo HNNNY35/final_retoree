@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": 0,
-    "scrollLeft": -5.8333331015375025,
+    "scrollTop": -2.4999999006589295,
+    "scrollLeft": -19.999999205271436,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -43,12 +43,12 @@
   "table": {
     "tables": [
       {
-        "name": "WISHLIST",
-        "comment": "찜목록",
+        "name": "RESERVATION",
+        "comment": "예약",
         "columns": [
           {
-            "name": "WISHLISTID",
-            "comment": "찜 UID",
+            "name": "RESERVATIONID",
+            "comment": "예약 UID",
             "dataType": "VARCHAR(45)",
             "default": "",
             "option": {
@@ -62,7 +62,7 @@
               "pk": true,
               "fk": false,
               "pfk": false,
-              "widthName": 76.39453125,
+              "widthName": 106.01904296875,
               "widthComment": 60,
               "widthDataType": 87.71875,
               "widthDefault": 60
@@ -71,7 +71,7 @@
           },
           {
             "name": "USERID",
-            "comment": "찜 유저 UID",
+            "comment": "예약 유저 UID",
             "dataType": "VARCHAR(45)",
             "default": "",
             "option": {
@@ -86,7 +86,7 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 70.61181640625,
+              "widthComment": 83.61181640625,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
@@ -94,7 +94,7 @@
           },
           {
             "name": "PRICEID",
-            "comment": "찜 상품 UID",
+            "comment": "예약 상품 UID",
             "dataType": "VARCHAR(45)",
             "default": "",
             "option": {
@@ -109,19 +109,42 @@
               "fk": false,
               "pfk": false,
               "widthName": 60,
-              "widthComment": 70.61181640625,
+              "widthComment": 83.61181640625,
               "widthDataType": 87.71875,
               "widthDefault": 60
             },
             "id": "9b35eda0-53fd-4d2f-9b35-a418613db9f1"
+          },
+          {
+            "name": "DATE",
+            "comment": "예약 일자",
+            "dataType": "DATE",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 60,
+              "widthDefault": 60
+            },
+            "id": "fdb6a3ca-797a-4c6a-8e2c-0421968e3147"
           }
         ],
         "ui": {
           "active": false,
-          "left": 54.9999,
-          "top": 61.6675,
+          "left": 53.3333,
+          "top": 62.5008,
           "zIndex": 5,
-          "widthName": 63.39453125,
+          "widthName": 93.01904296875,
           "widthComment": 60
         },
         "visible": true,
