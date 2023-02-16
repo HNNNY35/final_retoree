@@ -40,29 +40,29 @@
         <tbody>
           <tr>
             <th scope="row"class="text-primary">공지</th>
-            <td><a href="./notice_page" class="text-decoration-none text-dark">리투리카 플랫폼 누적방문 수 10만회 돌파</a></td>
+            <td><a href="./notice_contents" class="text-decoration-none text-dark">리투리카 플랫폼 누적방문 수 10만회 돌파</a></td>
             <td>2023.02.04</td>
           
           </tr>
           <tr>
             <th scope="row">1</th>
-            <td><a href="./notice_page_01" class="text-decoration-none text-dark">[공지]리투리카 비교견적 서비스 리뉴얼 안내</a></td>
+            <td><a href="./notice_contents_01" class="text-decoration-none text-dark">[공지]리투리카 비교견적 서비스 리뉴얼 안내</a></td>
             <td>2023.02.04</td>
           
           </tr>
           <tr>
             <th scope="row">2</th>
-            <td><a href="./notice_page_02" class="text-decoration-none text-dark">[공지]상품 이용 약관 변경 안내</a></td>
+            <td><a href="./notice_contents_02" class="text-decoration-none text-dark">[공지]상품 이용 약관 변경 안내</a></td>
             <td>2023.02.04</td>
           </tr>
           <tr>
             <th scope="row">3</th>
-            <td><a href="./notice_page_03" class="text-decoration-none text-dark">리투리카 시스템 점검 안내</a></td>
+            <td><a href="./notice_contents_03" class="text-decoration-none text-dark">리투리카 시스템 점검 안내</a></td>
             <td>2023.02.04</td>
           </tr>
           <tr>
             <th scope="row">4</th>
-            <td><a href="./notice_page_04" class="text-decoration-none text-dark">리투리카 플랫폼 시스템 점검에 따른 서비스 일시 중단 안내</a></td>
+            <td><a href="./notice_contents_04" class="text-decoration-none text-dark">리투리카 플랫폼 시스템 점검에 따른 서비스 일시 중단 안내</a></td>
             <td>2023.02.04</td>
           
           </tr>

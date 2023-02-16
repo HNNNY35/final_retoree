@@ -105,37 +105,37 @@ public class AdminController {
 
     }
 
-    @RequestMapping(value = "/notice_page")
+    @RequestMapping(value = "/notice_contents")
     public ModelAndView notice_page(ModelAndView modelAndView) {
-        modelAndView.setViewName("/notice/notice_page");
+        modelAndView.setViewName("/notice/notice_contents");
         return modelAndView;
 
     }
 
-    @RequestMapping(value = "/notice_page_01")
+    @RequestMapping(value = "/notice_contents_01")
     public ModelAndView notice_page_01(ModelAndView modelAndView) {
-        modelAndView.setViewName("/notice/notice_page_01");
+        modelAndView.setViewName("/notice/notice_contents_01");
         return modelAndView;
 
     }
 
-    @RequestMapping(value = "/notice_page_02")
+    @RequestMapping(value = "/notice_contents_02")
     public ModelAndView notice_page_02(ModelAndView modelAndView) {
-        modelAndView.setViewName("/notice/notice_page_02");
+        modelAndView.setViewName("/notice/notice_contents_02");
         return modelAndView;
 
     }
 
-    @RequestMapping(value = "/notice_page_03")
+    @RequestMapping(value = "/notice_contents_03")
     public ModelAndView notice_page_03(ModelAndView modelAndView) {
-        modelAndView.setViewName("/notice/notice_page_03");
+        modelAndView.setViewName("/notice/notice_contents_03");
         return modelAndView;
 
     }
 
-    @RequestMapping(value = "/notice_page_04")
+    @RequestMapping(value = "/notice_contents_04")
     public ModelAndView notice_page_04(ModelAndView modelAndView) {
-        modelAndView.setViewName("/notice/notice_page_04");
+        modelAndView.setViewName("/notice/notice_contents_04");
         return modelAndView;
 
     }
