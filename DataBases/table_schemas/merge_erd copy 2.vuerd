@@ -3,9 +3,9 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -4,
-    "scrollLeft": -221,
-    "zoomLevel": 1,
+    "scrollTop": -371,
+    "scrollLeft": -971,
+    "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
       "columnComment": true,
@@ -162,8 +162,8 @@
             "id": "28f58915-3892-4530-a053-5181b6857e78"
           },
           {
-            "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "name": "ADMIN_ID",
+            "comment": "관리자정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -177,19 +177,19 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 83.61181640625,
+              "widthName": 64.1181640625,
+              "widthComment": 96.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "fd1970f3-4451-43a3-ada3-969881a4dd9b"
+            "id": "4182c254-65a3-4f38-b19f-449b1dc630e4"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1928.374,
-          "top": 869.3167,
-          "zIndex": 207,
+          "left": 2192.124,
+          "top": 881.8167,
+          "zIndex": 260,
           "widthName": 60,
           "widthComment": 60
         },
@@ -316,8 +316,8 @@
             "id": "7267190a-9beb-44d9-bf00-e1523e5294f7"
           },
           {
-            "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "name": "ADMIN_ID",
+            "comment": "관리자정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -331,19 +331,19 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 83.61181640625,
+              "widthName": 64.1181640625,
+              "widthComment": 96.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "b0f0c4a7-9a16-4afb-bdee-4d6a971c1034"
+            "id": "0e3b132c-dc84-44d0-a1e4-98415402dd75"
           }
         ],
         "ui": {
           "active": false,
-          "left": 2245.0743,
-          "top": 1122.5193,
-          "zIndex": 206,
+          "left": 2262.5743,
+          "top": 1091.2693,
+          "zIndex": 262,
           "widthName": 60,
           "widthComment": 60
         },
@@ -794,9 +794,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1715.7651,
-          "top": 141.1525,
-          "zIndex": 173,
+          "left": 1718.4873,
+          "top": 115.2081,
+          "zIndex": 200,
           "widthName": 67.72998046875,
           "widthComment": 60
         },
@@ -994,9 +994,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 2329.6645,
-          "top": 445.7372,
-          "zIndex": 175,
+          "left": 2336.6645,
+          "top": 416.9872,
+          "zIndex": 172,
           "widthName": 78.34326171875,
           "widthComment": 83.61181640625
         },
@@ -1286,9 +1286,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 2341.0869,
-          "top": 99.5861,
-          "zIndex": 174,
+          "left": 2347.5869,
+          "top": 79.0861,
+          "zIndex": 171,
           "widthName": 145.52685546875,
           "widthComment": 87.2236328125
         },
@@ -1346,29 +1346,6 @@
             "id": "b6d004cf-fcfb-4c90-803a-5120fce041dc"
           },
           {
-            "name": "DEALER_ID",
-            "comment": "딜러정보 UID",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 74.2490234375,
-              "widthComment": 80,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "bf92f624-314a-4d98-8b24-3d844afce9dd"
-          },
-          {
             "name": "STATUS_ID",
             "comment": "판매상태 UID",
             "dataType": "VARCHAR(100)",
@@ -1392,8 +1369,8 @@
             "id": "be68b079-ace9-4c73-9445-874e4a29b990"
           },
           {
-            "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "name": "DEALER_ID",
+            "comment": "딜러정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -1407,19 +1384,19 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 60,
+              "widthName": 74.2490234375,
               "widthComment": 83.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "1603aaf6-a9ea-4e9b-8646-02e7edefe621"
+            "id": "c87f92d2-90a9-46e1-af70-d82f02a566d8"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1101.6091,
-          "top": 276.5984,
-          "zIndex": 204,
+          "left": 1172.3034,
+          "top": 269.0983,
+          "zIndex": 242,
           "widthName": 128.1787109375,
           "widthComment": 60
         },
@@ -1686,9 +1663,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 419.3945,
-          "top": 1001.2952,
-          "zIndex": 176,
+          "left": 1111.6445,
+          "top": 738.7952,
+          "zIndex": 175,
           "widthName": 76.40087890625,
           "widthComment": 60
         },
@@ -1700,8 +1677,8 @@
         "comment": "딜러 정보",
         "columns": [
           {
-            "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "name": "DEALER_ID",
+            "comment": "딜러정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -1715,7 +1692,7 @@
               "pk": false,
               "fk": false,
               "pfk": true,
-              "widthName": 60,
+              "widthName": 74.2490234375,
               "widthComment": 83.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -1771,9 +1748,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 564.1795,
-          "top": 298.8541,
-          "zIndex": 203,
+          "left": 574.3186,
+          "top": 262.6873,
+          "zIndex": 247,
           "widthName": 92.3017578125,
           "widthComment": 60
         },
@@ -1925,9 +1902,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 399.9166,
-          "top": 1404.0992,
-          "zIndex": 177,
+          "left": 1682.6945,
+          "top": 715.4884,
+          "zIndex": 176,
           "widthName": 87.2490234375,
           "widthComment": 87.2236328125
         },
@@ -2031,8 +2008,8 @@
             "id": "e80e7672-a3ad-4f74-a144-6b84603e5191"
           },
           {
-            "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "name": "ADMIN_ID",
+            "comment": "관리자정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -2046,19 +2023,19 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 83.61181640625,
+              "widthName": 64.1181640625,
+              "widthComment": 96.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "500ca5b0-2734-4997-9f06-3835fbf5adbc"
+            "id": "0aba9c7c-16dc-4a5f-900e-52994263359f"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1585.2202,
-          "top": 1477.0324,
-          "zIndex": 191,
+          "left": 1925.2202,
+          "top": 1311.7546,
+          "zIndex": 264,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
@@ -2118,9 +2095,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1056.8855,
-          "top": 1642.9792,
-          "zIndex": 192,
+          "left": 1338.1355,
+          "top": 1341.7292,
+          "zIndex": 184,
           "widthName": 97.11962890625,
           "widthComment": 60
         },
@@ -2267,11 +2244,11 @@
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "709263c7-e0db-4d4a-99c6-a33465a9fab2"
+            "id": "f2d0a28d-8bae-48e4-bca9-ed1afd5a3f9e"
           },
           {
-            "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "name": "ADMIN_ID",
+            "comment": "관리자정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -2285,19 +2262,19 @@
               "pk": false,
               "fk": true,
               "pfk": false,
-              "widthName": 60,
-              "widthComment": 83.61181640625,
+              "widthName": 64.1181640625,
+              "widthComment": 96.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "3b1a55a1-99c3-47d8-aee0-b7e4bc9dc1f7"
+            "id": "8be1bf7f-ba23-4a55-9d5d-d36a47c69b75"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1001.1873,
-          "top": 1315.1332,
-          "zIndex": 183,
+          "left": 1052.9933,
+          "top": 1098.1887,
+          "zIndex": 267,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2378,29 +2355,6 @@
             "id": "760b3763-0797-4bbe-a0b3-3b3929b85b42"
           },
           {
-            "name": "USER_ID",
-            "comment": "일반회원정보  UID",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 109.61181640625,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "2e08e9b6-1819-4190-abb0-7ff5ae5952dd"
-          },
-          {
             "name": "CAR_DTL_ID",
             "comment": "차량 판매  UID",
             "dataType": "VARCHAR(100)",
@@ -2422,13 +2376,36 @@
               "widthDefault": 60
             },
             "id": "8e8197fa-0f67-40a6-b136-c645f527fc30"
+          },
+          {
+            "name": "USER_ID",
+            "comment": "일반회원정보  UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 109.61181640625,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "363d1b2e-7cc3-4afa-b754-26813a00ebf9"
           }
         ],
         "ui": {
           "active": false,
-          "left": 825.8331,
-          "top": 664.6704,
-          "zIndex": 195,
+          "left": 544.5831,
+          "top": 661.9204,
+          "zIndex": 180,
           "widthName": 93.01904296875,
           "widthComment": 60
         },
@@ -2511,9 +2488,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 1106.389,
-          "top": 19.035,
-          "zIndex": 200,
+          "left": 1188.4999,
+          "top": 59.8405,
+          "zIndex": 199,
           "widthName": 91.82568359375,
           "widthComment": 60
         },
@@ -2524,29 +2501,6 @@
         "name": "WISHLIST",
         "comment": "찜",
         "columns": [
-          {
-            "name": "USER_ID",
-            "comment": "일반회원정보  UID",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 109.61181640625,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "ff00a22f-dbe0-43f8-943f-3df75f047519"
-          },
           {
             "name": "CAR_DTL_ID",
             "comment": "차량 판매  UID",
@@ -2569,13 +2523,36 @@
               "widthDefault": 60
             },
             "id": "634ddd36-6ae0-4050-80b4-b7218f8b3165"
+          },
+          {
+            "name": "USER_ID",
+            "comment": "일반회원정보  UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 109.61181640625,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "4121edbe-0435-445a-87e6-f80c28453b08"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1196.2163,
-          "top": 905.7675,
-          "zIndex": 194,
+          "left": 296.5769,
+          "top": 489.2686,
+          "zIndex": 228,
           "widthName": 63.39453125,
           "widthComment": 60
         },
@@ -2654,29 +2631,6 @@
               "widthDefault": 60
             },
             "id": "aef4ce40-ba96-41a7-93ec-0887f910187e"
-          },
-          {
-            "name": "USER_ID",
-            "comment": "일반회원정보  UID",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": true,
-              "pfk": false,
-              "widthName": 60,
-              "widthComment": 109.61181640625,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "f60ce348-f36f-4a18-a794-9bbf761df628"
           },
           {
             "name": "INQ_DATE",
@@ -2771,31 +2725,8 @@
             "id": "59e61d84-6110-47df-a026-b40ab1fb951b"
           },
           {
-            "name": "DEALER_ID",
-            "comment": "딜러정보 UID",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": true
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 74.2490234375,
-              "widthComment": 80,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "1c5911ed-bad5-4e15-8f78-02c2db9f41ce"
-          },
-          {
             "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "comment": "일반회원정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -2810,18 +2741,41 @@
               "fk": true,
               "pfk": false,
               "widthName": 60,
+              "widthComment": 109.61181640625,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "ab6c7ec6-7414-4184-8f2b-e2b90baf1544"
+          },
+          {
+            "name": "DEALER_ID",
+            "comment": "딜러정보  UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": true,
+              "pfk": false,
+              "widthName": 74.2490234375,
               "widthComment": 83.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "c3be9342-76e4-42f1-9723-64b805be4234"
+            "id": "1e4f9f48-9942-4a23-87ec-b76a3d03d793"
           }
         ],
         "ui": {
           "active": false,
-          "left": 11.8527,
-          "top": 228.0018,
-          "zIndex": 202,
+          "left": 9.75,
+          "top": 200.2518,
+          "zIndex": 245,
           "widthName": 63.8642578125,
           "widthComment": 60
         },
@@ -2881,9 +2835,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 38.7169,
-          "top": 30.9538,
-          "zIndex": 168,
+          "left": 8.4669,
+          "top": 8.9538,
+          "zIndex": 164,
           "widthName": 115.64208984375,
           "widthComment": 60
         },
@@ -2895,8 +2849,47 @@
         "comment": "관리자 정보",
         "columns": [
           {
+            "name": "ADMIN_ID",
+            "comment": "관리자정보  UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": true,
+              "widthName": 64.1181640625,
+              "widthComment": 96.61181640625,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "9f1a2815-4371-490b-8754-00931c8b23a7"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 1706.1857,
+          "top": 1066.3261,
+          "zIndex": 266,
+          "widthName": 60,
+          "widthComment": 70.61181640625
+        },
+        "visible": true,
+        "id": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b"
+      },
+      {
+        "name": "USER",
+        "comment": "일반 회원 정보",
+        "columns": [
+          {
             "name": "USER_ID",
-            "comment": "회원정보  UID",
+            "comment": "일반회원정보  UID",
             "dataType": "VARCHAR(100)",
             "default": "",
             "option": {
@@ -2911,23 +2904,23 @@
               "fk": false,
               "pfk": true,
               "widthName": 60,
-              "widthComment": 83.61181640625,
+              "widthComment": 109.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
             },
-            "id": "9f1a2815-4371-490b-8754-00931c8b23a7"
+            "id": "3644a59d-e01c-4bfb-b63e-dbe7997f467c"
           }
         ],
         "ui": {
           "active": false,
-          "left": 1605.4912,
-          "top": 1146.6042,
+          "left": 239.4723,
+          "top": 900.8049,
           "zIndex": 181,
           "widthName": 60,
-          "widthComment": 70.61181640625
+          "widthComment": 87.2236328125
         },
         "visible": true,
-        "id": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b"
+        "id": "929258c9-f57f-4bdf-8391-f42b09081f39"
       }
     ],
     "indexes": []
@@ -2946,8 +2939,8 @@
           "columnIds": [
             "d04d6e11-a5c2-4145-ba76-69e6b33b994d"
           ],
-          "x": 1715.7651,
-          "y": 370.40250000000003,
+          "x": 1718.4873,
+          "y": 344.4581,
           "direction": "left"
         },
         "end": {
@@ -2955,8 +2948,8 @@
           "columnIds": [
             "b6d004cf-fcfb-4c90-803a-5120fce041dc"
           ],
-          "x": 1532.247771875,
-          "y": 362.3484,
+          "x": 1602.942071875,
+          "y": 344.5983,
           "direction": "right"
         },
         "constraintName": "fk_car_info_to_car_detaile_info",
@@ -2972,18 +2965,18 @@
           "columnIds": [
             "c182715d-0ec0-40d9-bc83-ba589b9b8638"
           ],
-          "x": 637.041844140625,
-          "y": 1404.0992,
-          "direction": "top"
+          "x": 1682.6945,
+          "y": 811.4884,
+          "direction": "left"
         },
         "end": {
           "tableId": "76f05620-1830-40bd-a9df-8ad656d9869e",
           "columnIds": [
             "c629edb6-49ba-4d39-ab73-a42f05f805b5"
           ],
-          "x": 645.177947265625,
-          "y": 1295.7952,
-          "direction": "bottom"
+          "x": 1563.21139453125,
+          "y": 812.4202,
+          "direction": "right"
         },
         "constraintName": "fk_user_ts_cs_to_user_info",
         "visible": true,
@@ -2998,8 +2991,8 @@
           "columnIds": [
             "ff6f41b9-d45a-4ed8-8be3-61afac30266e"
           ],
-          "x": 1479.58325390625,
-          "y": 1697.9792,
+          "x": 1760.83325390625,
+          "y": 1396.7292,
           "direction": "right"
         },
         "end": {
@@ -3007,8 +3000,8 @@
           "columnIds": [
             "e80e7672-a3ad-4f74-a144-6b84603e5191"
           ],
-          "x": 1585.2202,
-          "y": 1562.7824,
+          "x": 1925.2202,
+          "y": 1397.5046,
           "direction": "left"
         },
         "constraintName": "fk_inquiry_type_to_cs_fna",
@@ -3024,17 +3017,17 @@
           "columnIds": [
             "ff6f41b9-d45a-4ed8-8be3-61afac30266e"
           ],
-          "x": 1268.234376953125,
-          "y": 1642.9792,
-          "direction": "top"
+          "x": 1338.1355,
+          "y": 1396.7292,
+          "direction": "left"
         },
         "end": {
           "tableId": "62a5289e-bef6-43a9-83a2-0587ed708ad5",
           "columnIds": [
             "d2c57d9b-977f-49d3-a024-0396958b897a"
           ],
-          "x": 1234.55302265625,
-          "y": 1527.6332,
+          "x": 1286.35902265625,
+          "y": 1310.6887,
           "direction": "bottom"
         },
         "constraintName": "fk_inquiry_type_to_cs_qna",
@@ -3046,64 +3039,12 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "76f05620-1830-40bd-a9df-8ad656d9869e",
-          "columnIds": [
-            "4c749159-549a-444e-bf88-fe9ef6864615"
-          ],
-          "x": 870.96139453125,
-          "y": 1050.3785333333333,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "62a5289e-bef6-43a9-83a2-0587ed708ad5",
-          "columnIds": [
-            "709263c7-e0db-4d4a-99c6-a33465a9fab2"
-          ],
-          "x": 1001.1873,
-          "y": 1421.3832,
-          "direction": "left"
-        },
-        "constraintName": "fk_user_info_to_cs_qna",
-        "visible": true,
-        "id": "5f57944b-f65a-489f-a2e0-245919bac92d"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "76f05620-1830-40bd-a9df-8ad656d9869e",
-          "columnIds": [
-            "4c749159-549a-444e-bf88-fe9ef6864615"
-          ],
-          "x": 494.6556490885416,
-          "y": 1001.2952,
-          "direction": "top"
-        },
-        "end": {
-          "tableId": "be49131a-2d90-4d28-b798-c920e467452c",
-          "columnIds": [
-            "2e08e9b6-1819-4190-abb0-7ff5ae5952dd"
-          ],
-          "x": 825.8331,
-          "y": 750.4204,
-          "direction": "left"
-        },
-        "constraintName": "fk_user_info_to_reservation",
-        "visible": true,
-        "id": "74e5f206-df99-4e12-8ef9-e5dff4d5d2b2"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
           "tableId": "f8c135eb-4970-44f4-84f0-b3669fbfed72",
           "columnIds": [
             "637870e6-814e-4adf-b748-7e2c3912c2ae"
           ],
-          "x": 2329.6645,
-          "y": 562.2372,
+          "x": 2336.6645,
+          "y": 533.4872,
           "direction": "left"
         },
         "end": {
@@ -3111,8 +3052,8 @@
           "columnIds": [
             "9254dd6d-515f-4cb0-9400-e870021c36b3"
           ],
-          "x": 2243.227990625,
-          "y": 485.02750000000003,
+          "x": 2245.950190625,
+          "y": 459.0831,
           "direction": "right"
         },
         "constraintName": "fk_car_panel_to_car_info",
@@ -3128,8 +3069,8 @@
           "columnIds": [
             "94589171-4a57-4594-9c95-ff6d9484c0f9"
           ],
-          "x": 2341.0869,
-          "y": 257.0861,
+          "x": 2347.5869,
+          "y": 236.5861,
           "direction": "left"
         },
         "end": {
@@ -3137,8 +3078,8 @@
           "columnIds": [
             "32dbf246-f181-4bca-bfaa-74551210d19e"
           ],
-          "x": 2243.227990625,
-          "y": 255.7775,
+          "x": 2245.950190625,
+          "y": 229.8331,
           "direction": "right"
         },
         "constraintName": "fk_car_main_skeleton_to_car_info",
@@ -3154,8 +3095,8 @@
           "columnIds": [
             "834ae3d2-57f9-4a0e-b32e-363f372aef5f"
           ],
-          "x": 1315.452720703125,
-          "y": 149.535,
+          "x": 1397.563620703125,
+          "y": 190.3405,
           "direction": "bottom"
         },
         "end": {
@@ -3163,8 +3104,8 @@
           "columnIds": [
             "be68b079-ace9-4c73-9445-874e4a29b990"
           ],
-          "x": 1316.9284359375,
-          "y": 276.5984,
+          "x": 1387.6227359375,
+          "y": 269.0983,
           "direction": "top"
         },
         "constraintName": "fk_sale_status_to_car_detaile_info",
@@ -3176,64 +3117,12 @@
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "76f05620-1830-40bd-a9df-8ad656d9869e",
-          "columnIds": [
-            "4c749159-549a-444e-bf88-fe9ef6864615"
-          ],
-          "x": 870.96139453125,
-          "y": 1148.5452,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "2b4af278-5fc5-4b77-89c7-e39dfada07e5",
-          "columnIds": [
-            "ff00a22f-dbe0-43f8-943f-3df75f047519"
-          ],
-          "x": 1196.2163,
-          "y": 960.7675,
-          "direction": "left"
-        },
-        "constraintName": "fk_user_info_to_wishlist",
-        "visible": true,
-        "id": "ec12b833-8c2e-48e7-afcf-df0bcbd7eb72"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "76f05620-1830-40bd-a9df-8ad656d9869e",
-          "columnIds": [
-            "4c749159-549a-444e-bf88-fe9ef6864615"
-          ],
-          "x": 795.7002454427084,
-          "y": 1001.2952,
-          "direction": "top"
-        },
-        "end": {
-          "tableId": "5ab28e9f-b69d-4972-989b-2a6c25eddcc9",
-          "columnIds": [
-            "f60ce348-f36f-4a18-a794-9bbf761df628"
-          ],
-          "x": 247.0275046875,
-          "y": 502.0018,
-          "direction": "bottom"
-        },
-        "constraintName": "fk_user_info_to_contact",
-        "visible": true,
-        "id": "c18275fd-aaa3-4c31-9c98-d59796a53a7a"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
           "tableId": "297bfcb3-2095-40de-a8cc-4787b082f76d",
           "columnIds": [
             "00d8bbea-3bd1-4272-bb85-b183b89e0556"
           ],
-          "x": 247.28867734375,
-          "y": 140.9538,
+          "x": 217.03867734375,
+          "y": 118.9538,
           "direction": "bottom"
         },
         "end": {
@@ -3241,8 +3130,8 @@
           "columnIds": [
             "59e61d84-6110-47df-a026-b40ab1fb951b"
           ],
-          "x": 247.0275046875,
-          "y": 228.0018,
+          "x": 244.9248046875,
+          "y": 200.2518,
           "direction": "top"
         },
         "constraintName": "fk_answer_status_to_contact",
@@ -3258,18 +3147,18 @@
           "columnIds": [
             "1d9a91b4-bc87-405e-9a61-5ee068f4502e"
           ],
-          "x": 1424.58810390625,
-          "y": 448.0984,
-          "direction": "bottom"
+          "x": 1172.3034,
+          "y": 394.9316333333333,
+          "direction": "left"
         },
         "end": {
           "tableId": "2b4af278-5fc5-4b77-89c7-e39dfada07e5",
           "columnIds": [
             "634ddd36-6ae0-4050-80b4-b7218f8b3165"
           ],
-          "x": 1422.729727734375,
-          "y": 905.7675,
-          "direction": "top"
+          "x": 749.60375546875,
+          "y": 544.2686,
+          "direction": "right"
         },
         "constraintName": "fk_car_detaile_info_to_wishlist",
         "visible": true,
@@ -3284,17 +3173,17 @@
           "columnIds": [
             "1d9a91b4-bc87-405e-9a61-5ee068f4502e"
           ],
-          "x": 1209.26876796875,
-          "y": 448.0984,
-          "direction": "bottom"
+          "x": 1172.3034,
+          "y": 344.5983,
+          "direction": "left"
         },
         "end": {
           "tableId": "be49131a-2d90-4d28-b798-c920e467452c",
           "columnIds": [
             "8e8197fa-0f67-40a6-b136-c645f527fc30"
           ],
-          "x": 1310.6426703124998,
-          "y": 750.4204,
+          "x": 1029.3926703124998,
+          "y": 747.6704,
           "direction": "right"
         },
         "constraintName": "fk_car_detaile_info_to_reservation",
@@ -3310,8 +3199,8 @@
           "columnIds": [
             "4c749159-549a-444e-bf88-fe9ef6864615"
           ],
-          "x": 645.177947265625,
-          "y": 1001.2952,
+          "x": 1337.427947265625,
+          "y": 738.7952,
           "direction": "top"
         },
         "end": {
@@ -3319,9 +3208,9 @@
           "columnIds": [
             "8efa86bf-97a1-4e69-a2d4-bcb3a8e541dc"
           ],
-          "x": 786.357478515625,
-          "y": 429.3541,
-          "direction": "bottom"
+          "x": 1018.67455703125,
+          "y": 360.5623,
+          "direction": "right"
         },
         "constraintName": "fk_user_info_to_dealer_user_info",
         "visible": true,
@@ -3336,8 +3225,8 @@
           "columnIds": [
             "4c749159-549a-444e-bf88-fe9ef6864615"
           ],
-          "x": 870.96139453125,
-          "y": 1246.7118666666668,
+          "x": 1563.21139453125,
+          "y": 959.6702,
           "direction": "right"
         },
         "end": {
@@ -3345,8 +3234,8 @@
           "columnIds": [
             "9f1a2815-4371-490b-8754-00931c8b23a7"
           ],
-          "x": 1605.4912,
-          "y": 1213.7292,
+          "x": 1706.1857,
+          "y": 1088.7011,
           "direction": "left"
         },
         "constraintName": "fk_user_info_to_admin",
@@ -3354,82 +3243,134 @@
         "id": "8f261e5a-7a67-4218-ac4f-e6d96e4ee7b8"
       },
       {
-        "identification": false,
+        "identification": true,
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b",
+          "tableId": "76f05620-1830-40bd-a9df-8ad656d9869e",
           "columnIds": [
-            "9f1a2815-4371-490b-8754-00931c8b23a7"
+            "4c749159-549a-444e-bf88-fe9ef6864615"
           ],
-          "x": 2011.051746875,
-          "y": 1213.7292,
-          "direction": "right"
-        },
-        "end": {
-          "tableId": "39f12f35-f5b9-4d52-9db5-834b8c4da48a",
-          "columnIds": [
-            "b0f0c4a7-9a16-4afb-bdee-4d6a971c1034"
-          ],
-          "x": 2245.0743,
-          "y": 1218.5193,
+          "x": 1111.6445,
+          "y": 886.0452,
           "direction": "left"
         },
-        "constraintName": "fk_admin_to_notice",
+        "end": {
+          "tableId": "929258c9-f57f-4bdf-8391-f42b09081f39",
+          "columnIds": [
+            "3644a59d-e01c-4bfb-b63e-dbe7997f467c"
+          ],
+          "x": 671.032846875,
+          "y": 945.5549000000001,
+          "direction": "right"
+        },
+        "constraintName": "fk_user_info_to_user",
         "visible": true,
-        "id": "b64ec656-6bd9-44c8-aa78-219a40281398"
+        "id": "e3e66592-5412-4147-8b1e-c70345393f5b"
       },
       {
         "identification": false,
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b",
+          "tableId": "929258c9-f57f-4bdf-8391-f42b09081f39",
           "columnIds": [
-            "9f1a2815-4371-490b-8754-00931c8b23a7"
+            "3644a59d-e01c-4bfb-b63e-dbe7997f467c"
           ],
-          "x": 2011.051746875,
-          "y": 1168.9792,
+          "x": 671.032846875,
+          "y": 915.7215666666667,
           "direction": "right"
         },
         "end": {
-          "tableId": "56e5b7be-a67e-406c-9740-63db21050102",
+          "tableId": "be49131a-2d90-4d28-b798-c920e467452c",
           "columnIds": [
-            "fd1970f3-4451-43a3-ada3-969881a4dd9b"
+            "363d1b2e-7cc3-4afa-b754-26813a00ebf9"
           ],
-          "x": 2169.207740234375,
-          "y": 1061.3166999999999,
+          "x": 786.98788515625,
+          "y": 833.4204,
           "direction": "bottom"
         },
-        "constraintName": "fk_admin_to_event",
+        "constraintName": "fk_user_to_reservation",
         "visible": true,
-        "id": "882f26ce-d440-4a3e-80ab-f89271540071"
+        "id": "6b61ba38-e070-40ab-bf48-0d68df7c6037"
       },
       {
         "identification": false,
         "relationshipType": "OneN",
         "startRelationshipType": "Dash",
         "start": {
-          "tableId": "aa10ea51-6d9b-4672-8d40-adf3264fe979",
+          "tableId": "929258c9-f57f-4bdf-8391-f42b09081f39",
           "columnIds": [
-            "8efa86bf-97a1-4e69-a2d4-bcb3a8e541dc"
+            "3644a59d-e01c-4bfb-b63e-dbe7997f467c"
           ],
-          "x": 564.1795,
-          "y": 364.1041,
+          "x": 455.2525734375,
+          "y": 900.8049,
+          "direction": "top"
+        },
+        "end": {
+          "tableId": "2b4af278-5fc5-4b77-89c7-e39dfada07e5",
+          "columnIds": [
+            "4121edbe-0435-445a-87e6-f80c28453b08"
+          ],
+          "x": 523.090327734375,
+          "y": 599.2686,
+          "direction": "bottom"
+        },
+        "constraintName": "fk_user_to_wishlist",
+        "visible": true,
+        "id": "311af872-4550-4526-97e6-78cf4c4be469"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "929258c9-f57f-4bdf-8391-f42b09081f39",
+          "columnIds": [
+            "3644a59d-e01c-4bfb-b63e-dbe7997f467c"
+          ],
+          "x": 671.032846875,
+          "y": 975.3882333333335,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "62a5289e-bef6-43a9-83a2-0587ed708ad5",
+          "columnIds": [
+            "f2d0a28d-8bae-48e4-bca9-ed1afd5a3f9e"
+          ],
+          "x": 1052.9933,
+          "y": 1204.4387,
+          "direction": "left"
+        },
+        "constraintName": "fk_user_to_cs_qna",
+        "visible": true,
+        "id": "62341735-016e-473d-9630-fee57ac07f62"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "929258c9-f57f-4bdf-8391-f42b09081f39",
+          "columnIds": [
+            "3644a59d-e01c-4bfb-b63e-dbe7997f467c"
+          ],
+          "x": 239.4723,
+          "y": 945.5549,
           "direction": "left"
         },
         "end": {
           "tableId": "5ab28e9f-b69d-4972-989b-2a6c25eddcc9",
           "columnIds": [
-            "c3be9342-76e4-42f1-9723-64b805be4234"
+            "ab6c7ec6-7414-4184-8f2b-e2b90baf1544"
           ],
-          "x": 482.202309375,
-          "y": 365.0018,
-          "direction": "right"
+          "x": 244.9248046875,
+          "y": 453.7518,
+          "direction": "bottom"
         },
-        "constraintName": "fk_dealer_info_to_contact",
+        "constraintName": "fk_user_to_contact",
         "visible": true,
-        "id": "10203096-9f1b-4362-b34b-9ed1f583b46e"
+        "id": "deb4a685-8ede-4a02-b4a8-a755acc187d8"
       },
       {
         "identification": false,
@@ -3440,22 +3381,48 @@
           "columnIds": [
             "8efa86bf-97a1-4e69-a2d4-bcb3a8e541dc"
           ],
-          "x": 1008.53545703125,
-          "y": 364.1041,
+          "x": 1018.67455703125,
+          "y": 295.3123,
           "direction": "right"
         },
         "end": {
           "tableId": "2f6a92b6-71ce-492f-b743-f43807e6b073",
           "columnIds": [
-            "1603aaf6-a9ea-4e9b-8646-02e7edefe621"
+            "c87f92d2-90a9-46e1-af70-d82f02a566d8"
           ],
-          "x": 1101.6091,
-          "y": 362.3484,
+          "x": 1172.3034,
+          "y": 294.2649666666667,
           "direction": "left"
         },
         "constraintName": "fk_dealer_info_to_car_detaile_info",
         "visible": true,
-        "id": "e69e0b58-a239-4254-a702-5bedc8fd010e"
+        "id": "48960c00-6f64-4ac6-bafc-0132b82295dd"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "aa10ea51-6d9b-4672-8d40-adf3264fe979",
+          "columnIds": [
+            "8efa86bf-97a1-4e69-a2d4-bcb3a8e541dc"
+          ],
+          "x": 574.3186,
+          "y": 327.9373,
+          "direction": "left"
+        },
+        "end": {
+          "tableId": "5ab28e9f-b69d-4972-989b-2a6c25eddcc9",
+          "columnIds": [
+            "1e4f9f48-9942-4a23-87ec-b76a3d03d793"
+          ],
+          "x": 480.099609375,
+          "y": 327.0018,
+          "direction": "right"
+        },
+        "constraintName": "fk_dealer_info_to_contact",
+        "visible": true,
+        "id": "d202c51c-00a2-46f4-b754-93ff68cbf84b"
       },
       {
         "identification": false,
@@ -3466,48 +3433,100 @@
           "columnIds": [
             "9f1a2815-4371-490b-8754-00931c8b23a7"
           ],
-          "x": 1605.4912,
-          "y": 1168.9792,
+          "x": 2128.8644109375,
+          "y": 1081.2427666666665,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "56e5b7be-a67e-406c-9740-63db21050102",
+          "columnIds": [
+            "4182c254-65a3-4f38-b19f-449b1dc630e4"
+          ],
+          "x": 2192.124,
+          "y": 977.8167,
+          "direction": "left"
+        },
+        "constraintName": "fk_admin_to_event",
+        "visible": true,
+        "id": "a55eecb4-fb0b-483b-bd7e-5bd26263b139"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b",
+          "columnIds": [
+            "9f1a2815-4371-490b-8754-00931c8b23a7"
+          ],
+          "x": 2128.8644109375,
+          "y": 1111.0760999999998,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "39f12f35-f5b9-4d52-9db5-834b8c4da48a",
+          "columnIds": [
+            "0e3b132c-dc84-44d0-a1e4-98415402dd75"
+          ],
+          "x": 2262.5743,
+          "y": 1187.2693,
+          "direction": "left"
+        },
+        "constraintName": "fk_admin_to_notice",
+        "visible": true,
+        "id": "8837d8bb-8984-4718-8db6-11b15b67bae3"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b",
+          "columnIds": [
+            "9f1a2815-4371-490b-8754-00931c8b23a7"
+          ],
+          "x": 2128.8644109375,
+          "y": 1140.909433333333,
+          "direction": "right"
+        },
+        "end": {
+          "tableId": "6ac6353c-3291-496d-b778-348e055ae8d0",
+          "columnIds": [
+            "0aba9c7c-16dc-4a5f-900e-52994263359f"
+          ],
+          "x": 2147.7631687499997,
+          "y": 1311.7546,
+          "direction": "top"
+        },
+        "constraintName": "fk_admin_to_cs_fna",
+        "visible": true,
+        "id": "e9aaedf0-9369-421b-8347-75846b3c98e8"
+      },
+      {
+        "identification": false,
+        "relationshipType": "OneN",
+        "startRelationshipType": "Dash",
+        "start": {
+          "tableId": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b",
+          "columnIds": [
+            "9f1a2815-4371-490b-8754-00931c8b23a7"
+          ],
+          "x": 1706.1857,
+          "y": 1133.4511,
           "direction": "left"
         },
         "end": {
           "tableId": "62a5289e-bef6-43a9-83a2-0587ed708ad5",
           "columnIds": [
-            "3b1a55a1-99c3-47d8-aee0-b7e4bc9dc1f7"
+            "8be1bf7f-ba23-4a55-9d5d-d36a47c69b75"
           ],
-          "x": 1467.9187453125,
-          "y": 1421.3832,
+          "x": 1519.7247453125,
+          "y": 1204.4387,
           "direction": "right"
         },
         "constraintName": "fk_admin_to_cs_qna",
         "visible": true,
-        "id": "f1959d80-41d0-4aef-86c7-add8db26c123"
-      },
-      {
-        "identification": false,
-        "relationshipType": "OneN",
-        "startRelationshipType": "Dash",
-        "start": {
-          "tableId": "0f0582cf-e3f9-45ee-9f12-2211cbebb91b",
-          "columnIds": [
-            "9f1a2815-4371-490b-8754-00931c8b23a7"
-          ],
-          "x": 1808.2714734375,
-          "y": 1236.1042,
-          "direction": "bottom"
-        },
-        "end": {
-          "tableId": "6ac6353c-3291-496d-b778-348e055ae8d0",
-          "columnIds": [
-            "500ca5b0-2734-4997-9f06-3835fbf5adbc"
-          ],
-          "x": 1801.26316875,
-          "y": 1477.0324,
-          "direction": "top"
-        },
-        "constraintName": "fk_admin_to_cs_fna",
-        "visible": true,
-        "id": "94db5574-217f-4eb8-9249-1c142a6bcedf"
+        "id": "398e7ed9-56ad-4ae8-a9fe-fa5eabd9c7b9"
       }
     ]
   }
