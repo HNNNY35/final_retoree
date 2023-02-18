@@ -23,7 +23,7 @@
     <!-- 해야할것 : 차량 상세 페이지(찜, 차량 상세 정보, 차량 상세 이미지, 할부금 모의 계산, 딜러에게 문의하기) -->
   </head>
   <body>
-    <%@ include file="../header.jsp" %>
+    <%@ include file="../../header.jsp" %>
 
     <!-- 차량 사진 -->
     <div class="container">
@@ -33,7 +33,7 @@
             <div class="numbertext">1 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_001.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_003.jpg"
               width="100%"
               height="600px"
             />
@@ -43,7 +43,7 @@
             <div class="numbertext">2 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_002.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_001.jpg"
               width="100%"
               height="600px"
             />
@@ -53,7 +53,7 @@
             <div class="numbertext">3 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_022.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_015.jpg"
               width="100%"
               height="600px"
             />
@@ -63,7 +63,7 @@
             <div class="numbertext">4 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_005.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_005.jpg"
               width="100%"
               height="600px"
             />
@@ -73,7 +73,7 @@
             <div class="numbertext">5 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_030.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_009.jpg"
               width="100%"
               height="600px"
             />
@@ -83,7 +83,7 @@
             <div class="numbertext">6 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_010.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_010.jpg"
               width="100%"
               height="600px"
             />
@@ -101,7 +101,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_001.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_003.jpg"
               style="width: 30%"
               onclick="currentSlide(1)"
               alt="앞면"
@@ -110,7 +110,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_002.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_001.jpg"
               style="width: 30%"
               onclick="currentSlide(2)"
               alt="옆면"
@@ -119,7 +119,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_022.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_015.jpg"
               style="width: 30%"
               onclick="currentSlide(3)"
               alt="내부"
@@ -128,7 +128,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MjBfODQg/MDAxNTA1ODY1ODI5MDIz._8sKpzEzN_YdBu1-VliqwnlufMTHSOwTjrMbv1wuyX8g.KbxVGiYIxKrawqfKzQe71rw_M4T3ByLDaF0hNpK_AYwg.JPEG.tirestory3/%EA%B7%B8%EB%9E%9C%EC%A0%80ig_%ED%83%80%EC%9D%B4%EC%96%B4_%EA%B5%90%EC%B2%B4_%EB%AF%B8%EC%89%90%EB%A6%B0_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%A8%B8%EC%8B%9Cmxm4_DSC03416.JPG?type=w800"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_005.jpg"
               onclick="currentSlide(4)"
               style="width: 30%"
               alt="타이어"
@@ -137,7 +137,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_030.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_009.jpg"
               style="width: 30%"
               onclick="currentSlide(5)"
               alt="네비게이션"
@@ -146,7 +146,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60785206_010.jpg"
+              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_010.jpg"
               style="width: 30%"
               onclick="currentSlide(6)"
               alt="트렁크"
@@ -532,7 +532,7 @@
           </table>
         </div>
         <div class="col-md-5">
-          <img src="/img/주요 골격.png" alt="" width="400" />
+          <img src="../image/주요 골격.png" alt="" width="400" />
           <!-- <svg
             class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto"
             width="500"
@@ -553,7 +553,7 @@
 
     <!-- 차량 옵션부분 넣어야하나? -->
 
-    <%@ include file="../footer.jsp" %>
+    <%@ include file="../../footer.jsp" %>
   </body>
   <script src="../js/car_detail.js"></script>
   <script

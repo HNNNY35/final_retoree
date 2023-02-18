@@ -7,27 +7,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AdminController {
 
-    @RequestMapping(value = "/car_detail_change")
-    public ModelAndView car_detail(ModelAndView modelAndView) {
-        modelAndView.setViewName("/car/car_detail_change");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/car_reg")
-    public ModelAndView car_reg(ModelAndView modelAndView) {
-        modelAndView.setViewName("/car/car_reg");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/car_detail_k5")
-    public ModelAndView car_detail_k5(ModelAndView modelAndView) {
-        modelAndView.setViewName("/car/car_detail_k5");
-        return modelAndView;
-
-    }
-
     @RequestMapping(value = "/cs_FNA_page01")
     public ModelAndView cs_FNA_page01(ModelAndView modelAndView) {
         modelAndView.setViewName("/cs/cs_FNA_page01");
