@@ -1,6 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -23,7 +20,98 @@
     <!-- 해야할것 : 차량 상세 페이지(찜, 차량 상세 정보, 차량 상세 이미지, 할부금 모의 계산, 딜러에게 문의하기) -->
   </head>
   <body>
-    <%@ include file="../../header.jsp" %>
+    <header class="p-3 mb-3 border-bottom">
+      <div class="container marketing">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start"
+        >
+          <a
+            href="./main_search.html"
+            class="navbar-brand d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none"
+          >
+            <!-- <h1 class="img-responsive">리투리 로고</h1> -->
+            <img
+              src="../image/unused/RETOREE_crop.png"
+              alt="Brand"
+              class="img-responsive"
+              height="60rem"
+            />
+          </a>
+
+          <ul
+            class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0"
+          >
+            <li>
+              <a
+                href="./main_search.html"
+                class="fs-5 nav-link px-2 link-dark"
+                <img
+                src="../image/unused/RETOREE_crop.png"
+                alt="Brand"
+                class="img-responsive"
+                height="60rem"
+              ></a>
+            </li>
+
+            <li>
+              <a href="./main_search.html" class="fs-5 nav-link px-2 link-dark"
+                >HOME</a
+              >
+            </li>
+            <li>
+              <a href="./search.html" class="fs-5 nav-link ps-5 link-dark"
+                >검색
+              </a>
+            </li>
+            <li>
+              <a href="./price_check.html" class="fs-5 nav-link ps-5 link-dark"
+                >시세</a
+              >
+            </li>
+            <li>
+              <a href="./event.html" class="fs-5 nav-link ps-5 link-dark"
+                >이벤트</a
+              >
+            </li>
+            <li>
+              <a href="./cs_main.html" class="fs-5 nav-link ps-5 link-dark"
+                >고객센터</a
+              >
+            </li>
+           <a href="./notice.html" class="fs-5 nav-link ps-5 link-dark"
+                >공지사항</a
+              >
+            </li>
+          </ul>
+
+          <div class="dropdown text-end">
+            <a
+              href="#"
+              class="d-block link-dark text-decoration-none dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <img
+                src="https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1705/tuktukdesign170500020/77461809-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B2%A1%ED%84%B0-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%ED%94%84%EB%A1%9C%ED%95%84-%EC%95%84%EB%B0%94%ED%83%80-%EA%B8%80%EB%A6%AC%ED%94%84-%ED%94%BD%ED%86%A0%EA%B7%B8%EB%9E%A8-%EC%8B%AC%EB%B3%BC-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg?ver=6"
+                alt="mdo"
+                width="32"
+                height="32"
+                class="rounded-circle"
+              />
+            </a>
+            <ul class="dropdown-menu text-small">
+              <li>
+                <a class="dropdown-item" href="./myPage.html">마이페이지</a>
+              </li>
+              <li><a class="dropdown-item" href="#">방문예약 확인</a></li>
+              <li><a class="dropdown-item" href="#">찜 차량</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="#">로그아웃</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <!-- 차량 사진 -->
     <div class="container">
@@ -33,7 +121,7 @@
             <div class="numbertext">1 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_001.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/live360/images/thumb/img_0_0_0_L.jpg"
               width="100%"
               height="600px"
             />
@@ -43,7 +131,7 @@
             <div class="numbertext">2 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_003.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/live360/images/thumb/img_0_0_15_L.jpg"
               width="100%"
               height="600px"
             />
@@ -53,7 +141,7 @@
             <div class="numbertext">3 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_015.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_o_0_17_L.jpg"
               width="100%"
               height="600px"
             />
@@ -63,7 +151,7 @@
             <div class="numbertext">4 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_005.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_o_0_13_L.jpg"
               width="100%"
               height="600px"
             />
@@ -73,7 +161,7 @@
             <div class="numbertext">5 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_032.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_s_001_L.jpg"
               width="100%"
               height="600px"
             />
@@ -83,7 +171,7 @@
             <div class="numbertext">6 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_010.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_o_0_12_L.jpg"
               width="100%"
               height="600px"
             />
@@ -101,7 +189,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_001.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/live360/images/thumb/img_0_0_0_L.jpg"
               style="width: 30%"
               onclick="currentSlide(1)"
               alt="앞면"
@@ -110,7 +198,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_003.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/live360/images/thumb/img_0_0_15_L.jpg"
               style="width: 30%"
               onclick="currentSlide(2)"
               alt="옆면"
@@ -119,7 +207,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_015.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_o_0_17_L.jpg"
               style="width: 30%"
               onclick="currentSlide(3)"
               alt="내부"
@@ -128,7 +216,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_005.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_o_0_13_L.jpg"
               onclick="currentSlide(4)"
               style="width: 30%"
               alt="타이어"
@@ -137,7 +225,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_032.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_s_001_L.jpg"
               style="width: 30%"
               onclick="currentSlide(5)"
               alt="네비게이션"
@@ -146,7 +234,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_010.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/normal/thumb/img_o_0_12_L.jpg"
               style="width: 30%"
               onclick="currentSlide(6)"
               alt="트렁크"
@@ -553,7 +641,41 @@
 
     <!-- 차량 옵션부분 넣어야하나? -->
 
-    <%@ include file="../../footer.jsp" %>
+    <footer class="border-top pt-4 container">
+      <div class="row">
+        <div class="col-4">
+          <img
+            src="../image/unused/RETOREE_logo1.png"
+            alt=""
+            srcset=""
+            width="80%"
+            height="50%"
+          />
+          <!-- <small class="text-muted text-center"> <div>© 2023</div></small> -->
+        </div>
+        <div class="col-8">
+          <ul class="list-unstyled text-small">
+            <li class="text-secondary mb-1">
+              리투리 주식회사(주) | 대표자: 리투리 | 서울특별시 강남구 논현동
+            </li>
+            <li class="text-secondary mb-1">
+              사업자 등록번호 : 123-12-12345 | 통신판매업신고:서울논현동-00000
+            </li>
+            <li class="text-secondary mb-1">
+              리투리주식회사(주)는 통신판매중개자이며, 통신판매의 당사자가
+              아닙니다.
+            </li>
+            <li class="text-secondary mb-1">
+              상품, 상품정보제공 및 거래에 관한 의무와 책임은 판매자에게
+              있습니다.
+            </li>
+            <li class="text-secondary mb-1">
+              COPYRIGHT (C) RETOREE CAR CO., LTD. ALL RIGHTS RESERVED.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
   <script src="../js/car_detail.js"></script>
   <script

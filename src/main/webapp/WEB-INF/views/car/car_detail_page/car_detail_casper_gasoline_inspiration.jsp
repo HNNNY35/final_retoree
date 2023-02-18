@@ -33,7 +33,7 @@
             <div class="numbertext">1 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_001.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/live360/images/thumb/img_0_0_0_L.jpg"
               width="100%"
               height="600px"
             />
@@ -43,7 +43,7 @@
             <div class="numbertext">2 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_003.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/live360/images/thumb/img_0_0_15_L.jpg"
               width="100%"
               height="600px"
             />
@@ -53,7 +53,7 @@
             <div class="numbertext">3 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_015.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_17_L.jpg"
               width="100%"
               height="600px"
             />
@@ -63,7 +63,7 @@
             <div class="numbertext">4 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_005.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_13_L.jpg"
               width="100%"
               height="600px"
             />
@@ -73,7 +73,7 @@
             <div class="numbertext">5 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_032.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_21_L.jpg"
               width="100%"
               height="600px"
             />
@@ -83,7 +83,7 @@
             <div class="numbertext">6 / 6</div>
             <img
               class="car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_010.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_12_L.jpg"
               width="100%"
               height="600px"
             />
@@ -101,7 +101,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_001.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/live360/images/thumb/img_0_0_0_L.jpg"
               style="width: 30%"
               onclick="currentSlide(1)"
               alt="앞면"
@@ -110,7 +110,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_003.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/live360/images/thumb/img_0_0_15_L.jpg"
               style="width: 30%"
               onclick="currentSlide(2)"
               alt="옆면"
@@ -119,7 +119,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_015.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_17_L.jpg"
               style="width: 30%"
               onclick="currentSlide(3)"
               alt="내부"
@@ -128,7 +128,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784434_005.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_13_L.jpg"
               onclick="currentSlide(4)"
               style="width: 30%"
               alt="타이어"
@@ -137,7 +137,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_032.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_21_L.jpg"
               style="width: 30%"
               onclick="currentSlide(5)"
               alt="네비게이션"
@@ -146,7 +146,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60782567_010.jpg"
+              src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/normal/thumb/img_o_0_12_L.jpg"
               style="width: 30%"
               onclick="currentSlide(6)"
               alt="트렁크"

@@ -105,4 +105,70 @@ public class Car_detailController {
         return modelAndView;
 
     }
+
+    // search
+
+    @RequestMapping(value = "/car_detail_accent_modern")
+    public ModelAndView car_detail_accent_modern(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_accent_modern");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_avante_ad_gdi")
+    public ModelAndView car_detail_avante_ad_gdi(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_avante_ad_gdi");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_avante_modern_smartstream")
+    public ModelAndView car_detail_avante_modern_smartstream(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_avante_modern_smartstream");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_casper_gasoline_inspiration")
+    public ModelAndView car_detail_casper_gasoline_inspiration(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_casper_gasoline_inspiration");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_grandeur_ig_premium")
+    public ModelAndView car_detail_grandeur_ig_premium(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_grandeur_ig_premium");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_kona_modern_pop")
+    public ModelAndView car_detail_kona_modern_pop(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_kona_modern_pop");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_the_new_avante_ad")
+    public ModelAndView car_detail_the_new_avante_ad(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_the_new_avante_ad");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_the_new_veloster_pyl")
+    public ModelAndView car_detail_the_new_veloster_pyl(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_the_new_veloster_pyl");
+        return modelAndView;
+
+    }
+
+    @RequestMapping(value = "/car_detail_veloster_n_performance")
+    public ModelAndView car_detail_veloster_n_performance(ModelAndView modelAndView) {
+        modelAndView.setViewName("/car/car_detail_page/car_detail_veloster_n_performance");
+        return modelAndView;
+
+    }
+
 }

@@ -146,7 +146,7 @@
                           </div>
                       </div>
 
-                      <!-- 우측 검색필터 -->
+                     <!-- 우측 검색필터 -->
                       <div class="col-9">
                         <sapn class="fs-5" >
                           총 
@@ -172,10 +172,10 @@
                             <div class="row row-cols-1 row-cols-md-3 g-4">
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/cb1bf635-35e0-4bf8-bebd-060b001bf99f/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_accent_modern"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/cb1bf635-35e0-4bf8-bebd-060b001bf99f/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div ><a href="" class="card-text fw-normal small text-primary text-decoration-none">대전 D-AUTO MALL 드림디오토</a></div>
-                                    <h5 ><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 엑센트 신형 모던 wit 1.4 VVT</a></h5>
+                                    <h5 ><a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">현대 엑센트 신형 모던 wit 1.4 VVT</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2015</a></span>
                                     <span class="small">|</span>
                                     <span ><a href="" class="card-text fw-normal small text-secondary text-decoration-none">87,196km</a></span>
@@ -206,10 +206,10 @@
 
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/9ef1f668-19e7-4a8a-9349-104ba195ede8/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a> 
+                                  <a href="/car_detail_grandeur_ig_premium"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/9ef1f668-19e7-4a8a-9349-104ba195ede8/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a> 
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">휀다,트렁크교환,풀옵션차량입니다.</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 그랜저IG 프리미엄 스페셜 2.4 GDi</a></h5>
+                                    <h5><a href="/car_detail_grandeur_ig_premium" class="card-title fw-bold text-dark text-decoration-none">현대 그랜저IG 프리미엄 스페셜 2.4 GDi</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2019</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">38,788km</a></span>
@@ -238,10 +238,10 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/2503698e-c093-4284-990b-b205fcdab283/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_veloster_n_performance"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/2503698e-c093-4284-990b-b205fcdab283/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">1인신조차량, 완전무사고 차량입니다.</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 벨로스터 N 퍼포먼스 N 퍼포먼스</a></h5>
+                                    <h5><a href="/car_detail_veloster_n_performance" class="card-title fw-bold text-dark text-decoration-none">현대 벨로스터 N 퍼포먼스 N 퍼포먼스</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2020</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">21,257km</a></span>
@@ -272,10 +272,10 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_casper_gasoline_inspiration"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/a4a84cc3-1595-421e-a800-41a772cb244c/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">신차급^^</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 캐스퍼 가솔린 1.0 인스퍼레이션</a></h5>
+                                    <h5><a href="/car_detail_casper_gasoline_inspiration" class="card-title fw-bold text-dark text-decoration-none">현대 캐스퍼 가솔린 1.0 인스퍼레이션</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2023</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">1,026km</a></span>
@@ -305,10 +305,10 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/7c1deb04-e8fa-4c40-9872-519e770eca31/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_the_new_avante_ad"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/7c1deb04-e8fa-4c40-9872-519e770eca31/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">키로수짧은 무사고 차량입니다.</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 더 뉴아반떼AD 스마트 초이스 스마트스트림 1.6 가솔린</a></h5>
+                                    <h5><a href="/car_detail_the_new_avante_ad" class="card-title fw-bold text-dark text-decoration-none">현대 더 뉴아반떼AD 스마트 초이스 스마트스트림 1.6 가솔린</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2020</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">8,168km</a></span>
@@ -338,10 +338,10 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/3acd949c-9e90-4655-9bf1-eddac32f1d12/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_avante_modern_smartstream"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/3acd949c-9e90-4655-9bf1-eddac32f1d12/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">금연차량/완전 무사고/신차급 컨디션</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 아반떼(CN7) 모던 스마트스트림 1.6 가솔린</a></h5>
+                                    <h5><a href="/car_detail_avante_modern_smartstream" class="card-title fw-bold text-dark text-decoration-none">현대 아반떼(CN7) 모던 스마트스트림 1.6 가솔린</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2021</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">22,785km</a></span>
@@ -371,10 +371,10 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/d521909c-e932-4f82-94ea-931db934cdf8/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_avante_ad_gdi"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/d521909c-e932-4f82-94ea-931db934cdf8/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">완전무사고,짧은키로수</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 아반떼AD 1.6 GDi 밸류 플러스</a></h5>
+                                    <h5><a href="/car_detail_avante_ad_gdi" class="card-title fw-bold text-dark text-decoration-none">현대 아반떼AD 1.6 GDi 밸류 플러스</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2017</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">22,755km</a></span>
@@ -404,10 +404,10 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/c764aa3e-51b2-4604-8ab0-2c45ab1319e7/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_the_new_veloster_pyl"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/c764aa3e-51b2-4604-8ab0-2c45ab1319e7/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
                                     <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">무사고/배기구변완료/최저가판매</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 더 뉴벨로스터 PYL DCT 감마 1.6 GDi DCT</a></h5>
+                                    <h5><a href="/car_detail_the_new_veloster_pyl" class="card-title fw-bold text-dark text-decoration-none">현대 더 뉴벨로스터 PYL DCT 감마 1.6 GDi DCT</a></h5>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2015</a></span>
                                     <span class="small">|</span>
                                     <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">77,818km</a></span>
@@ -437,20 +437,20 @@
                               </div>
                               <div class="col">
                                 <div class="card h-100">
-                                  <a href=""><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/f73fb2eb-920a-4c77-baaf-2ea6333472dd/live360/images/thumb/img_0_0_0_M.jpg"  width="270px"  class="card-img-top" alt="..."></a>
+                                  <a href="/car_detail_kona_modern_pop"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/b97982ca-5269-4ec1-9434-f76742da972a/live360/images/thumb/img_0_0_0_L.jpg"  width="270px"  class="card-img-top" alt="..."></a>
                                   <div class="card-body">
-                                    <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">차량성능상태굿입니다.</a></div>
-                                    <h5><a href="" class="card-title fw-bold text-dark text-decoration-none">현대 더 뉴아반떼AD 스마트스트림 1.6 가솔린 스마트</a></h5>
-                                    <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2019</a></span>
+                                    <div><a href="" class="card-text fw-normal small text-primary text-decoration-none">대전 D-AUTO MALL 드림디오토</a></div>
+                                    <h5><a href="/car_detail_kona_modern_pop" class="card-title fw-bold text-dark text-decoration-none">현대 코나 모던 팝 디젤 1.6</a></h5>
+                                    <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">2018</a></span>
                                     <span class="small">|</span>
-                                    <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">71,858km</a></span>
+                                    <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">54.005km</a></span>
                                   <span class="small">|</span>
-                                  <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">가솔린</a></span>
+                                  <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">디젤</a></span>
                                   <span class="small">|</span>
                                   <span><a href="" class="card-text fw-normal small text-secondary text-decoration-none">대전</a></span>
                                   
                                   <div>
-                                    <span><a href="" class="card-text text-primary text-decoration-none">1,350만원</a></span>
+                                    <span><a href="" class="card-text text-primary text-decoration-none">1,790만원</a></span>
                                     <span><a href="" class="card-text fw-bold text-dark text-decoration-none">만원</a></span>
                                    </div>
                                    <br>

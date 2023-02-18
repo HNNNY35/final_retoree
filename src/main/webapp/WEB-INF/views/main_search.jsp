@@ -170,14 +170,14 @@
       <div class="">
       <div class="">
         <td>
-          <a href="" ><img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60776988_045.jpg" alt="" width="150px" class="m-2"></a>
+          <a href="/car_detail_tucson_4" ><img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60776988_045.jpg" alt="" width="150px" class="m-2"></a>
         </td>
         <td>
          
             <div class="fw-bold "><a href="/car_detail_tucson_4">현대 투싼 하이브리드 (4세대)</a></div>
             <div>
                 <span class="fs-5 fw-bold ">
-                  <a href="" class="car_price"> 3,180만원</a>
+                  <a href="/car_detail_tucson_4" class="car_price"> 3,180만원</a>
                 </span>
                 <div class="fw-normal small">
                   <span><a href="">20년 11월식</a></span>
@@ -190,13 +190,13 @@
       </div>
       <div class="">
         <td>
-          <a href=""  >  <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60779128_045.jpg"  width="150px" class="m-2"></a>
+          <a href="/car_detail_casper"  >  <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60779128_045.jpg"  width="150px" class="m-2"></a>
       </td>
         <td>
           <div class="fw-bold"><a href="/car_detail_casper">현대 캐스퍼 가솔린 1.0 터보 밴 스마트 </a></div>
           <div>
             <span class="fs-5 fw-bold text-dark">
-              <a href=""class="car_price">1,330만원</a>
+              <a href="/car_detail_casper"class="car_price">1,330만원</a>
               </span>
               <div class="fw-normal small ">
                 <span><a href="">22년 08월식</a></span>
@@ -209,13 +209,13 @@
       </div>
       <div class="">
         <td>
-          <a href=""  >   <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60774973_045.jpg" alt="" width="150px" class="m-2"></a>
+          <a href="/car_detail_k5_turbo"  >   <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60774973_045.jpg" alt="" width="150px" class="m-2"></a>
       </td>
       <td>
           <div class="fw-bold"><a href="/car_detail_k5_turbo">기아 K5 3세대 가솔린 터보</a></div>
           <div>
             <span class="fs-5 fw-bold ">
-              <a href="" class="car_price">2,690만원</a>
+              <a href="/car_detail_k5_turbo" class="car_price">2,690만원</a>
               </span>
               <div class="fw-normal small ">
                    <span><a href=""> 20년 03월식</a></span>
@@ -238,13 +238,13 @@
           <div class="d-flex flex-row justify-content-around">
          <div class="">
           <td>
-            <a href=""  >  <img src="https://img.kcar.com/carpicture/carpicture05/pic6075/kcarM_60751824_045.jpg" alt="" width="150px" class="m-2"></a>
+            <a href="/car_detail_avante_n_turbo"  >  <img src="https://img.kcar.com/carpicture/carpicture05/pic6075/kcarM_60751824_045.jpg" alt="" width="150px" class="m-2"></a>
         </td>
           <td>
             <div class="fw-bold"><a href="/car_detail_avante_n_turbo">현대 아반떼 N 2.0 터보</a></div>
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price">2,820만원</a>
+                <a href="/car_detail_avante_n_turbo"class="car_price">2,820만원</a>
                 </span>
                 <div class="fw-normal small ">
                   <span><a href="">22년 04월식</a></span>
@@ -257,14 +257,14 @@
         </div>
         <div class="">
           <td>
-            <a href=""  >  <img src="https://img.kcar.com/carpicture/carpicture06/pic6076/kcarM_60769205_045.jpg" alt="" width="150px" class="m-2"></a>
+            <a href="/car_detail_bmw_420i"  >  <img src="https://img.kcar.com/carpicture/carpicture06/pic6076/kcarM_60769205_045.jpg" alt="" width="150px" class="m-2"></a>
         </td>
           <td>
             <div class="fw-bold"><a href="/car_detail_bmw_420i">BMW 4시리즈 (G22)가솔린 2WD 420i </a></div>
 
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price">5,650만원</a>
+                <a href="/car_detail_bmw_420i"class="car_price">5,650만원</a>
                 </span>
                 <div class="fw-normal small ">
                   <span><a href=""> 22년 09월식</a></span>
@@ -277,14 +277,14 @@
         </div>
         <div class="">
           <td>
-            <a href=""  >  <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60788870_001.jpg" alt="" width="150px" class="m-2"></a>
+            <a href="/car_detail_kia_the_new_Ray"  >  <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60788870_001.jpg" alt="" width="150px" class="m-2"></a>
         </td>
           <td>
             <div class="fw-bold"><a href="/car_detail_kia_the_new_Ray">기아 더 뉴 레이 시그니처 </a></div>
 
             <div>
               <span class="fs-5 fw-bold text-dark">
-                <a href=""class="car_price">1,570만원</a>
+                <a href="/car_detail_kia_the_new_Ray"class="car_price">1,570만원</a>
                 </span>
                 <div class="fw-normal small ">
                   <span><a href=""> 22년 06월식</a></span>
@@ -308,13 +308,13 @@
     <tr>
       <div class="">
     <td>
-      <a href="">   <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60775062_045.jpg" alt="" width="150px" class="m-2"></a>
+      <a href="/car_detail_grandeur_hg240">   <img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60775062_045.jpg" alt="" width="150px" class="m-2"></a>
   </td>
   <td>
     <div class="fw-bold"> <a href="/car_detail_grandeur_hg240"> 현대 그랜저 HG240 모던</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price">1,420만원</a>
+        <a href="/car_detail_grandeur_hg240" class="car_price">1,420만원</a>
         </span>
         <div class="fw-normal small ">
             <span><a href="">15년 06월식</a></span>
@@ -327,13 +327,13 @@
 </div>
   <div class="">
   <td>
-    <a href="">  <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60786773_001.jpg" alt="" width="150px" class="m-2"></a>
+    <a href="/car_detail_veloster">  <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60786773_001.jpg" alt="" width="150px" class="m-2"></a>
 </td>
   <td>
     <div class="fw-bold"><a href="/car_detail_veloster">현대 벨로스터 (JS) 1.6 터보 스포츠 코어</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price">  1,149만원</a>
+        <a href="/car_detail_veloster" class="car_price">  1,149만원</a>
         </span>
         <div class="fw-normal small ">
             <span><a href="">18년 10월식</span>
@@ -346,13 +346,13 @@
 </div>
   <div class="">
   <td>
-    <a href="">   <img src="https://img.kcar.com/3dcarpicture/2023/01/114/60776698_1/main/main780.jpg" alt="" width="150px" class="m-2"></a>
+    <a href="/car_detail_mojave_the_master">   <img src="https://img.kcar.com/3dcarpicture/2023/01/114/60776698_1/main/main780.jpg" alt="" width="150px" class="m-2"></a>
 </td>
   <td>
     <div class="fw-bold"><a href="/car_detail_mojave_the_master">기아 모하비 더 마스터 디젤</a></div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="" class="car_price"> 4,480만원</a>
+        <a href="/car_detail_mojave_the_master" class="car_price"> 4,480만원</a>
         </span>
         <div class="fw-normal small ">
               <span><a href=""> 21년 01월식</a></span>
@@ -373,13 +373,13 @@
           <tr>
             <div class="">
             <td>
-              <a href=""> <img src="https://img.kcar.com/BrandCertificationMall/carpicture04/pic6074/kcarM_60743039_001.jpg" alt="" width="150px" class="m-2"></a>
+              <a href="/car_detail_benz_e_class_w213"> <img src="https://img.kcar.com/BrandCertificationMall/carpicture04/pic6074/kcarM_60743039_001.jpg" alt="" width="150px" class="m-2"></a>
           </td>
             <td>
               <div class="fw-bold"><a href="/car_detail_benz_e_class_w213">벤츠 E-클래스 W213</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price">   4,800만원</a>
+                  <a href="/car_detail_benz_e_class_w213"class="car_price">   4,800만원</a>
                   </span>
                   <div class="fw-normal small ">
                     <span><a href="">19년 06월식</a></span>
@@ -392,13 +392,13 @@
           </div>
             <div class="">
             <td>
-              <a href="">  <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784325_001.jpg" alt="" width="150px" class="m-2"></a>
+              <a href="/car_detail_audi_a5">  <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60784325_001.jpg" alt="" width="150px" class="m-2"></a>
           </td>
             <td>
               <div class="fw-bold"><a href="/car_detail_audi_a5">아우디 A5 4WD 45 TFSI 콰트로 프리미엄</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price">3,100만원</a>
+                  <a href="/car_detail_audi_a5"class="car_price">3,100만원</a>
                   </span>
                   <div class="fw-normal small ">
                     <span><a href=""> 19년 11월식</a></span>
@@ -411,13 +411,13 @@
           </div>
             <div class="">
             <td>
-              <a href="">   <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60781296_001.jpg"  width="150px" class="m-2"></a>
+              <a href="/car_detail_bmw_x6">   <img src="https://img.kcar.com/carpicture/carpicture08/pic6078/kcar_60781296_001.jpg"  width="150px" class="m-2"></a>
           </td>
             <td>
               <div class="fw-bold"><a href="/car_detail_bmw_x6"> BMW X6 (F16) xDrive 30d</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href=""class="car_price">4,370만원</a>
+                  <a href="/car_detail_bmw_x6"class="car_price">4,370만원</a>
                   </span>
                   <div class="fw-normal small ">
                     <span><a href=""> 18년 1월식</a></span>
