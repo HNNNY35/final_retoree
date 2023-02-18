@@ -1,0 +1,9 @@
+body {
+  margin: auto;
+  padding: 10px;
+}
+
+.sales a {
+  text-decoration: none;
+  color: black;
+}
