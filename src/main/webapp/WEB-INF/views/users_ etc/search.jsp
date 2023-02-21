@@ -174,34 +174,24 @@
                             <br>
                             <br>
                             <%-- 카드 시작 --%>
-                                <div class="row row-cols-1 row-cols-md-3 g-4"> <div class="col">
-                                    <div class="card h-100">
-                                        <a href="/car_detail_accent_modern"><img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/cb1bf635-35e0-4bf8-bebd-060b001bf99f/live360/images/thumb/img_0_0_0_M.jpg" width="270px" class="card-img-top" alt="..."></a>
+                            <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <div class="col">
+                                    <div class="card">
+                                        <img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/cb1bf635-35e0-4bf8-bebd-060b001bf99f/live360/images/thumb/img_0_0_0_M.jpg" class="card-img-top" alt="...">
                                         <div class="card-body">
-                                            <div>
-                                                <a href="" class="card-text fw-normal small text-primary text-decoration-none">대전 D-AUTO MALL 드림디오토</a>
-                                            </div>
-                                            <h5>
-                                                <a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">현대 엑센트 신형 모던 wit 1.4 VVT</a>
-                                            </h5>
-                                            <span>
-                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">2015</a>
-                                            </span>
-                                            <span class="small">|</span>
-                                            <span>
-                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">87,196km</a>
-                                            </span>
-                                            <span class="small">|</span>
-                                            <span>
-                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">가솔린</a>
-                                            </span>
-                                            <span class="small">|</span>
-                                            <span>
-                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">대전</a>
-                                            </span>
+                                        <div>
+                                            <a href="" class="card-text fw-normal small text-primary text-decoration-none">대전 D-AUTO MALL 드림디오토</a>
+                                        </div>
+                                        <h5>
+                                            <a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">현대 엑센트 신형 모던 wit 1.4 VVT</a>
+                                        </h5>
+                                        <span>
+                                            <a href="" class="card-text fw-normal small text-secondary text-decoration-none">2015 | 87,196km | 가솔린 | 대전</a>
+                                        </span>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
@@ -209,4 +199,4 @@
             </div>
         </div>
     </body>
-</html></div></div></main><!-- footer --><%@ include file="../footer.jsp" %><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script></body></html>
+</html></div></body></html></div></div></main><!-- footer --><%@ include file="../footer.jsp" %><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script></body></html>
