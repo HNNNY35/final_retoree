@@ -176,6 +176,7 @@
                             <br>
                             <%-- 카드 시작 --%>
                             <div class="row row-cols-1 row-cols-md-3 g-4">
+                                <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                                 <div class="col">
                                     <div class="card h-100">
                                         <img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/cb1bf635-35e0-4bf8-bebd-060b001bf99f/live360/images/thumb/img_0_0_0_M.jpg" class="card-img-top" alt="...">
@@ -184,17 +185,18 @@
                                                 <a href="" class="card-text fw-normal small text-primary text-decoration-none">D-AUTO MALL 드림디오토</a>
                                             </div>
                                             <h5>
-                                                <a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">현대 엑센트 신형 모던 wit 1.4 VVT</a>
+                                                <a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">${resultData.MUNUFACTURER} ${resultData.DETAILED_MODEL}</a>
                                             </h5>
                                             <div>
-                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">2015 | 87,196km</a>
+                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">${resultData.MODEL_YEAR} | ${resultData.DRIVEN_DIST}km</a>
                                             </div>
                                             <div>
-                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">가솔린</a>
+                                                <a href="" class="card-text fw-normal small text-secondary text-decoration-none">${resultData.FUEL}</a>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                </c:forEach>
                             </div>
                         </div>
                     </div>
