@@ -24,11 +24,11 @@ public class MainController {
 
     // }
 
-    @GetMapping(value = { "/main" })
+    @GetMapping(value = { "/main_search" })
     public ModelAndView main(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object resultMap = mainService.getList(params);
         modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("main_search");
+        modelAndView.setViewName("main");
         return modelAndView;
     }
 }
