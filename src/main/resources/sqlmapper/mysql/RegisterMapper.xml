@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Register">
+
+ <!-- call Register.selectFromRegister_2 -->
+<select id="selectFromRegister_2" parameterType="Map" resultType="Map">
+SELECT * 
+FROM REGISTER_2
+ </select>
+
+<!-- call Register.insertWithUID -->
+ <insert id="insertWithUID" parameterType="Map">
+INSERT INTO REGISTER_2
+(USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH) 
+VALUES 
+(
+    #{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT}
+  
+   <choose>
+   <when test="TS_CS_ID != null">
+    ,'YES'
+    </when>
+    <otherwise>
+    ,'NO'
+    </otherwise>
+    </choose>
+    <choose>
+    <when test="AUTH != null">
+    ,'YES'
+    </when>
+    <otherwise>
+    ,'NO'
+    </otherwise>
+    </choose>
+     )
+    </insert>
+
+</mapper>
