@@ -43,27 +43,6 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/register_new_1")
-    public ModelAndView register_new_1(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/register_new_1");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/register_new_2")
-    public ModelAndView register_new_2(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/register_new_2");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/register_new_3")
-    public ModelAndView register_new_3(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/register_new_3");
-        return modelAndView;
-
-    }
-
     @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
     public ModelAndView search(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object resultMap = searchService.getList(params);
