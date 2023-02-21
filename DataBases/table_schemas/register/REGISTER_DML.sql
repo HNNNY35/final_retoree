@@ -1,15 +1,8 @@
-INSERT INTO REGISTER_1
-(UNIQUE_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF)
-VALUES
-('R01', 'YES', 'YES', 'YES', 'YES', 'YES'),
-('R02', 'YES', 'YES', 'NO', 'YES', 'NO')
-;
-
 INSERT INTO REGISTER_2
-(UNIQUE_ID, NAME, BIRTHDAY, ID, PASSWORD, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT)
+(USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH) 
 VALUES
-('U01', '김양파', '20010101', 'kimonion', 'a1234', '01012341234', 'kim_onion@naver.com', '서울시', '강남구'),
-('U02', '이쿵야', '19991231', 'leeky', 'b1234', '01056785678', 'kylee@naver.com', '경기도', '용인시')
-;
+('U01', '전지현', 'jihyun1030', 'jh1030' , '19811030' , '01012345678', 'jun_jihyun@gmail.com', '서울시', '강남구' , 'YES' , 'NO'),
+('U02', '송혜교', 'hyekyo1122', 'hk1122' , '19811122' , '01012341234', 'song_hyekyo@gmail.com', '서울시', '용산구' , 'YES' , 'NO')
+; 
 
-
+SELECT * FROM REGISTER_2;

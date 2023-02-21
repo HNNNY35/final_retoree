@@ -9,63 +9,63 @@ public class UserController {
 
     @RequestMapping(value = "/login")
     public ModelAndView login(ModelAndView modelAndView) {
-        modelAndView.setViewName("/login_register/login");
+        modelAndView.setViewName("login_register/login");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(ModelAndView modelAndView) {
-        modelAndView.setViewName("/myPage/myPage");
+        modelAndView.setViewName("myPage/myPage");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/myPage_modify")
     public ModelAndView myPage_modify(ModelAndView modelAndView) {
-        modelAndView.setViewName("/myPage/myPage_modify");
+        modelAndView.setViewName("myPage/myPage_modify");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/price_check")
     public ModelAndView price_check(ModelAndView modelAndView) {
-        modelAndView.setViewName("/users_ etc/price_check");
+        modelAndView.setViewName("users_ etc/price_check");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/register_new_1")
     public ModelAndView register_new_1(ModelAndView modelAndView) {
-        modelAndView.setViewName("/login_register/register_new_1");
+        modelAndView.setViewName("login_register/register_new_1");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/register_new_2")
     public ModelAndView register_new_2(ModelAndView modelAndView) {
-        modelAndView.setViewName("/login_register/register_new_2");
+        modelAndView.setViewName("login_register/register_new_2");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/register_new_3")
     public ModelAndView register_new_3(ModelAndView modelAndView) {
-        modelAndView.setViewName("/login_register/register_new_3");
+        modelAndView.setViewName("login_register/register_new_3");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/search")
     public ModelAndView search(ModelAndView modelAndView) {
-        modelAndView.setViewName("/users_ etc/search");
+        modelAndView.setViewName("users_ etc/search");
         return modelAndView;
 
     }
 
     @RequestMapping(value = "/visit_reserve")
     public ModelAndView visit_reserve(ModelAndView modelAndView) {
-        modelAndView.setViewName("/users_ etc/visit_reserve");
+        modelAndView.setViewName("users_ etc/visit_reserve");
         return modelAndView;
 
     }
