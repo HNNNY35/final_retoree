@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Main">
+
+ <!-- call Main.selectFromMain -->
+<select id="selectFromMain" parameterType="Map" resultType="Map">
+SELECT CAR_ID, MUNUFACTURER, MODEL, DETAILED_MODEL, PRICE, MODEL_YEAR, FUEL, DRIVEN_DIST, DTL_IMG_CAR, ADDR_CITY, PANER_ID, SKELETON_ID
+FROM CAR_INFO
+ </select>
+
+
+</mapper>
