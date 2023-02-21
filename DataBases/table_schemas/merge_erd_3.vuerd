@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -59,
-    "scrollLeft": 0,
+    "scrollTop": -126,
+    "scrollLeft": -1537,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -378,7 +378,7 @@
             "id": "d04d6e11-a5c2-4145-ba76-69e6b33b994d"
           },
           {
-            "name": "MUNUFACTURER",
+            "name": "MANUFACTURER",
             "comment": "제조사",
             "dataType": "VARCHAR(100)",
             "default": "",
@@ -393,7 +393,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 111.052734375,
+              "widthName": 110.33544921875,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -796,7 +796,7 @@
           "active": false,
           "left": 1718.4873,
           "top": 115.2081,
-          "zIndex": 10,
+          "zIndex": 39,
           "widthName": 67.72998046875,
           "widthComment": 60
         },
@@ -1123,7 +1123,7 @@
             "id": "4e907a96-0551-4aee-9d39-7673e5c136d1"
           },
           {
-            "name": "WHEEL_HOUSD",
+            "name": "WHEEL_HOUSE",
             "comment": "휠 하우스",
             "dataType": "VARCHAR(100)",
             "default": "",
@@ -1138,7 +1138,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 102.4072265625,
+              "widthName": 101.68994140625,
               "widthComment": 60,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -1288,7 +1288,7 @@
           "active": false,
           "left": 2347.5869,
           "top": 79.0861,
-          "zIndex": 2,
+          "zIndex": 36,
           "widthName": 145.52685546875,
           "widthComment": 87.2236328125
         },
