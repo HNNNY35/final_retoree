@@ -113,7 +113,8 @@
                                         <div>
 
                                             <div class="filterName">주행거리</div>
-                                            <input type="range" name="distanceDriven" id="distanceDriven" class="form-range" data-slider-min="0" data-slider-max="200000">
+                                            <input type="range" name="distanceDriven" id="distanceDriven" class="form-range" min="0" max="300000" step="1000" value="0" oninput="document.getElementById('value1').innerHTML=this.value;">
+                                            <div class="p-1" id="value1"></div>
                                         </div>
                                         <div>
 
