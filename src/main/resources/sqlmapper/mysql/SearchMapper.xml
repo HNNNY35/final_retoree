@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="Search">
-    <!-- call Home.selectFromANSWERSByQUESTIONS_UID -->
+    <!-- call Search.selectFromCAR_INFO -->
     <select id="selectFromCAR_INFO" 
         parameterType="Map" resultType="Map">
         SELECT CAR_ID, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
