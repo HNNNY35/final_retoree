@@ -9,7 +9,7 @@ public class MainController {
 
     @RequestMapping(value = { "", "/", "/main_search" })
     public ModelAndView signup(ModelAndView modelAndView) {
-        modelAndView.setViewName("/main_search");
+        modelAndView.setViewName("main_search");
         return modelAndView;
 
     }
