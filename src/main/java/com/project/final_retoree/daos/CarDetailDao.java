@@ -10,9 +10,9 @@ public class CarDetailDao {
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
 
-    // public Object getList(String sqlMapId, Object dataMap) {
-    //     Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
-    //     return result;
-    // }
+    public Object getList(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
+        return result;
+    }
 
 }
