@@ -4,20 +4,20 @@
 <mapper namespace="Register">
 
  <!-- call Register.selectFromRegister -->
-<select id="selectFromRegister" parameterType="Map" resultType="Map">
+<!-- <select id="selectFromRegister" parameterType="Map" resultType="Map">
 SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
 FROM REGISTER
 WHERE USER_ID = 'U01'
-;
+; -->
  </select>
 
   <!-- call Register.selectFromRegister_agree -->
-<select id="selectFromRegister" parameterType="Map" resultType="Map">
+<!-- <select id="selectFromRegister" parameterType="Map" resultType="Map">
 SELECT TS_CS_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF
 FROM REGISTER_AGREE
 WHERE TS_CS_ID = 'R01'
 ;
- </select>
+ </select> -->
 
 <!-- call Register.insertWithUID -->
  <insert id="insertWithUID" parameterType="Map">
