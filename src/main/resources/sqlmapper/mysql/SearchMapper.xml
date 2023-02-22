@@ -26,15 +26,15 @@
             </when>
             <when test='modelYear!="2015"'>
                 <![CDATA[
-                AND MODEL_YEAR =< #{modelYear}
+                AND MODEL_YEAR <= #{modelYear}
                 ]]>
             </when>
             <otherwise></otherwise>
         </choose>
-        <!--<if test = 'fuel!="연료"'>
+        <if test = 'fuel!="연료"'>
             AND FUEL = #{fuel}
         </if>
-        <if test = 'grade!="등급"'>
+        <!--<if test = 'grade!="등급"'>
             AND CARGRADE = #{grade}
         </if>
         <if test = 'detailedGrade!="세부등급 없음"'>
