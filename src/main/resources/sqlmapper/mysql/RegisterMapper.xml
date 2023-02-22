@@ -41,42 +41,42 @@ VALUE
    (#{TS_CS_ID}, 
    <choose>
    <when test="TS_CS != null">
-    ,'YES'
+    'YES',
     </when>
     <otherwise>
-    ,'NO'
+     'NO',
     </otherwise>
     </choose>
     <choose>
     <when test="PER_INF_REQ != null">
-    ,'YES'
+     'YES',
     </when>
     <otherwise>
-    ,'NO'
+     'NO',
     </otherwise>
     </choose>
     <choose>
     <when test="PER_INF_OPT != null">
-    ,'YES'
+     'YES',
     </when>
     <otherwise>
-    ,'NO'
+     'NO',
     </otherwise>
     </choose>
     <choose>
     <when test="REGULATION != null">
-    ,'YES'
+     'YES',
     </when>
     <otherwise>
-    ,'NO'
+     'NO',
     </otherwise>
     </choose>
     <choose>
     <when test="REC_MKT_INF != null">
-    ,'YES'
+     'YES',
     </when>
     <otherwise>
-    ,'NO'
+     'NO',
     </otherwise>
     </choose>
      ) 
@@ -84,3 +84,6 @@ VALUE
   
 
 </mapper>
+<!-- heck the manual that corresponds to your MySQL server version 
+for the right syntax to use near ','NO' ,'NO' ,'NO' ,'NO' ' at line 6 
+### The error may exist in file -->
