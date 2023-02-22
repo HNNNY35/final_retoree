@@ -55,7 +55,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="termsAndConditions" name="checkRow">
+                        <input class="form-check-input" type="checkbox" id="termsAndConditions" name="TS_CS">
                         <label class="form-check-label" for="termsAndConditions">이용약관(필수)</label>
                         <!-- 이용약관 전문 모달 -->
                         <a href="#modalTarget1" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -100,7 +100,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="personalInforRequired" name="checkRow">
+                        <input class="form-check-input" type="checkbox" id="personalInforRequired" name="PER_INF_REQ">
                         <label class="form-check-label" for="personalInforRequired">개인정보 수집/이용에 대한 안내(필수)</label>
                         <!-- 개인정보 전문 모달 -->
                         <a href="#modalTarget2" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -225,7 +225,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="personalInforOptional" name="checkRow">
+                        <input class="form-check-input" type="checkbox" id="personalInforOptional" name="PER_INF_OPT">
                         <label class="form-check-label" for="personalInforOptional">개인정보 수집/이용에 대한 안내(선택)</label> 
                         <!-- 개인정보 전문 모달 -->
                         <a href="#modalTarget3" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -278,7 +278,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="regulation" name="checkRow">
+                        <input class="form-check-input" type="checkbox" id="regulation" name="REGULATION">
                         <label class="form-check-label" for="regulation">리투리 규정에 대한 안내(필수)</label>
                         <!-- 리투리 규정 모달 -->
                         <a href="#modalTarget4" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -352,7 +352,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="regulation" name="checkRow">
+                        <input class="form-check-input" type="checkbox" id="regulation" name="REC_MKT_INF">
                         <label class="form-check-label" for="regulation">마케팅 정보 수신 및 활용 동의(선택)</label>
                         <!-- 마케팅 수신 모달 -->
                         <a href="#modalTarget5" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
