@@ -55,25 +55,27 @@
                                         </div>
 
                                         <div class="searchSelect">
-                                            <select name="detailedModel" id="detailedModel" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                                <option selected>상세모델</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="searchSelect">
                                             <select name="modelYear" id="modelYear" class="form-select form-select-sm" aria-label=".form-select-sm">
                                                 <option selected>연식</option>
+                                                <option value="2023">2023년식</option>
                                                 <option value="2022">2022년식</option>
                                                 <option value="2021">2021년식</option>
                                                 <option value="2020">2020년식</option>
                                                 <option value="2019">2019년식</option>
+                                                <option value="2018">2018년식</option>
+                                                <option value="2017">2017년식</option>
+                                                <option value="2016">2016년식</option>
+                                                <option value="2015">2015년식 이전</option>
                                             </select>
                                         </div>
 
                                         <div class="searchSelect">
                                             <select name="fuel" id="fuel" class="form-select form-select-sm" aria-label=".form-select-sm">
                                                 <option selected>연료</option>
-                                                <option value="gasoline_electricity">가솔린+전기 2400cc</option>
+                                                <option value="가솔린">가솔린(휘발유)</option>
+                                                <option value="디젤">디젤(경유)</option>
+                                                <option value="하이브리드">하이브리드</option>
+                                                <option value="전기">전기</option>
                                             </select>
                                         </div>
 

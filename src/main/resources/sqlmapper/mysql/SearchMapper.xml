@@ -17,16 +17,21 @@
         <if test = 'manufacturer!="제조사"'>
             AND MUNUFACTURER = #{manufacturer}
         </if>
-        <!-- <if test = 'model!="모델"'>
+        <if test = 'model!="모델"'>
             AND MODEL = #{model}
         </if>
-        <if test = 'detailedModel!="상세모델"'>
-            AND DETAILED_MODEL = #{detailedModel}
-        </if>
-        <if test = 'modelYear!="연식"'>
-            AND MODEL_YEAR = #{modelYear}
-        </if>
-        <if test = 'fuel!="연료"'>
+        <choose>
+            <when test='modelYear!="연식"'>
+                AND MODEL_YEAR = #{modelYear}
+            </when>
+            <when test='modelYear!="2015"'>
+                <![CDATA[
+                AND MODEL_YEAR =< #{modelYear}
+                ]]>
+            </when>
+            <otherwise></otherwise>
+        </choose>
+        <!--<if test = 'fuel!="연료"'>
             AND FUEL = #{fuel}
         </if>
         <if test = 'grade!="등급"'>
@@ -34,11 +39,11 @@
         </if>
         <if test = 'detailedGrade!="세부등급 없음"'>
             AND DETAILED_CARGRADE = #{detailedGrade}
-        </if>
+        </if>-->
         <if test = 'distanceDriven!="0"'>
             <![CDATA[
             AND DRIVEN_DIST < #{distanceDriven}
             ]]>
-        </if> -->
+        </if> 
     </select>
 </mapper>
