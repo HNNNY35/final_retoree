@@ -30,7 +30,7 @@
         <!-- <hr class="featurette-divider" /> -->
         <%-- 추가 확인 --%>
            <span>
-          ${resultMap.NAME}
+          ${resultMap.TS_CS_ID}
           </span>
         <h2 class="text-center">
             회원가입
