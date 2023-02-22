@@ -40,7 +40,7 @@
       </div>
       <!-- <hr /> -->
       <br />
-      <form action="./register_new_3" method="get">
+      <form action="/register_new_3" method="POST">
         <table class="register_form">
           <thead>
             <tr>
@@ -53,10 +53,6 @@
             </tr>
           </thead>
           <tbody>
-          <%-- 추가 확인 --%>
-          <span>
-          ${resultMap.NAME}
-          </span>
             <tr>
               <th>
                 <h6 class="fw-bold">이름 <span class="text-danger">*</span></h6>
@@ -65,7 +61,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  name="name"
+                  name="NAME"
                   id="name"
                   placeholder="실명  입력"
                   required
@@ -84,7 +80,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  name="birthday"
+                  name="BIRTHDAY"
                   id="birthday"
                   placeholder="YYYYMMDD"
                   required
@@ -103,7 +99,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  name="userId"
+                  name="ID"
                   id="userId"
                   placeholder="영문 소문자와 숫자 조합 4~12자리"
                   required
@@ -122,7 +118,7 @@
                 <input
                   type="password"
                   class="form-control"
-                  name="userPw"
+                  name="PASSWORD"
                   id="userPw"
                   required
                 />
@@ -144,7 +140,7 @@
                 <input
                   type="password"
                   class="form-control"
-                  name="userPwConfirm"
+                  name="PASSWORD_CHECK"
                   id="userPwConfirm"
                   required
                 />
@@ -162,7 +158,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  name="cell_number"
+                  name="CELL_NUMBER"
                   id="cell_number"
                   required
                   placeholder="'-' 제외하고 숫자만 입력"
@@ -181,7 +177,7 @@
                 <input
                   type="text"
                   class="form-control"
-                  name="email"
+                  name="EMAIL"
                   id="email"
                   placeholder="example@retoreecar.com"
                   required
@@ -191,20 +187,25 @@
             </tr>
             <th><h6 class="fw-bold">거주지</h6></th>
             <td class="d-flex">
-              <select class="form-select" name="addressCity" id="addressCity">
+              <select class="form-select" name="ADDR_CITY" id="addressCity">
                 <option value="city" selected>시도</option>
                 <option value="seoul">서울특별시</option>
                 <option value="gyeonggido">경기도</option>
                 <option value="gangwondo">강원도</option>
                 <option value="gyeongsangbukdo">경상북도</option>
+                <option value="jeonlanamdo">전라남도</option>
               </select>
 
               <select
                 class="form-select"
-                name="addressDistrict"
+                name="ADDR_DISTRICT"
                 id="addressDistrict"
               >
                 <option value="district">시군구</option>
+                <option value="district">강남구</option>
+                <option value="district">용산구</option>
+                <option value="district">부산광역시</option>
+                <option value="district">광주광역시</option>
               </select>
               <br />
             </td>

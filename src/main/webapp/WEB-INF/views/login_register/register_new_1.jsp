@@ -392,7 +392,7 @@
             </tr>
         </table>
        <div class="text-center m-3" >
-            <form action="./register_new_2" method="get">
+            <form action="/register_new_2" method="">
                 <button class="nextBtn">다음</button>
             </form>
         </div>
