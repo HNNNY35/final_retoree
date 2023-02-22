@@ -26,7 +26,7 @@ public class RegisterController {
 
     }
 
-    @RequestMapping(value = { "/register" }, method = RequestMethod.POST)
+    @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
     public ModelAndView register(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object resultMap = registerService.insertregister(params);
         modelAndView.addObject("resultMap", resultMap);
