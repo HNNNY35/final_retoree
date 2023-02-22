@@ -189,7 +189,7 @@
           "active": false,
           "left": 101.6668,
           "top": 152.4999,
-          "zIndex": 125,
+          "zIndex": 1,
           "widthName": 121.1962890625,
           "widthComment": 80
         },
