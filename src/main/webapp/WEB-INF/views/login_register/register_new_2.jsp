@@ -40,7 +40,7 @@
       </div>
       <!-- <hr /> -->
       <br />
-      <form method="post" action="./register_new_3">
+      <form action="./register_new_3" method="post">
         <table class="register_form">
           <thead>
             <tr>
@@ -53,6 +53,10 @@
             </tr>
           </thead>
           <tbody>
+          <%-- 추가 확인 --%>
+          <span>
+          ${resultMap.NAME}
+          </span>
             <tr>
               <th>
                 <h6 class="fw-bold">이름 <span class="text-danger">*</span></h6>
