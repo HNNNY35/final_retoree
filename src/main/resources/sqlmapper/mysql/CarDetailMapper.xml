@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CarDetail">
+    <!-- call CarDetail.selectFromCAR_INFO -->
+    <select id="selectFromCAR_INFO" parametertype="Map" resultType="Map">
+    SELECT CAR_INFO.CAR_ID, VEH_NUM, MODEL_YEAR, DRIVEN_DIST, TRANSMISSION, PRICE, DTL_IMG_CAR
+    FROM CAR_INFO
+    JOIN CAR_DETAILE_INFO
+    ON CAR_INFO.CAR_ID = CAR_DETAILE_INFO.CAR_ID
+    WHERE CAR_DTL_ID = #{CAR_DTL_ID};
+    </select>
+
+    <!-- call CarDetail.selectFromCAR_PANEL -->
+    <select id="selectFromCAR_PANEL" parametertype="Map" resultType="Map">
+    SELECT HOOD, FRONT_FENDER, DOOR, SIDE_PANEL, TRUNK_LID, ROOF_PANEL, QUARTER_PANEL
+    FROM CAR_PANEL
+    JOIN CAR_INFO
+    ON CAR_INFO.PANER_ID = CAR_PANEL.PANER_ID
+    WHERE CAR_INFO.CAR_ID = #{CAR_DTL_ID};
+    </select>
+
+    <!-- call CarDetail.selectFromCAR_MAIN_SKELETON -->
+    <select id="selectFromCAR_PANEL" parametertype="Map" resultType="Map">
+    SELECT FRONT_PANEL, CROSS_MEMBER, INSIDE_PANEL, SIDE_MEMBER, WHEEL_HOUSE, PACKAGE_TRAY, DASH_PANEL, FLOOR_PANEL, FILER_PANEL, REAR_PANEL, TRUNK_FLOOR
+    FROM CAR_MAIN_SKELETON
+    JOIN CAR_INFO
+    ON CAR_INFO.SKELETON_ID = CAR_MAIN_SKELETON.SKELETON_ID
+    WHERE CAR_INFO.CAR_ID = #{CAR_DTL_ID};
+    </select>
+
+    <!-- call CarDetail.selectFromUSER_INFO -->
+    <select id="selectFromUSER_INFO" parametertype="Map" resultType="Map">
+    SELECT USER_INFO.NAME, USER_INFO.CELL_NUMBER, DEALER_INFO.PROFILE_IMG, DEALER_INFO.DEALER_ID
+    FROM DEALER_INFO
+    JOIN CAR_DETAILE_INFO
+    ON CAR_DETAILE_INFO.DEALER_ID = DEALER_INFO.DEALER_ID
+    JOIN USER_INFO
+    ON DEALER_INFO.DEALER_ID = USER_INFO.USER_ID
+    WHERE CAR_DETAILE_INFO.CAR_DTL_ID = #{CAR_DTL_ID};
+    </select>
+
+    <!-- call CarDetail.selectFromSALE_STATUS -->
+    <select id="selectFromSALE_STATUS1" parametertype="Map" resultType="Map">
+    SELECT COUNT(*)
+    FROM CAR_DETAILE_INFO
+    JOIN SALE_STATUS
+    ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+    WHERE DEALER_ID = #{DEALER_ID};
+    AND STATUS = 'sale';
+    </select>
+
+    <!-- call CarDetail.selectFromSALE_STATUS -->
+    <select id="selectFromSALE_STATUS2" parametertype="Map" resultType="Map">
+    SELECT COUNT(*)
+    FROM CAR_DETAILE_INFO
+    JOIN SALE_STATUS
+    ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+    WHERE DEALER_ID = #{DEALER_ID};
+    AND STATUS = 'soldout';
+    </select>
+
+<!-- 방문예약, 찜 넣어야함 -->
+</mapper>
