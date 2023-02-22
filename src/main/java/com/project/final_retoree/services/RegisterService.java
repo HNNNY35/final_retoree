@@ -11,27 +11,35 @@ public class RegisterService {
     @Autowired
     RegisterDao registerDao;
 
-    public Object getList(Object dataMap) {
-        String sqlmapId = "Register.selectFromRegister_2";
-        Object result = registerDao.getList(sqlmapId, dataMap);
-        return result;
+    // public Object getList(Object dataMap) {
+    // String sqlmapId = "Register.selectFromRegister";
+    // Object result = registerDao.getList(sqlmapId, dataMap);
+    // return result;
 
-    }
+    // }
 
-    public Object insert(Object dataMap) {
+    public Object insertregister(Object dataMap) {
         String sqlMapId = "Register.insertWithUID";
         Object result = registerDao.insert(sqlMapId, dataMap);
         return result;
     }
 
-    public Object insertAndGetList(Object dataMap) {
-        Object result = this.insert(dataMap);
-        result = this.getList(dataMap);
+    public Object insertagree(Object dataMap) {
+        String sqlMapId = "Register.insertagreeWithUID";
+        Object result = registerDao.insert(sqlMapId, dataMap);
         return result;
     }
 
-    // private Object getList(Object dataMap) {
-    // return null;
-    // } // controller
+    // public Object register(Object dataMap) {
+    // Object result = this.insertregister(dataMap);
+    // result = this.insertagree(dataMap);
+    // return result;
+    // }
+
+    // public Object select(Object dataMap) {
+    // String sqlMapId = "Register.selectFromRegister";
+    // Object result = registerDao.getOne(sqlMapId, dataMap);
+    // return result;
+    // }
 
 }

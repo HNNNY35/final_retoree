@@ -26,8 +26,13 @@
 <!-- 바꾼 헤더 -->
 <%@ include file="../header.jsp" %>
     <div class="container">
+   <form action="./register_new_2" method="post">
         <!-- 본문 타이틀 -->
         <!-- <hr class="featurette-divider" /> -->
+        <%-- 추가 확인 --%>
+           <span>
+          ${resultMap.TS_CS_ID}
+          </span>
         <h2 class="text-center">
             회원가입
         </h2>
@@ -390,6 +395,7 @@
         <div class="text-center m-3" >
             <a href="./register_new_2" class="nextBtn">다음</a>
         </div>
+        </form>
     </div>
     
 

@@ -1,10 +1,23 @@
-INSERT INTO REGISTER_2
+INSERT INTO REGISTER
 (USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH) 
 VALUES
-('U01', '전지현', 'jihyun1030', 'jh1030' , '19811030' , '01012345678', 'jun_jihyun@gmail.com', '서울시', '강남구' , 'YES' , 'NO'),
-('U02', '송혜교', 'hyekyo1122', 'hk1122' , '19811122' , '01012341234', 'song_hyekyo@gmail.com', '서울시', '용산구' , 'YES' , 'NO')
+('U01', '전지현', 'jihyun1030', 'jh1030' , '19811030' , '01012345678', 'jun_jihyun@gmail.com', '서울시', '강남구' , 'R01' , 'NO'),
+('U02', '송혜교', 'hyekyo1122', 'hk1122' , '19811122' , '01012341234', 'song_hyekyo@gmail.com', '서울시', '용산구' , 'R02' , 'NO'),
+('U03', '손예진', 'yejin0111', 'yj0111', '19820111', '01011111111', 'son_yejin@naver.com', '서울시', '서초동' , 'R03' , 'NO')
 ; 
 
-SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT 
-FROM REGISTER_2
+-- READ
+SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
+FROM REGISTER
+;
+
+-- UPDATE
+UPDATE REGISTER
+SET ADDR_DISTRICT='서초구'
+WHERE USER_ID='U03'
+;
+
+-- DELETE
+DELETE FROM REGISTER
+WHERE USER_ID = 'U03'
 ;
