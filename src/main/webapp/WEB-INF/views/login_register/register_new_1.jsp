@@ -28,6 +28,10 @@
     <div class="container">
         <!-- 본문 타이틀 -->
         <!-- <hr class="featurette-divider" /> -->
+        <%-- 추가 확인 --%>
+           <span>
+          ${resultMap.NAME}
+          </span>
         <h2 class="text-center">
             회원가입
         </h2>
