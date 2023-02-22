@@ -11,14 +11,29 @@ public class MainDao {
     private SqlSessionTemplate sqlSessionTemplate;
 
     // Read
-    public Object getList(String sqlMapId, Object dataMap) {
+    public Object getSearchList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
     }
 
-    // Create
+    public Object getSpecialList(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
+        return result;
+    }
 
-    // Update
+    public Object getNewCarList(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
+        return result;
+    }
 
-    // Delete
+    public Object getDomesticList(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getImportedList(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
+        return result;
+    }
+
 }

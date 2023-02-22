@@ -71,25 +71,21 @@
       <!-- 사진 -->
      
   
-      <div  style="margin-top: 60px">
+      <div style="margin-top: 60px">
         <form action="" method="get" id="form">
           <div class="row justify-content-center">
             <div class="col col-lg-5 mt-5">
               
               <div class="fs-4 fw-bold text-center fw-bold mb-5 choice">원하는 차를 찾아보세요!</div>
       
-              <div class="d-flex justify-content-evenly">
-
-              
-                <form action="" method="get">
-                  <div class="">
+              <div class="d-flex justify-content-evenly">            
+                <form action="users_ etc/search.jsp" method="get">
+                  <div>
                     <span>
-                    
-                      <select name="cars" id=""class="">
+                      <select name="cars">
                         <option value="
                         manufacturer">제조사</option>
-                        <optgroup label="
-                        국산">국산
+                        <optgroup label="국산">국산
                         <option value="
                         hyundai">현대</option>
                         <option value="
@@ -99,8 +95,7 @@
                         <option value="samsung">르노삼성</option>
                         <option value="ssangyong">쌍용</option>
                       </optgroup>
-                      <optgroup label="
-                      수입">수입
+                      <optgroup label=" 수입">수입
                         <option value="BMW">BMW</option>
                         <option value="audi">아우디</option>
                         <option value="benz">벤츠</option>
@@ -114,7 +109,7 @@
                       </select>
                     </span>
                     <span>
-                      <select name="cars" id="" class="">
+                      <select name="cars">
                         <option value="
                         model">모델</option>
                         <option value="
@@ -129,7 +124,7 @@
                         genesis">스타렉스</option>
                     
                       </select>
-                     <select name="cars" id="" >
+                     <select name="cars">
                         <option value="
                         model">상세모델</option>
                         <option value="
@@ -167,8 +162,8 @@
            <hr> 
   <table >
     <tr>
-      <div class="">
-      <div class="">
+      <div>
+      <div>
         <td>
           <a href="/car_detail_tucson_4" ><img src="https://img.kcar.com/carpicture/carpicture07/pic6077/kcarM_60776988_045.jpg" alt="" width="150px" class="m-2"></a>
         </td>
