@@ -3,38 +3,39 @@
 
 <mapper namespace="Register">
 
- <!-- call Register.selectFromRegister_2 -->
-<select id="selectFromRegister_2" parameterType="Map" resultType="Map">
-SELECT * 
-FROM register_2
-WHERE USER_ID = 'USER_ID'
+ <!-- call Register.selectFromRegister -->
+<select id="selectFromRegister" parameterType="Map" resultType="Map">
+SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
+FROM REGISTER
+WHERE USER_ID = 'U01'
+;
+ </select>
+
+  <!-- call Register.selectFromRegister_agree -->
+<select id="selectFromRegister" parameterType="Map" resultType="Map">
+SELECT TS_CS_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF
+FROM REGISTER_AGREE
+WHERE TS_CS_ID = 'R01'
+;
  </select>
 
 <!-- call Register.insertWithUID -->
  <insert id="insertWithUID" parameterType="Map">
-INSERT INTO REGISTER_2
+INSERT INTO REGISTER
 (USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH) 
 VALUE
-(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT} , #{TS_CS_ID}, #{AUTH}
-<!-- <choose>
-   <when test="TS_CS_ID != null">
-    ,'YES'
-    </when>
-    <otherwise>
-    ,'NO'
-    </otherwise>
-    </choose>
-    <choose>
-    <when test="AUTH != null">
-    ,'YES'
-    </when>
-    <otherwise>
-    ,'NO'
-    </otherwise>
-    </choose>
-     ) -->
+(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT} , #{TS_CS_ID}, #{AUTH})
+
  </insert>
-   
+
+ <!-- call Register.insertagreeWithUID -->
+ <insert id="insertagreeWithUID" parameterType="Map">
+   <insert>
+   INSERT INTO REGISTER_AGREE
+    (TS_CS_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF)
+   VALUES
+   (#{TS_CS_ID}, #{TS_CS}, #{PER_INF_REQ}, #{PER_INF_OPT}, #{REGULATION}, #{REC_MKT_INF})
+   </insert>
   
 
 </mapper>

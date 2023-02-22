@@ -1,0 +1,208 @@
+{
+  "canvas": {
+    "version": "2.2.11",
+    "width": 2000,
+    "height": 2000,
+    "scrollTop": -0.8333333002196431,
+    "scrollLeft": 0,
+    "zoomLevel": 1,
+    "show": {
+      "tableComment": true,
+      "columnComment": true,
+      "columnDataType": true,
+      "columnDefault": true,
+      "columnAutoIncrement": false,
+      "columnPrimaryKey": true,
+      "columnUnique": false,
+      "columnNotNull": true,
+      "relationship": true
+    },
+    "database": "MySQL",
+    "databaseName": "",
+    "canvasType": "ERD",
+    "language": "GraphQL",
+    "tableCase": "pascalCase",
+    "columnCase": "camelCase",
+    "highlightTheme": "VS2015",
+    "bracketType": "none",
+    "setting": {
+      "relationshipDataTypeSync": true,
+      "relationshipOptimization": false,
+      "columnOrder": [
+        "columnName",
+        "columnDataType",
+        "columnNotNull",
+        "columnUnique",
+        "columnAutoIncrement",
+        "columnDefault",
+        "columnComment"
+      ]
+    },
+    "pluginSerializationMap": {}
+  },
+  "table": {
+    "tables": [
+      {
+        "name": "REGISTER_AGREE",
+        "comment": "회원약관동의",
+        "columns": [
+          {
+            "name": "TS_CS_ID",
+            "comment": "약관동의 UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 64.130859375,
+              "widthComment": 80,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "04e9f723-754e-4327-b760-e89d2dc9e800"
+          },
+          {
+            "name": "TS_CS",
+            "comment": "이용약관 동의",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 83.61181640625,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "8009abe3-7f9f-45c4-9a6d-37076b5556dd"
+          },
+          {
+            "name": "PER_INF_REQ",
+            "comment": "개인정보 필수 약관",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 92.3017578125,
+              "widthComment": 113.2236328125,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "ce45b8a3-4909-4b91-9494-d645d1765a1c"
+          },
+          {
+            "name": "PER_INF_OPT",
+            "comment": "개인정보 선택 약관",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 90.8544921875,
+              "widthComment": 113.2236328125,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "707839c1-7adc-4a24-9e24-c4e16acc11ae"
+          },
+          {
+            "name": "REGULATION",
+            "comment": "리투리 규정 약관",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 85.5478515625,
+              "widthComment": 100.2236328125,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "207446b1-60c5-4d3e-a6d3-fd38f3fbdeec"
+          },
+          {
+            "name": "REC_MKT_INF",
+            "comment": "마케팅 정보 수신 동의",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 92.2890625,
+              "widthComment": 120,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "510c78ab-a7f7-4e0b-bde8-c7c8f1bb1448"
+          }
+        ],
+        "ui": {
+          "active": false,
+          "left": 101.6668,
+          "top": 152.4999,
+          "zIndex": 125,
+          "widthName": 121.1962890625,
+          "widthComment": 80
+        },
+        "visible": true,
+        "id": "b4caebce-e50e-431c-925d-ea92ab2d87d9"
+      }
+    ],
+    "indexes": []
+  },
+  "memo": {
+    "memos": []
+  },
+  "relationship": {
+    "relationships": []
+  }
+}

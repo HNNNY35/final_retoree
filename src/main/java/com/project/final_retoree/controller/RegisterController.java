@@ -17,16 +17,18 @@ public class RegisterController {
     @Autowired
     RegisterService registerService;
 
-    @RequestMapping(value = "/register_new_1")
-    public ModelAndView register_new_1(ModelAndView modelAndView) {
+    @RequestMapping(value = { "/register_agree" }, method = RequestMethod.POST)
+    public ModelAndView register_agree(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        Object resultMap = registerService.insertagree(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("login_register/register_new_1");
         return modelAndView;
 
     }
 
-    @RequestMapping(value = { "/register_new_2" }, method = RequestMethod.GET)
-    public ModelAndView register_new_2(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        Object resultMap = registerService.insertAndGetList(params);
+    @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
+    public ModelAndView register(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        Object resultMap = registerService.insertregister(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("login_register/register_new_2");
         return modelAndView;

@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 2000,
     "height": 2000,
-    "scrollTop": -326.66665368610006,
-    "scrollLeft": -154.99999384085368,
+    "scrollTop": -324.9999870856608,
+    "scrollLeft": -153.3333272404144,
     "zoomLevel": 1,
     "show": {
       "tableComment": true,
@@ -43,7 +43,7 @@
   "table": {
     "tables": [
       {
-        "name": "REGISTER_2",
+        "name": "REGISTER",
         "comment": "회원가입",
         "columns": [
           {
@@ -304,8 +304,8 @@
           "active": false,
           "left": 190.8333,
           "top": 545.8332,
-          "zIndex": 82,
-          "widthName": 82.91357421875,
+          "zIndex": 4,
+          "widthName": 68.45361328125,
           "widthComment": 60
         },
         "visible": true,
