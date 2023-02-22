@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,12 +10,14 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Search</title>
-        <link rel="stylesheet" href="/css/search.css"/>
+        <link rel="stylesheet" href="./css/search.css"/>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"/>
         <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet"/>
+        <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     </head>
     <body>
+        <%-- <script type="text/javascript" src="./js/search.js"></script> --%>
         <%@ include file="../header.jsp" %>
         <!-- header -->
         <!-- 좌측 검색필터 -->
@@ -28,128 +31,119 @@
                 <hr/>
                 <br/>
                 <!-- </div> -->
-                <!-- 좌측 검색필터 -->
+                <!-- Filter -->
                     <div class="container"> <div class="row mb-3">
                         <div class="col-3">
                             <div class="card text-center">
                                 <h5 class="card-header">차량 검색</h3>
                                 <div class="card-body">
-                                    <div class="searchSelect">
-                                        <select name="manufacturer" id="manufacturer" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                            <option selected>제조사</option>
-                                            <option value="hyundai">현대</option>
-                                            <option value="genesis">제네시스</option>
-                                            <option value="kia">기아</option>
-                                            <option value="chevrolet">쉐보레(GM대우)</option>
-                                            <option value="renaultkorea">르노코리아(삼성)</option>
-                                            <option value="smotor">쌍용</option>
-                                            <option value="benz">벤츠</option>
-                                        </select>
-                                    </div>
+                                    <form action="/search" method="post">
+                                        <div><button class="btn btn-gray btn-sm">검색</button></div>
+                                        <div class="searchSelect">
+                                            <select name="manufacturer" id="manufacturer" class="form-select form-select-sm" aria-label=".form-select-sm" onchange="itemChange()">
+                                                <option selected>제조사</option>
+                                                <option value="현대">현대</option>
+                                                <option value="제네시스">제네시스</option>
+                                                <option value="기아">기아</option>
+                                            </select>
+                                        </div>
 
-                                    <div class="searchSelect">
-                                        <select name="model" id="model" class="form-select form-select-sm" aria-label=".form-select-sm">
+                                        <div class="searchSelect">
+                                            <select name="model" id="model" class="form-select form-select-sm" aria-label=".form-select-sm">
                                             <option selected>모델</option>
-                                            <option value="i30">i30</option>
-                                            <option value="i40">i40</option>
-                                            <option value="grandeur">그랜저</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="searchSelect">
-                                        <select name="detailedModel" id="detailedModel" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                            <option selected>상세모델</option>
-                                            <option value="GN7_22">그랜저(GN7)(22년~현재)</option>
-                                            <option value="GN7_22_H">그랜저 하이브리드(GN7)(22년~현재)</option>
-                                            <option value="IG_19">더 뉴 그랜저 IG(19년~현재)</option>
-                                            <option value="IG_19_H">더 뉴 그랜저 IG 하이브리드(19년~현재)</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="searchSelect">
-                                        <select name="modelYear" id="modelYear" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                            <option selected>연식</option>
-                                            <option value="2022">2022년식</option>
-                                            <option value="2021">2021년식</option>
-                                            <option value="2020">2020년식</option>
-                                            <option value="2019">2019년식</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="searchSelect">
-                                        <select name="fuel" id="fuel" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                            <option selected>연료</option>
-                                            <option value="gasoline_electricity">가솔린+전기 2400cc</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="searchSelect">
-                                        <select name="grade" id="grade" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                            <option selected>등급</option>
-                                            <option value="premium">프리미엄</option>
-                                            <option value="premium_choice">프리미엄 초이스</option>
-                                            <option value="leblanc">르블랑</option>
-                                            <option value="exclusive">익스클루시브</option>
-                                            <option value="calligraphy">캘리그래피</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="searchSelect">
-                                        <select name="detailedGrade" id="detailedGrade" class="form-select form-select-sm" aria-label=".form-select-sm">
-                                            <option selected>세부등급 없음</option>
-                                        </select>
-                                    </div>
-
-                                    <div class="searchTitle small text-end">
-                                        <span>필터 초기화</span>
-                                        <a href="" class="btn">
-                                            <span class="material-symbols-outlined text-primary">refresh</span>
-                                        </a>
-                                    </div>
-
-                                    <div
-                                        class="text-start">
-                                        <!-- 주행거리 onchange() 이벤트로 슬라이더값 표시 추가 필요 -->
-                                        <div>
-
-                                            <div class="filterName">주행거리</div>
-                                            <input type="range" name="distanceDriven" id="distanceDriven" class="form-range" min="0" max="300000" step="1000" value="0" oninput="document.getElementById('value1').innerHTML=this.value;">
-                                            <div class="p-1" id="value1"></div>
+                                            </select>
                                         </div>
-                                        <div>
 
-                                            <div class="filterName">사고정보</div>
+                                        <div class="searchSelect">
+                                            <select name="detailedModel" id="detailedModel" class="form-select form-select-sm" aria-label=".form-select-sm">
+                                                <option selected>상세모델</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="searchSelect">
+                                            <select name="modelYear" id="modelYear" class="form-select form-select-sm" aria-label=".form-select-sm">
+                                                <option selected>연식</option>
+                                                <option value="2022">2022년식</option>
+                                                <option value="2021">2021년식</option>
+                                                <option value="2020">2020년식</option>
+                                                <option value="2019">2019년식</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="searchSelect">
+                                            <select name="fuel" id="fuel" class="form-select form-select-sm" aria-label=".form-select-sm">
+                                                <option selected>연료</option>
+                                                <option value="gasoline_electricity">가솔린+전기 2400cc</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="searchSelect">
+                                            <select name="grade" id="grade" class="form-select form-select-sm" aria-label=".form-select-sm">
+                                                <option selected>등급</option>
+                                                <option value="premium">프리미엄</option>
+                                                <option value="premium_choice">프리미엄 초이스</option>
+                                                <option value="leblanc">르블랑</option>
+                                                <option value="exclusive">익스클루시브</option>
+                                                <option value="calligraphy">캘리그래피</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="searchSelect">
+                                            <select name="detailedGrade" id="detailedGrade" class="form-select form-select-sm" aria-label=".form-select-sm">
+                                                <option selected>세부등급 없음</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="searchTitle small text-end">
+                                            <span>필터 초기화</span>
+                                            <a href="" class="btn">
+                                                <span class="material-symbols-outlined text-primary">refresh</span>
+                                            </a>
+                                        </div>
+
+                                        <div
+                                            class="text-start">
+                                            <!-- 주행거리 onchange() 이벤트로 슬라이더값 표시 추가 필요 -->
                                             <div>
-                                                <button class="btn btn-light btn-sm">무사고</button>
-                                                <button class="btn btn-light btn-sm">외부패널 교환</button>
-                                                <button class="btn btn-light btn-sm">사고</button>
+
+                                                <div class="filterName">주행거리</div>
+                                                <input type="range" name="distanceDriven" id="distanceDriven" class="form-range" min="0" max="300000" step="1000" value="0" oninput="document.getElementById('value1').innerHTML=this.value;">
+                                                <div class="p-1" id="value1"></div>
                                             </div>
-                                        </div>
-                                        <div class="filterName">추가옵션</div>
-                                        <div>
-                                            <button class="btn btn-light btn-sm">선루프</button>
-                                            <button class="btn btn-light btn-sm">내비게이션</button>
-                                        </div>
-                                        <div class="filterName">색상</div>
-                                        <div>
-                                            <button class="btn btn-light btn-sm">검정색</button>
-                                            <button class="btn btn-light btn-sm">검정투톤</button>
-                                            <button class="btn btn-light btn-sm">은색</button>
-                                            <button class="btn btn-light btn-sm">더보기</button>
-                                        </div>
-                                    </div>
+                                            <div>
 
-
+                                                <div class="filterName">사고정보</div>
+                                                <div>
+                                                    <button class="btn btn-light btn-sm">무사고</button>
+                                                    <button class="btn btn-light btn-sm">외부패널 교환</button>
+                                                    <button class="btn btn-light btn-sm">사고</button>
+                                                </div>
+                                            </div>
+                                            <div class="filterName">추가옵션</div>
+                                            <div>
+                                                <button class="btn btn-light btn-sm">선루프</button>
+                                                <button class="btn btn-light btn-sm">내비게이션</button>
+                                            </div>
+                                            <div class="filterName">색상</div>
+                                            <div>
+                                                <button class="btn btn-light btn-sm">검정색</button>
+                                                <button class="btn btn-light btn-sm">검정투톤</button>
+                                                <button class="btn btn-light btn-sm">은색</button>
+                                                <button class="btn btn-light btn-sm">더보기</button>
+                                            </div>
+                                            
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- 우측 검색필터 -->
+                        <!-- Contents -->
                         <div class="col-9">
                             <span class="fs-5">
                                 총
                                 <span class="text-primary">
-                                    215
+                                    ${resultMap.size()}
                                 </span>
                                 <span>
                                     대
@@ -204,5 +198,36 @@
                 </div>
             </div>
         </div>
+        <script>
+            function itemChange(){
+                alert("Avtive itemChange");
+
+                var hyundai = ["아반떼", "소나타", "그랜저", "베뉴", "코나", "투싼", "싼타페", "팰리세이드"];
+                var genesis = ["G70", "G80", "GV60", "GV70", "GV80", "G90"];
+                var kia = ["k3","k5","k7", "k8", "k9", "스팅어", "모닝", "레이", "소울", "셀토스", "스포티지", "니로", "소렌토", "모하비", "카니발"];
+
+                var selectItem = $("#manufacturer").val();
+                var changeItem;
+
+                if(selectItem == "현대"){
+                    changeItem = hyundai;
+                }else if(selectItem == "제네시스"){
+                    changeItem = genesis;
+                }else if(selectItem == "기아"){
+                    changeItem = kia;
+                }
+
+                $('#model').empty();
+
+                var selectedItem = $("<option selected>모델</option>");
+
+                $('#model').append(selectedItem);
+                for(var count = 0; count < changeItem.length; count++){
+                    var option = $("<option>"+changeItem[count]+"</option>");
+                    $('#model').append(option);
+                }
+
+            }
+        </script>
     </body>
 </html></div></body></html></div></div></main><!-- footer --><%@ include file="../footer.jsp" %><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script></body></html>

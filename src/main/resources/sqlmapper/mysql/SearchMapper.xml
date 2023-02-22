@@ -8,4 +8,11 @@
         SELECT  CAR_ID, MUNUFACTURER, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
         FROM CAR_INFO;
     </select>
+    <!-- call Search.selectFromCAR_INFOwithFilter -->
+    <select id="selectFromCAR_INFOWithFilter" 
+        parameterType="Map" resultType="Map">
+        SELECT  CAR_ID, MUNUFACTURER, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
+        FROM CAR_INFO
+        WHERE 1 = 1;
+    </select>
 </mapper>
