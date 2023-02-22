@@ -54,7 +54,8 @@ public class UserController {
 
     @RequestMapping(value = {"/search"}, method = RequestMethod.POST)
     public ModelAndView searchPost(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        Object resultMap = searchService.getList(params);
+        System.out.println("p");
+        Object resultMap = searchService.getListWithFilter(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("users_ etc/search");
         return modelAndView;

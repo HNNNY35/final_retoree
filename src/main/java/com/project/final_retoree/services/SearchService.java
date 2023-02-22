@@ -15,4 +15,9 @@ public class SearchService {
         Object result = searchDao.getList(sqlMapId, dataMap);
         return result;
     }
+    public Object getListWithFilter(Object dataMap){
+        String sqlMapId = "Search.selectFromCAR_INFOWithFilter";
+        Object result = searchDao.getList(sqlMapId, dataMap);
+        return result;
+    }
 }

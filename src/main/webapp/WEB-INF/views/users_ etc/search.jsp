@@ -200,9 +200,8 @@
         </div>
         <script>
             function itemChange(){
-                alert("Avtive itemChange");
 
-                var hyundai = ["아반떼", "소나타", "그랜저", "베뉴", "코나", "투싼", "싼타페", "팰리세이드"];
+                var hyundai = ["아반떼", "소나타", "그랜저", "베뉴", "코나", "투싼", "싼타페", "팰리세이드", "캐스퍼"];
                 var genesis = ["G70", "G80", "GV60", "GV70", "GV80", "G90"];
                 var kia = ["k3","k5","k7", "k8", "k9", "스팅어", "모닝", "레이", "소울", "셀토스", "스포티지", "니로", "소렌토", "모하비", "카니발"];
 
@@ -223,7 +222,7 @@
 
                 $('#model').append(selectedItem);
                 for(var count = 0; count < changeItem.length; count++){
-                    var option = $("<option>"+changeItem[count]+"</option>");
+                    var option = $("<option value='"+changeItem[count]+"' >"+changeItem[count]+"</option>");
                     $('#model').append(option);
                 }
 
