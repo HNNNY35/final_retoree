@@ -76,7 +76,7 @@ VALUE
      'YES',
     </when>
     <otherwise>
-     'NO',
+     'NO'
     </otherwise>
     </choose>
      ) 
