@@ -8,8 +8,8 @@
 SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
 FROM REGISTER
 WHERE USER_ID = 'U01'
-; -->
- </select>
+; 
+ </select>-->
 
   <!-- call Register.selectFromRegister_agree -->
 <!-- <select id="selectFromRegister" parameterType="Map" resultType="Map">
@@ -21,6 +21,7 @@ WHERE TS_CS_ID = 'R01'
 
 <!-- call Register.insertWithUID -->
  <insert id="insertWithUID" parameterType="Map">
+ 
 INSERT INTO REGISTER
 (USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH) 
 VALUE
@@ -30,7 +31,7 @@ VALUE
 
  <!-- call Register.insertagreeWithUID -->
  <insert id="insertagreeWithUID" parameterType="Map">
-   <insert>
+   
    INSERT INTO REGISTER_AGREE
     (TS_CS_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF)
    VALUES
