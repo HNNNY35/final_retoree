@@ -6,18 +6,17 @@
  <!-- call Register.selectFromRegister_2 -->
 <select id="selectFromRegister_2" parameterType="Map" resultType="Map">
 SELECT * 
-FROM REGISTER_2
+FROM register_2
+WHERE USER_ID = 'USER_ID'
  </select>
 
 <!-- call Register.insertWithUID -->
  <insert id="insertWithUID" parameterType="Map">
 INSERT INTO REGISTER_2
 (USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH) 
-VALUES 
-(
-    #{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT}
-  
-   <choose>
+VALUE
+(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT} , #{TS_CS_ID}, #{AUTH}
+<!-- <choose>
    <when test="TS_CS_ID != null">
     ,'YES'
     </when>
@@ -33,7 +32,9 @@ VALUES
     ,'NO'
     </otherwise>
     </choose>
-     )
-    </insert>
+     ) -->
+ </insert>
+   
+  
 
 </mapper>
