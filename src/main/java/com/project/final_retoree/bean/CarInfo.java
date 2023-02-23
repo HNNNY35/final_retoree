@@ -1,5 +1,9 @@
 package com.project.final_retoree.bean;
 
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class CarInfo {
 
     private String car_id;
