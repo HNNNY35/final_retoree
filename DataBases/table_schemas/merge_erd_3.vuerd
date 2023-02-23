@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -126,
-    "scrollLeft": -1537,
+    "scrollTop": -313,
+    "scrollLeft": -192,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -189,7 +189,7 @@
           "active": false,
           "left": 2192.124,
           "top": 881.8167,
-          "zIndex": 15,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60
         },
@@ -343,7 +343,7 @@
           "active": false,
           "left": 2262.5743,
           "top": 1091.2693,
-          "zIndex": 16,
+          "zIndex": 14,
           "widthName": 60,
           "widthComment": 60
         },
@@ -376,6 +376,29 @@
               "widthDefault": 60
             },
             "id": "d04d6e11-a5c2-4145-ba76-69e6b33b994d"
+          },
+          {
+            "name": "ORIGIN",
+            "comment": "국산/수입",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 60,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "a5066508-c014-42b4-816e-5609e4d6be73"
           },
           {
             "name": "MANUFACTURER",
@@ -796,7 +819,7 @@
           "active": false,
           "left": 1718.4873,
           "top": 115.2081,
-          "zIndex": 39,
+          "zIndex": 29,
           "widthName": 67.72998046875,
           "widthComment": 60
         },
@@ -996,7 +1019,7 @@
           "active": false,
           "left": 2336.6645,
           "top": 416.9872,
-          "zIndex": 3,
+          "zIndex": 2,
           "widthName": 78.34326171875,
           "widthComment": 83.61181640625
         },
@@ -1288,7 +1311,7 @@
           "active": false,
           "left": 2347.5869,
           "top": 79.0861,
-          "zIndex": 36,
+          "zIndex": 18,
           "widthName": 145.52685546875,
           "widthComment": 87.2236328125
         },
@@ -1396,7 +1419,7 @@
           "active": false,
           "left": 1172.3034,
           "top": 269.0983,
-          "zIndex": 12,
+          "zIndex": 10,
           "widthName": 128.1787109375,
           "widthComment": 60
         },
@@ -1665,7 +1688,7 @@
           "active": false,
           "left": 1111.6445,
           "top": 738.7952,
-          "zIndex": 4,
+          "zIndex": 3,
           "widthName": 76.40087890625,
           "widthComment": 60
         },
@@ -1750,7 +1773,7 @@
           "active": false,
           "left": 574.3186,
           "top": 262.6873,
-          "zIndex": 14,
+          "zIndex": 12,
           "widthName": 92.3017578125,
           "widthComment": 60
         },
@@ -1904,7 +1927,7 @@
           "active": false,
           "left": 1682.6945,
           "top": 715.4884,
-          "zIndex": 5,
+          "zIndex": 4,
           "widthName": 87.2490234375,
           "widthComment": 87.2236328125
         },
@@ -2035,7 +2058,7 @@
           "active": false,
           "left": 1925.2202,
           "top": 1311.7546,
-          "zIndex": 17,
+          "zIndex": 15,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
@@ -2097,7 +2120,7 @@
           "active": false,
           "left": 1338.1355,
           "top": 1341.7292,
-          "zIndex": 8,
+          "zIndex": 7,
           "widthName": 97.11962890625,
           "widthComment": 60
         },
@@ -2274,7 +2297,7 @@
           "active": false,
           "left": 1052.9933,
           "top": 1098.1887,
-          "zIndex": 19,
+          "zIndex": 17,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2405,7 +2428,7 @@
           "active": false,
           "left": 544.5831,
           "top": 661.9204,
-          "zIndex": 6,
+          "zIndex": 5,
           "widthName": 93.01904296875,
           "widthComment": 60
         },
@@ -2490,7 +2513,7 @@
           "active": false,
           "left": 1188.4999,
           "top": 59.8405,
-          "zIndex": 9,
+          "zIndex": 8,
           "widthName": 91.82568359375,
           "widthComment": 60
         },
@@ -2501,6 +2524,29 @@
         "name": "WISHLIST",
         "comment": "찜",
         "columns": [
+          {
+            "name": "WISHLIST_ID",
+            "comment": "찜 UID",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": true,
+              "unique": false,
+              "notNull": true
+            },
+            "ui": {
+              "active": false,
+              "pk": true,
+              "fk": false,
+              "pfk": false,
+              "widthName": 83.62451171875,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "50ef552d-8415-41f7-b6e1-cca2d9b72868"
+          },
           {
             "name": "CAR_DTL_ID",
             "comment": "차량 판매  UID",
@@ -2552,7 +2598,7 @@
           "active": false,
           "left": 296.5769,
           "top": 489.2686,
-          "zIndex": 11,
+          "zIndex": 39,
           "widthName": 63.39453125,
           "widthComment": 60
         },
@@ -2775,7 +2821,7 @@
           "active": false,
           "left": 9.75,
           "top": 200.2518,
-          "zIndex": 13,
+          "zIndex": 11,
           "widthName": 63.8642578125,
           "widthComment": 60
         },
@@ -2876,7 +2922,7 @@
           "active": false,
           "left": 1706.1857,
           "top": 1066.3261,
-          "zIndex": 18,
+          "zIndex": 16,
           "widthName": 60,
           "widthComment": 70.61181640625
         },
@@ -2915,7 +2961,7 @@
           "active": false,
           "left": 239.4723,
           "top": 900.8049,
-          "zIndex": 7,
+          "zIndex": 6,
           "widthName": 60,
           "widthComment": 87.2236328125
         },
@@ -2940,7 +2986,7 @@
             "d04d6e11-a5c2-4145-ba76-69e6b33b994d"
           ],
           "x": 1718.4873,
-          "y": 344.4581,
+          "y": 354.7081,
           "direction": "left"
         },
         "end": {
@@ -3053,7 +3099,7 @@
             "9254dd6d-515f-4cb0-9400-e870021c36b3"
           ],
           "x": 2245.950190625,
-          "y": 459.0831,
+          "y": 474.4581,
           "direction": "right"
         },
         "constraintName": "fk_car_panel_to_car_info",
@@ -3079,7 +3125,7 @@
             "32dbf246-f181-4bca-bfaa-74551210d19e"
           ],
           "x": 2245.950190625,
-          "y": 229.8331,
+          "y": 234.9581,
           "direction": "right"
         },
         "constraintName": "fk_car_main_skeleton_to_car_info",
@@ -3156,8 +3202,8 @@
           "columnIds": [
             "634ddd36-6ae0-4050-80b4-b7218f8b3165"
           ],
-          "x": 749.60375546875,
-          "y": 544.2686,
+          "x": 751.76195859375,
+          "y": 554.5186,
           "direction": "right"
         },
         "constraintName": "fk_car_detaile_info_to_wishlist",
@@ -3312,8 +3358,8 @@
           "columnIds": [
             "4121edbe-0435-445a-87e6-f80c28453b08"
           ],
-          "x": 523.090327734375,
-          "y": 599.2686,
+          "x": 524.169429296875,
+          "y": 619.7686,
           "direction": "bottom"
         },
         "constraintName": "fk_user_to_wishlist",

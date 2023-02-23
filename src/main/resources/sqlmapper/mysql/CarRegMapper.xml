@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CarReg">
+
+    <!-- call CarReg.insertCarInfoWithUID -->
+    <insert id = "insertCarInfoWithUID" parameterType="Map">
+        INSERT INTO CAR_INFO
+        (CAR_ID, ORIGIN, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
+        VALUE
+        (#{CAR_ID}, #{ORIGIN}, #{MANUFACTURER}, #{MODEL}, #{DETAILED_MODEL}, #{VEH_NUM}, #{PRICE}, #{MODEL_YEAR}, #{FUEL}, #{TRANSMISSION}, #{CARGRADE}, #{DETAILED_CARGRADE}, #{DRIVEN_DIST}, #{ACCIDENT_INFO}, #{OPTIONS}, #{COLOR}, #{DTL_IMG_CAR}, #{SALE_STATUS}, #{PANER_ID}, #{SKELETON_ID}})
+    </insert>
+
+</mapper>

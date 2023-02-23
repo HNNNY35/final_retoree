@@ -34,19 +34,19 @@ VALUES
 
 -- 차량 정보 입력
 INSERT INTO CAR_INFO
-(CAR_ID, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
+(CAR_ID, ORIGIN, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
 VALUES
-('CAR01', '기아', 'K5', '3세대', '12아5452', '2700', '2020년 3월', '하이브리드', '오토', '프리미엄','none', '10000', 'none', 'sunroof', '검정', 'http://127.0.0.1:5501/docs/image/grandeur_design_front.png', 'sale', 'PU1', 'SU1');
+('CAR01', '국산차', '기아', 'K5', '3세대', '12아5452', '2700', '2020년 3월', '하이브리드', '오토', '프리미엄','none', '10000', 'none', 'sunroof', '검정', 'http://127.0.0.1:5501/docs/image/grandeur_design_front.png', 'sale', 'PU1', 'SU1');
 
 INSERT INTO CAR_INFO
-(CAR_ID, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
+(CAR_ID, ORIGIN, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
 VALUES
-('CAR02', '현대', '그랜저', '그랜저', '23바1222', '3500', '2022년 3월', '하이브리드', '오토', '익스클루시브','none', '20000', 'none', 'navi', '은색', 'http://127.0.0.1:5501/docs/image/grandeur_design_front.png', 'sale', 'PU2', 'SU2');
+('CAR02', '국산차', '현대', '그랜저', '그랜저', '23바1222', '3500', '2022년 3월', '하이브리드', '오토', '익스클루시브','none', '20000', 'none', 'navi', '은색', 'http://127.0.0.1:5501/docs/image/grandeur_design_front.png', 'sale', 'PU2', 'SU2');
 
 INSERT INTO CAR_INFO
-(CAR_ID, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
+(CAR_ID, ORIGIN, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
 VALUES
-('CAR03', '현대', '코나', '코나', '59사1662', '2000', '2022년 12월', '가솔린', '오토', '프리미엄','none', '20000', 'none', 'navi', '그린', 'http://127.0.0.1:5501/docs/image/grandeur_design_front.png', 'sale', 'PU3', 'SU3');
+('CAR03', '국산차', '현대', '코나', '코나', '59사1662', '2000', '2022년 12월', '가솔린', '오토', '프리미엄','none', '20000', 'none', 'navi', '그린', 'http://127.0.0.1:5501/docs/image/grandeur_design_front.png', 'sale', 'PU3', 'SU3');
 
 
 -- 차량 등록

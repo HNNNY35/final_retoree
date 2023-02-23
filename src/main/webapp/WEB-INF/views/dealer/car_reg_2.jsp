@@ -9,7 +9,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>판매 차량 신규 등록</title>
     <link rel="stylesheet" href="css/header.css" />
-    <link rel="stylesheet" href="css/car_reg.css" />
+    <link rel="stylesheet" href="../css/car_reg.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -59,7 +59,15 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>제조사</th>
                             <td>
-                              <input type="text" name="manufacturer" id="manufacturer" class="form-control">
+                              <select name="maunfacturer" id="maunfacturer" class="form-select">
+                                <option value="현대">현대</option>
+                                <option value="제네시스">제네시스</option>
+                                <option value="기아">기아</option>
+                                <option value="쉐보레">쉐보레(GM대우)</option>
+                                <option value="르노코리아">르노코리아(삼성)</option>
+                                <option value="쌍용">쌍용</option>
+                                <option value="벤츠">벤츠</option>
+                              </select>
                             </td>
                           </tr>
                             <tr>
@@ -91,7 +99,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>연식</th>
                             <td>
-                              <select name="model_year" id="model_year" class="form-control">
+                              <select name="model_year" id="model_year" class="form-select">
                                 <option value="2023">2023</option>
                                 <option value="2022">2022</option>
                                 <option value="2021">2021</option>
@@ -107,7 +115,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>연료</th>
                             <td>
-                              <select name="fuel" id="fuel" class="form-control">
+                              <select name="fuel" id="fuel" class="form-select">
                                 <option value="gasoline">가솔린</option>
                                 <option value="diesel">디젤</option>
                                 <option value="lpg">LPG</option>
@@ -122,7 +130,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>변속기</th>
                             <td>
-                              <select name="transmission" id="transmission" class="form-control">
+                              <select name="transmission" id="transmission" class="form-select">
                                 <option value="auto">오토</option>
                                 <option value="manual">수동</option>
                                 <option value="semiauto">세미오토</option>
@@ -135,7 +143,17 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>차량등급</th>
                             <td>
-                              <input type="text" name="cargrade" id="cargrade" class="form-control">
+                              <select name="cargrade" id="cargrade" class="form-select">
+                                <option value="프리미엄">프리미엄</option>
+                                <option value="프리미엄 초이스">프리미엄 초이스</option>
+                                <option value="르블랑">르블랑</option>
+                                <option value="익스클루시브">익스클루시브</option>
+                                <option value="캘리그래피">캘리그래피</option>
+                                <option value="트렌디">트렌디</option>
+                                <option value="프레스티지">프레스티지</option>
+                                <option value="노블레스">노블레스</option>
+                                <option value="시그니처">시그니처</option>
+                            </select>
                             </td>
                           </tr>
                           <tr>
@@ -155,7 +173,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>사고정보</th>
                             <td>
-                              <select name="accident_info" id="accident_info" class="form-control">
+                              <select name="accident_info" id="accident_info" class="form-select">
                                 <option value="none">무사고</option>
                                 <option value="panel_exchange">외부패널 교환</option>
                                 <option value="accident">사고</option>
@@ -166,7 +184,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>추가옵션</th>
                             <td>
-                              <select name="options" id="options" class="form-control">
+                              <select name="options" id="options" class="form-select">
                                 <option value="sunroof">선루프</option>
                                 <option value="navi">내비게이션</option>
                               </select>
@@ -176,7 +194,23 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>색상</th>
                             <td>
-                              <input type="text" name="color" id="color" class="form-control">
+                              <select name="color" id="color" class="form-select">
+                                <option value="검정색">검정색</option>
+                                <option value="검정투톤">검정투톤</option>
+                                <option value="쥐색">쥐색</option>
+                                <option value="은색">은색</option>
+                                <option value="은회색">은회색</option>
+                                <option value="은색투톤">은색투톤</option>
+                                <option value="흰색">흰색</option>
+                                <option value="진주색">진주색</option>
+                                <option value="흰색투톤">흰색투톤</option>
+                                <option value="은하색">은하색</option>
+                                <option value="청색">청색</option>
+                                <option value="담녹색">담녹색</option>
+                                <option value="빨간색">빨간색</option>
+                                <option value="보라색">보라색</option>
+                                <option value="청옥색">청옥색</option>
+                              </select>
                             </td>
                           </tr>
         
@@ -186,9 +220,12 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                               <input type="file" name="dtl_img_car" id="dtl_img_car" class="form-control">
                             </td>
                           </tr>
-        
+                        
                         </tbody>
                       </table>
+                      <div class="text-center mx-5">
+                        <button type="submit" class="submitBtn">저장</button>
+                      </div>
                       <hr>
                     </form>
         
@@ -252,7 +289,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           </span></td>
                           <th>외부 패널 정보</th>
                           <td>
-                            <button type="submit" class="panel_btn">입력 완료</button>
+                            <button type="button" class="panel_btn" onclick="insertPanelFunc();">입력 완료</button>
                           </td>
                         </tr>
                       </tbody>
@@ -260,7 +297,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     <hr>
                   </form>
         
-                    <form action="" method="post">
+                    <form action="/CarReg/insert" method="post">
                       <h4>차량 주요 골격</h4>
                       <table class="table">
                         <colgroup>
@@ -381,5 +418,14 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+    <script>
+      function insertPanelFunc(){
+        $.ajax({
+          type : "post",
+          url : ""
+        })
+
+      }
+    </script>
   </body>
 </html>
