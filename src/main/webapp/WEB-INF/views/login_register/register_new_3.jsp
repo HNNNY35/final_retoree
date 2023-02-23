@@ -41,13 +41,13 @@
       <br />
       <div class="text-center m-3">
            <h3 class="m-3">회원가입이 완료되었습니다.</h3>
-          <h5 class="m-3"><a href="./login" class="text-dark">로그인 페이지로</a></h5>
+          <h5 class="m-3"><a href="./login" class="text-primary">로그인 페이지로</a></h5>
        
         <h4 class="m-5">리투리 카에서 당신의 차를 찾아보세요.</h4>
         <div>
-          <div> <a href="./event" class="text-dark">현재 리투리 카에서 진행중인 이벤트</a></div>
-          <div><a href="./search" class="text-dark">내가 원하는 모델 찾아보기</a></div>
-          <div> <a href="./price_check" class="text-dark">중고차 시세 알아보기</a></div>
+          <div> <a href="./event" class="text-primary">현재 리투리 카에서 진행중인 이벤트</a></div>
+          <div><a href="./search" class="text-primary">내가 원하는 모델 찾아보기</a></div>
+          <div> <a href="./price_check" class="text-primary">중고차 시세 알아보기</a></div>
           <div></div>
           <div></div>
         </div>
