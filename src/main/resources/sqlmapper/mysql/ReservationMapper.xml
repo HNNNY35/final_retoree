@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Reservation">
+
+ <!-- 유저 정보 READ -->
+<!--call Reservation.selectFromUserInfo   -->
+<select id="selectFromUserInfo" parameterType="Map" resultType="Map">
+SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
+FROM USER_INFO
+ </select>
+
+
+ <!-- reserve table이랑 조인해야함. -->

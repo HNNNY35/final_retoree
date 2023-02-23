@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.final_retoree.services.ReservationService;
+
 @Controller
 public class UserController {
-   
+
+    @Autowired
+    ReservationService reservationService;
 
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(ModelAndView modelAndView) {
@@ -27,8 +31,12 @@ public class UserController {
 
     }
 
-    @RequestMapping(value = "/visit_reserve")
-    public ModelAndView visit_reserve(ModelAndView modelAndView) {
+    // 방문 예약 확인
+    @RequestMapping(value = "/visit_reserve", method = RequestMethod.GET)
+    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        Object reservation = reservationService.getUserReservation(params);
+
+        modelAndView.addObject("reservation", reservation);
         modelAndView.setViewName("users_ etc/visit_reserve");
         return modelAndView;
 
