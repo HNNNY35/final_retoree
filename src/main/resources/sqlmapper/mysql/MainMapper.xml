@@ -10,7 +10,40 @@ SELECT MUNUFACTURER, MODEL, DETAILED_MODEL
 FROM CAR_INFO;
  </select>
 
+<!-- 특가 -->
+<!-- call Main.selectFromSpecialPrice-->
+<select id="selectFromSpecialPrice" parameterType="Map" resultType="Map">
+SELECT CAR_ID, MUNUFACTURER, MODEL, TRANSMISSION, DETAILED_MODEL, PRICE, MODEL_YEAR, FUEL, DRIVEN_DIST, DTL_IMG_CAR, ADDR_CITY, PANER_ID, SKELETON_ID
+FROM CAR_INFO
+WHERE PRICE &lt; 1000
 
+ </select>
+
+<!-- 신차급 -->
+<!-- call Main.selectFromNewCar-->
+<select id="selectFromNewCar" parameterType="Map" resultType="Map">
+SELECT CAR_ID, MUNUFACTURER, MODEL, DETAILED_MODEL, PRICE, MODEL_YEAR, FUEL, DRIVEN_DIST, DTL_IMG_CAR, ADDR_CITY, PANER_ID, SKELETON_ID
+FROM CAR_INFO
+WHERE MODEL_YEAR = '2022'
+
+ </select>
+<!-- 인기 국산차 -->
+<!-- call Main.selectFromDomestic-->
+<select id="selectFromDomestic" parameterType="Map" resultType="Map">
+SELECT CAR_ID, MUNUFACTURER, MODEL, DETAILED_MODEL, PRICE, MODEL_YEAR, FUEL, DRIVEN_DIST, DTL_IMG_CAR, ADDR_CITY, PANER_ID, SKELETON_ID
+FROM CAR_INFO
+WHERE ORIGIN = '국산'
+
+
+ </select>
+<!-- 인기 수입차 -->
+<!-- call Main.selectFromImported-->
+<select id="selectFromImported" parameterType="Map" resultType="Map">
+SELECT CAR_ID, MUNUFACTURER, MODEL, DETAILED_MODEL, PRICE, MODEL_YEAR, FUEL, DRIVEN_DIST, DTL_IMG_CAR, ADDR_CITY, PANER_ID, SKELETON_ID
+FROM CAR_INFO
+WHERE ORIGIN = '수입'
+
+ </select>
 
 
 </mapper>

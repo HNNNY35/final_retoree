@@ -14,13 +14,13 @@ public class MainService {
     MainDao mainDao;
 
     // 메인 검색
-    public ArrayList<CarInfo> getSearchBeanList(Object dataMap) {
-        ArrayList<CarInfo> list = new ArrayList<CarInfo>();
-        CarInfo carInfo = new CarInfo();
-        String sqlMapId = "Main.selectFromMainSearch";
-        Object result = mainDao.getSearchList(sqlMapId, dataMap);
-        return list;
-    }
+    // public ArrayList<CarInfo> getSearchBeanList(Object dataMap) {
+    // ArrayList<CarInfo> list = new ArrayList<CarInfo>();
+    // CarInfo carInfo = new CarInfo();
+    // String sqlMapId = "Main.selectFromMainSearch";
+    // Object result = mainDao.getSearchList(sqlMapId, dataMap);
+    // return list;
+    // }
 
     public Object getSearchList(Object dataMap) {
         String sqlMapId = "Main.selectFromMainSearch";

@@ -16,21 +16,25 @@ public class MainDao {
         return result;
     }
 
+    // 특가
     public Object getSpecialList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
     }
 
+    // 신차급
     public Object getNewCarList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
     }
 
+    // 국산차
     public Object getDomesticList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
     }
 
+    // 수입차
     public Object getImportedList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;

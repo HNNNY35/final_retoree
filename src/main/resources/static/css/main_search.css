@@ -32,9 +32,19 @@ select {
   padding-left: 8px;
   border-radius: 9px;
   margin-right: 20px;
-
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 45px;
+}
+.text {
+  color: rgb(72, 72, 210);
+  background: #fafafa;
+  border: 1px solid rgb(177, 177, 227);
+  border-radius: 9px;
+  padding: 4px;
+  margin-left: 8px;
+  margin-top: 3px;
+  width: 200px;
+  height: 45px;
 }
 .button {
   color: rgb(72, 72, 210);
@@ -73,4 +83,48 @@ a:hover {
 }
 .text-align {
   text-align: align;
+}
+
+.main-search-area {
+  z-index: 2;
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1080px;
+  /* height: 190px; */
+  padding: 35px 40px;
+  background-color: white;
+  border-radius: 20px;
+  filter: drop-shadow(0px -5px 10px rgba(60, 96, 171, 0.05))
+    drop-shadow(0px 20px 30px rgba(60, 96, 171, 0.15));
+}
+.main-auto-search {
+  height: 45px;
+}
+.main-auto-search .input-area {
+  position: absolute;
+  width: 360px;
+  height: 45px;
+  top: 35px;
+  right: 40px;
+  border: 1px solid #dbdee3;
+  border-radius: 80px;
+  padding: 0 0 0 25px;
+  z-index: 2;
+  background-color: white;
+  transition: border 0.3s;
+}
+.main-car-filter {
+  margin-top: 20px;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+div {
+  display: block;
 }

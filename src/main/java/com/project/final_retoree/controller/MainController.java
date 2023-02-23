@@ -31,23 +31,23 @@ public class MainController {
 
     // 메인 차량 검색
     @GetMapping(value = { "", "/", "/main_search" })
-    public ModelAndView mainSearch(ModelAndView modelAndView) {
+    public ModelAndView mainSearch(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
 
         // ArrayList<CarInfo> searchBeanList = mainService.getSearchBeanList();
         // modelAndView.addObject("searchBeanLIst", searchBeanList);
-        // Object searchRs = mainService.getSearchList(params);
-        // Object specialRs = mainService.getSpecialList(params);
-        // Object newCarRs = mainService.getNewCarList(params);
-        // Object domesticRs = mainService.getDomesticList(params);
-        // Object importedRs = mainService.getImportedList(params);
+        Object searchRs = mainService.getSearchList(params);
+        Object specialRs = mainService.getSpecialList(params);
+        Object newCarRs = mainService.getNewCarList(params);
+        Object domesticRs = mainService.getDomesticList(params);
+        Object importedRs = mainService.getImportedList(params);
 
-        // modelAndView.addObject("searchRs", searchRs);
-        // modelAndView.addObject("specialRs", specialRs);
-        // modelAndView.addObject("newCarRs", newCarRs);
-        // modelAndView.addObject("domesticRs", domesticRs);
-        // modelAndView.addObject("importedRs", importedRs);
+        modelAndView.addObject("searchRs", searchRs);
+        modelAndView.addObject("specialRs", specialRs);
+        modelAndView.addObject("newCarRs", newCarRs);
+        modelAndView.addObject("domesticRs", domesticRs);
+        modelAndView.addObject("importedRs", importedRs);
 
-        modelAndView.setViewName("users_etc/search");
+        modelAndView.setViewName("main_search");
         return modelAndView;
     }
 
