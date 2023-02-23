@@ -26,8 +26,6 @@ public class Car_detailController {
         return modelAndView;
     }
 
-
-
     // // jsp에서 uid 받아와야 함 => test에서 받아옴
     @RequestMapping(value = "/car_detail_change/{car_dtl_id}", method = RequestMethod.GET)
     // @RequestMapping(value = "/car_detail_change")
@@ -39,7 +37,6 @@ public class Car_detailController {
         modelAndView.addObject("resultMap2", resultMap2);
         modelAndView.setViewName("car/car_detail_change");
         return modelAndView;
-
     }
 
     @RequestMapping(value = "/car_reg")

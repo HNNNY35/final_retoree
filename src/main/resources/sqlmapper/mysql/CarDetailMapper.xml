@@ -35,4 +35,7 @@
         WHERE CAR_DETAILE_INFO.CAR_DTL_ID = #{CAR_DTL_ID}
     </select>
     
+    <!-- 방문예약 -->
+
+
 </mapper>
