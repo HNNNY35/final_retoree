@@ -26,6 +26,8 @@
 <!-- 바꾼 헤더 -->
 <%@ include file="../header.jsp" %>
     <div class="container">
+          <%--회원가입 폼으로 이동 --%>
+         <form action="/register" method="POST"> 
         <!-- 본문 타이틀 -->
         <!-- <hr class="featurette-divider" /> -->
         <%-- 추가 확인 --%>
@@ -40,6 +42,7 @@
         </div>
         <!-- <hr /> -->
         <br />
+   
         <table>
             <tr>
                 <td>
@@ -390,7 +393,7 @@
             </tr>
         </table>
        <div class="text-center m-3" >
-            <form action="/register" method="">
+           
                 <button class="nextBtn">다음</button>
             </form>
         </div>
