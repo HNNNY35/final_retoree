@@ -23,7 +23,7 @@ public class RegisterController {
 
     @RequestMapping(value = { "/register_agree" }, method = RequestMethod.GET)
     public ModelAndView register_agree(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        params.put("TS_CS_ID", "R09");
+        params.put("TS_CS_ID", "TS05");
         registerService.insertagree(params);
         modelAndView.setViewName("login_register/register_new_1");
         return modelAndView;
@@ -39,12 +39,22 @@ public class RegisterController {
 
     @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
     public ModelAndView register(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        Object resultMap = registerService.insertregister(params);
-        modelAndView.addObject("resultMap", resultMap);
+        params.put("USER_ID", "U03");
+        registerService.insertregister(params);
         modelAndView.setViewName("login_register/register_new_2");
         return modelAndView;
 
     }
+
+    // @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
+    // public ModelAndView register(@RequestParam Map<String, Object> params,
+    // ModelAndView modelAndView) {
+    // Object resultMap = registerService.insertregister(params);
+    // modelAndView.addObject("resultMap", resultMap);
+    // modelAndView.setViewName("login_register/register_new_2");
+    // return modelAndView;
+
+    // }
 
     @RequestMapping(value = "/register_new_3")
     public ModelAndView register_new_3(ModelAndView modelAndView) {

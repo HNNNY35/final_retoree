@@ -29,9 +29,7 @@
         <!-- 본문 타이틀 -->
         <!-- <hr class="featurette-divider" /> -->
         <%-- 추가 확인 --%>
-           <span>
-          ${resultMap.TS_CS_ID}
-          </span>
+    
         <h2 class="text-center">
             회원가입
         </h2>
@@ -392,7 +390,7 @@
             </tr>
         </table>
        <div class="text-center m-3" >
-            <form action="/register_new_2" method="">
+            <form action="/register" method="">
                 <button class="nextBtn">다음</button>
             </form>
         </div>
