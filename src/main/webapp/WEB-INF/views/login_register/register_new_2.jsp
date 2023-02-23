@@ -30,6 +30,8 @@
     <%@ include file="../header.jsp" %>
 
     <div class="container">
+      <%-- 회원가입완료폼이동--%>
+      <form action="/register_welcome" method="POST">
       <!-- 본문 타이틀 -->
       <!-- <hr class="featurette-divider" /> -->
       <h2 class="text-center">회원가입</h2>
@@ -40,7 +42,7 @@
       </div>
       <!-- <hr /> -->
       <br />
-      <form action="/register_new_3" method="POST">
+    
         <table class="register_form">
           <thead>
             <tr>

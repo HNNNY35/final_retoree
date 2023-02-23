@@ -191,9 +191,9 @@
               </div>
               <strong class="add" id="inputList">
                 찜하기
-                <!-- 찜버튼 js 나중에 추가 -->
-                <span style="display: inline-block">
-                  <i
+
+                  <span style="display: inline-block">
+                    <i
                     class="material-icons rounded-circle bg-light"
                     style="
                       width: 3rem;
@@ -201,12 +201,12 @@
                       display: flex;
                       justify-content: center;
                       align-items: center;
-                    "
+                      "
                     id="heart"
                     >favorite_border</i
-                  >
-                </span>
-              </strong>
+                    >
+                  </span>
+                </strong>
               <h4 style="font-weight: 700; margin-top: 10px">
                 판매가격
                 <span class="font-weight-bold text-primary">${resultMap1.PRICE}만원</span>
@@ -557,9 +557,9 @@
     </div>
 
     <!-- 차량 옵션부분 넣어야하나? -->
-
     <%@ include file="../footer.jsp" %>
-  </body>
+
+    </body>
   <script src="/js/car_detail.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

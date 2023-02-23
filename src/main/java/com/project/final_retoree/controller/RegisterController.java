@@ -21,9 +21,9 @@ public class RegisterController {
     @Autowired
     CommonUtils commonUtils;
 
-    @RequestMapping(value = { "/register_agree" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/register_agree" }, method = RequestMethod.GET) // 이용약관동의페이지
     public ModelAndView register_agree(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        params.put("TS_CS_ID", "TS05");
+        params.put("TS_CS_ID", "TS03");
         registerService.insertagree(params);
         modelAndView.setViewName("login_register/register_new_1");
         return modelAndView;
@@ -37,7 +37,7 @@ public class RegisterController {
 
     // }
 
-    @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
+    @RequestMapping(value = { "/register" }, method = RequestMethod.POST) // 회원가입페이지
     public ModelAndView register(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         params.put("USER_ID", "U03");
         registerService.insertregister(params);
@@ -46,17 +46,7 @@ public class RegisterController {
 
     }
 
-    // @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
-    // public ModelAndView register(@RequestParam Map<String, Object> params,
-    // ModelAndView modelAndView) {
-    // Object resultMap = registerService.insertregister(params);
-    // modelAndView.addObject("resultMap", resultMap);
-    // modelAndView.setViewName("login_register/register_new_2");
-    // return modelAndView;
-
-    // }
-
-    @RequestMapping(value = "/register_new_3")
+    @RequestMapping(value = { "/register_welcome" }, method = RequestMethod.POST) // 회원가입완료(환영페이지)
     public ModelAndView register_new_3(ModelAndView modelAndView) {
         modelAndView.setViewName("login_register/register_new_3");
         return modelAndView;
@@ -64,3 +54,13 @@ public class RegisterController {
     }
 
 }
+// 2번 회원가입
+// @RequestMapping(value = { "/register" }, method = RequestMethod.GET)
+// public ModelAndView register(@RequestParam Map<String, Object> params,
+// ModelAndView modelAndView) {
+// Object resultMap = registerService.insertregister(params);
+// modelAndView.addObject("resultMap", resultMap);
+// modelAndView.setViewName("login_register/register_new_2");
+// return modelAndView;
+
+// }

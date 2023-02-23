@@ -1,3 +1,6 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -45,59 +48,74 @@
           </div>
 
         <div class="col-9">
-          <h3 class="pt-3">xxx님의 판매현황입니다.</h3>
+          <h3 class="pt-3">${resultDealerName.NAME}님의 판매현황입니다.</h3>
           <hr />
           <h4>판매중</h4>
           <table class="table table-hover sales">
-            <tr>
-              <th>판매 차량</th>
-              <th>차량 번호</th>
-              <th>차량 정보 수정</th>
-              <th>판매활동</th>
-            </tr>
-            <tr>
-              <td><a href=""> 현대 그랜져 하이브리드</a></td>
-              <td>23 허 0101</td>
-              <td><a href="">수정</a></td>
-              <td><a href="">더보기</a></td>
-            </tr>
-            <tr>
-              <td><a href="">기아 K3 </a></td>
-              <td>xxxx</td>
-              <td><a href="">수정</a></td>
-              <td><a href="">더보기</a></td>
-            </tr>
-            <tr>
-              <td><a href=""> 현대 코나 하이브리드</a></td>
-              <td>xxxx</td>
-              <td><a href="">수정</a></td>
-              <td><a href="">더보기</a></td>
-            </tr>
-            <tr>
-              <td><a href=""> 아우디 A6</a></td>
-              <td>xxxx</td>
-              <td><a href="">수정</a></td>
-              <td><a href="">더보기</a></td>
-            </tr>
+            <thead>
+              <tr>
+                <th>판매 차량</th>
+                <th>차량 번호</th>
+                <th>차량 정보 수정</th>
+                <th>판매활동</th>
+              </tr>
+            </thead>
+            <tbody>
+              <c:forEach items="${resultOnSaleCar}" var="resultOnSaleCar" varStatus="loop">
+                <tr>
+                  <td>
+                    <form action="/car_detail_change/${resultOnSaleCar.CAR_DTL_ID}" method="get">
+                      <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
+                        ${resultOnSaleCar.MANUFACTURER} ${resultOnSaleCar.MODEL}
+                      </button>
+                    </form>
+                    </td>
+                  <td>
+                  ${resultOnSaleCar.VEH_NUM}
+                  </td>
+                  <td>
+                    <form action="/car_modify/${resultOnSaleCar.CAR_DTL_ID}" method="get">
+                      <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
+                        수정
+                      </button>
+                    </form>
+                  </td>
+                  <td>
+                    <form action="/car_modify/${resultOnSaleCar.CAR_DTL_ID}" method="get">
+                      <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
+                        더보기
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              </c:forEach>
+          </tbody>
           </table>
           <br />
           <h4>판매완료</h4>
           <table class="table table-hover sales">
-            <tr>
-              <th>판매일자</th>
-              <th>판매차량</th>
-              <th>가격</th>
-            </tr>
-            <tr>
-              <td>2022년 10월 29일</td>
-              <td><a href="">xxxx</a></td>
-              <td>500만원</td>
-            </tr>
-            <tr>
-              <td>2023년 02월 18일</td>
-              <td><a href="">xxxx</a></td>
-              <td>290만원</td>
-            </tr>
+            <thead>
+              <tr>
+                <th>판매일자</th>
+                <th>판매차량</th>
+                <th>가격</th>
+              </tr>
+            </thead>
+            <tbody>
+              <c:forEach items="${resultSoltOutCar}" var="resultSoltOutCar" varStatus="loop">
+                <tr>
+                  <td>${resultSoltOutCar.SALE_DATE}</td>
+                  <td>
+                    <form action="/car_detail_change/${resultSoltOutCar.CAR_DTL_ID}" method="get">
+                      <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
+                        ${resultSoltOutCar.MANUFACTURER} ${resultSoltOutCar.MODEL}
+                      </button>
+                    </form>
+                  </td>
+                  <td>${resultSoltOutCar.PRICE}만원</td>
+                </tr>
+              </c:forEach>
+            </tbody>
           </table>
         </div>
 </div>

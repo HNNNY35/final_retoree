@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="DealerSalesMgmt">
+    <!-- call DealerSalesMgmt.selectFromUserInfoByDEALER_ID-->
+    <!-- DEALER_ID로 딜러 이름 조회 -->
+    <select id="selectFromUserInfoByDEALER_ID" parameterType="Map" resultType="Map">
+        SELECT NAME
+        FROM DEALER_INFO
+        JOIN USER_INFO
+        ON DEALER_ID = USER_ID
+        WHERE DEALER_ID = #{DEALER_ID}
+    </select>
+
+    <!-- call DealerSalesMgmt.selectFromOnSaleCARByDEALER_ID -->
+    <!-- DEALER_ID로 판매중인 차량 조회 -->
+    <select id="selectFromOnSaleCARByDEALER_ID" parameterType="Map" resultType="Map">
+        SELECT MANUFACTURER, MODEL, VEH_NUM, STATUS, CAR_DETAILE_INFO.CAR_DTL_ID
+        FROM CAR_DETAILE_INFO
+        JOIN CAR_INFO
+        ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
+        JOIN SALE_STATUS
+        ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+        WHERE STATUS = 'sale'
+        AND DEALER_ID = #{DEALER_ID}
+    </select>
+
+    <!-- call DealerSalesMgmt.selectFromSoldoutCARByDEALER_ID -->
+    <!-- DEALER_ID로 판매완료된 차량 조회 -->
+    <select id="selectFromSoldoutCARByDEALER_ID" parameterType="Map" resultType="Map">
+        SELECT SALE_DATE, MANUFACTURER, MODEL, PRICE, CAR_DETAILE_INFO.CAR_DTL_ID
+        FROM CAR_DETAILE_INFO
+        JOIN SALE_STATUS
+        ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+        JOIN CAR_INFO
+        ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
+        WHERE STATUS = 'soldout'
+        AND DEALER_ID = #{DEALER_ID}
+    </select>
+</mapper>
