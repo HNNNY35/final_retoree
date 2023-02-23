@@ -180,9 +180,14 @@
                   중고차 시세
                 </span>
               </div>
-              <h5 style="font-weight: 600">(23허0101) 그랜져 하이브리드</h5>
+              <h5 style="font-weight: 600">(${resultMap1.VEH_NUM}) ${resultMap1.MANUFACTURER} ${resultMap1.MODEL}</h5>
               <div class="text-muted p-2">
-                2020년 3월 | 70,123km | 자동(오토)
+                <div>
+                  ${resultMap1.DETAILED_MODEL}
+                </div>
+                <div>
+                  ${resultMap1.MODEL_YEAR} | ${resultMap1.DRIVEN_DIST}km | ${resultMap1.TRANSMISSION}
+                </div>
               </div>
               <strong class="add" id="inputList">
                 찜하기
@@ -204,7 +209,7 @@
               </strong>
               <h4 style="font-weight: 700; margin-top: 10px">
                 판매가격
-                <span class="font-weight-bold text-primary">2,000만원</span>
+                <span class="font-weight-bold text-primary">${resultMap1.PRICE}만원</span>
               </h4>
             </div>
             <!-- 모달 -->
@@ -222,7 +227,7 @@
                   <h2 class="modal-header">할부금 계산하기</h2>
                   <div class="modal-body">
                     <h4 class="align-items-center mb-3">
-                      <span class="badge bg-primary rounded-pill">총 비용</span>
+                      <span class="badge bg-primary rounded-pill">총 비용 ${resultMap1.PRICE}</span>
                     </h4>
                     <ul class="list-group mb-3">
                       <li
@@ -232,7 +237,7 @@
                           <h6 class="my-0">차량 가격</h6>
                           <!-- <small class="text-muted">Brief description</small> -->
                         </div>
-                        <span class="text-muted">20,000,000원</span>
+                        <span class="text-muted">원</span>
                       </li>
                       <li
                         class="list-group-item d-flex justify-content-between lh-sm"
@@ -321,11 +326,11 @@
               <div class="box" style="background: #bdbdbd">
                 <img
                   class="profile"
-                  src="https://us.123rf.com/450wm/tuktukdesign/tuktukdesign1705/tuktukdesign170500020/77461809-%EC%82%AC%EC%9A%A9%EC%9E%90-%EC%95%84%EC%9D%B4%EC%BD%98-%EB%B2%A1%ED%84%B0-%EB%82%A8%EC%9E%90-%EC%82%AC%EB%9E%8C-%ED%94%84%EB%A1%9C%ED%95%84-%EC%95%84%EB%B0%94%ED%83%80-%EA%B8%80%EB%A6%AC%ED%94%84-%ED%94%BD%ED%86%A0%EA%B7%B8%EB%9E%A8-%EC%8B%AC%EB%B3%BC-%EC%9D%BC%EB%9F%AC%EC%8A%A4%ED%8A%B8-%EB%A0%88%EC%9D%B4%EC%85%98.jpg?ver=6"
+                  src="${resultMap2.PROFILE_IMG}"
                 />
               </div>
-              <h5 style="font-weight: 600; margin-bottom: 10px">홍길동</h5>
-              <p class="text-muted">전화번호:010-1234-1234</p>
+              <h5 style="font-weight: 600; margin-bottom: 10px">${resultMap2.NAME}</h5>
+              <p class="text-muted">전화번호:${resultMap2.CELL_NUMBER}</p>
               <p class="text-muted">
                 판매중 : <span class="text-danger">20대 </span>| 판매완료 :
                 <span class="text-danger"> 3대</span>

@@ -11,9 +11,20 @@ public class CarDetailService {
     CarDetailDao carDetailDao;
 
     public Object getList(Object dataMap){
-        String sqlMapId = "CarDetail.selectFromCAR_INFOByCAR_DTL_ID";
+        String sqlMapId = "CarDetail.selectFromCAR_DETAILE_INFO";
         Object result = carDetailDao.getList(sqlMapId, dataMap);
         return result;
+    }
 
+    public Object getCarInfo(Object dataMap){
+        String sqlMapId = "CarDetail.selectFromCAR_DETAILE_INFOByCAR_DTL_ID";
+        Object result = carDetailDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object getDealerInfo(Object dataMap){
+        String sqlMapId = "CarDetail.selectFromDEALER_INFOByCAR_DTL_ID";
+        Object result = carDetailDao.getOne(sqlMapId, dataMap);
+        return result;
     }
 }

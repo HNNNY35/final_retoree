@@ -2,16 +2,37 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="CarDetail">
-    <!-- call CarDetail.selectFromCAR_INFOByCAR_DTL_ID -->
-    <select id="selectFromCAR_INFOByCAR_DTL_ID" parameterType="Map" resultType="Map">
-    SELECT CAR_INFO.CAR_ID, VEH_NUM, MODEL_YEAR, DRIVEN_DIST, TRANSMISSION, PRICE, DTL_IMG_CAR
-    FROM CAR_INFO
-    JOIN CAR_DETAILE_INFO
-    ON CAR_INFO.CAR_ID = CAR_DETAILE_INFO.CAR_ID
-    WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+    <!-- call CarDetail.selectFromCAR_DETAILE_INFO -->
+    <!-- test에서 CAR_DTL_ID 클릭해서 상세페이지로 가기 위함 -->
+    <select id="selectFromCAR_DETAILE_INFO" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CAR_DETAILE_INFO
     </select>
 
-    
+    <!-- 차량 정보 -->
+    <!-- call CarDetail.selectFromCAR_DETAILE_INFOByCAR_DTL_ID -->
+    <select id="selectFromCAR_DETAILE_INFOByCAR_DTL_ID" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CAR_DETAILE_INFO
+        JOIN CAR_INFO
+        ON CAR_INFO.CAR_ID = CAR_DETAILE_INFO.CAR_ID
+        JOIN CAR_MAIN_SKELETON
+        ON CAR_INFO.SKELETON_ID = CAR_MAIN_SKELETON.SKELETON_ID
+        JOIN CAR_PANEL
+        ON CAR_INFO.PANER_ID = CAR_PANEL.PANER_ID
+        WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+    </select>
 
-<!-- 방문예약, 찜 넣어야함 -->
+    <!-- 딜러 정보 -->
+    <!-- call CarDetail.selectFromDEALER_INFOByCAR_DTL_ID -->
+    <select id="selectFromDEALER_INFOByCAR_DTL_ID" parameterType="Map" resultType="Map">
+        SELECT USER_INFO.NAME, USER_INFO.CELL_NUMBER, DEALER_INFO.PROFILE_IMG, DEALER_INFO.DEALER_ID
+        FROM DEALER_INFO
+        JOIN CAR_DETAILE_INFO
+        ON CAR_DETAILE_INFO.DEALER_ID = DEALER_INFO.DEALER_ID
+        JOIN USER_INFO
+        ON DEALER_INFO.DEALER_ID = USER_INFO.USER_ID
+        WHERE CAR_DETAILE_INFO.CAR_DTL_ID = #{CAR_DTL_ID}
+    </select>
+    
 </mapper>

@@ -15,4 +15,9 @@ public class CarDetailDao {
         return result;
     }
 
+    public Object getOne(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectOne(sqlMapId, dataMap);
+        return result;
+    }
+
 }
