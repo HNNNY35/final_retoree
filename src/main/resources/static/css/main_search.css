@@ -66,11 +66,11 @@ select {
 
 div > a {
   text-decoration: none !important;
-  color: rgb(10, 43, 208);
+  color: rgb(0, 0, 0);
 }
 span > a {
   text-decoration: none !important;
-  color: rgb(40, 40, 225);
+  color: rgb(0, 0, 0);
 }
 a:hover {
   text-decoration: none !important;

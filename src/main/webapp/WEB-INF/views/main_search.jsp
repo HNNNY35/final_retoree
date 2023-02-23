@@ -72,58 +72,41 @@
      
   
       <!-- 검색 -->
-      <div style="margin-top: 60px">
+      <div class="border rounded border-dark bg-light m-3">
         <form action="search" method="post" id="form">
           <div class="row justify-content-center">
             <div class="col col-lg-5 mt-5">
-              <div class="fs-4 fw-bold text-center fw-bold mb-5 choice">원하는 차를 찾아보세요!</div>
-              <div class="d-flex justify-content-evenly">            
+              <h2 class=" text-center fw-bold mb-5 choice">원하는 차를 찾아보세요!</h2>
+              <div class="d-flex justify-content-evenly mb-5">           
                   <div>
+                      <div style="text-align: right;">전체 매물 차량 : <span style="color: cornflowerblue;">${searchRs.size()}</span>  대</div>             
                     <span>
                       <!-- 검색 후 search 화면단 이동 -->
                       <select name="cars">  
                         <option value="manufacturer">제조사</option>
                         <optgroup label="국산">국산
-                        <option value="hyundai">현대</option>
-                        <option value="genesis">제네시스</option>
-                        <option value="kia">기아</option>
-                        <option value="chevrolet">쉐보레</option>
-                        <option value="samsung">르노삼성</option>
-                        <option value="ssangyong">쌍용</option>
-                        <option value="other">기타</option>
+                          <c:forEach var="searchRs" items="${searchRs}">
+                            <option>${searchRs.MUNUFACTURER}</option>
+                          </c:forEach>
                       </optgroup>
                       <optgroup label="수입">수입
-                        <option value="BMW">BMW</option>
-                        <option value="audi">아우디</option>
-                        <option value="benz">벤츠</option>
-                        <option value="volvo">볼보</option>
-                        <option value="tesla">테슬라</option>
-                        <option value="porsche">포르쉐</option>
-                        <option value="other">기타</option>
+                        <c:forEach var="searchRs" items="${searchRs}">
+                          <option>${searchRs.MUNUFACTURER}</option>
+                        </c:forEach>
 
                       </optgroup>
                       </select>
                     </span>
                     <span>
                       <select name="cars">
-                        <option value="
-                        model">모델</option>
-                        <option value="
-                        hyundai">그랜저</option>
-                        <option value="
-                        genesis">싼타페</option>
-                        <option value="
-                        genesis">아반떼</option>
-                        <option value="
-                        genesis">쏘나타</option>
-                        <option value="
-                        genesis">스타렉스</option>
-                    
-                      </select>
-                    
+                        <option value="model">모델</option>
+                        <c:forEach var="searchRs" items="${searchRs}">
+                          <option>${searchRs.MODEL}</option>
+                        </c:forEach>   
+                      </select>  
                     </span>
                     <span>
-                      <input type="text" name="keyword" placeholder="차량명을 입력하세요"  class="text" id="">
+                      <input type="text" name="keyword" placeholder="차량명을 입력하세요"  class="text bg-white" id="">
                     
                     </span>
                     <span>
@@ -144,7 +127,7 @@
       </div>
            <hr> 
   <table >
-    <c:forEach var="special" items="${specialRs}">
+    <c:forEach begin="0" end="2" var="special" items="${specialRs}">
     <tr>
       <div>
         <td>
@@ -171,7 +154,7 @@
  </div>
       <hr> 
       <table>
-        <c:forEach var="newCar" items="${newCarRs}">
+        <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}">
         <tr>
           <div class="d-flex flex-row justify-content-around">
          <div>
@@ -201,7 +184,7 @@
   인기 국산차
  </div>
  <hr> 
-   <c:forEach var="domestic" items="${domesticRs}">      
+   <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}">      
      <table>
       <tr>
         <div class="container">
@@ -234,7 +217,7 @@
    </div>
         <hr> 
         <table >
-          <c:forEach var="imported" items="${importedRs}">
+          <c:forEach begin="0" end="2" var="imported" items="${importedRs}">
           <tr>
             <div>
             <td>
@@ -262,7 +245,7 @@
         </c:forEach>
         </table>
  
-
+</main>
        <%@ include file="./footer.jsp" %>
        
     <script
