@@ -24,11 +24,11 @@ public class RegisterService {
         return result;
     }
 
-    // public Object insertagree(Object dataMap) {
-    // String sqlMapId = "Register.insertagreeWithUID";
-    // Object result = registerDao.insert(sqlMapId, dataMap);
-    // return result;
-    // }
+    public Object insertagree(Object dataMap) {
+        String sqlMapId = "Register.insertagreeWithUID";
+        Object result = registerDao.insert(sqlMapId, dataMap);
+        return result;
+    }
 
     // public Object register(Object dataMap) {
     // Object result = this.insertregister(dataMap);

@@ -33,7 +33,7 @@ VALUE
 
  <!-- 약관동의UID,이용약관동의(필수),개인정보필수약관(필수),개인정보선택약관(선택),리투리구정약관(필수),마케팅정보수신동의(선택) -->
  <!-- call Register.insertagreeWithUID -->
- <!-- <insert id="insertagreeWithUID" parameterType="Map">
+ <insert id="insertagreeWithUID" parameterType="Map">
    
    INSERT INTO REGISTER_AGREE
     (TS_CS_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF)
@@ -73,17 +73,14 @@ VALUE
     </choose>
     <choose>
     <when test="REC_MKT_INF != null">
-     'YES',
+     'YES'
     </when>
     <otherwise>
      'NO'
     </otherwise>
     </choose>
      ) 
-   </insert> -->
+   </insert>
   
 
 </mapper>
-<!-- heck the manual that corresponds to your MySQL server version 
-for the right syntax to use near ','NO' ,'NO' ,'NO' ,'NO' ' at line 6 
-### The error may exist in file -->

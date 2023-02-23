@@ -11,12 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class UserController {
-    @RequestMapping(value = "/login")
-    public ModelAndView login(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/login");
-        return modelAndView;
-
-    }
+   
 
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(ModelAndView modelAndView) {
