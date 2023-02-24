@@ -54,7 +54,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       <%-- 회원가입창 유도 --%>
       <form action="/register_agree">
         <div class="text-center"> 
-           <button type="button" class="signup">sign up</button>
+           <button type="submit" class="signup">sign up</button>
              </div>
              </form>
       </div>
