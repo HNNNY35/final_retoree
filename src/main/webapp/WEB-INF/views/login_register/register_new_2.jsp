@@ -105,7 +105,8 @@
                   id="userId"
                   placeholder="영문 소문자와 숫자 조합 4~12자리"
                   required
-                />
+                  
+                  />
                 <br />
               </td>
             </tr>
@@ -121,10 +122,10 @@
                   type="password"
                   class="form-control"
                   name="PASSWORD"
-                  id="userPw"
+                  id="password"
                   required
                 />
-                <label for="userPw" class="small"
+                <label for="password" class="small"
                   >영문 대/소문자, 숫자 사용 가능하며, 8~16자까지
                   가능합니다.</label
                 >
@@ -143,13 +144,15 @@
                   type="password"
                   class="form-control"
                   name="PASSWORD_CHECK"
-                  id="userPwConfirm"
+                  id="passwordConfirm"
                   required
                 />
+                <label for="text" id="passwordCheckResult" class="small"></label>
+                
                 <br />
               </td>
             </tr>
-
+            
             <tr>
               <th>
                 <h6 class="fw-bold">
@@ -291,6 +294,29 @@
     </div>
     <!-- 푸터 -->
       <%@ include file="../footer.jsp" %>
+      
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+   // 비밀번호체크
+    $(document).ready(function() {
+      $("#password, #passwordConfirm").on("keyup", function () {
+        var password = $("#password").val();
+        var passwordConfirm = $("#passwordConfirm").val();
+
+        if (password != "" && passwordConfirm != "") {
+          if (password != passwordConfirm) {
+            $("#passwordCheckResult").html("비밀번호가 일치하지 않습니다.");
+          } else {
+            $("#passwordCheckResult").html("비밀번호가 일치합니다.");
+          }
+        } else {
+          $("#passwordCheckResult").html("");
+        }
+      });
+    });
+    // 아이디중복체크 
+  
+  </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

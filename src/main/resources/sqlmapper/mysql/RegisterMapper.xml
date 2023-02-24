@@ -3,21 +3,13 @@
 
 <mapper namespace="Register">
 
- <!-- call Register.selectFromRegister -->
-<!-- <select id="selectFromRegister" parameterType="Map" resultType="Map">
-SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
-FROM REGISTER
-WHERE USER_ID = 'U01'
-; 
- </select>-->
-
-  <!-- call Register.selectFromRegister_agree -->
-<!-- <select id="selectFromRegister" parameterType="Map" resultType="Map">
-SELECT TS_CS_ID, TS_CS, PER_INF_REQ, PER_INF_OPT, REGULATION, REC_MKT_INF
-FROM REGISTER_AGREE
-WHERE TS_CS_ID = 'R01'
-;
- </select> -->
+<!-- 아이디 중복 체크 -->
+ <!-- call Register.idcheck -->
+	<!-- <select id="idCheck" parameterType="String" resultType="int">
+		SELECT COUNT(ID) 
+    FROM REGISTER
+    WHERE ID= #{ID}
+	</select> -->
  
 <!--회원정보UID,이름,아이디,비밀번호,생년월일,전화번호,이메일,주소(시도),주소(시구군),약관동의UID,권한 -->
 <!-- call Register.insertWithUID -->
