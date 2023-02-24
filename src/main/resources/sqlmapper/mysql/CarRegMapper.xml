@@ -3,12 +3,50 @@
 
 <mapper namespace="CarReg">
 
+    <!-- 차량 정보 insert -->
     <!-- call CarReg.insertCarInfoWithUID -->
     <insert id = "insertCarInfoWithUID" parameterType="Map">
         INSERT INTO CAR_INFO
-        (CAR_ID, ORIGIN, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
+        (CAR_ID, ORIGIN, MANUFACTURER, MODEL, DETAILED_MODEL, VEH_NUM, PRICE, MODEL_YEAR, FUEL, ADDR_CITY, TRANSMISSION, CARGRADE, DETAILED_CARGRADE, DRIVEN_DIST, ACCIDENT_INFO, OPTIONS, COLOR, DTL_IMG_CAR, SALE_STATUS, PANER_ID, SKELETON_ID)
         VALUE
-        (#{CAR_ID}, #{ORIGIN}, #{MANUFACTURER}, #{MODEL}, #{DETAILED_MODEL}, #{VEH_NUM}, #{PRICE}, #{MODEL_YEAR}, #{FUEL}, #{TRANSMISSION}, #{CARGRADE}, #{DETAILED_CARGRADE}, #{DRIVEN_DIST}, #{ACCIDENT_INFO}, #{OPTIONS}, #{COLOR}, #{DTL_IMG_CAR}, #{SALE_STATUS}, #{PANER_ID}, #{SKELETON_ID}})
+        (#{CAR_ID}, #{ORIGIN}, #{MANUFACTURER}, #{MODEL}, #{DETAILED_MODEL}, #{VEH_NUM}, #{PRICE}, #{MODEL_YEAR}, #{FUEL}, #{ADDR_CITY}, #{TRANSMISSION}, #{CARGRADE}, #{DETAILED_CARGRADE}, #{DRIVEN_DIST}, #{ACCIDENT_INFO}, #{OPTIONS}, #{COLOR}, #{DTL_IMG_CAR}, #{SALE_STATUS}, #{PANER_ID}, #{SKELETON_ID})
     </insert>
+
+    <!-- 외부패널 정보 insert -->
+    <!-- call CarReg.insertPanelWithUID -->
+    <insert id = "insertPanelWithUID" parameterType="Map">
+        INSERT INTO CAR_PANEL
+        (PANER_ID, HOOD, FRONT_FENDER, DOOR, SIDE_PANEL, TRUNK_LID, ROOF_PANEL, QUARTER_PANEL)
+        VALUES
+        (#{PANER_ID},#{HOOD}, #{FRONT_FENDER}, #{DOOR}, #{SIDE_PANEL}, #{TRUNK_LID}, #{ROOF_PANEL}, #{QUARTER_PANEL})
+    </insert>
+
+    <!-- 주요골격 정보 insert -->
+    <!-- call CarReg.insertSkeletonWithUID -->
+    <insert id = "insertSkeletonWithUID" parameterType="Map">
+        INSERT INTO CAR_MAIN_SKELETON
+        (SKELETON_ID, FRONT_PANEL, CROSS_MEMBER, INSIDE_PANEL, SIDE_MEMBER, WHEEL_HOUSE, PACKAGE_TRAY, DASH_PANEL, FLOOR_PANEL, FILER_PANEL, REAR_PANEL, TRUNK_FLOOR)
+        VALUES
+        (#{SKELETON_ID}, #{FRONT_PANEL}, #{CROSS_MEMBER}, #{INSIDE_PANEL}, #{SIDE_MEMBER}, #{WHEEL_HOUSE}, #{PACKAGE_TRAY}, #{DASH_PANEL}, #{FLOOR_PANEL}, #{FILER_PANEL}, #{REAR_PANEL}, #{TRUNK_FLOOR})
+    </insert>
+
+    <!-- 판매상태 insert : 차량 등록시 자동으로 sale 상태로 생성되게 하기 -->
+    <!-- call CarReg.insertSaleStatus -->
+    <insert id = "insertSaleStatus" parameterType="Map">
+        INSERT INTO SALE_STATUS
+        (STATUS_ID, STATUS, SALE_DATE)
+        VALUES
+        (#{STATUS_ID}, 'sale', 'none')
+    </insert>
+
+    <!-- 차량 판매 insert -->
+    <!-- call CarReg.insertCarDetailInfo -->
+    <insert id = "insertCarDetailInfo" parameterType="Map">
+        INSERT INTO CAR_DETAILE_INFO
+        (CAR_DTL_ID, CAR_ID, STATUS_ID, DEALER_ID)
+        VALUES
+        (#{CAR_DTL_ID}, #{CAR_ID}, #{STATUS_ID}, #{DEALER_ID})
+    </insert>
+
 
 </mapper>
