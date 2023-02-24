@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -313,
-    "scrollLeft": -192,
+    "scrollTop": -426,
+    "scrollLeft": -183,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -189,7 +189,7 @@
           "active": false,
           "left": 2192.124,
           "top": 881.8167,
-          "zIndex": 13,
+          "zIndex": 12,
           "widthName": 60,
           "widthComment": 60
         },
@@ -343,7 +343,7 @@
           "active": false,
           "left": 2262.5743,
           "top": 1091.2693,
-          "zIndex": 14,
+          "zIndex": 13,
           "widthName": 60,
           "widthComment": 60
         },
@@ -560,6 +560,29 @@
               "widthDefault": 60
             },
             "id": "8de7f35c-374c-4408-a962-9cdc5b134082"
+          },
+          {
+            "name": "ADDR_CITY",
+            "comment": "판매지역",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 75.67724609375,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "b2ea8b66-28e3-4d8f-aa3a-985d7602753c"
           },
           {
             "name": "TRANSMISSION",
@@ -819,7 +842,7 @@
           "active": false,
           "left": 1718.4873,
           "top": 115.2081,
-          "zIndex": 29,
+          "zIndex": 19,
           "widthName": 67.72998046875,
           "widthComment": 60
         },
@@ -1311,7 +1334,7 @@
           "active": false,
           "left": 2347.5869,
           "top": 79.0861,
-          "zIndex": 18,
+          "zIndex": 17,
           "widthName": 145.52685546875,
           "widthComment": 87.2236328125
         },
@@ -1419,7 +1442,7 @@
           "active": false,
           "left": 1172.3034,
           "top": 269.0983,
-          "zIndex": 10,
+          "zIndex": 9,
           "widthName": 128.1787109375,
           "widthComment": 60
         },
@@ -1773,7 +1796,7 @@
           "active": false,
           "left": 574.3186,
           "top": 262.6873,
-          "zIndex": 12,
+          "zIndex": 11,
           "widthName": 92.3017578125,
           "widthComment": 60
         },
@@ -2058,7 +2081,7 @@
           "active": false,
           "left": 1925.2202,
           "top": 1311.7546,
-          "zIndex": 15,
+          "zIndex": 14,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
@@ -2297,7 +2320,7 @@
           "active": false,
           "left": 1052.9933,
           "top": 1098.1887,
-          "zIndex": 17,
+          "zIndex": 16,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2598,7 +2621,7 @@
           "active": false,
           "left": 296.5769,
           "top": 489.2686,
-          "zIndex": 39,
+          "zIndex": 18,
           "widthName": 63.39453125,
           "widthComment": 60
         },
@@ -2821,7 +2844,7 @@
           "active": false,
           "left": 9.75,
           "top": 200.2518,
-          "zIndex": 11,
+          "zIndex": 10,
           "widthName": 63.8642578125,
           "widthComment": 60
         },
@@ -2922,7 +2945,7 @@
           "active": false,
           "left": 1706.1857,
           "top": 1066.3261,
-          "zIndex": 16,
+          "zIndex": 15,
           "widthName": 60,
           "widthComment": 70.61181640625
         },
@@ -2986,7 +3009,7 @@
             "d04d6e11-a5c2-4145-ba76-69e6b33b994d"
           ],
           "x": 1718.4873,
-          "y": 354.7081,
+          "y": 364.9581,
           "direction": "left"
         },
         "end": {
@@ -3099,7 +3122,7 @@
             "9254dd6d-515f-4cb0-9400-e870021c36b3"
           ],
           "x": 2245.950190625,
-          "y": 474.4581,
+          "y": 489.8331,
           "direction": "right"
         },
         "constraintName": "fk_car_panel_to_car_info",
@@ -3125,7 +3148,7 @@
             "32dbf246-f181-4bca-bfaa-74551210d19e"
           ],
           "x": 2245.950190625,
-          "y": 234.9581,
+          "y": 240.0831,
           "direction": "right"
         },
         "constraintName": "fk_car_main_skeleton_to_car_info",
