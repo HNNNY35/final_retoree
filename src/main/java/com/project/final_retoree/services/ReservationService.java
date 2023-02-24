@@ -11,7 +11,7 @@ public class ReservationService {
     ReservationDao reservatioinDao;
 
     public Object getUserReservation(Object dataMap) {
-        String sqlMapId = "Reservation.selectFromUserInfo";
+        String sqlMapId = "Reservation.selectFromReservation";
         Object result = reservatioinDao.getUserReservation(sqlMapId, dataMap);
         return result;
     }

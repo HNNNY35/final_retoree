@@ -11,4 +11,13 @@ FROM USER_INFO
  </select>
 
 
- <!-- reserve table이랑 조인해야함. -->
+ <!-- 예약상태 유저 정보 READ -->
+     <select id="selectFromReservation" parameterType="Map" resultType="Map">
+        SELECT USER_INFO.NAME, RSV_STATUS, RSV_DATE
+        FROM RESERVATION
+        JOIN USER_INFO 
+        ON USER_INFO.USER_ID = RESERVATION.USER_ID
+        WHERE USER_INFO.USER_ID = #{USER_ID}    
+    </select>
+
+    </mapper>
