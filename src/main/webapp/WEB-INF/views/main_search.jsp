@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>리투리카</title>
     <link rel="stylesheet" href="/css/main_search.css" />
-    
+  
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -30,15 +30,13 @@
       
       <!-- 사진 -->
       <div class="container">
-        <div id="carouselId" class="carousel slide carouselslide" data-bs-ride="carousel">
-        
+        <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <a
               href="#carouselId"
               data-bs-slide-to="0"
-              class="active  "
+              class="active"
             ></a>
-  
             <button data-bs-target="#carouselId" data-bs-slide-to="0"></button>
             <button data-bs-target="#carouselId" data-bs-slide-to="1"></button>
             <button data-bs-target="#carouselId" data-bs-slide-to="2"></button>
@@ -47,25 +45,26 @@
             <div class="carousel-item active">
               <img
                 class="w-100"
-                src="https://cdn.autobell.co.kr/picture/banner/73a72ee4c5dc40c58a7f88e42ed257b0"
+                src="/img/리투리카 배너2.png"
                 alt="" 
               />
             </div>
             <div class="carousel-item">
               <img
                 class="w-100"
-                src="https://cdn.autobell.co.kr/picture/banner/2aa98e025fa24bd5988f716a75452aeb"
+                src="/img/배너2.png"
                 alt=""
               />
             </div>
             <div class="carousel-item">
               <img
                 class="w-100"
-                src="https://cdn.autobell.co.kr/picture/banner/1440134feb7b4868ac10cec77c566b8b"
+                src="/img/배너3.jpg"
                 alt=""
               />
             </div>
           </div>
+         
         </div>
       </div>
       <!-- 사진 -->
@@ -73,7 +72,7 @@
   
       <!-- 검색 -->
       <div class="border rounded border-dark bg-light m-3">
-        <form action="search" method="post" id="form">
+        <form action="search" method="GET" id="form">
           <div class="row justify-content-center">
             <div class="col col-lg-5 mt-5">
               <h2 class=" text-center fw-bold mb-5 choice">원하는 차를 찾아보세요!</h2>
@@ -111,8 +110,7 @@
                     </span>
                     <span>
                   
-                    <button type="submit" onclick="getSearchList()" value="검색"  class="button">검색</button>
-                     
+                    <button type="submit" onclick="getSearchList()" value="검색"  class="button">검색</button>         
                       </span>
                     </div>
                   </form>
@@ -126,7 +124,7 @@
        특가
       </div>
            <hr> 
-  <table >
+  <table  style="float: left; margin-right:10px;" >
     <c:forEach begin="0" end="2" var="special" items="${specialRs}">
     <tr>
       <div>
@@ -141,7 +139,7 @@
             </span>
             <div class="fw-normal small">
               <span>${special.MODEL_YEAR}</span>
-              <span>${special.DRIVEN_DIST}</span>
+              <span>${special.DRIVEN_DIST}km</span>
               <span>${special.FUEL}</span>
               <span>${special.ADDR_CITY}</span>
             </td>
@@ -149,11 +147,13 @@
         </tr>
       </c:forEach>
     </table>
+    <div style="clear:both"></div>
+
 <div class="fs-4 fw-bold mt-4">
   신차급
  </div>
       <hr> 
-      <table>
+      <table style="float: left; margin-right:10px;">
         <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}">
         <tr>
           <div class="d-flex flex-row justify-content-around">
@@ -169,7 +169,7 @@
                 </span>
                 <div class="fw-normal small ">
                   <span>${newCar.MODEL_YEAR}</span>
-                  <span>${newCar.DRIVEN_DIST}</span>
+                  <span>${newCar.DRIVEN_DIST}km</span>
                   <span>${newCar.FUEL}</span>
                   <span>${newCar.ADDR_CITY}</span>
                 </div>
@@ -180,12 +180,14 @@
         </tr>
       </c:forEach>
  </table>      
+ <div style="clear:both"></div>
+
 <div class="fs-4 fw-bold mt-4">
   인기 국산차
  </div>
  <hr> 
    <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}">      
-     <table>
+     <table style="float: left; margin-right:10px;">
       <tr>
         <div class="container">
           <div>
@@ -200,7 +202,7 @@
         </span>
         <div class="fw-normal small ">
           <span>${domestic.MODEL_YEAR}</span>
-          <span>${domestic.DRIVEN_DIST}</span>
+          <span>${domestic.DRIVEN_DIST}km</span>
           <span>${domestic.FUEL}</span>
           <span>${domestic.ADDR_CITY}</span>
         </div>
@@ -210,13 +212,13 @@
   </div>
   </tr>
 </table>
-
 </c:forEach>
+<div style="clear:both"></div>
   <div class="fs-4 fw-bold mt-4">
     인기 수입차
    </div>
         <hr> 
-        <table >
+        <table  style="float: left; margin-right:10px;" >
           <c:forEach begin="0" end="2" var="imported" items="${importedRs}">
           <tr>
             <div>
@@ -231,7 +233,7 @@
                   </span>
                   <div class="fw-normal small ">
                     <span>${imported.MODEL_YEAR}</span>
-                    <span>${imported.DRIVEN_DIST}</span>
+                    <span>${imported.DRIVEN_DIST}km</span>
                     <span>${imported.FUEL}</span>
                     <span>${imported.ADDR_CITY}</span>
                   </div>
@@ -244,15 +246,28 @@
           </tr>
         </c:forEach>
         </table>
- 
+        <div style="clear:both"></div>
+
 </main>
        <%@ include file="./footer.jsp" %>
-       
+ 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
+
+    <script src="/src/main/resources/static/js/main_search.js"></script>
+    <!-- <script>  
+      $(".search_area button").on("click", function(e){
+        e.preventDefault();
+        let val = $("input[name='keyword']").val();
+        moveForm.find("input[name='keyword']").val(val);
+        moveForm.find("input[name='pageNum']").val(1);
+        moveForm.submit();
+      }); 
+      </script> -->
+
 <!-- <script>
   function getSearchList(){
     $.ajax({
