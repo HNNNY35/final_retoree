@@ -23,8 +23,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       <!-- 방문예약->방문예약확정(필수)확인 및 안심번호로 전화통화 -> 매매단지 방문 및 차량 확인 -->
       <div class="container temp-box" style="padding: 80px 30px 140px">
         <h2 class="text-center">
-          ${reservation.NAME}고객님은 안심번호로 전화통화 후 방문예약이
-          <span style="color: red">확정</span>되었습니다.
+          ${USER_INFO.NAME}고객님은 안심번호로 전화통화 후 방문예약이
+          <span style="color: red">${RESERVATION.RSV_STATUS}</span>되었습니다.
         </h2>
         <hr />
         <h3>판매자 정보</h3>
