@@ -8,7 +8,7 @@ public class CarInfo {
 
     private String car_id;
     private String origin;
-    private String munufacturer;
+    private String manufacturer;
     private String model;
     private String detailed_model;
     private String veh_num;
@@ -45,12 +45,12 @@ public class CarInfo {
         this.origin = origin;
     }
 
-    public String getMunufacturer() {
-        return this.munufacturer;
+    public String getManufacturer() {
+        return this.manufacturer;
     }
 
-    public void setMunufacturer(String munufacturer) {
-        this.munufacturer = munufacturer;
+    public void setManufacturer(String manufacturer) {
+        this.manufacturer = manufacturer;
     }
 
     public String getModel() {

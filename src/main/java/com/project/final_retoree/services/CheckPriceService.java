@@ -44,7 +44,7 @@ public class CheckPriceService {
         return result;
     }
     public Object getFirstManufAndModel(Object dataMap){
-        String sqlMapId = "CheckPrice.selectFromCAR_INFOWithHyundaiForFirstModelMunufacturer";
+        String sqlMapId = "CheckPrice.selectFromCAR_INFOWithHyundaiForFirstModelManufacturer";
         Object result = checkPriceDao.getOne(sqlMapId, dataMap);
         return result;
     }

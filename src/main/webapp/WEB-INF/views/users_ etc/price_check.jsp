@@ -156,7 +156,7 @@
                         <div class="carInfo">
                             <div>
                             <%-- ???? --%>
-                                <h3 class="fw-bold">${manufAndModel.MUNUFACTURER} ${manufAndModel.MODEL}</h3>
+                                <h3 class="fw-bold">${manufAndModel.MANUFACTURER} ${manufAndModel.MODEL}</h3>
                                 <div class="fw-bold my-3 text-danger">금주 시세
                                     <span class="h4 fw-bold">
                                         ${minMax.MIN} ~ ${minMax.MAX}
@@ -211,7 +211,7 @@
                                 </td>
                                 <td>
                                     <div class="fw-bold">
-                                        <a href="./car_detail_change" class="text-black">${resultData.MUNUFACTURER} ${resultData.DETAILED_MODEL}</a>
+                                        <a href="./car_detail_change" class="text-black">${resultData.MANUFACTURER} ${resultData.DETAILED_MODEL}</a>
                                     </div>
                                     <div class="fw-light small text-secondary">
                                         <span>${resultData.MODEL_YEAR}년</span>

@@ -86,12 +86,12 @@
                         <option value="manufacturer">제조사</option>
                         <optgroup label="국산">국산
                           <c:forEach var="searchRs" items="${searchRs}">
-                            <option>${searchRs.MUNUFACTURER}</option>
+                            <option>${searchRs.MANUFACTURER}</option>
                           </c:forEach>
                       </optgroup>
                       <optgroup label="수입">수입
                         <c:forEach var="searchRs" items="${searchRs}">
-                          <option>${searchRs.MUNUFACTURER}</option>
+                          <option>${searchRs.MANUFACTURER}</option>
                         </c:forEach>
 
                       </optgroup>
@@ -134,7 +134,7 @@
           <a href="/car_detail_tucson_4" ><img src="${special.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
         </td>
         <td>
-          <div class="fw-bold "><a href="/car_detail_tucson_4">${special.MUNUFACTURER} ${special.DETAILED_MODEL}</a></div>
+          <div class="fw-bold "><a href="/car_detail_tucson_4">${special.MANUFACTURER} ${special.DETAILED_MODEL}</a></div>
           <div>
             <span class="fs-5 fw-bold ">
               <a href="/car_detail_tucson_4" class="car_price">${special.PRICE}만원</a>
@@ -162,7 +162,7 @@
             <a href="/car_detail_avante_n_turbo"><img src="${newCar.DTL_IMG_CAR}"  width="150px" class="m-2"> </a>
         </td>
           <td>
-            <div class="fw-bold"><a href="/car_detail_avante_n_turbo">${newCar.MUNUFACTURER} ${newCar.DETAILED_MODEL}</a></div>
+            <div class="fw-bold"><a href="/car_detail_avante_n_turbo">${newCar.MANUFACTURER} ${newCar.DETAILED_MODEL}</a></div>
             <div>
               <span class="fs-5 fw-bold text-dark car_price">
               ${newCar.PRICE}만원
@@ -193,7 +193,7 @@
       <a href="/car_detail_grandeur_hg240"><img src="${domestic.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
            </td>
             <td>
-    <div class="fw-bold"> <a href="/car_detail_grandeur_hg240">${domestic.MUNUFACTURER} ${domestic.DETAILED_MODEL}</a></div>
+    <div class="fw-bold"> <a href="/car_detail_grandeur_hg240">${domestic.MANUFACTURER} ${domestic.DETAILED_MODEL}</a></div>
     <div>
       <span class="fs-5 fw-bold ">
         <a href="/car_detail_grandeur_hg240" class="car_price">${domestic.PRICE}만원</a>
@@ -224,7 +224,7 @@
               <a href="/car_detail_benz_e_class_w213"><img src="${imported.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
           </td>
             <td>
-              <div class="fw-bold"><a href="/car_detail_benz_e_class_w213">${imported.MUNUFACTURER} ${imported.DETAILED_MODEL}</a></div>
+              <div class="fw-bold"><a href="/car_detail_benz_e_class_w213">${imported.MANUFACTURER} ${imported.DETAILED_MODEL}</a></div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
                   <a href="/car_detail_benz_e_class_w213"class="car_price">${imported.PRICE}만원</a>

@@ -187,7 +187,7 @@
                                                 <a href="" class="card-text fw-normal small text-primary text-decoration-none">D-AUTO MALL 드림디오토</a>
                                             </div>
                                             <h5>
-                                                <a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">${resultData.MUNUFACTURER} ${resultData.DETAILED_MODEL}</a>
+                                                <a href="/car_detail_accent_modern" class="card-title fw-bold text-dark text-decoration-none">${resultData.MANUFACTURER} ${resultData.DETAILED_MODEL}</a>
                                             </h5>
                                             <div>
                                                 <a href="" class="card-text fw-normal small text-secondary text-decoration-none">${resultData.MODEL_YEAR} | ${resultData.DRIVEN_DIST}km</a>
