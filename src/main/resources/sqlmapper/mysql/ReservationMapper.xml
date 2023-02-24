@@ -9,6 +9,5 @@
 SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
 FROM USER_INFO
  </select>
-
-
+</mapper>
  <!-- reserve table이랑 조인해야함. -->

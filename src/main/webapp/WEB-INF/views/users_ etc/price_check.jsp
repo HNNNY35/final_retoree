@@ -211,7 +211,7 @@
                                 </td>
                                 <td>
                                     <div class="fw-bold">
-                                        <a href="./car_detail_change" class="text-black">${resultData.MANUFACTURER} ${resultData.DETAILED_MODEL}</a>
+                                        <a href="./car_detail_change" class="text-black">${resultData.MANUFACTURER} ${resultData.MODEL} ${resultData.DETAILED_MODEL}</a>
                                     </div>
                                     <div class="fw-light small text-secondary">
                                         <span>${resultData.MODEL_YEAR}년</span>

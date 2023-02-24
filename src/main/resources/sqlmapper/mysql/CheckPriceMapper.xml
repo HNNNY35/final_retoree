@@ -7,14 +7,14 @@
     <!-- call CheckPrice.selectFromCAR_INFO -->
     <select id="selectFromCAR_INFO" 
         parameterType="Map" resultType="Map">
-        SELECT  CAR_ID, MANUFACTURER, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
+        SELECT  CAR_ID, MANUFACTURER, MODEL, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
         FROM CAR_INFO;
     </select>
 
     <!-- call CheckPrice.selectFromCAR_INFOWithHyundaiForFirst -->
     <select id="selectFromCAR_INFOWithHyundaiForFirst" 
         parameterType="Map" resultType="Map">
-        SELECT  CAR_ID, MANUFACTURER, DETAILED_MODEL, PRICE, MODEL_YEAR, DRIVEN_DIST, FUEL 
+        SELECT  CAR_ID, MANUFACTURER, MODEL, DETAILED_MODEL, PRICE, MODEL_YEAR, DRIVEN_DIST, FUEL 
         FROM CAR_INFO
         WHERE 1 = 1 
         AND MANUFACTURER = "현대"
@@ -88,7 +88,7 @@
     <!-- call CheckPrice.selectFromCAR_INFOWithFilter -->
     <select id="selectFromCAR_INFOWithFilter" 
         parameterType="Map" resultType="Map">
-        SELECT  CAR_ID, MANUFACTURER, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
+        SELECT  CAR_ID, MANUFACTURER, MODEL, DETAILED_MODEL, MODEL_YEAR, DRIVEN_DIST, FUEL 
         FROM CAR_INFO
         WHERE 1 = 1
         <if test = 'manufacturer!="제조사"'>
