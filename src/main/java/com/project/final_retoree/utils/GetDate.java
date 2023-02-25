@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GetDate {
-   
+    //오늘 날짜를 리턴
     public String getDate(){
         String pattern = "yyyy-MM-dd";
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);

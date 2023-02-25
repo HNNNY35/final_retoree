@@ -24,7 +24,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 <span class="text-muted">${notice.NOTICE_DATE}</span>
             </div>
 
-            <hr/>
+            <hr/> 
 
             <div>
                 <div style="white-space:pre;"><c:out value="${notice.NOTICE_CONTENT}" /></div>
@@ -32,6 +32,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             <div>
                 <div class="text-center">
                     <a href="/notice" class="btn btn-dark mt-5">목록</a>
+                    <a href="/notice_modify/${notice.NOTICE_NO}" class="btn btn-dark mt-5">수정</a>
                     <a href="/notice_delete/${notice.NOTICE_NO}" class="btn btn-dark mt-5">삭제</a>
                 </div>
             </div>

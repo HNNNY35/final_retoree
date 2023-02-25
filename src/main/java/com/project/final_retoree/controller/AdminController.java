@@ -120,12 +120,4 @@ public class AdminController {
         return modelAndView;
 
     }
-
-    
-
-    @RequestMapping(value = "/notice_modify")
-    public ModelAndView notice_modify(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_modify");
-        return modelAndView;
-    }
 }

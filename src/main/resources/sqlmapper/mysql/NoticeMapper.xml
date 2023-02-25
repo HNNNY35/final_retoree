@@ -49,4 +49,29 @@
         parameterType="Map">
         DELETE FROM NOTICE WHERE NOTICE_NO=#{NOTICE_NO}
     </delete>
+
+    <!-- call Notice.updateFromNoticeNo -->
+    <delete id="updateFromNoticeNo" 
+        parameterType="Map">
+        
+
+        <choose>
+            <when test='NOTICE_TOP!="YSE"'>
+                UPDATE NOTICE
+                SET 
+                NOTICE_TITLE = #{NOTICE_TITLE},
+                NOTICE_CONTENT = #{NOTICE_CONTENT},
+                NOTICE_TOP = #{NOTICE_TOP}
+                WHERE NOTICE_NO = #{NOTICE_NO}
+            </when>
+            <otherwise>
+                UPDATE NOTICE
+                SET 
+                NOTICE_TITLE = #{NOTICE_TITLE},
+                NOTICE_CONTENT = #{NOTICE_CONTENT},
+                WHERE NOTICE_NO = #{NOTICE_NO}
+            </otherwise>
+        </choose>
+
+    </delete>
 </mapper>

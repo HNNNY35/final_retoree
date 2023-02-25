@@ -89,5 +89,27 @@ public class NoticeController {
         modelAndView.setViewName("notice/notice");
         return modelAndView;
     }
+
+    @RequestMapping(value = "/notice_modify/{notice_no}", method = RequestMethod.GET)
+    public ModelAndView notice_modify_in(@RequestParam Map<String, Object> params, @PathVariable String notice_no, ModelAndView modelAndView) {
+        params.put("NOTICE_NO", notice_no);
+        Object notice = noticeService.getOne(params);
+        modelAndView.addObject("notice", notice);
+        modelAndView.setViewName("notice/notice_modify");
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/notice_modify", method = RequestMethod.POST)
+    public ModelAndView notice_modify_out(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+
+        noticeService.update(params);
+        //reloading
+        Object resultMap = noticeService.getList(params);
+        Object noticeTopMap = noticeService.getNoticeTopList(params);
+        modelAndView.addObject("noticeTopMap", noticeTopMap);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("notice/notice");
+        return modelAndView;
+    }
     
 }
