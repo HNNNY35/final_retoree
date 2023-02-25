@@ -282,23 +282,26 @@
       
               </select>
               <br />
-                   <input
+                  <input
                   type="hidden"
                   class="form-control"
                   name="TS_CS_ID"
                   id="ts_cs_id"
-                  value="${ts_cs_id.TS_CS_ID}"
+                  value="${ts_cs_id}"
                   required
                 />
-                
-                     <input
-                  type="hidden"
-                  class="form-control"
-                  name="AUTH"
-                  id="auth"
-                  value="user"
-                  required
-                />
+             <tr>
+            <th><h6 class="fw-bold">권한(AUTH)</h6></th>
+            <td class="d-flex mt-3">
+              <select class="form-select authselect" name="AUTH" id="auth">
+                <option value="authselection">권한선택</option>
+                <option value="member">USER</option>
+                <option value="dealer">DEALER</option>
+                <option value="admin">ADMIN</option>
+              </select>
+              <br />
+            </td>
+          </tr>
               
             </td>
             </tr>
@@ -323,9 +326,9 @@
 
         if (password != "" && passwordConfirm != "") {
           if (password != passwordConfirm) {
-            $("#passwordCheckResult").html("비밀번호가 일치하지 않습니다.");
+            $("#passwordCheckResult").html("비밀번호가 일치하지 않습니다.").css("color", "red");;
           } else {
-            $("#passwordCheckResult").html("비밀번호가 일치합니다.");
+            $("#passwordCheckResult").html("비밀번호가 일치합니다.").css("color", "black");
           }
         } else {
           $("#passwordCheckResult").html("");

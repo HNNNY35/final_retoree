@@ -72,6 +72,10 @@ table {
   margin-right: 1rem;
 }
 
+#auth {
+  width: 200px;
+}
+
 /* 3 */
 .loginBtn > a {
   text-decoration: none;
