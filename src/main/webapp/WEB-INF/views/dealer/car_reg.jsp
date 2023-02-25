@@ -172,13 +172,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                             </select>
                             </td>
                           </tr>
-                          <tr>
-                            <th>세부등급</th>
-                            <td>
-                              <input type="text" name="DETAILED_CARGRADE" id="DETAILED_CARGRADE" class="form-control">
-                            </td>
-                          </tr>
-        
+
                           <tr>
                             <th>주행거리</th>
                             <td>

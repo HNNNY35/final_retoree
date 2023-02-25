@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -426,
-    "scrollLeft": -183,
+    "scrollTop": -95,
+    "scrollLeft": -1522,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -631,29 +631,6 @@
             "id": "82413b74-bb93-4842-9827-eca3667d9a9d"
           },
           {
-            "name": "DETAILED_CARGRADE",
-            "comment": "세부등급",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 145.51416015625,
-              "widthComment": 60,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "7c70f6c2-b168-435e-989a-7d8789b33de4"
-          },
-          {
             "name": "DRIVEN_DIST",
             "comment": "주행거리",
             "dataType": "INT",
@@ -769,29 +746,6 @@
             "id": "3d47d3a6-20ee-482e-b56b-d8199bacf20c"
           },
           {
-            "name": "SALE_STATUS",
-            "comment": "판매상태(SALE/SOLD OUT)",
-            "dataType": "VARCHAR(100)",
-            "default": "",
-            "option": {
-              "autoIncrement": false,
-              "primaryKey": false,
-              "unique": false,
-              "notNull": false
-            },
-            "ui": {
-              "active": false,
-              "pk": false,
-              "fk": false,
-              "pfk": false,
-              "widthName": 91.82568359375,
-              "widthComment": 120,
-              "widthDataType": 94.94873046875,
-              "widthDefault": 60
-            },
-            "id": "93f6adb7-ceff-48b6-8ff3-1fbd98a9c088"
-          },
-          {
             "name": "PANER_ID",
             "comment": "패널 UID",
             "dataType": "VARCHAR(100)",
@@ -842,7 +796,7 @@
           "active": false,
           "left": 1718.4873,
           "top": 115.2081,
-          "zIndex": 19,
+          "zIndex": 21,
           "widthName": 67.72998046875,
           "widthComment": 60
         },
@@ -3009,7 +2963,7 @@
             "d04d6e11-a5c2-4145-ba76-69e6b33b994d"
           ],
           "x": 1718.4873,
-          "y": 364.9581,
+          "y": 344.4581,
           "direction": "left"
         },
         "end": {
@@ -3121,8 +3075,8 @@
           "columnIds": [
             "9254dd6d-515f-4cb0-9400-e870021c36b3"
           ],
-          "x": 2245.950190625,
-          "y": 489.8331,
+          "x": 2185.7265578125,
+          "y": 459.0831,
           "direction": "right"
         },
         "constraintName": "fk_car_panel_to_car_info",
@@ -3147,8 +3101,8 @@
           "columnIds": [
             "32dbf246-f181-4bca-bfaa-74551210d19e"
           ],
-          "x": 2245.950190625,
-          "y": 240.0831,
+          "x": 2185.7265578125,
+          "y": 229.8331,
           "direction": "right"
         },
         "constraintName": "fk_car_main_skeleton_to_car_info",
