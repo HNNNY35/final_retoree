@@ -16,8 +16,10 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
       crossorigin="anonymous"
     />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   </head>
   <body>
+    <%-- <script type="text/javascript" src="./js/search.js"></script> --%>
     <!-- 바꾼 헤더 -->
     <%@ include file="../header.jsp" %>
 
@@ -52,24 +54,24 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <div class="col-9">
                     <h3>차량 신규 등록</h3>
                     <hr>
-                    <form action="/car_reg_submit" method="post">
-                      <h4>차량 일반 정보</h4>
+                    <form action="/car_reg_submit" method="post" onsubmit="return formChk();">
                       <input type="hidden" name="DEALER_ID" value="${DEALER_ID}">
+                      <h4>차량 일반 정보</h4>
                       <table class="table">
                         <tbody>
                           <tr>
                             <th>분류</th>
                             <td>
                               <select name="ORIGIN" id="ORIGIN" class="form-select">
-                                <option value="국산차">국산차</option>
-                                <option value="수입차">수입차</option>
+                                <option value="국산">국산차</option>
+                                <option value="수입">수입차</option>
                               </select>
                             </td>
                           </tr>
                           <tr>
                             <th>제조사</th>
                             <td>
-                              <select name="MANUFACTURER" id="MANUFACTURER" class="form-select">
+                              <select name="MANUFACTURER" id="MANUFACTURER" class="form-select" onchange="itemChange()">
                                 <option value="현대">현대</option>
                                 <option value="제네시스">제네시스</option>
                                 <option value="기아">기아</option>
@@ -77,32 +79,36 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                                 <option value="르노코리아">르노코리아(삼성)</option>
                                 <option value="쌍용">쌍용</option>
                                 <option value="벤츠">벤츠</option>
+                                <option value="BMW">BMW</option>
+                                <option value="폭스바겐">폭스바겐</option>
                               </select>
                             </td>
                           </tr>
                             <tr>
                             <th>모델</th>
                             <td>
-                              <input type="text" name="MODEL" id="MODEL" class="form-control">
+                              <select name="MODEL" id="MODEL" class="form-select" required>
+                                <option selected>모델</option>
+                              </select>
                             </td>
                           </tr>
                           <tr>
                             <th>상세모델</th>
                             <td>
-                              <input type="text" name="DETAILED_MODEL" id="DETAILED_MODEL" class="form-control">
+                              <input type="text" name="DETAILED_MODEL" id="DETAILED_MODEL" class="form-control" placeholder="모델과 동일할 경우 생략">
                             </td>
                           </tr>
                           <tr>
                               <th>차량번호</th>
                               <td>
-                                <input type="text" name="VEH_NUM" id="VEH_NUM" class="form-control">
+                                <input type="text" name="VEH_NUM" id="VEH_NUM" class="form-control" placeholder="00가0000" required>
                               </td>
                           </tr>
                           
                           <tr>
-                            <th>가격</th>
+                            <th>가격 (만원)</th>
                             <td>
-                              <input type="text" name="PRICE" id="PRICE" class="form-control">
+                              <input type="text" name="PRICE" id="PRICE" class="form-control" placeholder="숫자만 입력 ex)2000" required>
                             </td>
                           </tr>
         
@@ -125,7 +131,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>판매지역</th>
                             <td>
-                              <input type="text" name="ADDR_CITY" id="ADDR_CITY" class="form-control">
+                              <input type="text" name="ADDR_CITY" id="ADDR_CITY" class="form-control" required>
                             </td>
                           </tr>
                           <tr>
@@ -174,9 +180,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           </tr>
 
                           <tr>
-                            <th>주행거리</th>
+                            <th>주행거리 (km)</th>
                             <td>
-                              <input type="text" name="DRIVEN_DIST" id="DRIVEN_DIST" class="form-control">
+                              <input type="text" name="DRIVEN_DIST" id="DRIVEN_DIST" class="form-control" placeholder="숫자만 입력 ex)10000" required>
                             </td>
                           </tr>
         
@@ -233,7 +239,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         
                         </tbody>
                       </table>
-                      <hr>
 
                       <h4>차량 외부 패널</h4>
                       <table class="table">
@@ -299,7 +304,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           </tr>
                         </tbody>
                       </table>
-                      <hr>
 
                       <h4>차량 주요 골격</h4>
                       <table class="table">
@@ -404,7 +408,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           </tr>
                         </tbody>
                       </table>
-                      <hr>
                       <div class="text-center">
                         <button type="submit" class="submitBtn ">입력 완료</button>
                       </div>
@@ -416,6 +419,68 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     </div>
 
     <%@ include file="../footer.jsp" %>
+
+    <script>
+      function itemChange(){
+
+      var hyundai = ["아반떼", "소나타", "그랜저", "베뉴", "코나", "투싼", "싼타페", "팰리세이드", "캐스퍼"];
+      var genesis = ["G70", "G80", "GV60", "GV70", "GV80", "G90"];
+      var kia = ["k3","k5","k7", "k8", "k9", "스팅어", "모닝", "레이", "소울", "셀토스", "스포티지", "니로", "소렌토", "모하비", "카니발"];
+      var chevrolet = ["트래버스", "볼트", "이쿼녹스", "트레일블레이저", "타호", "콜로라도", "카마로"];
+      var renaultkorea =["XM3","QM6","SM3","SM5","SM7"];
+      var smotor = ["티볼리", "코란도", "렉스턴", "토레스"];
+      var benz = ["E-Class", "A-Class", "C-Class", "S-Class", "Mercedes-Maybach", "GLC", "CLA", "CLS", "EQS", "GLA", "GLB", "GLC", "GLE", "GLS"];
+      var bmw = ["iX", "i7", "i4", "i4", "XM", "X7","X6","X5", "X4", "X3", "X2", "X1"];
+      var volkwagen = ["투아렉", "골프", "티구안", "아르테온"];
+
+
+
+      var selectItem = $("#MANUFACTURER").val();
+      var changeItem;
+
+      if(selectItem == "현대"){
+          changeItem = hyundai;
+      }else if(selectItem == "제네시스"){
+          changeItem = genesis;
+      }else if(selectItem == "기아"){
+          changeItem = kia;
+      }else if(selectItem == "쉐보레"){
+          changeItem = chevrolet;  
+      }else if(selectItem == "르노코리아"){
+          changeItem = renaultkorea;
+      }else if(selectItem == "쌍용"){
+          changeItem = smotor;
+      }else if(selectItem == "벤츠"){
+          changeItem = benz;
+      }else if(selectItem == "BMW"){
+          changeItem = bmw;
+      }else if(selectItem == "폭스바겐"){
+          changeItem = volkwagen;
+      }
+
+      $('#MODEL').empty();
+
+      var selectedItem = $("<option selected>모델</option>");
+
+      $('#MODEL').append(selectedItem);
+      for(var count = 0; count < changeItem.length; count++){
+          var option = $("<option value='"+changeItem[count]+"' >"+changeItem[count]+"</option>");
+          $('#MODEL').append(option);
+      }
+
+      }
+
+      function formChk(){
+        if(isNaN($('#PRICE').val())){
+          alert("가격은 숫자만 입력 가능합니다. 다시 입력해주세요.")
+          return false;
+        } else if(isNaN($('#DRIVEN_DIST').val())){
+          alert("주행거리는 숫자만 입력 가능합니다. 다시 입력해주세요.")
+          return false;
+        }
+        return true;
+      }
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

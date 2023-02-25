@@ -52,7 +52,12 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <div class="col-9">
                     <h3>차량 등록 완료</h3>
                     <hr>
-                    <div>차량 등록이</div>
+                    <div>차량 등록이 완료되었습니다.</div>
+                    <div>
+                      <!-- <form action="" method="post">
+                        <button type="submit">차량 상세페이지 확인하기</button>
+                      </form> -->
+                    </div>
                   </div>
       </div>
     </div>
