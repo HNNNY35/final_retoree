@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -32,8 +33,11 @@ public class UserController {
     }
 
     // 방문 예약 확인
-    @RequestMapping(value = "/visit_reserve", method = RequestMethod.GET)
-    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+    @RequestMapping(value = "/visit_reserve/{user_id}", method = RequestMethod.GET)
+    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String user_id,
+            ModelAndView modelAndView) {
+
+        params.put("USER_ID", user_id);
         Object reservation = reservationService.getUserReservation(params);
 
         modelAndView.addObject("reservation", reservation);

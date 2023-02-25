@@ -1,14 +1,23 @@
 package com.project.final_retoree.daos;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import com.project.final_retoree.bean.CarInfo;
 
 @Component
 public class MainDao {
 
     @Autowired
     private SqlSessionTemplate sqlSessionTemplate;
+
+    public List<CarInfo> getSearchBeanList(String sqlMapId, CarInfo carInfo) throws Exception {
+
+        return sqlSessionTemplate.selectList(sqlMapId, carInfo);
+    }
 
     // Read
     public Object getSearchList(String sqlMapId, Object dataMap) {

@@ -79,33 +79,32 @@
               <div class="d-flex justify-content-evenly mb-5">           
                   <div>
                       <div style="text-align: right;">전체 매물 차량 : <span style="color: cornflowerblue;">${searchRs.size()}</span>  대</div>             
-                    <span>
-                      <!-- 검색 후 search 화면단 이동 -->
-                      <select name="cars">  
-                        <option value="manufacturer">제조사</option>
-                        <optgroup label="국산">국산
-                          <c:forEach var="searchRs" items="${searchRs}">
-                            <option>${searchRs.MANUFACTURER}</option>
-                          </c:forEach>
-                      </optgroup>
-                      <optgroup label="수입">수입
-                        <c:forEach var="searchRs" items="${searchRs}">
-                          <option>${searchRs.MANUFACTURER}</option>
-                        </c:forEach>
 
+                      <!-- 검색 후 search 화면단 이동 -->
+                    <span>
+                      <select name="${carInfo.type}" id="manufacturer">  
+                        <option selected>제조사</option>
+                        <optgroup name="manufacturer" id="manufacturer" label="국산">국산
+                          <option  value="현대">현대</option>
+                          <option value="제네시스">제네시스</option>
+                          <option value="기아">기아</option>
+                          <option value="쌍용">쌍용</option>
+                          <option value="르노삼성">르노삼성</option>
                       </optgroup>
+                         <optgroup name="${carInfo.type}" id="manufacturer" label="수입">수입
+                          <option value="벤츠">벤츠</option>
+                          <option value="BMW">BMW</option>
+                          <option value="폭스바겐">폭스바겐</option>
+                          </optgroup>
                       </select>
                     </span>
-                    <span>
-                      <select name="cars">
-                        <option value="model">모델</option>
-                        <c:forEach var="searchRs" items="${searchRs}">
-                          <option>${searchRs.MODEL}</option>
-                        </c:forEach>   
+                     <span>
+                      <select name="${carInfo.type}" id="model">
+                        <option selected>모델</option>
                       </select>  
                     </span>
                     <span>
-                      <input type="text" name="keyword" placeholder="차량명을 입력하세요"  class="text bg-white" id="">
+                      <input type="text" name="${carInfo.keyword}" placeholder="차량명을 입력하세요"  class="text bg-white" id="">
                     
                     </span>
                     <span>
@@ -125,17 +124,21 @@
       </div>
            <hr> 
   <table  style="float: left; margin-right:10px;" >
+    <a href="/car_detail_tucson_4">
     <c:forEach begin="0" end="2" var="special" items="${specialRs}">
     <tr>
       <div>
         <td>
-          <a href="/car_detail_tucson_4" ><img src="${special.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
+          <a href="/car_detail_tucson_4">
+          <img src="${special.DTL_IMG_CAR}"  width="150px" class="m-2">
+          </a>
         </td>
         <td>
-          <div class="fw-bold "><a href="/car_detail_tucson_4">${special.MANUFACTURER} ${special.DETAILED_MODEL}</a></div>
+          <a href="/car_detail_tucson_4">
+          <div class="fw-bold ">${special.MANUFACTURER} ${special.DETAILED_MODEL}</div>
           <div>
             <span class="fs-5 fw-bold ">
-              <a href="/car_detail_tucson_4" class="car_price">${special.PRICE}만원</a>
+              ${special.PRICE}만원
             </span>
             <div class="fw-normal small">
               <span>${special.MODEL_YEAR}</span>
@@ -146,6 +149,7 @@
           </div>
         </tr>
       </c:forEach>
+    </a>
     </table>
     <div style="clear:both"></div>
 
@@ -154,15 +158,15 @@
  </div>
       <hr> 
       <table style="float: left; margin-right:10px;">
+        <a href="/car_detail_tucson_4">
         <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}">
         <tr>
-          <div class="d-flex flex-row justify-content-around">
          <div>
           <td>
             <a href="/car_detail_avante_n_turbo"><img src="${newCar.DTL_IMG_CAR}"  width="150px" class="m-2"> </a>
         </td>
           <td>
-            <div class="fw-bold"><a href="/car_detail_avante_n_turbo">${newCar.MANUFACTURER} ${newCar.DETAILED_MODEL}</a></div>
+            <div class="fw-bold">${newCar.MANUFACTURER} ${newCar.DETAILED_MODEL}</div>
             <div>
               <span class="fs-5 fw-bold text-dark car_price">
               ${newCar.PRICE}만원
@@ -179,7 +183,9 @@
            </div>
         </tr>
       </c:forEach>
+    </a>
  </table>      
+
  <div style="clear:both"></div>
 
 <div class="fs-4 fw-bold mt-4">
@@ -188,6 +194,7 @@
  <hr> 
    <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}">      
      <table style="float: left; margin-right:10px;">
+      <a href="/car_detail_tucson_4">
       <tr>
         <div class="container">
           <div>
@@ -195,10 +202,10 @@
       <a href="/car_detail_grandeur_hg240"><img src="${domestic.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
            </td>
             <td>
-    <div class="fw-bold"> <a href="/car_detail_grandeur_hg240">${domestic.MANUFACTURER} ${domestic.DETAILED_MODEL}</a></div>
+    <div class="fw-bold">${domestic.MANUFACTURER} ${domestic.DETAILED_MODEL}</div>
     <div>
       <span class="fs-5 fw-bold ">
-        <a href="/car_detail_grandeur_hg240" class="car_price">${domestic.PRICE}만원</a>
+      ${domestic.PRICE}만원
         </span>
         <div class="fw-normal small ">
           <span>${domestic.MODEL_YEAR}</span>
@@ -211,6 +218,7 @@
       </div>
   </div>
   </tr>
+</a>
 </table>
 </c:forEach>
 <div style="clear:both"></div>
@@ -219,6 +227,7 @@
    </div>
         <hr> 
         <table  style="float: left; margin-right:10px;" >
+          <a href="/car_detail_tucson_4">
           <c:forEach begin="0" end="2" var="imported" items="${importedRs}">
           <tr>
             <div>
@@ -226,10 +235,10 @@
               <a href="/car_detail_benz_e_class_w213"><img src="${imported.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
           </td>
             <td>
-              <div class="fw-bold"><a href="/car_detail_benz_e_class_w213">${imported.MANUFACTURER} ${imported.DETAILED_MODEL}</a></div>
+              <div class="fw-bold">${imported.MANUFACTURER} ${imported.DETAILED_MODEL}</div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
-                  <a href="/car_detail_benz_e_class_w213"class="car_price">${imported.PRICE}만원</a>
+                ${imported.PRICE}만원
                   </span>
                   <div class="fw-normal small ">
                     <span>${imported.MODEL_YEAR}</span>
@@ -245,6 +254,7 @@
           </div>
           </tr>
         </c:forEach>
+      </a>
         </table>
         <div style="clear:both"></div>
 
@@ -258,40 +268,52 @@
     ></script>
 
     <script src="/src/main/resources/static/js/main_search.js"></script>
-    <!-- <script>  
-      $(".search_area button").on("click", function(e){
-        e.preventDefault();
-        let val = $("input[name='keyword']").val();
-        moveForm.find("input[name='keyword']").val(val);
-        moveForm.find("input[name='pageNum']").val(1);
-        moveForm.submit();
-      }); 
-      </script> -->
+    <script>
+      function itemChange(){
 
-<!-- <script>
-  function getSearchList(){
-    $.ajax({
-        type: 'GET',
-        url : "/search",
-        data : $("form[name=search-form]").serialize(),
-        success : function(result){
-          //테이블 초기화
-          $('#boardtable > tbody').empty();
-          if(result.length>=1){
-            result.forEach(function(item){
-              str='<tr>'
-                str += "<td>"+item.idx+"</td>";
-                str+="<td>"+item.writer+"</td>";
-                str+="<td><a href = '/board/detail?idx=" + item.idx + "'>" + item.title + "</a></td>";
-                str+="<td>"+item.date+"</td>";
-                str+="<td>"+item.hit+"</td>";
-                str+="</tr>"
-                $('#boardtable').append(str);
-                })				 
-              }
-        }
-      })
-    }
-    </script> -->
+          var hyundai = ["아반떼", "소나타", "그랜저", "베뉴", "코나", "투싼", "싼타페", "팰리세이드", "캐스퍼"];
+          var genesis = ["G70", "G80", "GV60", "GV70", "GV80", "G90"];
+          var kia = ["k3","k5","k7", "k8", "k9", "스팅어", "모닝", "레이", "소울", "셀토스", "스포티지", "니로", "소렌토", "모하비", "카니발"];
+          var smotor = ["티볼리", "코란도", "렉스턴", "토레스"];
+          var renaultkorea =["XM3","QM6","SM3","SM5","SM7"];
+          var benz = ["E-Class", "A-Class", "C-Class", "S-Class", "Mercedes-Maybach", "GLC", "CLA", "CLS", "EQS", "GLA", "GLB", "GLC", "GLE", "GLS"];
+          var bmw = ["iX", "i7", "i4", "i4", "XM", "X7","X6","X5", "X4", "X3", "X2", "X1"];
+          var volkwagen = ["투아렉", "골프", "티구안", "아르테온"];
+
+
+
+          var selectItem = $("#manufacturer").val();
+          var changeItem;
+
+          if(selectItem == "현대"){
+              changeItem = hyundai;
+          }else if(selectItem == "제네시스"){
+              changeItem = genesis;
+          }else if(selectItem == "기아"){
+              changeItem = kia;
+          }else if(selectItem == "쌍용"){
+              changeItem = smotor;
+          }else if(selectItem == "르노삼성"){
+              changeItem = renaultkorea;
+          }else if(selectItem == "벤츠"){
+              changeItem = benz;
+          }else if(selectItem == "BMW"){
+              changeItem = bmw;
+          }else if(selectItem == "폭스바겐"){
+              changeItem = volkwagen;
+          }
+
+          $('#model').empty();
+
+          var selectedItem = $("<option selected>모델</option>");
+
+          $('#model').append(selectedItem);
+          for(var count = 0; count < changeItem.length; count++){
+              var option = $("<option value='"+changeItem[count]+"' >"+changeItem[count]+"</option>");
+              $('#model').append(option);
+          }
+
+      }
+  </script>
   </body>
 </html>

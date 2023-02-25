@@ -8,7 +8,6 @@
 <select id="selectFromMainSearch" parameterType="Map" resultType="Map">
 SELECT MANUFACTURER, MODEL, DETAILED_MODEL
 FROM CAR_INFO
-WHERE ${type} like '%${keyword}%'
 <choose>
 <when test="type != null and type.equals(#{MANUFACTURER})">
 AND MANUFACTURER LIKE CONCAT('%', #{keyword}, '%')
@@ -19,7 +18,6 @@ AND MODEL LIKE CONCAT('%', #{keyword}, '%')
 </choose>
 
 <!-- LIKE CONCAT('%'), #{keyword}, -->
-
 
  </select>
 

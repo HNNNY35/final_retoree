@@ -22,11 +22,17 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <main>
       <!-- 방문예약->방문예약확정(필수)확인 및 안심번호로 전화통화 -> 매매단지 방문 및 차량 확인 -->
       <div class="container temp-box" style="padding: 80px 30px 140px">
+        <h1 class="text-center">나의 방문예약 정보조회</h1>
+
+        <!-- 로그인 세션처리  (세션값 아직 없음)-->
+
+        <!-- 방문예약 내역이 있을 때 -->
         <h2 class="text-center">
-          ${USER_INFO.NAME}고객님은 안심번호로 전화통화 후 방문예약이
+          ${USER_INFO.USER_ID}고객님은 안심번호로 전화통화 후 방문예약이
           <span style="color: red">${RESERVATION.RSV_STATUS}</span>되었습니다.
         </h2>
         <hr />
+
         <h3>판매자 정보</h3>
         <table class="table table-bordered text-center">
           <tr>
@@ -135,6 +141,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         </div>
       </div>
     </main>
+
+    <!-- 예약내역이 없을 떄 -->
+
     <%@ include file="../footer.jsp" %>
   </body>
   <script

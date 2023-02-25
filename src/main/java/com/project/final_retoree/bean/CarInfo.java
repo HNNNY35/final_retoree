@@ -29,6 +29,10 @@ public class CarInfo {
     private String paner_id;
     private String skeleton_id;
 
+    // 검색에 필요한 데이터를 변수로 선언.
+    private String keyword;
+    private String type;
+
     public String getCar_id() {
         return this.car_id;
     }
@@ -195,6 +199,22 @@ public class CarInfo {
 
     public void setSkeleton_id(String skeleton_id) {
         this.skeleton_id = skeleton_id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getKeyword() {
+        return keyword;
+    }
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
     }
 
 }

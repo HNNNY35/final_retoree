@@ -1,6 +1,6 @@
 package com.project.final_retoree.services;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,13 +14,14 @@ public class MainService {
     MainDao mainDao;
 
     // 메인 검색
-    // public ArrayList<CarInfo> getSearchBeanList(Object dataMap) {
-    // ArrayList<CarInfo> list = new ArrayList<CarInfo>();
-    // CarInfo carInfo = new CarInfo();
-    // String sqlMapId = "Main.selectFromMainSearch";
-    // Object result = mainDao.getSearchList(sqlMapId, dataMap);
-    // return list;
-    // }
+    public List<CarInfo> getSearchBeanList(CarInfo carInfo) throws Exception {
+        // ArrayList<CarInfo> list = new ArrayList<CarInfo>();
+        // CarInfo carInfo = new CarInfo();
+        // String sqlMapId = "Main.selectFromMainSearch";
+        // Object result = mainDao.getSearchList(sqlMapId, dataMap);
+        String sqpMapId = "Main.selectFromMainSearch";
+        return mainDao.getSearchBeanList(sqpMapId, carInfo);
+    }
 
     public Object getSearchList(Object dataMap) {
         String sqlMapId = "Main.selectFromMainSearch";
