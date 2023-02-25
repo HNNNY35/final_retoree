@@ -287,17 +287,19 @@
                   class="form-control"
                   name="TS_CS_ID"
                   id="ts_cs_id"
-                  placeholder=""
+                  value="${ts_cs_id.TS_CS_ID}"
                   required
                 />
+                
                      <input
                   type="hidden"
                   class="form-control"
                   name="AUTH"
                   id="auth"
-                  placeholder=""
+                  value="user"
                   required
                 />
+              
             </td>
             </tr>
           </tbody>
