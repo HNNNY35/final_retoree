@@ -33,7 +33,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                                 <tr scope="">
                                     <th scope="" class="bg-primary bg-opacity-25">제목</th>
                                     <td colspan="3">
-                                        <input type="text" name="NOTICE_TITLE" id="" class="form-control" value="${notice.NOTICE_CONTENT}"/>
+                                        <input type="text" name="NOTICE_TITLE" id="" class="form-control" value="${notice.NOTICE_TITLE}"/>
                                     </td>
                                 </tr>
                                 <%-- Controller에서 오늘 날짜로 처리  --%>
