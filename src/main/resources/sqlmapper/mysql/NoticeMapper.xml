@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Notice">
+    <!-- call Notice.insertBoard-->
+    <insert id="insertBoard" parameterType="Map">
+        <choose>
+            <when test='NOTICE_TOP!="YSE"'>
+                INSERT INTO NOTICE (NOTICE_ID, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_DATE, ADMIN_ID, NOTICE_TOP) 
+                VALUES (#{NOTICE_ID}, #{NOTICE_NO}, #{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_DATE}, 'U003', #{NOTICE_TOP});
+            </when>
+            <otherwise>
+                INSERT INTO NOTICE (NOTICE_ID, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_DATE, ADMIN_ID) 
+                VALUES (#{NOTICE_ID}, #{NOTICE_NO}, #{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_DATE}, 'U003');
+            </otherwise>
+        </choose>
+    </insert>
+    
+    <!-- call Notice.selectNoticeBoard -->
+    <select id="selectNoticeBoard" 
+        parameterType="Map" resultType="Map">
+        SELECT NOTICE_NO, NOTICE_TITLE, NOTICE_DATE
+        FROM NOTICE
+        ORDER BY NOTICE_NO
+    </select>
+
+    <!-- call Notice.selectNoticeBoardTop -->
+    <select id="selectNoticeBoardTop" 
+        parameterType="Map" resultType="Map">
+        SELECT NOTICE_NO, NOTICE_TITLE, NOTICE_DATE
+        FROM NOTICE
+        WHERE 1=1
+        AND NOTICE_TOP = 'YES'
+        ORDER BY NOTICE_NO DESC
+    </select>
+
+    <!-- call Notice.selectNoticeBoardOne -->
+    <select id="selectNoticeBoardOne" 
+        parameterType="Map" resultType="Map">
+
+        SELECT NOTICE_NO, NOTICE_TITLE, NOTICE_DATE, NOTICE_CONTENT
+        FROM NOTICE
+        WHERE NOTICE_NO = #{NOTICE_NO}
+        
+    </select>
+
+    <!-- call Notice.deleteFromNoticeNo -->
+    <delete id="deleteFromNoticeNo" 
+        parameterType="Map">
+        DELETE FROM NOTICE WHERE NOTICE_NO=#{NOTICE_NO}
+    </delete>
+</mapper>

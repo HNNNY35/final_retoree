@@ -84,12 +84,7 @@ public class AdminController {
 
     }
 
-    @RequestMapping(value = "/notice")
-    public ModelAndView notice(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice");
-        return modelAndView;
-
-    }
+    
 
     @RequestMapping(value = "/notice_contents")
     public ModelAndView notice_page(ModelAndView modelAndView) {
@@ -126,17 +121,11 @@ public class AdminController {
 
     }
 
-    @RequestMapping(value = "/notice_edit")
-    public ModelAndView notice_edit(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_edit");
-        return modelAndView;
-
-    }
+    
 
     @RequestMapping(value = "/notice_modify")
     public ModelAndView notice_modify(ModelAndView modelAndView) {
         modelAndView.setViewName("notice/notice_modify");
         return modelAndView;
-
     }
 }

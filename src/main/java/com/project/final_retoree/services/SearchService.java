@@ -20,4 +20,5 @@ public class SearchService {
         Object result = searchDao.getList(sqlMapId, dataMap);
         return result;
     }
+    
 }
