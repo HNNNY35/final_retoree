@@ -34,11 +34,19 @@ public class RegisterController {
     // 회원가입
     @RequestMapping(value = { "/register" }, method = RequestMethod.POST)
     public ModelAndView register(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        params.put("TS_CS_ID", commonUtils.getUniqueSequence());
-        registerService.insertagree(params);
+        Object ts_cs_id = registerService.insertagree(params);
+        modelAndView.addObject("ts_cs_id", ts_cs_id);
         modelAndView.setViewName("login_register/register_new_2");
         return modelAndView;
     }
+    // @RequestMapping(value = { "/register" }, method = RequestMethod.POST)
+    // public ModelAndView register(@RequestParam Map<String, Object> params,
+    // ModelAndView modelAndView) {
+    // params.put("TS_CS_ID", commonUtils.getUniqueSequence());
+    // registerService.insertagree(params);
+    // modelAndView.setViewName("login_register/register_new_2");
+    // return modelAndView;
+    // }
 
     // 회원가입완료
     @RequestMapping(value = { "/register_welcome" }, method = RequestMethod.POST)
