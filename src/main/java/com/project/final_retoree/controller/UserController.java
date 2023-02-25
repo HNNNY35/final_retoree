@@ -35,7 +35,7 @@ public class UserController {
     // 방문 예약 확인
     @RequestMapping(value = "/visit_reserve/{user_id}", method = RequestMethod.GET)
     public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String user_id,
-            ModelAndView modelAndView) {
+            ModelAndView modelAndView) throws Exception {
 
         params.put("USER_ID", user_id);
         Object reservation = reservationService.getUserReservation(params);
