@@ -272,7 +272,7 @@
           {
             "name": "NOTICE_CONTENT",
             "comment": "공지사항 내용",
-            "dataType": "VARCHAR(1000)",
+            "dataType": "TEXT",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -287,7 +287,7 @@
               "pfk": false,
               "widthName": 121.1708984375,
               "widthComment": 83.61181640625,
-              "widthDataType": 102.1787109375,
+              "widthDataType": 60,
               "widthDefault": 60
             },
             "id": "122e61cf-39f1-476d-b5fb-695d82021ff8"
@@ -366,7 +366,7 @@
           "active": false,
           "left": 2263.5002,
           "top": 1092.1952,
-          "zIndex": 22,
+          "zIndex": 24,
           "widthName": 60,
           "widthComment": 60
         },
@@ -1927,7 +1927,7 @@
           "active": false,
           "left": 1682.6945,
           "top": 715.4884,
-          "zIndex": 19,
+          "zIndex": 18,
           "widthName": 87.2490234375,
           "widthComment": 87.2236328125
         },
