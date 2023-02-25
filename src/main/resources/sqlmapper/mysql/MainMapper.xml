@@ -7,7 +7,20 @@
   <!-- call Main.selectFromMainSearch -->
 <select id="selectFromMainSearch" parameterType="Map" resultType="Map">
 SELECT MANUFACTURER, MODEL, DETAILED_MODEL
-FROM CAR_INFO;
+FROM CAR_INFO
+WHERE ${type} like '%${keyword}%'
+<choose>
+<when test="type != null and type.equals(#{MANUFACTURER})">
+AND MANUFACTURER LIKE CONCAT('%', #{keyword}, '%')
+</when>
+<when test="type != null and type.equals(#{MODEL})">
+AND MODEL LIKE CONCAT('%', #{keyword}, '%')
+</when>
+</choose>
+
+<!-- LIKE CONCAT('%'), #{keyword}, -->
+
+
  </select>
 
 <!-- 특가 -->
@@ -15,7 +28,7 @@ FROM CAR_INFO;
 <select id="selectFromSpecialPrice" parameterType="Map" resultType="Map">
 SELECT CAR_ID, MANUFACTURER, MODEL, TRANSMISSION, DETAILED_MODEL, PRICE, MODEL_YEAR, FUEL, DRIVEN_DIST, DTL_IMG_CAR, ADDR_CITY, PANER_ID, SKELETON_ID
 FROM CAR_INFO
-WHERE PRICE &lt; 1000
+WHERE PRICE &lt; 2000
 
  </select>
 
