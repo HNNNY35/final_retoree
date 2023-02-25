@@ -10,7 +10,7 @@
     FROM REGISTER
     WHERE ID= #{ID}
 	</select> -->
-  
+
   <!-- 약관동의UID,이용약관동의(필수),개인정보필수약관(필수),개인정보선택약관(선택),리투리구정약관(필수),마케팅정보수신동의(선택) -->
  <!-- call Register.insertagreeWithUID -->
  <insert id="insertagreeWithUID" parameterType="Map">
@@ -69,8 +69,17 @@
 INSERT INTO USER_INFO
 (USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH)
 VALUE
-(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, NULL, NULL)
+(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT}, NULL, NULL)
 
  </insert>
+
+  <!-- <insert id="insertWithUID" parameterType="Map">
+ 
+INSERT INTO USER_INFO
+(USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT)
+VALUE
+(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL})
+
+ </insert> -->
 
 </mapper>
