@@ -10,20 +10,8 @@
     FROM REGISTER
     WHERE ID= #{ID}
 	</select> -->
- 
-<!--회원정보UID,이름,아이디,비밀번호,생년월일,전화번호,이메일,주소(시도),주소(시구군),약관동의UID,권한 -->
-<!-- call Register.insertWithUID -->
- <insert id="insertWithUID" parameterType="Map">
- 
-INSERT INTO REGISTER
-(USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT) 
-VALUE
-(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT})
-
- </insert>
-
-
- <!-- 약관동의UID,이용약관동의(필수),개인정보필수약관(필수),개인정보선택약관(선택),리투리구정약관(필수),마케팅정보수신동의(선택) -->
+  
+  <!-- 약관동의UID,이용약관동의(필수),개인정보필수약관(필수),개인정보선택약관(선택),리투리구정약관(필수),마케팅정보수신동의(선택) -->
  <!-- call Register.insertagreeWithUID -->
  <insert id="insertagreeWithUID" parameterType="Map">
    
@@ -73,6 +61,16 @@ VALUE
     </choose>
      ) 
    </insert>
-  
+ 
+<!--회원정보UID,이름,아이디,비밀번호,생년월일,전화번호,이메일,주소(시도),주소(시구군),약관동의UID,권한 -->
+<!-- call Register.insertWithUID -->
+ <insert id="insertWithUID" parameterType="Map">
+ 
+INSERT INTO USER_INFO
+(USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH)
+VALUE
+(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, NULL, NULL)
+
+ </insert>
 
 </mapper>
