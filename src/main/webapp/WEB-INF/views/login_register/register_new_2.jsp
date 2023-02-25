@@ -282,8 +282,24 @@
       
               </select>
               <br />
+                   <input
+                  type="hidden"
+                  class="form-control"
+                  name="TS_CS_ID"
+                  id="ts_cs_id"
+                  placeholder=""
+                  required
+                />
+                     <input
+                  type="hidden"
+                  class="form-control"
+                  name="AUTH"
+                  id="auth"
+                  placeholder=""
+                  required
+                />
             </td>
-            <tr></tr>
+            </tr>
           </tbody>
         </table>
         <div class="text-center m-5">
