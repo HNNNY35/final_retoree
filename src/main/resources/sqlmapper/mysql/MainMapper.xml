@@ -21,7 +21,7 @@
             AND MODEL = #{model}
         </if>
         <if test = "!keyword.equals('')">
-            AND CONCAT(MODEL, DETAILED_MODEL) LIKE CONCAT ('%', #{keyword}, '%')
+            AND CONCAT(MANUFACTURER, MODEL, DETAILED_MODEL) LIKE CONCAT ('%', #{keyword}, '%')
         </if>
        
 </select>
