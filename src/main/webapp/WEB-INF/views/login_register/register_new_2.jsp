@@ -279,7 +279,7 @@
               <option value="평창군">평창군</option>
               <option value="철원군">철원군</option>
             </optgroup>
-      
+            </td>
               </select>
               <br />
                   <input
@@ -290,20 +290,15 @@
                   value="${ts_cs_id}"
                   required
                 />
-             <tr>
-            <th><h6 class="fw-bold">권한(AUTH)</h6></th>
-            <td class="d-flex mt-3">
-              <select class="form-select authselect" name="AUTH" id="auth">
-                <option value="authselection">권한선택</option>
-                <option value="member">USER</option>
-                <option value="dealer">DEALER</option>
-                <option value="admin">ADMIN</option>
-              </select>
-              <br />
-            </td>
-          </tr>
-              
-            </td>
+                  <input
+                  type="hidden"
+                  class="form-control"
+                  name="AUTH"
+                  id="auth"
+                  value="user"
+                  required
+                />
+          
             </tr>
           </tbody>
         </table>
