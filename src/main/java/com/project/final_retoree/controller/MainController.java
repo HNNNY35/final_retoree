@@ -26,23 +26,17 @@ public class MainController {
     CarInfo carInfo;
 
     // 메인 차량 검색
-    @RequestMapping(value = { "/main_search" })
-    public List<CarInfo> mainSearch(@RequestParam(value = "type", required = false) String type,
-            @RequestParam("keyword") String keyword, Model model) throws Exception {
+    @RequestMapping(value = { "/searchCar" })
+    public ModelAndView searchCar(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
 
-        // CarInfo에서 값 받아오기
-        CarInfo carInfo = new CarInfo();
-        // 파라미터로 type&keyword 받아서 dto에 set
-        carInfo.setType(type);
-        carInfo.setKeyword(keyword);
+        Object resultMap = mainService.getSearchCarList(params);
+        modelAndView.addObject("resultMap", resultMap);
 
-        System.out.println(keyword);
-
+        System.out.println(params);
+        modelAndView.setViewName("users_ etc/search");
         // service 호출
-        return mainService.getSearchBeanList(carInfo);
-        // 오류
-        // Required request parameter 'type' for method parameter type String is not
-        // present]
+        return modelAndView;
+       
     }
 
     @GetMapping(value = { "", "/", "/main_search" })
@@ -54,12 +48,14 @@ public class MainController {
 
         // modelAndView.addObject("searchBeanLIst", searchBeanList);
 
+        // Object filterRs = mainService.getFilterList(params);
         Object searchRs = mainService.getSearchList(params);
         Object specialRs = mainService.getSpecialList(params);
         Object newCarRs = mainService.getNewCarList(params);
         Object domesticRs = mainService.getDomesticList(params);
         Object importedRs = mainService.getImportedList(params);
 
+        // modelAndView.addObject("filterRs", filterRs);
         modelAndView.addObject("searchRs", searchRs);
         modelAndView.addObject("specialRs", specialRs);
         modelAndView.addObject("specialRs", specialRs);

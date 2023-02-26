@@ -22,6 +22,17 @@ public class MainService {
         String sqpMapId = "Main.selectFromMainSearch";
         return mainDao.getSearchBeanList(sqpMapId, carInfo);
     }
+        public Object getSearchCarList(Object dataMap) {
+            String sqlMapId = "Main.selectFromMainSearchFilter";
+            Object result = mainDao.getSearchCarList(sqlMapId, dataMap);
+            return result;
+        }
+
+    //    public Object getFilterList(Object dataMap) {
+    //     String sqlMapId = "Main.selectFromMainSearchFilter";
+    //     Object result = mainDao.getFilterList(sqlMapId, dataMap);
+    //     return result;
+    //    }
 
     public Object getSearchList(Object dataMap) {
         String sqlMapId = "Main.selectFromMainSearch";

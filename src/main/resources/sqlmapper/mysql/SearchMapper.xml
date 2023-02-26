@@ -32,6 +32,7 @@
         <if test = 'model!="모델"'>
             AND MODEL = #{model}
         </if>
+       
         <choose>
             <when test='modelYear!="연식"'>
                 AND MODEL_YEAR = #{modelYear}

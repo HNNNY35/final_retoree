@@ -20,6 +20,11 @@ public class MainDao {
     }
 
     // Read
+    public Object getSearchCarList(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object getSearchList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
