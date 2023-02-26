@@ -1,0 +1,71 @@
+@font-face {
+  font-family: SCDream4;
+  src: url("./SCDream4.otf");
+}
+* {
+  font-family: SCDream4;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+}
+a {
+  color: inherit;
+}
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.tablemargin {
+  margin-bottom: 200px;
+}
+
+th {
+  color: rgb(70, 68, 68);
+}
+
+.title {
+  margin-top: 50px;
+}
+
+.titlemt {
+  margin-top: 30px;
+}
+
+ul,
+li {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+}
+.myPageMenu > ul > li > ul > li > a {
+  font-size: 16px;
+  color: rgb(17, 17, 124);
+}
+
+.myPageMenu > ul > li > a {
+  font-size: 18px;
+  color: black;
+}
+
+.myPageMenu > ul > li > a:hover,
+.myPageMenu > ul > li > ul > li > a:hover {
+  color: rgb(73, 73, 219);
+}
+
+.myPageMenu > ul > li {
+  margin: 10px 0px;
+}
+
+.cardmt {
+  margin-top: 90px;
+}
