@@ -20,6 +20,8 @@ public class CarRegService {
         // Object carId = this.insertMergeCarInfo(dataMap);
         // Object statusId = this.insertSaleStatus(dataMap);
         // Object dealerId = ((Map<String, Object>) dataMap).get("DEALER_ID");
+
+        // insert files
         
         Object car_dtl_id = commonUtils.getUniqueSequence();
         ((Map<String, Object>) dataMap).put("CAR_DTL_ID", car_dtl_id);

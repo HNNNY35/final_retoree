@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -1052.4999619523692,
-    "scrollLeft": -1628.666662428113,
+    "scrollTop": -624.4999619523692,
+    "scrollLeft": -658.6666624281131,
     "zoomLevel": 0.8,
     "show": {
       "tableComment": true,
@@ -189,7 +189,7 @@
           "active": false,
           "left": 2192.124,
           "top": 881.8167,
-          "zIndex": 11,
+          "zIndex": 9,
           "widthName": 60,
           "widthComment": 60
         },
@@ -366,7 +366,7 @@
           "active": false,
           "left": 2263.5002,
           "top": 1092.1952,
-          "zIndex": 24,
+          "zIndex": 17,
           "widthName": 60,
           "widthComment": 60
         },
@@ -819,7 +819,7 @@
           "active": false,
           "left": 1718.4873,
           "top": 115.2081,
-          "zIndex": 17,
+          "zIndex": 15,
           "widthName": 67.72998046875,
           "widthComment": 60
         },
@@ -1311,7 +1311,7 @@
           "active": false,
           "left": 2347.5869,
           "top": 79.0861,
-          "zIndex": 15,
+          "zIndex": 13,
           "widthName": 145.52685546875,
           "widthComment": 87.2236328125
         },
@@ -1419,7 +1419,7 @@
           "active": false,
           "left": 1172.3034,
           "top": 269.0983,
-          "zIndex": 8,
+          "zIndex": 6,
           "widthName": 128.1787109375,
           "widthComment": 60
         },
@@ -1569,7 +1569,7 @@
             "id": "ea447909-a63b-49f0-bee3-ad1cb51e17ba"
           },
           {
-            "name": "EAMIL",
+            "name": "EMAIL",
             "comment": "이메일",
             "dataType": "VARCHAR(100)",
             "default": "",
@@ -1688,7 +1688,7 @@
           "active": false,
           "left": 1111.6445,
           "top": 738.7952,
-          "zIndex": 3,
+          "zIndex": 19,
           "widthName": 76.40087890625,
           "widthComment": 60
         },
@@ -1773,7 +1773,7 @@
           "active": false,
           "left": 574.3186,
           "top": 262.6873,
-          "zIndex": 10,
+          "zIndex": 8,
           "widthName": 92.3017578125,
           "widthComment": 60
         },
@@ -1927,7 +1927,7 @@
           "active": false,
           "left": 1682.6945,
           "top": 715.4884,
-          "zIndex": 18,
+          "zIndex": 16,
           "widthName": 87.2490234375,
           "widthComment": 87.2236328125
         },
@@ -2058,7 +2058,7 @@
           "active": false,
           "left": 1925.2202,
           "top": 1311.7546,
-          "zIndex": 12,
+          "zIndex": 10,
           "widthName": 60,
           "widthComment": 83.61181640625
         },
@@ -2120,7 +2120,7 @@
           "active": false,
           "left": 1338.1355,
           "top": 1341.7292,
-          "zIndex": 6,
+          "zIndex": 4,
           "widthName": 97.11962890625,
           "widthComment": 60
         },
@@ -2297,7 +2297,7 @@
           "active": false,
           "left": 1052.9933,
           "top": 1098.1887,
-          "zIndex": 14,
+          "zIndex": 12,
           "widthName": 60,
           "widthComment": 60
         },
@@ -2353,6 +2353,52 @@
               "widthDefault": 60
             },
             "id": "b6fb9ca7-8ae0-4eeb-aa50-56767d75ec03"
+          },
+          {
+            "name": "RVS_TIME",
+            "comment": "예약시간(오전/오후)",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 66.77783203125,
+              "widthComment": 118.27001953125,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "ff7a3185-6e1f-4364-8f1f-bbabb4966602"
+          },
+          {
+            "name": "RVS_ADDR",
+            "comment": "방문주소",
+            "dataType": "VARCHAR(100)",
+            "default": "",
+            "option": {
+              "autoIncrement": false,
+              "primaryKey": false,
+              "unique": false,
+              "notNull": false
+            },
+            "ui": {
+              "active": false,
+              "pk": false,
+              "fk": false,
+              "pfk": false,
+              "widthName": 72.560546875,
+              "widthComment": 60,
+              "widthDataType": 94.94873046875,
+              "widthDefault": 60
+            },
+            "id": "e9999c01-6159-4f9d-8115-367c317b07b0"
           },
           {
             "name": "RSV_STATUS",
@@ -2426,9 +2472,9 @@
         ],
         "ui": {
           "active": false,
-          "left": 544.5831,
-          "top": 661.9204,
-          "zIndex": 4,
+          "left": 540.8331,
+          "top": 639.4204,
+          "zIndex": 18,
           "widthName": 93.01904296875,
           "widthComment": 60
         },
@@ -2513,7 +2559,7 @@
           "active": false,
           "left": 1188.4999,
           "top": 59.8405,
-          "zIndex": 7,
+          "zIndex": 5,
           "widthName": 91.82568359375,
           "widthComment": 60
         },
@@ -2598,7 +2644,7 @@
           "active": false,
           "left": 296.5769,
           "top": 489.2686,
-          "zIndex": 16,
+          "zIndex": 14,
           "widthName": 63.39453125,
           "widthComment": 60
         },
@@ -2821,7 +2867,7 @@
           "active": false,
           "left": 9.75,
           "top": 200.2518,
-          "zIndex": 9,
+          "zIndex": 7,
           "widthName": 63.8642578125,
           "widthComment": 60
         },
@@ -2922,7 +2968,7 @@
           "active": false,
           "left": 1706.1857,
           "top": 1066.3261,
-          "zIndex": 13,
+          "zIndex": 11,
           "widthName": 60,
           "widthComment": 70.61181640625
         },
@@ -2961,7 +3007,7 @@
           "active": false,
           "left": 239.4723,
           "top": 900.8049,
-          "zIndex": 5,
+          "zIndex": 3,
           "widthName": 60,
           "widthComment": 87.2236328125
         },
@@ -3228,8 +3274,8 @@
           "columnIds": [
             "8e8197fa-0f67-40a6-b136-c645f527fc30"
           ],
-          "x": 1029.3926703124998,
-          "y": 747.6704,
+          "x": 1034.3008734374998,
+          "y": 745.6704,
           "direction": "right"
         },
         "constraintName": "fk_car_detaile_info_to_reservation",
@@ -3332,8 +3378,8 @@
           "columnIds": [
             "363d1b2e-7cc3-4afa-b754-26813a00ebf9"
           ],
-          "x": 786.98788515625,
-          "y": 833.4204,
+          "x": 787.56698671875,
+          "y": 851.9204,
           "direction": "bottom"
         },
         "constraintName": "fk_user_to_reservation",
