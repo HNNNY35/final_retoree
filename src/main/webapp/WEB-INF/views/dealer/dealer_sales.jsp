@@ -48,52 +48,33 @@
           </div>
 
         <div class="col-9">
-          <h3 class="pt-3">${resultDealerName.NAME}님의 판매현황입니다.</h3>
+          <h3 class="pt-3">${resultDealerName.NAME}님의 매출내역입니다.</h3>
           <hr />
-          <div>
-              <h4>판매중</h4>
-          </div>
+
           <table class="table table-hover sales">
             <thead>
               <tr>
-                <th>판매 차량</th>
-                <th>차량 번호</th>
-                <th>차량 정보 수정</th>
-                <th>판매관리</th>
+                <th>판매일자</th>
+                <th>판매차량</th>
+                <th>가격</th>
               </tr>
             </thead>
             <tbody>
-              <c:forEach items="${resultOnSaleCar}" var="resultOnSaleCar" varStatus="loop">
+              <c:forEach items="${resultSoltOutCar}" var="resultSoltOutCar" varStatus="loop">
                 <tr>
+                  <td>${resultSoltOutCar.SALE_DATE}</td>
                   <td>
-                    <form action="/car_detail_change/${resultOnSaleCar.CAR_DTL_ID}" method="get">
+                    <form action="/car_detail_change/${resultSoltOutCar.CAR_DTL_ID}" method="get">
                       <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
-                        ${resultOnSaleCar.MANUFACTURER} ${resultOnSaleCar.MODEL}
-                      </button>
-                    </form>
-                    </td>
-                  <td>
-                  ${resultOnSaleCar.VEH_NUM}
-                  </td>
-                  <td>
-                    <form action="/car_modify/${resultOnSaleCar.CAR_DTL_ID}" method="get">
-                      <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
-                        수정
+                        ${resultSoltOutCar.MANUFACTURER} ${resultSoltOutCar.MODEL}
                       </button>
                     </form>
                   </td>
-                  <td>
-                    <form action="/car_modify/${resultOnSaleCar.CAR_DTL_ID}" method="get">
-                      <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
-                        더보기
-                      </button>
-                    </form>
-                  </td>
+                  <td>${resultSoltOutCar.PRICE}만원</td>
                 </tr>
               </c:forEach>
-          </tbody>
+            </tbody>
           </table>
-          <br />
         </div>
 </div>
 </div>

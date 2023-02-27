@@ -54,7 +54,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <div class="col-9">
                     <h3>차량 신규 등록</h3>
                     <hr>
-                    <form action="/car_reg_submit" method="post" onsubmit="return formChk();" enctype="multipart/form-data">
+                    <form action="/car_reg_img" method="post" onsubmit="return formChk();" enctype="multipart/form-data">
                       <input type="hidden" name="DEALER_ID" value="${DEALER_ID}">
                       <h4>차량 일반 정보</h4>
                       <table class="table">
@@ -232,50 +232,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         </tbody>
                       </table>
 
-                      <table class="table">
-                        <tbody>
-                          <tr>
-                            <th><h4>차량 이미지</h4></th>
-                            <td></td>
-                          </tr>
-                          <tr>
-                            <th>앞면</th>
-                            <td>
-                              <input type="file" name="imgFront" id="imgFront" class="form-control" required>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>옆면</th>
-                            <td>
-                              <input type="file" name="imgSide" id="imgSide" class="form-control" required>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>내부</th>
-                            <td>
-                              <input type="file" name="imgInside" id="imgInside" class="form-control" required>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>타이어</th>
-                            <td>
-                              <input type="file" name="imgTire" id="imgTire" class="form-control" required>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>네비게이션</th>
-                            <td>
-                              <input type="file" name="imgNavi" id="imgNavi" class="form-control" required>
-                            </td>
-                          </tr>
-                          <tr>
-                            <th>트렁크</th>
-                            <td>
-                              <input type="file" name="imgTrunk" id="imgTrunk" class="form-control" required>
-                            </td>
-                          </tr>
-                        </tbody>
-                      </table>
                       <h4>차량 외부 패널</h4>
                       <table class="table">
                         <tbody>
@@ -448,7 +404,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         <button type="submit" class="submitBtn ">입력 완료</button>
                       </div>
                     </form>
-        
         
                   </div>
       </div>

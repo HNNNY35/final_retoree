@@ -5,7 +5,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,11 +24,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.project.final_retoree.services.CarRegService;
+import com.project.final_retoree.utils.CommonUtils;
 
 @Controller
 public class CarRegController {
     @Autowired
     CarRegService carRegService;
+
+    @Autowired
+    CommonUtils commonUtils;
 
     // url : http://localhost:8080/car_reg/U002
     @RequestMapping(value = "/car_reg/{dealer_id}", method = RequestMethod.GET)
@@ -35,44 +42,57 @@ public class CarRegController {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/car_reg_submit", method = RequestMethod.POST)
+    @RequestMapping(value = "/car_reg_img", method = RequestMethod.POST)
     public ModelAndView car_reg_submit(MultipartHttpServletRequest multipartHttpServletRequest,@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws IOException {
         
-        Iterator<String> fileNames =  multipartHttpServletRequest.getFileNames();
-        // 이거로 하면 구름에서 저장 안됨
-        String relativePath = "C:\\Develops\\final_retoree\\src\\main\\resources\\static\\files";
-        while(fileNames.hasNext()) {
-            String fileName = fileNames.next();
-            MultipartFile multipartFile = multipartHttpServletRequest.getFile(fileName);
-            String originalFileName =  "imgFront_" + multipartFile.getOriginalFilename();
-            String storePath = relativePath + originalFileName;
-            multipartFile.transferTo(new File(storePath));
-        }
-
-
-
-        // // 이미지파일 가져오기
-        // MultipartFile multipartFile = multipartHttpServletRequest.getFile("DTL_IMG_CAR");
-        // String fileName =  multipartFile.getOriginalFilename();
-
-        // String relativePath = "src\\main\\resources\\static\\files\\";
-
-        // // 파일 저장하기
-        // BufferedWriter bufferedWriter = Files.newBufferedWriter(Paths .get(relativePath+fileName)) ;
-        // bufferedWriter.write(new String(multipartFile.getBytes()));
-        // bufferedWriter.flush();
-
-        // params.put("DTL_IMG_CAR", bufferedWriter);
-        Object car_dtl_id = carRegService.insertCarDetail(params);
-        modelAndView.addObject("car_dtl_id", car_dtl_id);
-        modelAndView.setViewName("dealer/car_reg_submit");
+        
+        Object car_id = carRegService.insertCarDetail(params);
+        modelAndView.addObject("CAR_ID", car_id);
+        modelAndView.setViewName("dealer/car_reg_img");
 
         return modelAndView;
     }
  
-    // 등록 완료 후 상세페이지 조회하기 링크
-    
+    // 정보 입력 후 car_id 받아서 차량 이미지 첨부하기
+    @RequestMapping(value = "/car_reg_submit", method = RequestMethod.POST)
+    public ModelAndView car_reg_img(MultipartHttpServletRequest multipartHttpServletRequest,@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws IOException {
+        
+        Iterator<String> fileNames =  multipartHttpServletRequest.getFileNames();
+        String absolutePath = commonUtils.getRelativeToAbsolutePath("src/main/resources/static/files/");
+        
+        Map attachfile = null;
+        List attachfiles = new ArrayList();
+        String physicalFileName = commonUtils.getUniqueSequence();
 
+        String storePath = absolutePath + physicalFileName + File.separator;
+        File newPath = new File(storePath);
+        newPath.mkdir();
+        
+        while(fileNames.hasNext()) {
+            String fileName = fileNames.next();
+            MultipartFile multipartFile = multipartHttpServletRequest.getFile(fileName);
+            String originalFileName = multipartFile.getOriginalFilename();
+            if(originalFileName != null && multipartFile.getSize() > 0){
 
-    
+            String storePathFilename = storePath + originalFileName;
+            multipartFile.transferTo(new File(storePathFilename));
+
+            attachfile = new HashMap<>();
+            attachfile.put("ATTACHFILE_SEQ", commonUtils.getUniqueSequence());
+            attachfile.put("SOURCE_UNIQUE_SEQ", params.get("CAR_ID"));
+            attachfile.put("ORIGINALFILE_NAME", originalFileName);
+            attachfile.put("PHYSICALFILE_NAME", physicalFileName);
+            
+            attachfiles.add(attachfile);
+            }
+        }
+
+        params.put("attachfiles", attachfiles);
+
+        Object resultMap = carRegService.insertFiles(params);
+
+        modelAndView.setViewName("dealer/car_reg_submit");
+        return modelAndView;
+        
+    }
 }

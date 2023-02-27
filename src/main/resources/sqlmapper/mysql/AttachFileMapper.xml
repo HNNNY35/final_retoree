@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AttachFile">
+
+    <!-- 차량 이미지 등록 insert -->
+    <!-- call AttachFile.insertMulti -->
+    <insert id ="insertMulti" parameterType="Map">
+        INSERT INTO CIP_ATTACHFILE
+        (ATTACHFILE_SEQ, SOURCE_UNIQUE_SEQ, ORIGINALFILE_NAME, PHYSICALFILE_NAME)
+        VALUES
+        <foreach collection="attachfiles" item="attachfile" open="(" close=")" separator="),(">
+            #{attachfile.ATTACHFILE_SEQ}, #{attachfile.SOURCE_UNIQUE_SEQ}, #{attachfile.ORIGINALFILE_NAME}, #{attachfile.PHYSICALFILE_NAME}
+        </foreach>
+    </insert>
+
+    <select id="selectListByUID" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CIP_ATTACHFILE
+        WHERE SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ}
+    </select>
+
+</mapper>

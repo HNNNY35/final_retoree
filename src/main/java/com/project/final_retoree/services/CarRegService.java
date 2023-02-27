@@ -6,12 +6,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.daos.CarRegDao;
+import com.project.final_retoree.daos.AttachFileDao;
 import com.project.final_retoree.utils.CommonUtils;
 
 @Service
 public class CarRegService {
     @Autowired
     CarRegDao carRegDao;
+
+    @Autowired
+    AttachFileDao attachFileDao;
     
     @Autowired
     CommonUtils commonUtils;
@@ -32,7 +36,7 @@ public class CarRegService {
 
         String sqlMapId = "CarReg.insertCarDetailInfo";
         Object result = carRegDao.insert(sqlMapId, dataMap);
-        result = car_dtl_id;
+        result = ((Map<String, Object>) dataMap).get("CAR_ID");
         return result;
     }
 
@@ -82,5 +86,9 @@ public class CarRegService {
         return result;
     }
 
-
+    public Object insertFiles(Object dataMap){
+        String sqlMapId = "AttachFile.insertMulti";
+        Object result = attachFileDao.insert(sqlMapId, dataMap);
+        return result;
+    }
 }

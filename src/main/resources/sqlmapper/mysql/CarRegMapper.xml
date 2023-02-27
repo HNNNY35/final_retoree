@@ -36,7 +36,7 @@
         INSERT INTO SALE_STATUS
         (STATUS_ID, STATUS, SALE_DATE)
         VALUES
-        (#{STATUS_ID}, 'sale', 'none')
+        (#{STATUS_ID}, 'sale', sysdate())
     </insert>
 
     <!-- 차량 판매 insert -->
@@ -47,6 +47,5 @@
         VALUES
         (#{CAR_DTL_ID}, #{CAR_ID}, #{STATUS_ID}, #{DEALER_ID})
     </insert>
-
 
 </mapper>
