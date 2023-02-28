@@ -86,7 +86,6 @@ public class CarRegController {
             attachfiles.add(attachfile);
             }
         }
-
         params.put("attachfiles", attachfiles);
 
         Object resultMap = carRegService.insertFiles(params);

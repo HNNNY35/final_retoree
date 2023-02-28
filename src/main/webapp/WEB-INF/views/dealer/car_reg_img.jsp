@@ -54,7 +54,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <div class="col-9">
                     <h3>차량 신규 등록</h3>
                     <hr>
-                    <form action="/car_reg_submit" method="post" enctype="multipart/form-data">
+                    <form action="/car_reg_submit" method="post" enctype="multipart/form-data" onsubmit="return checkImgType();">
                       <input type="hidden" name="CAR_ID" value="${CAR_ID}">
                       <table class="table">
                         <tbody>
@@ -101,7 +101,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         </tbody>
                       </table>
                       <div class="text-center">
-                        <button type="submit" class="submitBtn ">입력 완료</button>
+                        <button type="submit" class="submitBtn">입력 완료</button>
                       </div>
                     </form>
 
@@ -111,7 +111,22 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     </div>
 
     <%@ include file="../footer.jsp" %>
-
+    <!-- <script>
+      function checkImgType(){
+        var imgs = [$('#imgFront'), $('#imgSide'), $('#imgInside'), $('#imgTire'), $('#imgNavi'), $('#imgTrunk')]
+        for(var count = 0; count < imgs.length; couont++) {
+          var fileVal = imgs(count).val();
+          var idx = fileVal.lastIndexOf(".")+1;
+          var type = fileVal.substring(idx).toUpperCase();
+          if(type == "PNG" || type == "JPG" || type == "JPEG" || type == "GIF"){
+          } else {
+            alert("이미지파일(PNG, JPG, JPEG, GIF)만 업로드 가능합니다.");
+            return false;
+            }
+          }
+          return true;
+        }
+    </script> -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

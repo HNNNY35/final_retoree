@@ -3,7 +3,7 @@
 
 <mapper namespace="AttachFile">
 
-    <!-- 차량 이미지 등록 insert -->
+    <!-- 차량 이미지파일 저장 insert -->
     <!-- call AttachFile.insertMulti -->
     <insert id ="insertMulti" parameterType="Map">
         INSERT INTO CIP_ATTACHFILE
@@ -14,6 +14,14 @@
         </foreach>
     </insert>
 
+    <!-- car_img insert -->
+    <!-- call insertMulti.insertMultiCarImg -->
+    <insert id ="insertMultiCarImg" parameterType="Map">
+    
+    </insert>
+
+
+    <!-- call AttachFile.selectListByUID -->
     <select id="selectListByUID" parameterType="Map" resultType="Map">
         SELECT *
         FROM CIP_ATTACHFILE

@@ -1,9 +1,11 @@
 package com.project.final_retoree.services;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.project.final_retoree.daos.CarRegDao;
 import com.project.final_retoree.daos.AttachFileDao;
@@ -19,13 +21,8 @@ public class CarRegService {
     
     @Autowired
     CommonUtils commonUtils;
-    // car_id, status_id, dealer_id 받기 + car_dtl_id 생성해서 car_detaile_info에 insert후 uid 리턴하기
+    // car_id, status_id, dealer_id 받기 + car_dtl_id 생성해서 car_detaile_info에 insert후 car_id 리턴하기
     public Object insertCarDetail(Object dataMap){
-        // Object carId = this.insertMergeCarInfo(dataMap);
-        // Object statusId = this.insertSaleStatus(dataMap);
-        // Object dealerId = ((Map<String, Object>) dataMap).get("DEALER_ID");
-
-        // insert files
         
         Object car_dtl_id = commonUtils.getUniqueSequence();
         ((Map<String, Object>) dataMap).put("CAR_DTL_ID", car_dtl_id);
@@ -86,7 +83,10 @@ public class CarRegService {
         return result;
     }
 
+    // 첨부받은 이미지들 CIP_ATTACHFILE에 insert => CAR_IMG에도 insert
     public Object insertFiles(Object dataMap){
+
+
         String sqlMapId = "AttachFile.insertMulti";
         Object result = attachFileDao.insert(sqlMapId, dataMap);
         return result;
