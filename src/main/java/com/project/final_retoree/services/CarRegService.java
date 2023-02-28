@@ -85,10 +85,13 @@ public class CarRegService {
 
     // 첨부받은 이미지들 CIP_ATTACHFILE에 insert => CAR_IMG에도 insert
     public Object insertFiles(Object dataMap){
-
-
         String sqlMapId = "AttachFile.insertMulti";
         Object result = attachFileDao.insert(sqlMapId, dataMap);
+
+        // ((Map<String, Object>) dataMap).put("CAR_IMG_ID", ((Map<String, Object>) dataMap).get("CAR_ID"));
+
+        sqlMapId = "AttachFile.insertMultiCarImg";
+        result = attachFileDao.insert(sqlMapId, dataMap);
         return result;
     }
 }

@@ -15,9 +15,14 @@
     </insert>
 
     <!-- car_img insert -->
-    <!-- call insertMulti.insertMultiCarImg -->
+    <!-- call AttachFile.insertMultiCarImg -->
     <insert id ="insertMultiCarImg" parameterType="Map">
-    
+        INSERT INTO CAR_IMG
+        (CAR_IMG_ID, ATTACHFILE_SEQ, IMG_INFO)
+        VALUES
+        <foreach collection="attachfiles" item="attachfile" open="(" close=")" separator="),(">
+            #{CAR_ID}, #{attachfile.ATTACHFILE_SEQ}, #{attachfile.IMG_INFO}
+        </foreach>
     </insert>
 
 

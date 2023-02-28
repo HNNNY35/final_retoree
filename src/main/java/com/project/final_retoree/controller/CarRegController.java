@@ -60,6 +60,9 @@ public class CarRegController {
         Iterator<String> fileNames =  multipartHttpServletRequest.getFileNames();
         String absolutePath = commonUtils.getRelativeToAbsolutePath("src/main/resources/static/files/");
         
+        String[] imgFiles = {"Front", "Side", "Inside", "Tire", "Navi", "Trunk"};
+        int idx = 0;
+
         Map attachfile = null;
         List attachfiles = new ArrayList();
         String physicalFileName = commonUtils.getUniqueSequence();
@@ -80,9 +83,12 @@ public class CarRegController {
             attachfile = new HashMap<>();
             attachfile.put("ATTACHFILE_SEQ", commonUtils.getUniqueSequence());
             attachfile.put("SOURCE_UNIQUE_SEQ", params.get("CAR_ID"));
+            // attachfile.put("CAR_ID", params.get("CAR_ID"));
             attachfile.put("ORIGINALFILE_NAME", originalFileName);
             attachfile.put("PHYSICALFILE_NAME", physicalFileName);
-            
+            attachfile.put("IMG_INFO", imgFiles[idx]);
+            idx = idx + 1;
+
             attachfiles.add(attachfile);
             }
         }
