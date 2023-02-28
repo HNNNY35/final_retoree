@@ -26,7 +26,7 @@
     <!-- 딜러 정보 -->
     <!-- call CarDetail.selectFromDEALER_INFOByCAR_DTL_ID -->
     <select id="selectFromDEALER_INFOByCAR_DTL_ID" parameterType="Map" resultType="Map">
-        SELECT USER_INFO.NAME, USER_INFO.CELL_NUMBER, DEALER_INFO.PROFILE_IMG, DEALER_INFO.DEALER_ID
+        SELECT USER_INFO.NAME, USER_INFO.CELL_NUMBER, DEALER_INFO.ATTACHFILE_SEQ, DEALER_INFO.DEALER_ID
         FROM DEALER_INFO
         JOIN CAR_DETAILE_INFO
         ON CAR_DETAILE_INFO.DEALER_ID = DEALER_INFO.DEALER_ID
@@ -34,8 +34,37 @@
         ON DEALER_INFO.DEALER_ID = USER_INFO.USER_ID
         WHERE CAR_DETAILE_INFO.CAR_DTL_ID = #{CAR_DTL_ID}
     </select>
+
+    <!-- 딜러 판매중 차량 조회 -->
+    <!-- call CarDetail.selectDealerSalesCar -->
+    <select id="selectDealerSalesCar" parameterType="Map" resultType="Map">
+        SELECT COUNT(*)
+        FROM CAR_DETAILE_INFO
+        JOIN SALE_STATUS
+        ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+        WHERE DEALER_ID = #{DEALER_ID}
+        AND STATUS = 'sale'
+    </select>
+
+    <!-- 딜러 판매완료 차량 조회 -->
+    <!-- call CarDetail.selectDealerSoldOutCar -->
+    <select id="selectDealerSoldOutCar" parameterType="Map" resultType="Map">
+        SELECT COUNT(*)
+        FROM CAR_DETAILE_INFO
+        JOIN SALE_STATUS
+        ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+        WHERE DEALER_ID = #{DEALER_ID}
+        AND STATUS = 'soldout'
+    </select>
     
     <!-- 방문예약 -->
+    <!-- call CarDetail.insertReservation -->
+    <insert id = "insertReservation" parameterType="Map">
+        INSERT INTO RESERVATION
+        (RESERVATION_ID, RSV_DATE, RVS_TIME, RVS_ADDR, RSV_STATUS, CAR_DTL_ID, USER_ID)
+        VALUES
+        (#{RESERVATION_ID}, #{RSV_DATE}, #{RVS_TIME}, 'none', '예약 신청', #{CAR_DTL_ID}, #{USER_ID})
+    </insert>
 
 
 </mapper>

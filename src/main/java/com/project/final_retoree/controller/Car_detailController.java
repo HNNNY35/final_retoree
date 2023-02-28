@@ -33,17 +33,29 @@ public class Car_detailController {
         params.put("CAR_DTL_ID", car_dtl_id);
         Object resultMap1 = carDetailService.getCarInfo(params);
         Object resultMap2 = carDetailService.getDealerInfo(params);
+        
+        Object dealer_id = ((Map<String, Object>)resultMap2).get("DEALER_ID");
+        Object resultMap3 = carDetailService.getDealerSalesCar(dealer_id);
+        Object resultMap4 = carDetailService.getDealerSoldOutCar(dealer_id);
+        
         modelAndView.addObject("resultMap1", resultMap1);
         modelAndView.addObject("resultMap2", resultMap2);
+        modelAndView.addObject("resultMap3", resultMap3);
+        modelAndView.addObject("resultMap4", resultMap4);
+        modelAndView.setViewName("car/car_detail_change");
+        return modelAndView;
+    }
+    
+    // 방문예약 submit시 방문예약 insert후 방문예약 완료 페이지로
+    @RequestMapping(value = "/car_detail_reservation/{car_dtl_id}", method = RequestMethod.POST)
+    public ModelAndView car_detail_reservation(@RequestParam Map<String, Object> params, @PathVariable String car_dtl_id, ModelAndView modelAndView) {
+        
+        Object resultMap = carDetailService.insertReservation(params);
+        
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("car/car_detail_change");
         return modelAndView;
     }
 
-    @RequestMapping(value = "/car_reg")
-    public ModelAndView car_reg(ModelAndView modelAndView) {
-        modelAndView.setViewName("car/car_reg");
-        return modelAndView;
-
-    }
 
 }

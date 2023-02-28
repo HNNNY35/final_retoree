@@ -186,7 +186,16 @@
                   ${resultMap1.DETAILED_MODEL}
                 </div>
                 <div>
-                  ${resultMap1.MODEL_YEAR} | ${resultMap1.DRIVEN_DIST}km | ${resultMap1.TRANSMISSION}
+                  ${resultMap1.MODEL_YEAR} | ${resultMap1.DRIVEN_DIST}km | ${resultMap1.TRANSMISSION} | ${resultMap1.CARGRADE}
+                </div>
+                <div> 
+                  <c:choose>
+                    <c:when test="${resultMap1.OPTIONS eq 'navi'}">네비게이션</c:when>
+                  </c:choose>
+                  <c:choose>
+                    <c:when test="${resultMap1.OPTIONS eq 'sunroof'}">선루프</c:when>
+                  </c:choose>
+                    | ${resultMap1.ADDR_CITY}
                 </div>
               </div>
               <strong class="add" id="inputList">
@@ -207,13 +216,18 @@
                     >
                   </span>
                 </strong>
+                <c:set var="price" value="${resultMap1.PRICE}" />
               <h4 style="font-weight: 700; margin-top: 10px">
                 판매가격
-                <span class="font-weight-bold text-primary">${resultMap1.PRICE}만원</span>
+                <span class="font-weight-bold text-primary"><fmt:formatNumber type="number" maxFractionDigits="3" value="${price}" />만원</span>
               </h4>
             </div>
             <!-- 모달 -->
             <div>
+              <c:set var="carPrice" value="${price * 10000}" />
+              <c:set var="regTax" value="${carPrice * 0.05}" />
+              <c:set var="acqTax" value="${carPrice * 0.02}" />
+              <c:set var="totalPrice" value="${carPrice + regTax + acqTax + 213000 + 1000 + 3000}" />
               <a
                 href="#modalTarget"
                 data-bs-toggle="modal"
@@ -227,7 +241,7 @@
                   <h2 class="modal-header">할부금 계산하기</h2>
                   <div class="modal-body">
                     <h4 class="align-items-center mb-3">
-                      <span class="badge bg-primary rounded-pill">총 비용 ${resultMap1.PRICE}</span>
+                      <span class="badge bg-primary rounded-pill">총 비용 <fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" /></span>
                     </h4>
                     <ul class="list-group mb-3">
                       <li
@@ -237,7 +251,7 @@
                           <h6 class="my-0">차량 가격</h6>
                           <!-- <small class="text-muted">Brief description</small> -->
                         </div>
-                        <span class="text-muted">원</span>
+                        <span class="text-muted"><fmt:formatNumber type="number" maxFractionDigits="3" value="${carPrice}" />원</span>
                       </li>
                       <li
                         class="list-group-item d-flex justify-content-between lh-sm"
@@ -246,7 +260,7 @@
                           <h6 class="my-0">등록세(5%)</h6>
                           <!-- <small class="text-muted">Brief description</small> -->
                         </div>
-                        <span class="text-muted">800,000원</span>
+                        <span class="text-muted"><fmt:formatNumber type="number" maxFractionDigits="3" value="${regTax}" />원</span>
                       </li>
                       <li
                         class="list-group-item d-flex justify-content-between lh-sm"
@@ -255,16 +269,7 @@
                           <h6 class="my-0">취득세(2%)</h6>
                           <!-- <small class="text-muted">Brief description</small> -->
                         </div>
-                        <span class="text-muted">360,000원</span>
-                      </li>
-                      <li
-                        class="list-group-item d-flex justify-content-between lh-sm"
-                      >
-                        <div>
-                          <h6 class="my-0">취득세(2%)</h6>
-                          <!-- <small class="text-muted">Brief description</small> -->
-                        </div>
-                        <span class="text-muted">360,000원</span>
+                        <span class="text-muted"><fmt:formatNumber type="number" maxFractionDigits="3" value="${acqTax}" />원</span>
                       </li>
                       <li
                         class="list-group-item d-flex justify-content-between lh-sm"
@@ -297,7 +302,7 @@
                         class="list-group-item d-flex justify-content-between bg-light"
                       >
                         <span>총 구매 예상 비용</span>
-                        <strong>23,201,000원</strong>
+                        <strong><fmt:formatNumber type="number" maxFractionDigits="3" value="${totalPrice}" />원</strong>
                       </li>
                     </ul>
 
@@ -332,8 +337,8 @@
               <h5 style="font-weight: 600; margin-bottom: 10px">${resultMap2.NAME}</h5>
               <p class="text-muted">전화번호:${resultMap2.CELL_NUMBER}</p>
               <p class="text-muted">
-                판매중 : <span class="text-danger">20대 </span>| 판매완료 :
-                <span class="text-danger"> 3대</span>
+                판매중 : <span class="text-danger">${resultMap3}대 </span>| 판매완료 :
+                <span class="text-danger">${resultMap4}대</span>
               </p>
             </div>
             <div>
@@ -349,6 +354,9 @@
               <div class="modal-content">
                 <h2 class="modal-header">리투리카 방문예약신청</h2>
                 <div class="modal-body">
+                  <form action="/car_detail_reservation/{car_dtl_id}" mothod="post">
+                    <input type="hidden" name="CAR_DTL_ID" value="${resultMap1.CAR_DTL_ID}">
+                    <input type="hidden" name="USER_ID" value="U001">
                   <h5 class="bg-warning rounded-pill p-2">현재 보고계신 차량은 헛걸음보상 대상차량입니다.</h5>
                   <div>
                     <small >매매상사 방문 시 방문예약한 차량이 없거나,</small>
@@ -356,31 +364,29 @@
                     <small>
                       다른 차량으로 구매 유도를 할 경우  <span style="color: cornflowerblue;" > 20만원</span>을 보상해드립니다.
                     </small>
-                  <form>
                     <h5 class="pt-4 pb-1 ">방문 일자 </h5>
                     <div  class="bg-light rounded-pill p-3">
 
                       <label for="reservation_day">
-                        <input type="date" name="reservation_day" min="2023-02-08" max="2024-12-31">
+                        <input type="date" name="RSV_DATE" min="2023-02-08" max="2024-12-31">
                       </label>
-                    </form>
-                  </div>
-                  <h5 class="pt-5 pb-1">방문 시기</h5>
-                  <div  class="bg-light rounded-pill p-3">
-
-                 
-                  <label  for="listGroupRadios2">
+                    </div>
+                    <h5 class="pt-5 pb-1">방문 시기</h5>
+                    <div  class="bg-light rounded-pill p-3">
+                      
+                      
+                      <label  for="listGroupRadios2">
+                        <span class="p-3">
+                          <input class=" form-check-input flex-shrink-0" type="radio" name="RVS_TIME" id="listGroupRadios2" value="am">
+                          <span>
+                            오전
+                          </span>
+                        </label></span>
+                        <label for="listGroupRadios3">
                   <span class="p-3">
-                    <input class=" form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios2" value="">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="RVS_TIME" id="listGroupRadios3" value="pm">
                     <span>
-                     오전
-                    </span>
-                  </label></span>
-                  <label for="listGroupRadios3">
-                  <span class="p-3">
-                    <input class="form-check-input flex-shrink-0" type="radio" name="listGroupRadios" id="listGroupRadios3" value="">
-                    <span>
-                     오후
+                      오후
                     </span>
                   </label></span> </div>
                   <h5 class="pt-5 pb-1">방문예약 서비스 이용 안내</h5>
@@ -389,14 +395,12 @@
                   </div>
                 </div>
                 <div class="modal-footer justify-content-center">
-                  <button class="btn btn-primary " data-bs-dismiss="modal">
-                   방문예약
-                  </button> 
-                  <!-- -->
+                  <button class="btn btn-primary " type="submit">방문예약</button>
                   <button class="btn btn-secondary" data-bs-dismiss="modal">
                     취소
                   </button>
                 </div>
+              </form>
               </div>
             </div>
           </div>
@@ -440,39 +444,109 @@
       <br />
 
       <!--차량 진단서  -->
+
       <hr class="featurette-divider" />
       <h2 class="text-center">
-        진단 평가 결과, 해당 차량은
-        <span class="text-primary">[무사고 차량]</span>입니다.
+        진단 평가 결과, 해당 차량은 
+          <c:choose>
+            <c:when test="${resultMap1.ACCIDENT_INFO eq 'none'}"><span class="text-primary">[무사고 차량]</span></c:when>
+            <c:when test="${resultMap1.ACCIDENT_INFO eq 'panel_exchange'}"><span class="text-primary">[외부패널 교환 차량]</span></c:when>
+            <c:when test="${resultMap1.ACCIDENT_INFO eq 'accident'}"><span class="text-primary">[사고 차량]</span></c:when>
+          </c:choose>
+           입니다.
       </h2>
       <hr />
       <br />
       <div class="row featurette">
         <div class="col-md-7 order-md-2">
+
           <div class="text-center fs-2 pb-4">외부 패널</div>
           <table class="table">
             <tbody>
               <tr>
                 <th>후드</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.HOOD eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.HOOD eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                  </td>
                 <th>트렁크리드</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.TRUNK_LID eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.TRUNK_LID eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>프론트휀더</th>
-                <td><span class="text-warning">교환</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.FRONT_FENDER eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.FRONT_FENDER eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>루프패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.ROOF_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.ROOF_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>도어</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.DOOR eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.DOOR eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>쿼터패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.QUARTER_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.QUARTER_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>사이드실패널</th>
-                <td colspan="3"><span class="">정상</span></td>
+                <td colspan="3">
+                  <c:choose>
+                    <c:when test="${resultMap1.SIDE_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.SIDE_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -501,37 +575,136 @@
             <tbody>
               <tr>
                 <th>프론트패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.FRONT_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.FRONT_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>대쉬패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.DASH_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.DASH_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>크로스맴버</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.CROSS_MEMBER eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.CROSS_MEMBER eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>플로어패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.FLOOR_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.FLOOR_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>인사이드패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.INSIDE_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.INSIDE_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>필러패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.FILER_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.FILER_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>사이드멤버</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.SIDE_MEMBER eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.SIDE_MEMBER eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>리어패널</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.REAR_PANEL eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.REAR_PANEL eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>휠하우스</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.WHEEL_HOUSE eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.WHEEL_HOUSE eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
                 <th>트렁크플로어</th>
-                <td><span class="">정상</span></td>
+                <td>
+                  <c:choose>
+                    <c:when test="${resultMap1.TRUNK_FLOOR eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.TRUNK_FLOOR eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
               <tr>
                 <th>패키지트레이</th>
-                <td colspan="3"><span class="">정상</span></td>
+                <td colspan="3">
+                  <c:choose>
+                    <c:when test="${resultMap1.PACKAGE_TRAY eq '1'}">
+                      <span class="">정상</span>
+                    </c:when>
+                    <c:when  test="${resultMap1.PACKAGE_TRAY eq '2'}">
+                    <span class="text-warning">교환</span>
+                    </c:when>
+                  </c:choose>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -560,6 +733,7 @@
     <%@ include file="../footer.jsp" %>
 
     </body>
+
   <script src="/js/car_detail.js"></script>
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
