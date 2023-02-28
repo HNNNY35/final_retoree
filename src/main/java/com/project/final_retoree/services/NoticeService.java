@@ -42,7 +42,7 @@ public class NoticeService {
 
     public Object update(Object dataMap){
         String sqlMapId = "Notice.updateFromNoticeNo";
-        Object result = noticeDao.delete(sqlMapId, dataMap);
+        Object result = noticeDao.update(sqlMapId, dataMap);
         return result;
     }
 }

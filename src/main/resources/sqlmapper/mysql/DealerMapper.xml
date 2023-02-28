@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Dealer">
+    <!-- call Dealer.selectFromUserInfoByDEALER_ID-->
+    <!-- DEALER_ID로 딜러 정보 조회 -->
+    <select id="selectFromUserInfoByDEALER_ID" parameterType="Map" resultType="Map">
+
+        SELECT *
+        FROM DEALER_INFO
+        JOIN USER_INFO
+        ON DEALER_INFO.DEALER_ID = USER_INFO.USER_ID
+        WHERE DEALER_INFO.DEALER_ID = #{USER_ID}
+
+    </select>
+    <!-- call Dealer.updateUserInfo-->   
+    <update id="updateUserInfo" 
+        parameterType="Map">
+
+        UPDATE USER_INFO
+        SET 
+        PASSWORD = #{PASSWORD},
+        CELL_NUMBER = #{CELL_NUMBER},
+        EMAIL = #{EMAIL},
+        ADDR_CITY = #{ADDR_CITY},
+        ADDR_DISTRICT = #{ADDR_DISTRICT}
+        WHERE USER_ID = #{USER_ID}
+
+    </update>
+</mapper>
