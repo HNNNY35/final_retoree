@@ -8,10 +8,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
 
     // 로그인
-    @RequestMapping(value = "/login")
-    public ModelAndView login(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/login");
-        return modelAndView;
-    }
+    // @RequestMapping(value = "/login")
+    // public ModelAndView login(ModelAndView modelAndView) {
+    // modelAndView.setViewName("login_register/login");
+    // return modelAndView;
+    // }
 
 }
