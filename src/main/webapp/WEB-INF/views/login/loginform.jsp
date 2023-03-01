@@ -27,9 +27,7 @@
   <body>
     <%@ include file="../header.jsp" %>
     <div class="container">
-       <c:if test="${not empty param.fail}">
-        <div><font color="red"> Login Fail ! </font></div> 
-       </c:if>
+   
        <%-- method="post" action="/login" 스프링프레임워크의 필터에 걸리는 부분 --%>
     <form class="form-singin" method="post" action="/login">
       <div class="login">
@@ -54,13 +52,13 @@
           />
          
         <div class="text-center"> 
-            <button type="submit" class="mb-3 mt-2 signin">sign in</button>
+            <button class="mb-3 mt-2 signin">sign in</button>
         </div>
       </form>
       <%-- 회원가입창 유도 --%>
       <form action="/register_agree">
         <div class="text-center"> 
-           <button type="submit" class="signup">sign up</button>
+           <button class="signup">sign up</button>
              </div>
              </form>
       </div>
