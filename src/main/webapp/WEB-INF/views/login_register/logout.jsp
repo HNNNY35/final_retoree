@@ -28,13 +28,13 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ include file="../header.jsp" %>
     <div class="container">
       <div class="login">
-        <div class="">
+      <form class="form-signin" method="post" action="/logout">
+       
           <h4 class="text-center fw-bold text-primary mb-5">
             로그아웃되었습니다
           </h4>
         </div>
 
-        <form>
           <div class="text-center">
             <a href="./main_search.html"
               ><button type="button" class="mb-3 fs-5">Main</button></a
