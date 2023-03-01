@@ -27,6 +27,10 @@
   <body>
     <%@ include file="../header.jsp" %>
     <div class="container">
+       <c:if test="${not empty param.fail}">
+        <div><font color="red"> Login Fail ! </font></div> 
+       </c:if>
+       <%-- method="post" action="/login" 스프링프레임워크의 필터에 걸리는 부분 --%>
     <form class="form-singin" method="post" action="/login">
       <div class="login">
         <h2 class="fw-bold">Login</h2>
