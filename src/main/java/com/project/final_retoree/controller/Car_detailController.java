@@ -47,15 +47,34 @@ public class Car_detailController {
     }
     
     // 방문예약 submit시 방문예약 insert후 방문예약 완료 페이지로
+    // user_id 임의로 입력함
     @RequestMapping(value = "/car_detail_reservation/{car_dtl_id}", method = RequestMethod.POST)
     public ModelAndView car_detail_reservation(@RequestParam Map<String, Object> params, @PathVariable String car_dtl_id, ModelAndView modelAndView) {
         
         Object resultMap = carDetailService.insertReservation(params);
         
         modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("car/car_detail_change");
+
+        String viewName = "/car_detail_change";
+        modelAndView.setViewName(viewName);
+        // 방문예약 완료 페이지 만들어야함 아니면 리다이렉트
         return modelAndView;
     }
+
+    // 1:1상담 입력시 insert후 상담 요청 완료 페이지로
+    // user_id 임의로 입력함
+    @RequestMapping(value = "/car_contact/{dealer_id}", method = RequestMethod.POST)
+    public ModelAndView car_contact(@RequestParam Map<String, Object> params, @PathVariable String dealer_id, ModelAndView modelAndView) {
+        
+        Object resultMap = carDetailService.insertContact(params);
+        
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("car/contact_submit");
+        // 상담 요청 완료 페이지 만들어야함 아니면 리다이렉트
+        return modelAndView;
+    }
+
+
 
 
 }

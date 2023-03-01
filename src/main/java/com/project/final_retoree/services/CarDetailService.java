@@ -63,7 +63,25 @@ public class CarDetailService {
 
         String sqlMapId = "CarDetail.insertReservation";
         Object result = carDetailDao.insert(sqlMapId, dataMap);
+
+        result = ((Map<String, Object>) dataMap).get("CAR_DTL_ID");
         
         return result;
     }
+    // 1:1상담 insert
+    public Object insertContact(Object dataMap) {
+        // contact_id 생성
+        ((Map<String, Object>) dataMap).put("CONTACT_ID", commonUtils.getUniqueSequence());
+        
+        // 로그인 유저정보 가져와야함(hidden으로 임시로 입력함)
+
+        String sqlMapId = "CarDetail.insertContact";
+        Object result = carDetailDao.insert(sqlMapId, dataMap);
+
+        result = ((Map<String, Object>) dataMap).get("CAR_DTL_ID");
+        
+        return result;
+    }
+
+    
 }

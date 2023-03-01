@@ -66,5 +66,15 @@
         (#{RESERVATION_ID}, #{RSV_DATE}, #{RVS_TIME}, 'none', '예약 신청', #{CAR_DTL_ID}, #{USER_ID})
     </insert>
 
+    <!-- 1:1 문의(상담) 등록 -->
+    <!-- call CarDetail.insertContact -->
+    <insert id = "insertContact" parameterType="Map">
+        INSERT INTO CONTACT
+        (CONTACT_ID, INQ_TITLE, INQ_CONTENT, INQ_DATE, ANS_CONTENT, ANS_DATE, STATUS_ID, USER_ID, DEALER_ID)
+        VALUES
+        (#{CONTACT_ID}, #{INQ_TITLE}, #{INQ_CONTENT}, sysdate(), 'none', 'none', 'A001', #{USER_ID}, #{DEALER_ID})
+    </insert>
+
+
 
 </mapper>

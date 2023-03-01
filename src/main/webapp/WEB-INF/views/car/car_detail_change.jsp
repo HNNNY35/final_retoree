@@ -354,7 +354,7 @@
               <div class="modal-content">
                 <h2 class="modal-header">리투리카 방문예약신청</h2>
                 <div class="modal-body">
-                  <form action="/car_detail_reservation/{car_dtl_id}" mothod="post">
+                  <form action="/car_detail_reservation/{car_dtl_id}" method="POST">
                     <input type="hidden" name="CAR_DTL_ID" value="${resultMap1.CAR_DTL_ID}">
                     <input type="hidden" name="USER_ID" value="U001">
                   <h5 class="bg-warning rounded-pill p-2">현재 보고계신 차량은 헛걸음보상 대상차량입니다.</h5>
@@ -415,19 +415,25 @@
               <div class="modal" id="modalTarget3">
                 <div class="modal-dialog modal-dialog-scrollable">
                   <div class="modal-content">
-                    <h2 class="modal-header">1:1 쪽지 상담</h2>
+                    <h2 class="modal-header">1:1 상담</h2>
                     <div class="modal-body">
+                      <form action="/car_contact/${resultMap2.DEALER_ID}" method="post">
+                        <input type="hidden" name="DEALER_ID" value="${resultMap2.DEALER_ID}">
+                        <input type="hidden" name="USER_ID" value="U001">
+
                       <div class="textarea-wrap">
-                        <textarea class="textarea-tp1" maxlength="400" placeholder="" style="height: 320px;" width="100%">
+                        <input type="text" name="INQ_TITLE" class="form-control" placeholder="제목" required >
+                        <input type="text" name="INQ_CONTENT" class="form-control" placeholder="문의 내용을 입력하세요." style="height: 320px;" width="100%" required>
+
+                        <!-- <textarea class="textarea-tp1" maxlength="400" name = "INQ_CONTENT" value="내용" style="height: 320px;" width="100%" required>
                         </textarea>
                         <p class="text-counter ">
                           <span>0</span>/400 byte</p>
-                        </div>
+                        </div> -->
                     </div>
                     <div class="modal-footer justify-content-center" >
-                      <button class="btn btn-primary " data-bs-dismiss="modal">
-                        확인
-                      </button> 
+                      <button type="submit" class="btn btn-primary">확인</button>
+                    </form>
                       <!-- -->
                       <button class="btn btn-secondary" data-bs-dismiss="modal">
                         취소
