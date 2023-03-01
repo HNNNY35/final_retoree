@@ -26,8 +26,8 @@
 
   <body>
     <%@ include file="../header.jsp" %>
-    <form class="form-singin" method="post" action="/login">
     <div class="container">
+    <form class="form-singin" method="post" action="/login">
       <div class="login">
         <h2 class="fw-bold">Login</h2>
         <form>

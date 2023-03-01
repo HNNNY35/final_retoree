@@ -20,40 +20,45 @@
       integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/login.css" />
-    <link rel="stylesheet" href="/css/price_check_header.css" />
+    <link rel="stylesheet" href="/css/users_info_admin_edit.css" />
+   
   </head>
 
   <body>
     <%@ include file="../header.jsp" %>
 
     <div class="container">
-
-      <form action="/" method="post"> 
-      <div><h1 class="text-center fw-bold mt-5 mb-3">딜러회원관리등록</h1></div>
+    <form action="/dealerupdate" method="post">
+      <div><h1 class="text-center fw-bold mt-5 mb-3">딜러회원관리수정</h1></div>
       <div class="boxcolor">
+      
           
             <label for="name">이름</label>
-            <input type="text" id="name" name="name"><br>
+            <input class="form-control" type="text" id="name" name="NAME" value="${resultMap.NAME}" required ${statusDisabled}><br>
       
             <label for="id">아이디</label>
-            <input type="text" id="id" name="id"><br>
+            <input class="form-control" type="text" id="id" name="ID" value="${resultMap.ID}" required ${statusDisabled}><br>
       
             <label for="birthday">생일</label>
-            <input type="text" id="birthday" name="birthday"><br>
+            <input class="form-control" type="text" id="birthday" name="BIRTHDAY" value="${resultMap.BIRTHDAY}" required ${statusDisabled}><br>
       
             <label for="phone">전화번호</label>
-            <input type="text" id="phone" name="phone"><br>
+            <input class="form-control" type="text" id="phone" name="CELL_NUMBER" value="${resultMap.CELL_NUMBER}" required ${statusDisabled}><br>
       
-            <label for="email">메일</label>
-            <input type="text" id="email" name="email"><br>
-      
+            <label for="email">메일아이디</label>
+            <input class="form-control" type="text" id="email" name="EMAIL" value="${resultMap.EMAIL}" required ${statusDisabled}><br>
+
+            <label for="email">사업자번호</label>
+            <input class="form-control" type="text" id="br_number" name="BR_NUMBER" value="${resultMap.BR_NUMBER}" required ${statusDisabled}><br>
+            <input type="hidden" class="form-control" name="DEALER_ID" id="DEALER_ID" value="${DEALER_ID}" required ${statusDisabled} />
+            <input type="hidden" class="form-control" name="AUTH" id="auth" value="dealer" required ${statusDisabled} />                  
+                                    
             <label for="residence">거주지</label>
 
         <table>
           <tr>
             <td>
-              <select class="address  ps-5" name="ADDR_CITY" id="addressCity">
+              <select class="address  ps-5" name="ADDR_CITY" id="addressCity" value="${resultMap.ADDR_CITY}">
                 <option value="city" selected>시도</option>
               <option value="서울특별시">서울특별시</option>
               <option value="경기도">경기도</option>
@@ -65,7 +70,7 @@
               </select>
             </td>
             <td>
-              <select class="address ps-5" name="ADDR_DISTRICT" id="addressDistrict">
+              <select class="address ps-5" name="ADDR_DISTRICT" id="addressDistrict" value="${resultMap.ADDR_DISTRICT}">
                 <option value="city​county">시구군</option>
             <optgroup label="서울">서울
             <option value="강남구">강남구</option>
@@ -145,23 +150,22 @@
             </td>
           </tr>
         </table>
- 
-   
-       
-        <!-- 전체 폼 -->
       </div>
-       </form>
+     
        <br>
-        
+   </div>
+       <br>
        <div class="text-center">
-       <form action="dealer_info_admin.html" method="get">
+       
          <button type="submit" class=" btn btn-lg btn-outline-primary mb-5">
            등록
          </button>
-        </form>
        </div>
+        </form>
      </div>
-   
+        
+      
+        
     
       
      <%@ include file="../footer.jsp" %>
@@ -179,4 +183,20 @@
      ></script>
    </body>
  </html>
+                                    
+                                    
+                                   
+                                  
+                                   
+                                    
+                                   
+                                    
+                                   
+                                    
+                                    
+                                  
  
+   
+       
+      
+     

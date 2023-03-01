@@ -29,7 +29,7 @@
 
     <div class="container">
 
-    <form action="/" method="post"> 
+      <form action="/{form_action}" method="post"> 
       <div><h1 class="text-center fw-bold mt-5 mb-3">일반회원관리등록</h1></div>
       <div class="boxcolor">
           
@@ -146,23 +146,20 @@
           </tr>
         </table>
  
-   
-       
-        <!-- 전체 폼 -->
-      </div>
-       </form>
        <br>
         
        <div class="text-center">
-       <form action="user_info_admin.html" method="get">
+       <form action="dealer_info_admin" method="get">
          <button type="submit" class=" btn btn-lg btn-outline-primary mb-5">
-           등록
+           등록${form_action} 
          </button>
         </form>
        </div>
      </div>
-   
-        
+      </form>
+      </div>
+    
+      
      <%@ include file="../footer.jsp" %>
      <!-- Bootstrap JavaScript Libraries -->
      <script
@@ -179,3 +176,7 @@
    </body>
  </html>
  
+   
+       
+      
+     
