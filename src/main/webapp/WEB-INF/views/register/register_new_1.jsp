@@ -46,8 +46,8 @@
         <table>
             <tr>
                 <td>
-                    <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="allAccept" onclick="checkAll();">
+                    <div class="form-check form-switch" onsubmit="return onSubmit()">
+                        <input class="form-check-input" type="checkbox" id="checkAll" onclick="checkAll();">
                         <label class="form-check-label" for="allAccept">전체 동의하기(필수/선택항목)</label>
                     </div>
                     <hr />
@@ -56,7 +56,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="termsAndConditions" name="TS_CS">
+                        <input class="form-check-input" type="checkbox" id="check1" name="TS_CS" required>
                         <label class="form-check-label" for="termsAndConditions">이용약관(필수)</label>
                         <!-- 이용약관 전문 모달 -->
                         <a href="#modalTarget1" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -101,7 +101,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="personalInforRequired" name="PER_INF_REQ">
+                        <input class="form-check-input agree" type="checkbox" id="check2" name="PER_INF_REQ" required>
                         <label class="form-check-label" for="personalInforRequired">개인정보 수집/이용에 대한 안내(필수)</label>
                         <!-- 개인정보 전문 모달 -->
                         <a href="#modalTarget2" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -226,7 +226,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="personalInforOptional" name="PER_INF_OPT">
+                        <input class="form-check-input agree" type="checkbox" id="check3" name="PER_INF_OPT">
                         <label class="form-check-label" for="personalInforOptional">개인정보 수집/이용에 대한 안내(선택)</label> 
                         <!-- 개인정보 전문 모달 -->
                         <a href="#modalTarget3" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -279,7 +279,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="regulation" name="REGULATION">
+                        <input class="form-check-input agree" type="checkbox" id="check4" name="REGULATION" required>
                         <label class="form-check-label" for="regulation">리투리 규정에 대한 안내(필수)</label>
                         <!-- 리투리 규정 모달 -->
                         <a href="#modalTarget4" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -353,7 +353,7 @@
             <tr>
                 <td>
                     <div class="form-check form-switch">
-                        <input class="form-check-input" type="checkbox" id="regulation" name="REC_MKT_INF">
+                        <input class="form-check-input agree" type="checkbox" id="check5" name="REC_MKT_INF">
                         <label class="form-check-label" for="regulation">마케팅 정보 수신 및 활용 동의(선택)</label>
                         <!-- 마케팅 수신 모달 -->
                         <a href="#modalTarget5" data-bs-toggle="modal" class="text-decoration-none text-secondary small">내용보기</a>
@@ -394,20 +394,66 @@
         </table>
        <div class="text-center m-3" >
            
-                <button class="nextBtn">다음</button>
+                <button class="nextBtn" id="submitBtn">다음</button>
             </form>
+         
         </div>
     </div>
     
-
-      
        <!-- 푸터 -->
         <%@ include file="../footer.jsp" %>
+             <script>
+     //약관 전체 동의
+        const checkAll = document.getElementById('checkAll');
+        const check1 = document.getElementById('check1');
+        const check2 = document.getElementById('check2');
+        const check3 = document.getElementById('check3');
+
+        checkAll.addEventListener('change', function() {
+        if (checkAll.checked) {
+            check1.checked = true;
+            check2.checked = true;
+            check3.checked = true;
+            check4.checked = true;
+            check5.checked = true;
+        } else {
+            check1.checked = false;
+            check2.checked = false;
+            check3.checked = false;
+            check4.checked = false;
+            check5.checked = false;
+        }
+        });
+
+          // 필수선택 박스체크
+       const requiredSelectBox = document.getElementById("required-select-box");
+
+        // 제출 버튼 클릭 시 실행되는 함수
+        function onSubmit() {
+        // 필수 선택박스가 선택되지 않은 경우
+        if (!requiredSelectBox.value) {
+            // 알림창 띄우기
+            alert("필수사항을 선택해주세요.");
+            // 제출 방지
+            return false;
+        }
+        // 선택된 경우에는 제출 처리
+        return true;
+        }
+        </script>
+        <%-- <script>
+      
+        </script> --%>
       <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
       crossorigin="anonymous"
     ></script>
-
-</body>
+    </body>
 </html>
+
+      
+
+
+
+ 
