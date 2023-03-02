@@ -9,3 +9,11 @@
 .padding {
   padding-right: 70px;
 }
+
+.addr {
+  width: 230px;
+  margin-bottom: 5px;
+}
+.extraAddress {
+  display: none;
+}

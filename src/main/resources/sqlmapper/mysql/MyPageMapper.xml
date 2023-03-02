@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Mypage">
+
+ <!-- 찜하기 READ -->
+<!--call Mypage.selectFromWishList   -->
+<select id="selectFromWishList" parameterType="Map" resultType="Map">
+SELECT WISHLIST_ID, WISHLIST.CAR_DTL_ID, WISHLIST.USER_ID, MANUFACTURER, MODEL, DETAILED_MODEL, PRICE ,DTL_IMG_CAR
+FROM WISHLIST 
+JOIN CAR_DETAILE_INFO
+ON CAR_DETAILE_INFO.CAR_DTL_ID = WISHLIST.CAR_DTL_ID
+JOIN CAR_INFO
+ON CAR_INFO.CAR_ID = CAR_DETAILE_INFO.CAR_ID
+WHERE WISHLIST.USER_ID = #{user_id}
+ </select>
+
+<!-- 찜하기 삭제 -->
+<!--call Mypage.deleteFromWishList   -->
+<delete id ="deleteFromWishList" parameterType="Map">
+DELETE
+FROM WISHLIST
+WHERE WISHLIST_ID = #{wishlist_id}
+AND USER_ID = #{user_id}
+</delete>
+
+<!-- 방문 예약 일정 READ-->
+<!--call Mypage.selectFromReserveList   -->
+ <select id ="selectFromReserveList" parameterType="Map" resultType="Map">
+SELECT RESERVATION_ID, RSV_DATE,RSV_STATUS, RESERVATION.CAR_DTL_ID, RESERVATION.USER_ID, MANUFACTURER, MODEL, DETAILED_MODEL, USER_INFO.NAME
+FROM RESERVATION
+JOIN CAR_DETAILE_INFO
+ON CAR_DETAILE_INFO.CAR_DTL_ID = RESERVATION.CAR_DTL_ID
+JOIN CAR_INFO
+ON CAR_INFO.CAR_ID = CAR_DETAILE_INFO.CAR_ID
+JOIN USER_INFO
+ON RESERVATION.USER_ID = USER_INFO.USER_ID
+WHERE RESERVATION.USER_ID = #{user_id}
+</select>
+
+<!--상담 문의 내역 READ  -->
+<!--call Mypage.selectFromContact   -->
+<select id = "selectFromContact" parameterType ="Map" resultType="Map">
+SELECT CONTACT_ID, INQ_TITLE, INQ_CONTENT, INQ_DATE, ANS_CONTENT, ANS_DATE, STATUS_ID, USER_ID, DEALER_ID
+FROM CONTACT
+WHERE USER_ID = #{user_id}
+</select>
+
+<!-- 회원정보 READ -->
+<!--call Mypage.selectFromUserInfo   -->
+<select id = "selectFromUserInfo" parameterType ="Map" resultType="Map">
+SELECT USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH
+FROM USER_INFO
+WHERE USER_ID = #{user_id}
+</select>
+
+<!-- 회원정보 페이지 수정 -->
+<!--call Mypage.updateFromMyPage   -->
+<update id ="updateFromMyPage" parameterType="Map">
+UPDATE USER_INFO
+SET 
+PASSWORD = #{password},
+CELL_NUMBER = #{cell_number},
+EMAIL = #{email},
+ADDR_CITY = #{addr_city},
+ADDR_DISTRICT = #{addr_district}
+WHERE USER_ID = #{user_id}
+</update>
+
+<!-- 회원 탈퇴 -->
+<!--call Mypage.deleteFromMyPage   -->
+<delete id = "deleteFromMyPage" parameterType="Map">
+DELETE
+FROM USER_INFO
+WHERE USER_ID = #{user_id}
+
+</delete>
+</mapper>
+
