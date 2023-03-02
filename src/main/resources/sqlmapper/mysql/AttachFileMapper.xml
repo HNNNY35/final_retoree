@@ -5,32 +5,24 @@
 
     <!-- 차량 이미지파일 저장 insert -->
     <!-- call AttachFile.insertMulti -->
-    <insert id ="insertMulti" parameterType="Map">
-        INSERT INTO CIP_ATTACHFILE
-        (ATTACHFILE_SEQ, SOURCE_UNIQUE_SEQ, ORIGINALFILE_NAME, PHYSICALFILE_NAME)
-        VALUES
-        <foreach collection="attachfiles" item="attachfile" open="(" close=")" separator="),(">
-            #{attachfile.ATTACHFILE_SEQ}, #{attachfile.SOURCE_UNIQUE_SEQ}, #{attachfile.ORIGINALFILE_NAME}, #{attachfile.PHYSICALFILE_NAME}
-        </foreach>
+    <insert id="insertMulti" parameterType="Map"> INSERT INTO CIP_ATTACHFILE (ATTACHFILE_SEQ,
+        SOURCE_UNIQUE_SEQ, ORIGINALFILE_NAME, PHYSICALFILE_NAME) VALUES <foreach
+            collection="attachfiles" item="attachfile" open="(" close=")" separator="),(">
+        #{attachfile.ATTACHFILE_SEQ}, #{attachfile.SOURCE_UNIQUE_SEQ},
+        #{attachfile.ORIGINALFILE_NAME}, #{attachfile.PHYSICALFILE_NAME} </foreach>
     </insert>
 
     <!-- car_img insert -->
     <!-- call AttachFile.insertMultiCarImg -->
-    <insert id ="insertMultiCarImg" parameterType="Map">
-        INSERT INTO CAR_IMG
-        (CAR_IMG_ID, ATTACHFILE_SEQ, IMG_INFO)
-        VALUES
-        <foreach collection="attachfiles" item="attachfile" open="(" close=")" separator="),(">
-            #{CAR_ID}, #{attachfile.ATTACHFILE_SEQ}, #{attachfile.IMG_INFO}
-        </foreach>
+    <insert id="insertMultiCarImg" parameterType="Map"> INSERT INTO CAR_IMG (CAR_IMG_ID,
+        ATTACHFILE_SEQ, IMG_INFO) VALUES <foreach collection="attachfiles" item="attachfile"
+            open="(" close=")" separator="),("> #{CAR_ID}, #{attachfile.ATTACHFILE_SEQ},
+        #{attachfile.IMG_INFO} </foreach>
     </insert>
 
 
     <!-- call AttachFile.selectListByUID -->
-    <select id="selectListByUID" parameterType="Map" resultType="Map">
-        SELECT *
-        FROM CIP_ATTACHFILE
-        WHERE SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ}
-    </select>
+    <select id="selectListByUID" parameterType="Map" resultType="Map"> SELECT * FROM CIP_ATTACHFILE
+        WHERE SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ} </select>
 
 </mapper>
