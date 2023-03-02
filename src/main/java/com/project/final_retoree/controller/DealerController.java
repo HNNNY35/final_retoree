@@ -25,6 +25,8 @@ public class DealerController {
         //sql
         Object user = dealerService.getOne(params);
         modelAndView.addObject("user", user);
+        Object resultMap = dealerService.getList(params);
+        modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("dealer/dealer_main");
         return modelAndView;
     }

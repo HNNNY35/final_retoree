@@ -4,27 +4,20 @@
 <mapper namespace="Dealer">
     <!-- call Dealer.selectFromUserInfoByDEALER_ID-->
     <!-- DEALER_ID로 딜러 정보 조회 -->
-    <select id="selectFromUserInfoByDEALER_ID" parameterType="Map" resultType="Map">
+    <select id="selectFromUserInfoByDEALER_ID" parameterType="Map" resultType="Map"> SELECT * FROM
+        DEALER_INFO JOIN USER_INFO ON DEALER_INFO.DEALER_ID = USER_INFO.USER_ID WHERE
+        DEALER_INFO.DEALER_ID = #{USER_ID} </select>
 
-        SELECT *
-        FROM DEALER_INFO
-        JOIN USER_INFO
-        ON DEALER_INFO.DEALER_ID = USER_INFO.USER_ID
-        WHERE DEALER_INFO.DEALER_ID = #{USER_ID}
+    <!-- call Dealer.selectCarInfoByDealerId-->
+    <!-- DEALER_ID로 가격순 상위 3개의 등록 차량 조회 -->
+    <select id="selectCarInfoByDealerId" parameterType="Map" resultType="Map"> SELECT * FROM
+        CAR_DETAILE_INFO JOIN CAR_INFO ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID WHERE
+        CAR_DETAILE_INFO.DEALER_ID = #{USER_ID} ORDER BY CAR_INFO.PRICE DESC LIMIT 3 </select>
 
-    </select>
-    <!-- call Dealer.updateUserInfo-->   
-    <update id="updateUserInfo" 
-        parameterType="Map">
 
-        UPDATE USER_INFO
-        SET 
-        PASSWORD = #{PASSWORD},
-        CELL_NUMBER = #{CELL_NUMBER},
-        EMAIL = #{EMAIL},
-        ADDR_CITY = #{ADDR_CITY},
-        ADDR_DISTRICT = #{ADDR_DISTRICT}
-        WHERE USER_ID = #{USER_ID}
-
-    </update>
+    <!-- call Dealer.updateUserInfo-->
+    <update id="updateUserInfo"
+        parameterType="Map"> UPDATE USER_INFO SET PASSWORD = #{PASSWORD}, CELL_NUMBER =
+        #{CELL_NUMBER}, EMAIL = #{EMAIL}, ADDR_CITY = #{ADDR_CITY}, ADDR_DISTRICT = #{ADDR_DISTRICT}
+        WHERE USER_ID = #{USER_ID} </update>
 </mapper>

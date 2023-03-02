@@ -36,7 +36,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                                     <li>
                                         <a href="">차량관리</a>
                                         <ul>
-                                            <li><a href="">차량 신규 등록</a></li>
+                                            <li><a href="/car_reg/${user.DEALER_ID}">차량 신규 등록</a></li>
                                             <li><a href="">판매관리</a></li>
                                         </ul>
                                     </li>
@@ -77,18 +77,21 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                         </div>
                     </div>
                     <hr/>
-
+<%-- 반복 시작 --%>
                     <!-- 차량 관리 부분 -->
+                    
                     <div>
                         <h5>차량관리</h5>
                         <div class="my-3">최근 등록한 차량</div>
                         <div class="container">
+                        <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                             <div class="d-flex dealer_cards">
                                 <div class="card dealer_card">
                                     <div class="card-header text-center">
                                         <a class="text-black" href="">
-                                            <div class="fw-bold">그랜져 하이브리드</div>
-                                            <div>23허0101</div>
+                                            <div class="fw-bold">${resultData.MODEL}</div>
+                                            <div class="fw-bold">${resultData.DETAILED_MODEL}</div>
+                                            <div>${VEH_NUM}</div>
                                         </a>
                                     </div>
                                     <div class="card-body text-center">
@@ -97,54 +100,18 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                                         </div>
                                         <div class="my-2">
                                             판매가격
-                                            <span class="fw-bold">2,000만원</span>
+                                            <span class="fw-bold">${resultData.PRICE} 만원</span>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="card dealer_card">
-                                    <div class="card-header text-center">
-                                        <a class="text-black" href="">
-                                            <div class="fw-bold">그랜져 하이브리드</div>
-                                            <div>23허0101</div>
-                                        </a>
-                                    </div>
-                                    <div class="card-body text-center">
-                                        <div>
-                                            <img src="../image/grandeur_design_front.png" alt="" class="card_img"/>
-                                        </div>
-                                        <div class="my-2">
-                                            판매가격
-                                            <span class="fw-bold">2,000만원</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="card dealer_card">
-                                    <div class="card-header text-center">
-                                        <a class="text-black" href="">
-                                            <div class="fw-bold">그랜져 하이브리드</div>
-                                            <div>23허0101</div>
-                                        </a>
-                                    </div>
-                                    <div class="card-body text-center">
-                                        <div>
-                                            <img src="../image/grandeur_design_front.png" alt="" class="card_img"/>
-                                        </div>
-                                        <div class="my-2">
-                                            판매가격
-                                            <span class="fw-bold">2,000만원</span>
-                                        </div>
-                                    </div>
-                                </div>
+                        </c:forEach>
 
                                 <a href="" class="btn btn-outline-light d-flex align-items-center text-black">더보기</a>
                             </div>
                         </div>
-
                         <hr/>
                     </div>
-
+<%-- 반복 끝 --%>
                     <!-- 고객 관리 부분 -->
                     <div>
                         <h5>고객관리</h5>
@@ -161,7 +128,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td colspan="2">할부문의 드립니다.</td>
+                                    <td colspan="2">할부문의 드립니다. 미구현</td>
                                     <td>asdf</td>
                                     <td>2023-02-03</td>
                                 </tr>

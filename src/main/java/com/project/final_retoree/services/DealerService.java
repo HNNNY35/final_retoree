@@ -20,4 +20,12 @@ public class DealerService {
         Object result = commonDao.update(sqlMapId, dataMap);
         return result;
     } 
+
+    public Object getList(Object dataMap){
+        String sqlMapId = "Dealer.selectCarInfoByDealerId";
+        Object result = commonDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+
+    
 }

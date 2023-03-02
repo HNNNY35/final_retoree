@@ -27,11 +27,12 @@ public class NoticeController {
     GetDate getDate;
 
     String noticePath = "redirect:/notice";
-    
+
     @RequestMapping(value = {"/notice"}, method = RequestMethod.GET)
     public ModelAndView noticeGet(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object resultMap = noticeService.getList(params);
         Object noticeTopMap = noticeService.getNoticeTopList(params);
+        
         modelAndView.addObject("noticeTopMap", noticeTopMap);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("notice/notice");
@@ -40,16 +41,12 @@ public class NoticeController {
 
     @RequestMapping(value = {"/notice"}, method = RequestMethod.POST)
     public String noticePost(@RequestParam Map<String, Object> params) {
-        //NOTICE_ID 추가
         params.put("NOTICE_ID", commonUtils.getUniqueSequence());
-        //NOTICE_NO 추가
         params.put("NOTICE_NO", init.initializeNoticeNo());
-        //NOTICE_DATE 추가
         params.put("NOTICE_DATE", getDate.getDate());
 
         //insert
         noticeService.insert(params);
-
         return noticePath;
     }
     @RequestMapping(value = "/notice/{notice_no}", method = RequestMethod.GET)
@@ -70,11 +67,8 @@ public class NoticeController {
 
     @RequestMapping(value = "/notice_delete/{notice_no}")
     public String notice_delete(@RequestParam Map<String, Object> params, @PathVariable String notice_no) {
-        
-        
         params.put("NOTICE_NO", notice_no);
         noticeService.delete(params);
-
         return noticePath;
     }
 
@@ -89,9 +83,7 @@ public class NoticeController {
 
     @RequestMapping(value = "/notice_modify", method = RequestMethod.POST)
     public String notice_modify_out(@RequestParam Map<String, Object> params) {
-
         noticeService.update(params);
-        
         return noticePath;
     }
     
