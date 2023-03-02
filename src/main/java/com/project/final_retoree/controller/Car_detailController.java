@@ -37,12 +37,29 @@ public class Car_detailController {
         Object dealer_id = ((Map<String, Object>)resultMap2).get("DEALER_ID");
         Object resultMap3 = carDetailService.getDealerSalesCar(dealer_id);
         Object resultMap4 = carDetailService.getDealerSoldOutCar(dealer_id);
+
+        // 상품 찜 여부 확인하기
+        // 로그인 유저 UID 넘겨줌
+        params.put("USER_ID", "U001");
+        Object resultWishlist =carDetailService.checkWishlist(params);
+        if(resultWishlist == null) {
+            modelAndView.addObject("likeCheck", 0);
+        } else {
+            modelAndView.addObject("likeCheck", 1);
+        }
+
+        // car_info의 car_id로 차량 이미지 가져오기
+        params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
+        Object carImgs = carDetailService.selectCarImg(params);
         
         modelAndView.addObject("resultMap1", resultMap1);
         modelAndView.addObject("resultMap2", resultMap2);
         modelAndView.addObject("resultMap3", resultMap3);
         modelAndView.addObject("resultMap4", resultMap4);
+        modelAndView.addObject("carImgs", carImgs);
+        // modelAndView.addObject("resultWishlist", resultWishlist);
         modelAndView.setViewName("car/car_detail_change");
+
         return modelAndView;
     }
     
@@ -73,8 +90,9 @@ public class Car_detailController {
         // 상담 요청 완료 페이지 만들어야함 아니면 리다이렉트
         return modelAndView;
     }
+    
+    // 찜하기
 
-
-
+    
 
 }

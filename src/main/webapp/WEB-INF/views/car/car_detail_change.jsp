@@ -26,6 +26,8 @@
     <%@ include file="../header.jsp" %>
 
     <!-- 차량 사진 -->
+    <c:set var="directoryCar" value="${carImgs.path + carImgs.Front}" />
+    <c:set var="fileName" value="${carImgs.Front}" />
     <div class="container">
       <div class="img-container">
         <div class="inner-container">
@@ -33,7 +35,7 @@
             <div class="numbertext">1 / 6</div>
             <img
               class="car-img"
-              src="/img/grandeur_design_front.png"
+              src="${directoryCar}"
               width="100%"
               height="600px"
             />
@@ -198,12 +200,14 @@
                     | ${resultMap1.ADDR_CITY}
                 </div>
               </div>
+
               <strong class="add" id="inputList">
                 찜하기
-
-                  <span style="display: inline-block">
-                    <i
-                    class="material-icons rounded-circle bg-light"
+                <span style="display: inline-block">
+                  <a>
+                <c:choose>
+                  <c:when test="${likeCheck eq '0' or empty likeCheck}">
+                    <i class="material-icons rounded-circle bg-light"
                     style="
                       width: 3rem;
                       height: 3rem;
@@ -214,7 +218,25 @@
                     id="heart"
                     >favorite_border</i
                     >
+                  </c:when>
+                  <c:otherwise>
+                    <i class="material-icons rounded-circle bg-light"
+                    style="
+                      width: 3rem;
+                      height: 3rem;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      FILL : 1;
+                      "
+                    id="heart"
+                    >favorite_border</i
+                    >
+                  </c:otherwise>
+                </c:choose>
+                  </a>
                   </span>
+
                 </strong>
                 <c:set var="price" value="${resultMap1.PRICE}" />
               <h4 style="font-weight: 700; margin-top: 10px">
@@ -741,6 +763,7 @@
     </body>
 
   <script src="/js/car_detail.js"></script>
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

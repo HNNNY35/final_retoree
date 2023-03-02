@@ -56,6 +56,17 @@
         WHERE DEALER_ID = #{DEALER_ID}
         AND STATUS = 'soldout'
     </select>
+
+    <!-- 차량 UID로 이미지 가져오기 -->
+    <!-- call CarDetail.selectCarImg -->
+    <select id="selectCarImg" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CIP_ATTACHFILE
+        JOIN CAR_IMG
+        ON CIP_ATTACHFILE.ATTACHFILE_SEQ = CAR_IMG.ATTACHFILE_SEQ
+        WHERE SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ}
+        AND IMG_INFO = #{IMG_INFO}
+    </select>
     
     <!-- 방문예약 -->
     <!-- call CarDetail.insertReservation -->
@@ -74,6 +85,15 @@
         VALUES
         (#{CONTACT_ID}, #{INQ_TITLE}, #{INQ_CONTENT}, sysdate(), 'none', 'none', 'A001', #{USER_ID}, #{DEALER_ID})
     </insert>
+
+    <!-- 찜 여부 확인하기 -->
+    <!-- call CarDetail.selectWishlist -->
+    <select id="selectWishlist" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM wishlist
+        WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+        AND USER_ID = #{USER_ID}
+    </select>
 
 
 

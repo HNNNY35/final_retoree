@@ -43,31 +43,31 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                           <tr>
                             <th>앞면</th>
                             <td>
-                              <input type="file" name="imgFront" id="imgFront" class="form-control" required>
+                              <input type="file" name="imgFront" id="imgFront" class="form-control" accept="image/*" required>
                             </td>
                           </tr>
                           <tr>
                             <th>옆면</th>
                             <td>
-                              <input type="file" name="imgSide" id="imgSide" class="form-control" required>
+                              <input type="file" name="imgSide" id="imgSide" class="form-control" accept="image/*" required>
                             </td>
                           </tr>
                           <tr>
                             <th>내부</th>
                             <td>
-                              <input type="file" name="imgInside" id="imgInside" class="form-control" required>
+                              <input type="file" name="imgInside" id="imgInside" class="form-control" accept="image/*" required>
                             </td>
                           </tr>
                           <tr>
                             <th>타이어</th>
                             <td>
-                              <input type="file" name="imgTire" id="imgTire" class="form-control" required>
+                              <input type="file" name="imgTire" id="imgTire" class="form-control" accept="image/*" required>
                             </td>
                           </tr>
                           <tr>
                             <th>네비게이션</th>
                             <td>
-                              <input type="file" name="imgNavi" id="imgNavi" class="form-control" required>
+                              <input type="file" name="imgNavi" id="imgNavi" class="form-control" accept="image/*" required>
                             </td>
                           </tr>
                           <tr>
@@ -89,22 +89,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     </div>
 
     <%@ include file="../footer.jsp" %>
-    <!-- <script>
-      function checkImgType(){
-        var imgs = [$('#imgFront'), $('#imgSide'), $('#imgInside'), $('#imgTire'), $('#imgNavi'), $('#imgTrunk')]
-        for(var count = 0; count < imgs.length; couont++) {
-          var fileVal = imgs(count).val();
-          var idx = fileVal.lastIndexOf(".")+1;
-          var type = fileVal.substring(idx).toUpperCase();
-          if(type == "PNG" || type == "JPG" || type == "JPEG" || type == "GIF"){
-          } else {
-            alert("이미지파일(PNG, JPG, JPEG, GIF)만 업로드 가능합니다.");
-            return false;
-            }
-          }
-          return true;
-        }
-    </script> -->
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

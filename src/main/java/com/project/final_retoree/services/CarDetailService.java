@@ -1,5 +1,7 @@
 package com.project.final_retoree.services;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,6 +84,39 @@ public class CarDetailService {
         
         return result;
     }
+    
+    // 찜 여부 확인하기
+    public Object checkWishlist(Object dataMap) {
+        String sqlMapId = "CarDetail.selectWishlist";
+        Object result = carDetailDao.getOne(sqlMapId, dataMap);
+        
+        return result;
+    }
 
+    // 차량 이미지 가져오기
+    public Object selectCarImg(Object dataMap) {
+        String sqlMapId = "CarDetail.selectCarImg";
+        
+        Object result = null;
+        Map results = new HashMap<String, String>();
+        
+        String[] imgFiles = {"Front", "Side", "Inside", "Tire", "Navi", "Trunk"};
+        
+        for(int i = 0; i < imgFiles.length; i++) {
+            ((Map<String, Object>) dataMap).put("IMG_INFO", imgFiles[i]);
+            result = carDetailDao.getOne(sqlMapId, dataMap);
+            String fileName = (String)(((Map<String, Object>)result).get("ORIGINALFILE_NAME"));
+
+            results.put(imgFiles[i], fileName);
+        }
+        
+        // 이미지 가져올 때 필요한 것 : 경로, 이미지파일 이름
+        String directory = (String)((Map<String, Object>)carDetailDao.getOne(sqlMapId, dataMap)).get("PHYSICALFILE_NAME");
+        String path = commonUtils.getRelativeToAbsolutePath("src/main/resources/static/files/" + directory + "\\");
+        // String path = absolutePath + directory + "\\";
+        results.put("path", path);
+        
+        return results;
+    }
     
 }

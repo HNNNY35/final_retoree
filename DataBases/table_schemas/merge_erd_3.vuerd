@@ -3,8 +3,8 @@
     "version": "2.2.11",
     "width": 3000,
     "height": 3000,
-    "scrollTop": -159.99999364217138,
-    "scrollLeft": -882.3333548572336,
+    "scrollTop": -253.99999364217138,
+    "scrollLeft": -839,
     "zoomLevel": 0.9,
     "show": {
       "tableComment": true,
@@ -380,7 +380,7 @@
           {
             "name": "CAR_ID",
             "comment": "차량 정보  UID",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1348,7 +1348,7 @@
           {
             "name": "CAR_ID",
             "comment": "차량 정보  UID",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -1748,7 +1748,7 @@
           {
             "name": "ATTACHFILE_SEQ",
             "comment": "첨부파일 일련번호",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3021,7 +3021,7 @@
           {
             "name": "CAR_IMG_ID",
             "comment": "차량 정보  UID",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3044,7 +3044,7 @@
           {
             "name": "ATTACHFILE_SEQ",
             "comment": "첨부파일 일련번호",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3067,7 +3067,7 @@
           {
             "name": "IMG_INFO",
             "comment": "이미지 정보",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3092,7 +3092,7 @@
           "active": false,
           "left": 1760.9167,
           "top": 677.25,
-          "zIndex": 21,
+          "zIndex": 38,
           "widthName": 61.22998046875,
           "widthComment": 70.61181640625
         },
@@ -3106,7 +3106,7 @@
           {
             "name": "ATTACHFILE_SEQ",
             "comment": "첨부파일 일련번호",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3129,7 +3129,7 @@
           {
             "name": "SOURCE_UNIQUE_SEQ",
             "comment": "원본레코드 UNIQUE SEQ",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3152,7 +3152,7 @@
           {
             "name": "ATTACHFILE_TYPE",
             "comment": "첨부파일 유형",
-            "dataType": "VARCHAR(100)",
+            "dataType": "VARCHAR(200)",
             "default": "",
             "option": {
               "autoIncrement": false,
@@ -3173,7 +3173,7 @@
             "id": "b20a5dba-9f94-4c0a-8fd5-2f441b0c77c4"
           },
           {
-            "name": "ORGINALFILE_NAME",
+            "name": "ORIGINALFILE_NAME",
             "comment": "원본 파일명",
             "dataType": "VARCHAR(200)",
             "default": "",
@@ -3188,7 +3188,7 @@
               "pk": false,
               "fk": false,
               "pfk": false,
-              "widthName": 132.75537109375,
+              "widthName": 136.3671875,
               "widthComment": 70.61181640625,
               "widthDataType": 94.94873046875,
               "widthDefault": 60
@@ -3243,10 +3243,10 @@
           }
         ],
         "ui": {
-          "active": false,
+          "active": true,
           "left": 1133.0953,
           "top": 530.3811,
-          "zIndex": 19,
+          "zIndex": 43,
           "widthName": 108.4248046875,
           "widthComment": 60
         },
