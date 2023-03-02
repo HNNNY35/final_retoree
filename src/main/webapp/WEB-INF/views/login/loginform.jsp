@@ -31,6 +31,7 @@
        <%-- method="post" action="/login" 스프링프레임워크의 필터에 걸리는 부분 --%>
     <form class="form-singin" method="post" action="/login">
       <div class="login">
+     
         <h2 class="fw-bold">Login</h2>
         <form>
           <!-- <label for="username">아이디</label> -->
@@ -40,6 +41,7 @@
             name="username"
             placeholder="ID"
             required
+            value = "test01"
           />
 
           <!-- <label for="password">비밀번호</label> -->
@@ -49,8 +51,11 @@
             name="password"
             placeholder="PASSWORD"
             required
+            value = "12341234"
           />
-         
+          <c:if test="${not empty param.fail}">
+        <div><font color="red" class= "text-end">아이디를 다시 확인해 주시기 바랍니다.</font></div> 
+       </c:if>
         <div class="text-center"> 
             <button class="mb-3 mt-2 signin">sign in</button>
         </div>
