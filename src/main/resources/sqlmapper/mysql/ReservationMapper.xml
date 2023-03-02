@@ -17,7 +17,7 @@ FROM USER_INFO
         FROM RESERVATION
         JOIN USER_INFO 
         ON USER_INFO.USER_ID = RESERVATION.USER_ID
-        WHERE USER_INFO.USER_ID = #{USER_ID}    
+       
     </select>
 
     </mapper>

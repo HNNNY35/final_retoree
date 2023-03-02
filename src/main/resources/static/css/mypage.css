@@ -48,3 +48,64 @@
 .border {
   border-radius: 10px;
 }
+
+.myPage {
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  margin: 10px;
+  margin-top: 57px;
+  margin-bottom: 57px;
+  padding: 50px 0;
+  height: 200px;
+}
+.myPageMember {
+  display: inline-block;
+  position: relative;
+  max-width: 50%;
+  height: 32px;
+  padding-left: 50px;
+}
+.number {
+  float: right;
+  width: 500px;
+  vertical-align: top;
+}
+.value {
+  display: block;
+  margin-top: 5px;
+  font-size: 33px;
+  line-height: 38px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+ul {
+  display: block;
+}
+li {
+  list-style: none;
+}
+.number > ul > li {
+  float: left;
+  width: 33.33%;
+  padding-left: 80px;
+}
+
+.number > ul > li > span {
+  color: darkgrey;
+}
+
+thead > tr > th {
+  text-align: center;
+  vertical-align: middle;
+}
+
+tbody > tr > td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+.notice {
+  border: 1px solid black;
+}

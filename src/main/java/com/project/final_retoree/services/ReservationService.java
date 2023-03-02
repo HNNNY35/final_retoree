@@ -10,8 +10,8 @@ public class ReservationService {
     @Autowired
     ReservationDao reservatioinDao;
 
-    public Object getUserReservation(Object dataMap) {
-        String sqlMapId = "Reservation.selectFromReservation";
+    public Object getUserReservation(String user_id, Object dataMap) {
+        String sqlMapId = "Mypage.selectFromReserveList";
         Object result = reservatioinDao.getUserReservation(sqlMapId, dataMap);
         return result;
     }

@@ -28,8 +28,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
         <!-- 방문예약 내역이 있을 때 -->
         <h2 class="text-center">
-          ${reservation.NAME}고객님은 안심번호로 전화통화 후 방문예약이
-          <span style="color: red">${reservation.RSV_STATUS}</span>되었습니다.
+          고객님은 안심번호로 전화통화 후 방문예약이
+          <span style="color: red"></span>되었습니다.
         </h2>
         <hr />
 
