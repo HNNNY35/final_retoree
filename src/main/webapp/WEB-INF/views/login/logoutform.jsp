@@ -21,39 +21,25 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/login.css" />
-    <link rel="stylesheet" href="/css/price_check_header.css" />
-  </head>
-
-  <body>
+ </head>
+<body>
     <%@ include file="../header.jsp" %>
-        <div class="container">
-        <form class="form-signin" method="post" action="/logout">
-            <h2 class="form-signin-heading">Are you sure you want to log out?</h2>
-            <input name="_csrf" type="hidden" value="0e0841e3-2572-44fd-8529-1d8f028363c6">
-            <button class="btn btn-lg btn-primary btn-block" type="submit">Log Out</button>
-        </form>
-    </div>
-    <%-- <div class="container">
+       <div class="container">
+   <%-- method="post" action="/login" 스프링프레임워크의 필터에 걸리는 부분 --%>
+    <form class="form-signin" method="post" action="/logout">
       <div class="login">
-      <form class="form-signin" method="post" action="/logout">
-       
-          <h4 class="text-center fw-bold text-primary mb-5">
-            로그아웃되었습니다
+        <h4 class="text-center fw-bold text-dark mb-5">
+            로그아웃하시겠습니까?
           </h4>
-        </div>
-
-          <div class="text-center">
-            <a href="./main_search.html"
-              ><button type="button" class="mb-3 fs-5">Main</button></a
-            >
-
-            <a href="./login.html"
-              ><button type="button" class="mb-3 fs-5">Sign in</button></a
-            >
-          </div>
-        </form>
-      </div>
-    </div> --%>
+         <input name="_csrf" type="hidden" value="0e0841e3-2572-44fd-8529-1d8f028363c6">
+           
+            <div class="text-center" type="submit"> 
+           <button class="signup">Sign out</button>
+             </div>
+           </div>
+       </form>
+    </div>
+          
     <!-- 푸터 -->
     <%@ include file="../footer.jsp" %>
     <script
@@ -63,3 +49,5 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     ></script>
   </body>
 </html>
+     
+

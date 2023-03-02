@@ -25,18 +25,18 @@ public class RegisterController {
     CommonUtils commonUtils;
 
     // 회원가입약관동의
-    @RequestMapping(value = { "/register_agree" }) // ({ / })
+    @RequestMapping(value = { "/registeragree" })
     public ModelAndView register_agree(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/register_new_1");
+        modelAndView.setViewName("register/register_new_1");
         return modelAndView;
     }
 
     // 회원가입
-    @RequestMapping(value = { "/register" }, method = RequestMethod.POST) // @RequestMapping({ " / " })
+    @RequestMapping(value = { "/register" }, method = RequestMethod.POST)
     public ModelAndView register(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object ts_cs_id = registerService.insertagree(params);
         modelAndView.addObject("ts_cs_id", ts_cs_id);
-        modelAndView.setViewName("login_register/register_new_2");
+        modelAndView.setViewName("register/register_new_2");
         return modelAndView;
     }
 
@@ -45,23 +45,8 @@ public class RegisterController {
     public ModelAndView register_welcome(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         params.put("USER_ID", commonUtils.getUniqueSequence());
         registerService.insertregister(params);
-        modelAndView.setViewName("login_register/register_new_3");
+        modelAndView.setViewName("register/register_new_3");
         return modelAndView;
     }
 
-    // 로그인
-    @RequestMapping(value = "/login")
-    public ModelAndView login(ModelAndView modelAndView) {
-        modelAndView.setViewName("login_register/login");
-        return modelAndView;
-    }
-
-    // @RequestMapping(value = { "/register" }, method = RequestMethod.POST)
-    // public ModelAndView register(@RequestParam Map<String, Object> params,
-    // ModelAndView modelAndView) {
-    // params.put("TS_CS_ID", commonUtils.getUniqueSequence());
-    // registerService.insertagree(params);
-    // modelAndView.setViewName("login_register/register_new_2");
-    // return modelAndView;
-    // }
 }

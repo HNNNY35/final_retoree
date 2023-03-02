@@ -21,7 +21,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/login.css" />
-    <link rel="stylesheet" href="/css/price_check_header.css" />
+   
   </head>
 
   <body>
@@ -41,7 +41,7 @@
             name="username"
             placeholder="ID"
             required
-            value = "test01"
+         
           />
 
           <!-- <label for="password">비밀번호</label> -->
@@ -51,19 +51,19 @@
             name="password"
             placeholder="PASSWORD"
             required
-            value = "12341234"
+          
           />
           <c:if test="${not empty param.fail}">
         <div><font color="red" class= "text-end">아이디를 다시 확인해 주시기 바랍니다.</font></div> 
        </c:if>
         <div class="text-center"> 
-            <button class="mb-3 mt-2 signin">sign in</button>
+            <button class="mb-3 mt-2 signin">Sign in</button>
         </div>
       </form>
       <%-- 회원가입창 유도 --%>
-      <form action="/register_agree">
+      <form action="/registeragree">
         <div class="text-center"> 
-           <button class="signup">sign up</button>
+           <button class="signup">Sign up</button>
              </div>
              </form>
       </div>

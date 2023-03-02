@@ -29,6 +29,7 @@
         
         <div class="container">
         <div> Dealer / read</div>
+        <div> Dealer 와 Admin만 접속가능</div>
         </div>
 
     <!-- 푸터 -->

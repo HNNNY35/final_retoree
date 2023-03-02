@@ -67,7 +67,7 @@
                   id="name"
                   placeholder="실명  입력"
                   required
-                  value ="test_first"
+            
                 />
                 <br />
               </td>
@@ -87,7 +87,7 @@
                   id="birthday"
                   placeholder="YYYYMMDD"
                   required
-                   value ="2000000"
+                
                 />
                 <br />
               </td>
@@ -107,7 +107,7 @@
                   id="userId"
                   placeholder="영문 소문자와 숫자 조합 4~12자리"
                   required
-                   value ="test01"
+                
                   />
                 <br />
               </td>
@@ -126,7 +126,7 @@
                   name="PASSWORD"
                   id="password"
                   required
-                   value ="12341234"
+                
                 />
                 <label for="password" class="small"
                   >영문 대/소문자, 숫자 사용 가능하며, 8~16자까지
@@ -149,7 +149,7 @@
                   name="PASSWORD_CHECK"
                   id="passwordConfirm"
                   required
-                   value ="12341234"
+                 
                 />
                 <label for="text" id="passwordCheckResult" class="small"></label>
                 
@@ -171,7 +171,7 @@
                   id="cell_number"
                   required
                   placeholder="'-' 제외하고 숫자만 입력"
-                   value ="01012345678"
+                 
                 />
                 <br />
               </td>
@@ -191,7 +191,7 @@
                   id="email"
                   placeholder="example@retoreecar.com"
                   required
-                   value ="aaa@gmail"
+              
                 />
                 <br />
               </td>
@@ -302,7 +302,7 @@
                   class="form-control"
                   name="AUTH"
                   id="auth"
-                  value="user"
+                  value="ROLE_USER"
                   required
                 />
           

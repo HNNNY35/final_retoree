@@ -41,7 +41,7 @@
       <br />
       <div class="text-center m-3">
            <h3 class="m-3">회원가입이 완료되었습니다.</h3>
-          <h5 class="m-3"><a href="./login" class="text-primary">로그인 페이지로</a></h5>
+          <h5 class="m-3"><a href="/loginform" class="text-primary">로그인 페이지로</a></h5>
        
         <h4 class="m-5">리투리 카에서 당신의 차를 찾아보세요.</h4>
         <div>

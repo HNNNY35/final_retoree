@@ -24,16 +24,16 @@
     <link rel="stylesheet" href="/css/price_check_header.css" />
   </head>
 
- <body>
+  <body>
     <%@ include file="../header.jsp" %>
         
         <div class="container">
-        <div> manager / read</div>
+        <div> Admin / read</div>
+        <div> Admin만 접속 가능</div>
         </div>
 
     <!-- 푸터 -->
     <%@ include file="../footer.jsp" %>
-  
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

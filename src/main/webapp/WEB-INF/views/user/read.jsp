@@ -28,7 +28,8 @@
     <%@ include file="../header.jsp" %>
         
         <div class="container">
-        <div> Admin / read</div>
+        <div> User / read</div>
+        <div> User 와 Admin만 접속 가능</div>
         </div>
 
     <!-- 푸터 -->
