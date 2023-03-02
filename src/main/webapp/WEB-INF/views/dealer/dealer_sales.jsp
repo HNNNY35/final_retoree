@@ -23,29 +23,7 @@
     <div class="container">
       <div class="row mb-3">
       <!-- 좌측 마이페이지 메뉴 -->
-          <div class="col-3">
-            <div class="card">
-              <div class="card-header text-center">
-                <a href="" class="h5 text-black">마이페이지</a>
-              </div>
-              <div class="card-body">
-                <div class="myPageMenu">
-                  <ul>
-                    <li><a href="">딜러 정보 수정</a></li>
-                    <li>
-                      <a href="">차량관리</a>
-                      <ul>
-                        <li><a href="">차량 신규 등록</a></li>
-                        <li><a href="">판매관리</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="">고객관리</a></li>
-                    <li><a href="">매출내역</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
+          <%@ include file="../dealer_mypage_side_nav.jsp" %>
 
         <div class="col-9">
           <h3 class="pt-3">${resultDealerName.NAME}님의 매출내역입니다.</h3>
