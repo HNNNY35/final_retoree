@@ -130,7 +130,7 @@
             <sec:authorize access="hasRole('ROLE_ADMIN')">
             <ul class="dropdown-menu text-small">
               <li>
-                <a class="dropdown-item" href="../myPage">마이페이지</a>
+                <a class="dropdown-item" href="/dealerlist">회원관리</a>
               </li>
              
               <li><a class="dropdown-item" href="../myPageVisitReserve">방문예약 확인</a></li>

@@ -31,7 +31,7 @@ public class RegisterService {
 
     public Object insertregister(Object dataMap) {
         String sqlMapId = "Register.insertWithUID";
-        ((Map) dataMap).put("USERS_UID", commonUtils.getUniqueSequence());
+
         // normal to crupto password
         String password = (String) ((Map) dataMap).get("PASSWORD");
         ((Map) dataMap).put("PASSWORD", bcryptPasswordEncoder.encode(password)); // 패스워드를 암호화하는
@@ -40,4 +40,32 @@ public class RegisterService {
         return result;
     }
 
+    public void SignUp(Object dataMap) {
+
+        ((Map) dataMap).put("USER_ID", commonUtils.getUniqueSequence());
+        this.insertregister(dataMap);
+        this.insertUser(dataMap);
+
+    }
+
+    public Object insertUser(Object dataMap) {
+        String sqlMapId = "Register.insertUser";
+        Object result = registerDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertDealer(Object dataMap) {
+        String sqlMapId = "Register.insertDealer";
+        Object result = registerDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    public Object insertAdmin(Object dataMap) {
+        String sqlMapId = "Register.insertAdmin";
+        Object result = registerDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
 }
+// this.insertDealer(dataMap);
+// this.insertAdmin(dataMap);

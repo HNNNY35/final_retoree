@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="UserInfoAdmin">
+
+<!--call UserInfoAdmin.selectFromUserinfo   -->
+<select id="selectFromUserinfo" parameterType="Map" resultType="Map">
+SELECT *
+FROM USER_INFO
+ </select>
+   
+   <!--call UserInfoAdmin.selectselectByID   -->
+<select id="selectselectByID" parameterType="Map" resultType="Map">
+SELECT USER_ID, ID, NAME, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, AUTH
+FROM USER_INFO 
+WHERE USER_ID = #{USER_ID} 
+ </select>
+   
+       <!-- call UserInfoAdmin.updateByUSERID -->
+    <update id="updateByUSERID" parameterType="Map">
+    UPDATE USER_INFO
+    SET 
+    USER_ID = #{USER_ID},
+    NAME = #{NAME},
+    ID = #{ID},
+    BIRTHDAY = #{BIRTHDAY},
+    CELL_NUMBER = #{CELL_NUMBER},
+    EMAIL = #{EMAIL},
+    ADDR_CITY = #{ADDR_CITY},
+    ADDR_DISTRICT = #{ADDR_DISTRICT},
+    AUTH = #{AUTH},
+    WHERE USER_ID = #{USER_ID}
+    </update>
+
+      <!-- call UserInfoAdmin.deleteByUSERID -->
+    <delete id="deleteByUSERID" parameterType="Map">
+    DELETE FROM USER_INFO
+    WHERE USER_ID = #{USER_ID} 
+    </delete>
+  </mapper>
