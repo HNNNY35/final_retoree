@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="/css/car_detail.css" />
     <link rel="stylesheet" href="/css/myPage_modify.css" />
     <link rel="stylesheet" href="/css/mypage.css" />
+    <link rel="stylesheet" href="/css/register_new_1.css" />
     
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <link
@@ -32,107 +33,232 @@
        <%@ include file="./myPageSide.jsp" %>
         <!-- class="temp-box" -->
         <div class="container">
-          <form action="./myPageEdit?user_id=U001" method="post">
-          <c:forEach items="${userInfo}" var="userInfo">
-          <div class="container mt-3">
-          
-            <div class="fs-4 text-center padding">회원정보 수정</div>
-            <br />
-            <hr>
-          </div>
-          <div class="position">
-          <div class="mb-3 row text-center">
-            <input type="hidden" id="id" value = ${userInfo.NAME} >
-            <label for="" class="col-sm-2 col-form-label fs-5">이름</label>
-            <div class="col-sm-5">
-                <input type="txt" class="form-control" name="name" id="name" value="${userInfo.NAME}" readonly>
-                <div class="small" style="float: right;">이름은 변경하실 수 없습니다.</div>
-            </div>
-
-          </div>
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">생년월일</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="birthday" id="birthday" value="${userInfo.BIRTHDAY}" readonly>
-                <div class="small" style="float: right;">생년월일은 변경하실 수 없습니다.</div>
-            </div>
-          </div>
-
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">아이디</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="id" id="id" value="${userInfo.ID}" readonly >
-                <div class="small" style="float: right;">아이디는 변경하실 수 없습니다.</div>
-            </div>
-            <!-- <div class="small">영문 소문자와 숫자 조합 4~12자리</div> -->
-          </div>
-
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">비밀번호</label>
-            <div class="col-sm-5">
-                <input type="password" class="form-control" name="password" id="password" required="required">
-                <div class="small" style="float: right;">영문 대/소문자, 숫자 사용 필수 8~16자리</div>
-            </div>
-          </div>
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">비밀번호 확인</label>
-            <div class="col-sm-5">
-                <input type="password" class="form-control" name="password" id="passwordConfirm" required="required">
-                <label style="float: right;" for="text" id="passwordCheckResult" class="small "></label>
-
-            </div>
-          </div>
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">휴대번호</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" value="${userInfo.CELL_NUMBER}" name="cell_number" id=" cell_number" required placeholder="'-' 제외하고 숫자만 입력"/>
-            </div>
-          </div>
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">이메일</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" value="${userInfo.EMAIL}" name="email" id="email" required placeholder="example@retoreecar.com"/>
-            </div>
-          </div>
-          <!-- 주소 API 사용 -->
-          <label for="" class="col-sm-2 col-form-label fs-5">주소</label>
-          <input type="text" class="addr" id="sample2_postcode" placeholder="우편번호">
-          <input type="button" onclick="sample2_execDaumPostcode()" value="우편번호 찾기"><br>
-          
-          <label for="" class="col-sm-2 col-form-label fs-5"></label>
-          <input type="text" class="addr" name = "addr_city" id="sample2_address" placeholder="주소" value="${userInfo.ADDR_CITY}"><br>
-
-          <label for="" class="col-sm-2 col-form-label fs-5 ">상세주소</label>
-          <input type="text" class="addr"  name = "addr_district" id="sample2_detailAddress" placeholder="상세주소" value="${userInfo.ADDR_DISTRICT}">
-          <input type="text" class="extraAddress" id="sample2_extraAddress" placeholder="참고항목">
-
-<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
-<div id="layer" style="display:none;position:fixed;overflow:hidden;z-index:1;-webkit-overflow-scrolling:touch;">
-<img src="//t1.daumcdn.net/postcode/resource/images/close.png" id="btnCloseLayer" style="cursor:pointer;position:absolute;right:-3px;top:-3px;z-index:1" onclick="closeDaumPostcode()" alt="닫기 버튼">
-</div>
-
-          <!-- 주소 / 상세 주소  -->
-          <!-- <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">주소</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="address" id="address" required/>
-            </div>
-          </div>
-          
-          <div class="mb-3 row text-center">
-            <label for="" class="col-sm-2 col-form-label fs-5">상세주소</label>
-            <div class="col-sm-5">
-                <input type="text" class="form-control" name="detail_address" id="detail_address" required placeholder="상세주소를 입력해 주세요." />
-            </div>
-          </div> -->
-
-
-        </div>
+          <form action="./myPageEdit" method="post">
+            <c:forEach items="${userInfo}" var="userInfo">
+              <div class="container mt-3">
+                <!-- <div class="fs-4 text-center padding">회원정보 수정</div> -->
+                
+                <table class="register_form">
+                  <thead>
+                    <tr>
+                      <td colspan="2">
+                        <h3 class="text-center">회원정보 수정</h3>
+                        <hr>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td colspan="2" class="text-end text-danger">*필수입력</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">이름 <span class="text-danger">*</span></h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="name"
+                          id="name"
+                          value="${userInfo.NAME}"
+                          readonly
+                        />
+                        <div class="small" style="float: left">
+                          이름은 변경하실 수 없습니다.
+                        </div>
+        
+                        <br />
+                      </td>
+                    </tr>
+        
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          생년월일 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="birthday"
+                          id="birthday"
+                          value="${userInfo.BIRTHDAY}"
+                          readonly
+                        />
+        
+                        <div class="small" style="float: left">
+                          생년월일은 변경하실 수 없습니다.
+                        </div>
+        
+                        <br />
+                      </td>
+                    </tr>
+        
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          아이디 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="id"
+                          id="id"
+                          value="${userInfo.ID}"
+                          readonly
+                        />
+                        <div class="small" style="float: left">
+                          아이디는 변경하실 수 없습니다.
+                        </div>
+        
+                        <br />
+                      </td>
+                    </tr>
+        
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          비밀번호 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="password"
+                          class="form-control"
+                          name="password"
+                          id="password"
+                          required
+                        />
+                        <div class="small" style="float: left">
+                          영문 대/소문자, 숫자 사용 필수 8~16자리
+                        </div>
+                        <br />
+                      </td>
+                    </tr>
+        
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          비밀번호 확인 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="password"
+                          class="form-control"
+                          name="password"
+                          id="passwordConfirm"
+                          required
+                        />
+                        <label
+                          style="float: left"
+                          for="text"
+                          id="passwordCheckResult"
+                          class="small"
+                        ></label>
+                        <br />
+                      </td>
+                    </tr>
+        
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          휴대전화번호 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="${userInfo.CELL_NUMBER}"
+                          name="cell_number"
+                          id=" cell_number"
+                          required
+                          placeholder="'-' 제외하고 숫자만 입력"
+                        />
+                        <br />
+                      </td>
+                    </tr>
+        
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          이메일 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="${userInfo.EMAIL}"
+                          name="email"
+                          id="email"
+                          required
+                          placeholder="example@retoreecar.com"
+                        />
+        
+                        <br />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">주소 <span class="text-danger">*</span></h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="address_kakao"
+                          name = "addr_city"
+                          value="${userInfo.ADDR_CITY}"
+                        />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>
+                        <h6 class="fw-bold">
+                          상세 주소 <span class="text-danger">*</span>
+                        </h6>
+                      </th>
+                      <td>
+                        <input
+                          type="text"
+                          class="form-control"
+                          name="addr_district"
+                          value="${userInfo.ADDR_DISTRICT}"
+                        />
+                      </td>
+                      <br />
+                      <input
+                        type="hidden"
+                        class="form-control"
+                        name="TS_CS_ID"
+                        id="ts_cs_id"
+                        value="${ts_cs_id}"
+                        required
+                      />
+                      <input
+                        type="hidden"
+                        class="form-control"
+                        name="AUTH"
+                        id="auth"
+                        value="ROLE_USER"
+                        required
+                      />
+                    </tr>
+                  </tbody>
+                </table>
+         
             <div class="text-center m-5">
                 <button type="submit" onclick="alertUpdate()" class="btn btn-primary">수정하기</button>
             </div>
           </c:forEach>
         </form>
+      </div>
       </div>
         </main>
          <%@ include file="../footer.jsp" %>
@@ -144,12 +270,12 @@
         crossorigin="anonymous"
       ></script>
       <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-      <script src="/js/myPage_modify.js"></script>
+      <!-- <script src="/js/myPage_modify.js"></script> -->
       <script>
         function alertUpdate(){
           alert("수정하시겠습니까?")
           alert("수정이 완료되었습니다.")
-          window.location.href = "./myPage?user_id=U001"
+          window.location.href = "./myPage"
           
         }
       </script>
@@ -171,9 +297,26 @@
              }
            });
          });
-       
        </script>
 
+            <script>
+            window.onload = function () {
+            document
+            .getElementById("address_kakao")
+            .addEventListener("click", function () {
+              //주소입력칸을 클릭하면
+              //카카오 지도 발생
+            new daum.Postcode({
+                oncomplete: function (data) {
+                  //선택시 입력값 세팅
+                  document.getElementById("address_kakao").value = data.address; // 주소 넣기
+                  document.querySelector("input[name=ADDR_DISTRICT]").focus(); //상세입력 포커싱
+                },
+              }).open();
+            });
+        };
+      </script>
+ 
 
     </html>
 

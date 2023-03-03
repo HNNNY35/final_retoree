@@ -24,16 +24,16 @@
     <div class="side temp-box border" style="height: 350px">
     <ul>
       <li>
-        <h4 class="mt-3"><a href="./myPage?user_id=U001" style="color: black;" class="text-decoration-none" >마이페이지</a> </h4>
+        <h4 class="mt-3"><a href="./myPage" style="color: black;" class="text-decoration-none" >마이페이지</a> </h4>
       </li>
       <li>
-        <a href="./wishListCar?user_id=U001" class="text-decoration-none">찜 차량</a>
+        <a href="./wishListCar" class="text-decoration-none">찜 차량</a>
       </li>
       <li>
-        <a href="./myPageVisitReserve?user_id=U001" class="text-decoration-none">방문 예약</a>
+        <a href="./myPageVisitReserve" class="text-decoration-none">방문 예약</a>
       </li>
       <li>
-        <a href="./contact?user_id=U001" class="text-decoration-none">1:1 문의 내역</a>
+        <a href="./contact" class="text-decoration-none">1:1 문의 내역</a>
       </li>
     </ul>
     <ul >
@@ -44,7 +44,7 @@
           <!-- 세션 -- -->
           
             <li>
-              <a href="/myPage_modify?user_id=U001" class="text-decoration-none">회원정보수정</a>
+              <a href="/myPage_modify" class="text-decoration-none">회원정보수정</a>
             
             <li>
               <a href="/withdraw" class="text-decoration-none">회원 탈퇴</a>

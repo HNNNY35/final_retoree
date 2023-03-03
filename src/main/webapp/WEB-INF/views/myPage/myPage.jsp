@@ -30,17 +30,17 @@
           <ul>
             <li>
               <h4 class="mt-3">
-                <a href="./myPage?user_id=U001" style="color: black;" class="text-decoration-none" >마이페이지</a> 
+                <a href="./myPage" style="color: black;" class="text-decoration-none" >마이페이지</a> 
               </h4>
             </li>
             <li>
-              <a href="./wishListCar?user_id=U001" class="text-decoration-none">찜 차량</a>
+              <a href="./wishListCar" class="text-decoration-none">찜 차량</a>
             </li>
             <li>
-              <a href="./myPageVisitReserve?user_id=U001" class="text-decoration-none">방문 예약</a>
+              <a href="./myPageVisitReserve" class="text-decoration-none">방문 예약</a>
             </li>
             <li>
-              <a href="./contact?user_id=U001" class="text-decoration-none">1:1 문의 내역</a>
+              <a href="./contact" class="text-decoration-none">1:1 문의 내역</a>
             </li>
           </ul>
 
@@ -49,7 +49,7 @@
               <h5 >회원정보</h5>
                 <!-- 세션 -- -->
                   <li>
-                    <a href="/myPage_modify?user_id=U001" class="text-decoration-none">회원정보수정</a>
+                    <a href="/myPage_modify" class="text-decoration-none">회원정보수정</a>
                   
                   <li>
                     <a href="/withdraw" class="text-decoration-none">회원 탈퇴</a>
@@ -74,11 +74,11 @@
                 <ul>
                   <li>
                     <span>방문 예약</span> 
-                  <a class="value" href="./myPageVisitReserve?user_id=U001">${myPagereserve.size()}</a>
+                  <a class="value" href="./myPageVisitReserve">${myPagereserve.size()}</a>
                 </li>
                   <li> 
                     <span>찜한 차량</span> 
-                    <a class="value" href="./wishListCar?user_id=U001">${wishList.size()}</a>
+                    <a class="value" href="./wishListCar">${wishList.size()}</a>
                   </li>
                 </ul>
               </div>

@@ -5,6 +5,7 @@ import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.project.final_retoree.bean.MemberVo;
 import com.project.final_retoree.bean.WishList;
+import com.project.final_retoree.configurations.PrincipalUser;
 import com.project.final_retoree.services.MyPageService;
 import com.project.final_retoree.services.ReservationService;
 
@@ -31,11 +32,16 @@ public class UserController {
 
     // 마이페이지
     @RequestMapping(value = "/myPage")
-    public ModelAndView myPage(String user_id,  @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        // user_id ==> 나중에 세션으로 받아와야함 
-        Object wishList = myPageService.getWishList(user_id, params);
-        Object myPagereserve = myPageService.getReserveList(user_id, params);
-        Object userInfo = myPageService.getUserInfo(user_id, params);
+    public ModelAndView myPage(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        // user_id ==> 나중에 세션으로 받아와야함
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+         
+        params.put("USER_ID", user_id);
+
+        Object wishList = myPageService.getWishList(params);
+        Object myPagereserve = myPageService.getReserveList(params);
+        Object userInfo = myPageService.getUserInfo(params);
 
         System.out.println(user_id);
         System.out.println(wishList);
@@ -50,9 +56,13 @@ public class UserController {
     
     //찜한 차량 페이지
     @RequestMapping(value = "/wishListCar")
-    public ModelAndView wishListCar(String user_id,  @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+    public ModelAndView wishListCar(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // user_id ==> 나중에 세션으로 받아와야함 
-        Object wishList = myPageService.getWishList(user_id, params);
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+
+        params.put("USER_ID", user_id);
+        Object wishList = myPageService.getWishList(params);
 
         System.out.println(user_id);
         System.out.println(wishList);
@@ -65,7 +75,13 @@ public class UserController {
 
     // 찜목록 삭제
     @RequestMapping(value = "/dltWishList")
-     public ModelAndView dltWishList(String user_id, String wishlist_id, ModelAndView modelAndView) {
+     public ModelAndView dltWishList(String wishlist_id, @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+
+             PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+             String user_id = principal.getUser_id();
+
+            params.put("USER_ID", user_id);
+
             System.out.println(wishlist_id);
             System.out.println(user_id);
             
@@ -81,9 +97,11 @@ public class UserController {
 
      //1:1 상담 문의 내역
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
-    public ModelAndView contact(@RequestParam Map<String, Object> params,  String user_id,
-                ModelAndView modelAndView) throws Exception {
+    public ModelAndView contact(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
     
+            PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            String user_id = principal.getUser_id();               
+
             params.put("USER_ID", user_id);
             Object contact = myPageService.getContactList(user_id, params);
     
@@ -95,9 +113,12 @@ public class UserController {
 
     //마이페이지 유저 정보 확인
     @RequestMapping(value = "/myPage_modify")
-    public ModelAndView myPage_modify(@RequestParam Map<String, Object> params, String user_id,  ModelAndView modelAndView) {
+    public ModelAndView myPage_modify(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+
         params.put("user_id", user_id);
-        Object userInfo = myPageService.getUserInfo(user_id, params);
+        Object userInfo = myPageService.getUserInfo(params);
     
         System.out.println(user_id);
 
@@ -109,7 +130,10 @@ public class UserController {
 
     //마이페이지 회원 정보 수정
     @RequestMapping(value= "/myPageEdit", method = RequestMethod.POST)
-    public ModelAndView myPageEdit(@RequestParam Map<String, Object> params, String user_id, ModelAndView modelAndView) {
+    public ModelAndView myPageEdit(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+
         params.put("user_id", user_id);
 
         System.out.println(user_id);
@@ -125,6 +149,9 @@ public class UserController {
     // @RequestMapping(value = "/withdraw", method = RequestMethod.GET)
     // // 버튼을 통해 넘어왔기 때문에 무조건 get post는 폼에서 post를 지정해줘야 가능함.
     // public ModelAndView withdraw(HttpSession session, ModelAndView modelAndView){
+        // PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        // String user_id = principal.getUser_id();
+
     //     MemberVo member = (MemberVo) session.getAttribute(null);
     //     String user_id = member.getId();
         
@@ -146,8 +173,10 @@ public class UserController {
 
     //방문 예약 페이지
      @RequestMapping(value = "/myPageVisitReserve", method = RequestMethod.GET)
-     public ModelAndView myPageVisit_reserve(@RequestParam Map<String, Object> params, String user_id,
-             ModelAndView modelAndView) throws Exception {
+     public ModelAndView myPageVisit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
+
+         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+         String user_id = principal.getUser_id();
  
          params.put("USER_ID", user_id);
          Object reservation = reservationService.getUserReservation(user_id, params);
@@ -159,10 +188,12 @@ public class UserController {
      }
 
     // 방문 예약 확인(상세페이지)
-    @RequestMapping(value = "/visit_reserve/{user_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/visit_reserve", method = RequestMethod.GET)
     
-    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String user_id,
-            ModelAndView modelAndView) throws Exception {
+    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
+                
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
 
         params.put("USER_ID", user_id);
         Object reservation = reservationService.getUserReservation(user_id, params);

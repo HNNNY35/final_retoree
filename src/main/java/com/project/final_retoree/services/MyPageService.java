@@ -15,7 +15,7 @@ public class MyPageService {
     WishList wishlist;
 
     //찜 목록
-    public Object getWishList(String user_id, Object dataMap) {
+    public Object getWishList(Object dataMap) {
         String sqlMapId = "Mypage.selectFromWishList";
         Object result = myPageDao.getWishList(sqlMapId, dataMap);
         return result;
@@ -30,7 +30,7 @@ public class MyPageService {
 
     }
     //유저 정보 Read
-    public Object getUserInfo(String user_id,Object dataMap) {
+    public Object getUserInfo(Object dataMap) {
         String sqlMapId = "Mypage.selectFromUserInfo";
         Object result = myPageDao.getUserInfo(sqlMapId, dataMap);
 
@@ -50,7 +50,7 @@ public class MyPageService {
         return result;
     }
     //방문예약 정보 Read
-    public Object getReserveList(String user_id, Object dataMap) {
+    public Object getReserveList(Object dataMap) {
         String sqlMapId = "Mypage.selectFromReserveList";
         Object result = myPageDao.getReserveList(sqlMapId, dataMap);
         return result;
