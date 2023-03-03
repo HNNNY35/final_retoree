@@ -32,8 +32,10 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             <div>
                 <div class="text-center">
                     <a href="/notice" class="btn btn-dark mt-5">목록</a>
+                    <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <a href="/notice_modify/${notice.NOTICE_NO}" class="btn btn-dark mt-5">수정</a>
                     <a href="/notice_delete/${notice.NOTICE_NO}" class="btn btn-dark mt-5">삭제</a>
+                    </sec:authorize>
                 </div>
             </div>
         </div>
