@@ -26,8 +26,13 @@
     <%@ include file="../header.jsp" %>
 
     <!-- 차량 사진 -->
-    <c:set var="directoryCar" value="${carImgs.path + carImgs.Front}" />
-    <c:set var="fileName" value="${carImgs.Front}" />
+    <c:set var="fileNameFront" value="${carImgs.Front}" />
+    <c:set var="fileNameSide" value="${carImgs.Side}" />
+    <c:set var="fileNameInside" value="${carImgs.Inside}" />
+    <c:set var="fileNameNavi" value="${carImgs.Navi}" />
+    <c:set var="fileNameTire" value="${carImgs.Tire}" />
+    <c:set var="fileNameTrunk" value="${carImgs.Trunk}" />
+    <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
     <div class="container">
       <div class="img-container">
         <div class="inner-container">
@@ -35,7 +40,7 @@
             <div class="numbertext">1 / 6</div>
             <img
               class="car-img"
-              src="${directoryCar}"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
               width="100%"
               height="600px"
             />
@@ -45,7 +50,7 @@
             <div class="numbertext">2 / 6</div>
             <img
               class="car-img"
-              src="https://cdn.top-rider.com/news/photo/202211/62761_144394_4518.jpg"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameSide}"
               width="100%"
               height="600px"
             />
@@ -55,7 +60,7 @@
             <div class="numbertext">3 / 6</div>
             <img
               class="car-img"
-              src="http://file.mk.co.kr/meet/neds/2022/05/image_readmed_2022_414468_16522268155038384.jpg"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameInside}"
               width="100%"
               height="600px"
             />
@@ -65,7 +70,7 @@
             <div class="numbertext">4 / 6</div>
             <img
               class="car-img"
-              src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MjBfODQg/MDAxNTA1ODY1ODI5MDIz._8sKpzEzN_YdBu1-VliqwnlufMTHSOwTjrMbv1wuyX8g.KbxVGiYIxKrawqfKzQe71rw_M4T3ByLDaF0hNpK_AYwg.JPEG.tirestory3/%EA%B7%B8%EB%9E%9C%EC%A0%80ig_%ED%83%80%EC%9D%B4%EC%96%B4_%EA%B5%90%EC%B2%B4_%EB%AF%B8%EC%89%90%EB%A6%B0_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%A8%B8%EC%8B%9Cmxm4_DSC03416.JPG?type=w800"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameTire}"
               width="100%"
               height="600px"
             />
@@ -75,7 +80,7 @@
             <div class="numbertext">5 / 6</div>
             <img
               class="car-img"
-              src="https://blog.kakaocdn.net/dn/Kw1Tx/btqD7HBZO2T/NxRJXRa6z9lPsL5v2HKdf0/img.png"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameNavi}"
               width="100%"
               height="600px"
             />
@@ -85,7 +90,7 @@
             <div class="numbertext">6 / 6</div>
             <img
               class="car-img"
-              src="https://post-phinf.pstatic.net/MjAyMTAzMTJfMTc3/MDAxNjE1NDk4MDcxMTEx.LoUaQ8gY6piwrWOTRKJF88XBc-6N3a5pKuUIgOY07gwg.BSdYRrFm2fsbAhH4YBrYTBii0YgCequNzui_5tS4hZMg.JPEG/batch_KakaoTalk_20210311_111045682_11.jpg?type=w1200"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameTrunk}"
               width="100%"
               height="600px"
             />
@@ -103,7 +108,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="/img/grandeur_design_front.png"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
               style="width: 30%"
               onclick="currentSlide(1)"
               alt="앞면"
@@ -112,7 +117,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://cdn.top-rider.com/news/photo/202211/62761_144394_4518.jpg"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameSide}"
               style="width: 30%"
               onclick="currentSlide(2)"
               alt="옆면"
@@ -121,7 +126,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="http://file.mk.co.kr/meet/neds/2022/05/image_readmed_2022_414468_16522268155038384.jpg"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameInside}"
               style="width: 30%"
               onclick="currentSlide(3)"
               alt="내부"
@@ -130,7 +135,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://mblogthumb-phinf.pstatic.net/MjAxNzA5MjBfODQg/MDAxNTA1ODY1ODI5MDIz._8sKpzEzN_YdBu1-VliqwnlufMTHSOwTjrMbv1wuyX8g.KbxVGiYIxKrawqfKzQe71rw_M4T3ByLDaF0hNpK_AYwg.JPEG.tirestory3/%EA%B7%B8%EB%9E%9C%EC%A0%80ig_%ED%83%80%EC%9D%B4%EC%96%B4_%EA%B5%90%EC%B2%B4_%EB%AF%B8%EC%89%90%EB%A6%B0_%ED%94%84%EB%9D%BC%EC%9D%B4%EB%A8%B8%EC%8B%9Cmxm4_DSC03416.JPG?type=w800"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameTire}"
               onclick="currentSlide(4)"
               style="width: 30%"
               alt="타이어"
@@ -139,7 +144,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://blog.kakaocdn.net/dn/Kw1Tx/btqD7HBZO2T/NxRJXRa6z9lPsL5v2HKdf0/img.png"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameNavi}"
               style="width: 30%"
               onclick="currentSlide(5)"
               alt="네비게이션"
@@ -148,7 +153,7 @@
           <div class="car-column">
             <img
               class="demo cursor car-img"
-              src="https://post-phinf.pstatic.net/MjAyMTAzMTJfMTc3/MDAxNjE1NDk4MDcxMTEx.LoUaQ8gY6piwrWOTRKJF88XBc-6N3a5pKuUIgOY07gwg.BSdYRrFm2fsbAhH4YBrYTBii0YgCequNzui_5tS4hZMg.JPEG/batch_KakaoTalk_20210311_111045682_11.jpg?type=w1200"
+              src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameTrunk}"
               style="width: 30%"
               onclick="currentSlide(6)"
               alt="트렁크"
