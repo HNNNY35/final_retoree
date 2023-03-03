@@ -22,6 +22,7 @@ public class SecurityConfiguraion {
                 .antMatchers("/dealer/*").access("hasRole('ROLE_DEALER') or hasRole('ROLE_ADMIN')")
                 .antMatchers("/admin/*").access("hasRole('ROLE_ADMIN')")
                 .antMatchers("/dealer/**").authenticated()
+                .antMatchers("/myPage/**").authenticated()
                 .anyRequest().permitAll(); // 모두가 접속할 수 있는,로그인 필요x
 
         // 로그인에 대한
