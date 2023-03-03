@@ -48,6 +48,7 @@
             <li>
               <h5 >회원정보</h5>
                 <!-- 세션 -- -->
+                
                   <li>
                     <a href="/myPage_modify" class="text-decoration-none">회원정보수정</a>
                   
@@ -66,8 +67,8 @@
               <div class="myPageMember">
                 <c:forEach var="userInfo" items="${userInfo}">
                   <h3>환영합니다, ${userInfo.NAME} 님</h3>
-                  <div>${userInfo.ID}</div>
-                  <div>${userInfo.AUTH}</div>
+                  <div class="text-center">ID : ${userInfo.ID}</div>
+                  <div class="text-center">핸드폰 번호 : ${userInfo.CELL_NUMBER}</div>
                 </c:forEach>
               </div>
               <div class="number">
@@ -89,6 +90,7 @@
     <div class="mb-5"></div>
 
     <%@ include file="../footer.jsp" %>
+
   </body>
 
   <script

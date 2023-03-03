@@ -27,9 +27,6 @@ public class UserController {
     @Autowired
     MyPageService myPageService;
 
-    // @Autowired
-    // MemberVo member;
-
     // 마이페이지
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
@@ -38,14 +35,13 @@ public class UserController {
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
          
-        params.put("USER_ID", user_id);
+        params.put("user_id", user_id);
 
         Object wishList = myPageService.getWishList(params);
         Object myPagereserve = myPageService.getReserveList(params);
         Object userInfo = myPageService.getUserInfo(params);
 
         System.out.println(user_id);
-        System.out.println(wishList);
         modelAndView.addObject("wishList", wishList);
         modelAndView.addObject("myPagereserve", myPagereserve);
         modelAndView.addObject("userInfo", userInfo);
@@ -62,7 +58,7 @@ public class UserController {
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
 
-        params.put("USER_ID", user_id);
+        params.put("user_id", user_id);
         Object wishList = myPageService.getWishList(params);
 
         System.out.println(user_id);
@@ -81,7 +77,7 @@ public class UserController {
              PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
              String user_id = principal.getUser_id();
 
-            params.put("USER_ID", user_id);
+            params.put("user_id", user_id);
 
             System.out.println(wishlist_id);
             System.out.println(user_id);
@@ -103,7 +99,7 @@ public class UserController {
             PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
             String user_id = principal.getUser_id();               
 
-            params.put("USER_ID", user_id);
+            params.put("user_id", user_id);
             Object contact = myPageService.getContactList(user_id, params);
     
             modelAndView.addObject("contact", contact);
@@ -179,7 +175,7 @@ public class UserController {
          PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
          String user_id = principal.getUser_id();
  
-         params.put("USER_ID", user_id);
+         params.put("user_id", user_id);
          Object reservation = reservationService.getUserReservation(user_id, params);
  
          modelAndView.addObject("reservation", reservation);
@@ -196,7 +192,7 @@ public class UserController {
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
 
-        params.put("USER_ID", user_id);
+        params.put("user_id", user_id);
         Object reservation = reservationService.getUserReservation(user_id, params);
 
         modelAndView.addObject("reservation", reservation);
