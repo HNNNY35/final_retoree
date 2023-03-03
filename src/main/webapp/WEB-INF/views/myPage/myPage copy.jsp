@@ -29,7 +29,7 @@
         <div class="side temp-box border" style="height: 350px">
           <ul>
             <li>
-              <h4 class="mt-3"><a href="./myPage?user_id=U001" style="color: black;" class="text-decoration-none" >마이페이지</a> </h4>
+              <h4 class="mt-3"><a href="./myPage" style="color: black;" class="text-decoration-none" >마이페이지</a> </h4>
             </li>
             <li>
               <a href="" class="text-decoration-none">찜 차량</a>
@@ -49,7 +49,7 @@
                 <!-- 세션 -- -->
                 
                   <li>
-                    <a href="/myPage_modify?user_id=U001" class="text-decoration-none">회원정보수정</a>
+                    <a href="/myPage_modify" class="text-decoration-none">회원정보수정</a>
                   
                   <li>
                     <a href="" class="text-decoration-none">회원 탈퇴</a>
@@ -136,7 +136,7 @@
                       </div>
                       <div>
                         <form action="dltWishList" method="get">
-                          <input type="hidden" name="user_id" value="U001">  
+                          <input type="hidden" name="user_id">  
                           <input type="hidden" name="wishlist_id" value="W001">  
                           <button class="btn btn-outline-dark mb-2" onclick="deleteWishlist()">
                             찜 해제
@@ -207,7 +207,7 @@
   <script>
     function deleteWishlist(){
       alert("찜 해제 되었습니다.")
-      window.location.href = "./myPage?user_id=U001"
+      window.location.href = "./myPage"
     } 
   </script>
 </html>

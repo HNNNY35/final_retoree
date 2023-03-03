@@ -83,7 +83,7 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 <td>
                 <div>
                   <form action="dltWishList" method="get">
-                    <input type="hidden" name="user_id" value="U001">  
+                    <input type="hidden" name="user_id">  
                     <input type="hidden" name="wishlist_id" value="W001">  
                     <button class="btn btn-outline-dark mb-2" onClick="window.location.reload()">
                       찜 해제

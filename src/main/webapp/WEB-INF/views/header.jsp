@@ -100,11 +100,11 @@
             </a>
             <ul class="dropdown-menu text-small">
               <li>
-                <a class="dropdown-item" href="../myPage?user_id=U001">마이페이지</a>
+                <a class="dropdown-item" href="../myPage">마이페이지</a>
               </li>
              
-              <li><a class="dropdown-item" href="../myPageVisitReserve?user_id=U001">방문예약 확인</a></li>
-              <li><a class="dropdown-item" href="../wishListCar?user_id=U001">찜 차량</a></li>
+              <li><a class="dropdown-item" href="../myPageVisitReserve">방문예약 확인</a></li>
+              <li><a class="dropdown-item" href="../wishListCar">찜 차량</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="#">로그아웃</a></li>
             </ul>
