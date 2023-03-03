@@ -34,6 +34,7 @@ public class UserController {
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // user_id ==> 나중에 세션으로 받아와야함
+
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
          

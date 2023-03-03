@@ -33,6 +33,7 @@ public class NoticeController {
     @RequestMapping(value = {"/notice"}, method = RequestMethod.GET)
     public ModelAndView noticeGet(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
 
+        
         Object resultMap = noticeService.getList(params);
         Object noticeTopMap = noticeService.getNoticeTopList(params);
         
