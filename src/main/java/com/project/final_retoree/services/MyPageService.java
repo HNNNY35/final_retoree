@@ -1,6 +1,9 @@
 package com.project.final_retoree.services;
 
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.bean.WishList;
@@ -13,6 +16,8 @@ public class MyPageService {
     MypageDao myPageDao;
     @Autowired
     WishList wishlist;
+    @Autowired
+    BCryptPasswordEncoder bcryptPasswordEncoder;
 
     //찜 목록
     public Object getWishList(Object dataMap) {
@@ -39,6 +44,9 @@ public class MyPageService {
     //유저 정보 수정
     public Object editUserInfo(String user_id, Object dataMap) {
         String sqlMapId = "Mypage.updateFromMyPage";
+        String password = (String) ((Map) dataMap).get("password");
+        ((Map) dataMap).put("password", bcryptPasswordEncoder.encode(password)); // 패스워드를 암호화하는
+
         Object result = myPageDao.updateUserInfo(sqlMapId, dataMap);
 
         return result;
