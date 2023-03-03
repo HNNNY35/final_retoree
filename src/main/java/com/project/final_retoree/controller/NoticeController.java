@@ -3,6 +3,7 @@ package com.project.final_retoree.controller;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.project.final_retoree.configurations.PrincipalUser;
 import com.project.final_retoree.services.NoticeService;
 import com.project.final_retoree.utils.CommonUtils;
 import com.project.final_retoree.utils.GetDate;
@@ -30,6 +32,7 @@ public class NoticeController {
 
     @RequestMapping(value = {"/notice"}, method = RequestMethod.GET)
     public ModelAndView noticeGet(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+
         Object resultMap = noticeService.getList(params);
         Object noticeTopMap = noticeService.getNoticeTopList(params);
         
@@ -52,6 +55,7 @@ public class NoticeController {
     @RequestMapping(value = "/notice/{notice_no}", method = RequestMethod.GET)
     // @RequestMapping(value = "/car_detail_change")
     public ModelAndView car_detail(@RequestParam Map<String, Object> params, @PathVariable String notice_no, ModelAndView modelAndView) {
+
         params.put("NOTICE_NO", notice_no);
         Object notice = noticeService.getOne(params);
         modelAndView.addObject("notice", notice);

@@ -12,12 +12,26 @@ import org.springframework.util.StringUtils;
 public class PrincipalUser implements UserDetails {
 
     private Map<String, Object> userInfo;
+    private String user_id;
+    private String auth;
+
+    
+    public String getAuth() {
+        return auth;
+    }
+
+    public String getUser_id() {
+        return user_id;
+    }
 
     public PrincipalUser(Map userInfo) {
         if (userInfo == null) {
             throw new IllegalArgumentException("userInfo cannot be null");
         }
         this.userInfo = userInfo;
+        this.user_id = (String) userInfo.get("USER_ID");
+        this.auth = (String) userInfo.get("AUTH");
+        
     }
 
     // 인증된 사용자가 가진 권한 정보를 collections에 담아 반환하는 메서드

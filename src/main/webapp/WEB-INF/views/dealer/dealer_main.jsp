@@ -44,7 +44,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                             <div>${user.ADDR_CITY} ${user.ADDR_DISTRICT}</div>
                         </div>
                         <div>
-                            <a href="/dealer/modify/${user.DEALER_ID}">정보 수정하기</a>
+                            <a href="/dealer/modify">정보 수정하기</a>
                         </div>
                     </div>
                     <hr/>
