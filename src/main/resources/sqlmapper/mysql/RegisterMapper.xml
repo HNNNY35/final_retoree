@@ -63,14 +63,37 @@
    </insert>
  
 <!--회원정보UID,이름,아이디,비밀번호,생년월일,전화번호,이메일,주소(시도),주소(시구군),약관동의UID,권한 -->
+
+<!-- USER -->
+<insert id="insertUser" parameterType="Map">
+  INSERT INTO USER
+  (USER_ID)
+  VALUES
+  (#{USER_ID})
+</insert>
+
+ <!-- DEALER  -->
+ <insert id="insertDealer" parameterType="Map">
+  INSERT INTO DEALER_INFO
+  (DEALER_ID)
+  VALUES
+  (#{DEALER_ID})
+</insert>
+
+ <!-- ADMIN  -->
+ <insert id="insertAdmin" parameterType="Map">
+  INSERT INTO ADMIN
+  (ADMIN_ID)
+  VALUES
+  (#{ADMIN_ID})
+</insert>
+
 <!-- call Register.insertWithUID -->
  <insert id="insertWithUID" parameterType="Map">
- 
 INSERT INTO USER_INFO
 (USER_ID, NAME, ID, PASSWORD, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, TS_CS_ID, AUTH)
 VALUE
-(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT}, #{TS_CS_ID}, #{AUTH})
-
+(#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT}, #{TS_CS_ID}, #{AUTH}) 
  </insert>
 
 
