@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -98,6 +99,35 @@
                 class="rounded-circle"
               />
             </a>
+            <sec:authorize access="isAnonymous()">
+            <ul class="dropdown-menu text-small">
+              
+              <li><a class="dropdown-item" href="/loginform">로그인</a></li>
+              <li><a class="dropdown-item" href="/registeragree">회원가입</a></li>
+            </ul>
+            </sec:authorize>
+            <sec:authorize access="hasRole('ROLE_USER')">
+            <ul class="dropdown-menu text-small">
+              <li>
+                <a class="dropdown-item" href="/myPage">마이페이지</a>
+              </li>
+             
+              <li><a class="dropdown-item" href="../myPageVisitReserve">방문예약 확인</a></li>
+              <li><a class="dropdown-item" href="/wishListCar">찜 차량</a></li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="/logoutform">로그아웃</a></li>
+            </ul>
+            </sec:authorize>
+            <sec:authorize access="hasRole('ROLE_DEALER')">
+            <ul class="dropdown-menu text-small">
+              <li>
+                <a class="dropdown-item" href="/dealer/mypage">마이페이지</a>
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li><a class="dropdown-item" href="/logoutform">로그아웃</a></li>
+            </ul>
+            </sec:authorize>
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
             <ul class="dropdown-menu text-small">
               <li>
                 <a class="dropdown-item" href="../myPage">마이페이지</a>
@@ -106,8 +136,10 @@
               <li><a class="dropdown-item" href="../myPageVisitReserve">방문예약 확인</a></li>
               <li><a class="dropdown-item" href="../wishListCar">찜 차량</a></li>
               <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">로그아웃</a></li>
+              <li><a class="dropdown-item" href="/logoutform">로그아웃</a></li>
             </ul>
+            </sec:authorize>
+            
           </div>
         </div>
       </div>

@@ -79,7 +79,7 @@
                     </li>
                 </ul>
 
-                <sec:authorize access="hasRole('supervisor')">
+                <sec:authorize access="hasRole('ROLE_ADMIN')">
                     <a class="btn btn-dark" href="/notice_edit">글쓰기</a>
                 </sec:authorize>
                 
