@@ -49,20 +49,6 @@ public class AdminController {
 
     }
 
-    @RequestMapping(value = "/dealer_info_modify")
-    public ModelAndView dealer_info_modify(ModelAndView modelAndView) {
-        modelAndView.setViewName("dealer/dealer_info_modify");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/dealer_main")
-    public ModelAndView dealer_main(ModelAndView modelAndView) {
-        modelAndView.setViewName("dealer/dealer_main");
-        return modelAndView;
-
-    }
-
     @RequestMapping(value = "/event")
     public ModelAndView event(ModelAndView modelAndView) {
         modelAndView.setViewName("event/event");
@@ -84,40 +70,4 @@ public class AdminController {
 
     }
 
-    
-
-    @RequestMapping(value = "/notice_contents")
-    public ModelAndView notice_page(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_contents");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/notice_contents_01")
-    public ModelAndView notice_page_01(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_contents_01");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/notice_contents_02")
-    public ModelAndView notice_page_02(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_contents_02");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/notice_contents_03")
-    public ModelAndView notice_page_03(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_contents_03");
-        return modelAndView;
-
-    }
-
-    @RequestMapping(value = "/notice_contents_04")
-    public ModelAndView notice_page_04(ModelAndView modelAndView) {
-        modelAndView.setViewName("notice/notice_contents_04");
-        return modelAndView;
-
-    }
 }

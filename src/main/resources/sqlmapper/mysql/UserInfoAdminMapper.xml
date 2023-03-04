@@ -9,8 +9,8 @@ SELECT *
 FROM USER_INFO
  </select>
    
-   <!--call UserInfoAdmin.selectselectByID   -->
-<select id="selectselectByID" parameterType="Map" resultType="Map">
+   <!--call UserInfoAdmin.selectByID   -->
+<select id="selectByID" parameterType="Map" resultType="Map">
 SELECT USER_ID, ID, NAME, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT, AUTH
 FROM USER_INFO 
 WHERE USER_ID = #{USER_ID} 
@@ -28,7 +28,7 @@ WHERE USER_ID = #{USER_ID}
     EMAIL = #{EMAIL},
     ADDR_CITY = #{ADDR_CITY},
     ADDR_DISTRICT = #{ADDR_DISTRICT},
-    AUTH = #{AUTH},
+    AUTH = #{AUTH}
     WHERE USER_ID = #{USER_ID}
     </update>
 

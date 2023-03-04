@@ -18,7 +18,7 @@ public class UserInfoAdminService {
     }
 
     public Object getOne(Object dataMap) {
-        String sqlMapId = "UserInfoAdmin.selectselectByID";
+        String sqlMapId = "UserInfoAdmin.selectByID";
         Object result = userinfoadminDao.getOne(sqlMapId, dataMap);
         return result;
 
@@ -37,18 +37,6 @@ public class UserInfoAdminService {
 
     }
 
-    // public Object insert(Object dataMap) {
-    // String sqlMapId = "UserInfoAdmin.inserWithUID";
-    // Object result = userinfoadminDao.insert(sqlMapId, dataMap);
-    // return result;
-    // }
-
-    // public Object insertAndGetList(Object dataMap) {
-    // Object result = this.insert(dataMap);
-    // result = this.getList(dataMap);
-    // return result;
-    // }
-
     public Object delete(Object dataMap) {
         String sqlMapId = "UserInfoAdmin.deleteByUSERID";
         Object result = userinfoadminDao.delete(sqlMapId, dataMap);
@@ -61,4 +49,15 @@ public class UserInfoAdminService {
         return result;
 
     }
+    // public Object insert(Object dataMap) {
+    // String sqlMapId = "UserInfoAdmin.inserWithUID";
+    // Object result = userinfoadminDao.insert(sqlMapId, dataMap);
+    // return result;
+    // }
+
+    // public Object insertAndGetList(Object dataMap) {
+    // Object result = this.insert(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+    // }
 }
