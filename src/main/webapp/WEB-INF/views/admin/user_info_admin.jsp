@@ -30,6 +30,13 @@
     <%@ include file="../header.jsp" %>      
             <div class="container">
           <h1 class="text-center fw-bold title">회원관리페이지</h1>
+             <!-- 검색창 -->
+          <div class="mt-3">
+            <form action="/board/search" method="get">
+              <input type="text" name="keyword" class="border border-primary rounded">
+              <input type="submit" value="검색" class="btn btn-sm btn-outline-primary">
+          </form>
+            </div>
           <br>
           <br>  
           <table class="table table-bordered border-primary border-opacity-25"width="1000">
@@ -47,7 +54,7 @@
                 </tr>
               </thead>
               <tbody>
-                    <c:forEach items="${resultMap}" var="resultMap">
+                    <c:forEach items="${resultMap.resultList}" var="resultMap" varStatus="loop">
                         <tr>
                           <td scope="col">${resultMap.NAME}</td>
                           <td scope="col">${resultMap.ID}</td>
@@ -62,7 +69,7 @@
                                     class="form-control"
                                     name="DEALER_ID"
                                     id="DEALER_ID"
-                                    value="${resultMap.DEALER_ID}"
+                                    value="${resultData.DEALER_ID}"
                                     required
                                     /> --%>
                                     <%-- <input
@@ -70,7 +77,7 @@
                                     class="form-control"
                                     name="AUTH"
                                     id="auth"
-                                    value="${resultMap.AUTH}"
+                                    value="${resultData.AUTH}"
                                     required
                                     /> --%>
                  <th scope="col"> 
@@ -87,22 +94,47 @@
                        <button type="submit" class="btn btn btn-sm btn-outline-danger">
                              삭제
                           </button>
-                      </form>
+                           </form>
+                              </div>
+                              </div>
+                            </tr>
+                        </c:forEach>
+                          </tbody>
+                        </table>
+                        <%-- {resultMap.paginations.totalCount} --%>
+                                <%-- <nav aria-label="Page navigation example"> --%>
+                          <c:set var="_paginations" value="${resultMap.paginations}" />
+                                <%-- ${_paginations}     --%>
+                                <span>총갯수: ${_paginations.totalCount} </span>
+                                <ul class="pagination">
+                                  <li class="page-item">
+                                    <a class="page-link" href="/admin/listPagination/${_paginations.previousPage}" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                      <span class="sr-only">Pre</span>
+                                    </a>
+                                  </li>
+                                  <%-- for(int i = 0; i > 9; i++){} = blockScale = 5; --%>
+                                  <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
+                                    <li class="page-item">
+                                      <a class="page-link" href="/admin/listPagination/${i}">${i}</a>
+                                    </li>
+                                  </c:forEach>
+                                  <li class="page-item">
+                                    <a class="page-link" href="/admin/listPagination/${_paginations.nextPage}" aria-label="Next">
+                                      <span class="sr-only">Next</span>
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                             </a>
+                          </li>
+                        </ul>
+                      </nav>
                   </div>
                   </div>
-                </tr>
-              </tbody>
-            </c:forEach>
-            </table>
-           </div>
-          </div>
-
-        </div>
-      </div>
-      </div>
-        
-                  
-
+                </div>
+              </div>
+              </div>
             <%@ include file="../footer.jsp" %>
             <!-- Bootstrap JavaScript Libraries -->
             <script
@@ -118,3 +150,6 @@
             ></script>
           </body>
         </html>
+        
+                  
+

@@ -1,9 +1,11 @@
 package com.project.final_retoree.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,7 +23,19 @@ public class UserInfoAdminController {
     // 회원정보페이지
     @RequestMapping(value = "/userlist", method = RequestMethod.GET)
     public ModelAndView userlist(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        Object resultMap = userInfoAdminService.getList(params);
+        Object resultMap = userInfoAdminService.getListWithPagination(params);
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.setViewName("admin/user_info_admin");
+        return modelAndView;
+    }
+
+    // Pagination
+    @RequestMapping(value = "/listPagination/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView listPagination(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
+            ModelAndView modelAndView) {
+        params.put("currentPage", Integer.parseInt(currentPage));
+        params.put("pageScale", 10);
+        Object resultMap = userInfoAdminService.getListWithPagination(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/user_info_admin");
         return modelAndView;
@@ -59,4 +73,5 @@ public class UserInfoAdminController {
         return modelAndView;
 
     }
+
 }
