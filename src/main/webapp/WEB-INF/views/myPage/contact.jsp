@@ -36,6 +36,11 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       <h1>나의 문의 내역</h1>
       <hr />
       <!-- 차량 정보 -->
+      <c:if test="${contact.size() == 0}">
+        <div class="text-center m-5 fs-3" >
+          문의 내역이 없습니다. 
+        </div>
+      </c:if>
         <div class="row mb-3">
           <table class="table table-hover">
             <c:forEach var="contact" items="${contact}">

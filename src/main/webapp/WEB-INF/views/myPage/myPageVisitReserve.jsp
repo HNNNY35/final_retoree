@@ -34,6 +34,16 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
           <h1>방문 예약 확인</h1>
           <hr />
           <div class="container">
+            <c:if test="${reservation.size() == 0}">
+              <div class="text-center m-5 fs-3">
+                방문 예약 일정이 없습니다.
+                <div class="text-center m-3">
+                  <a href="search" class="btn btn-outline-primary"
+                    >차량 검색하러 가기</a
+                  >
+                </div>
+              </div>
+            </c:if>
             <div class="row">
               <table class="table table-hover">
                 <c:forEach var="reserve" items="${reservation}">

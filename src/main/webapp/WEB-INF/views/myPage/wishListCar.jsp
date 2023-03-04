@@ -36,6 +36,14 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       <h1>찜한 차량</h1>
       <hr />
       <!-- 차량 정보 -->
+      <c:if test="${wishList.size() == 0}">
+        <div class="text-center m-5 fs-3" >
+          찜한 차량이 없습니다. 
+          <div class="text-center m-3">
+            <a href="search" class="btn btn-outline-primary">차량 검색하러 가기</a>
+          </div> 
+        </div>
+      </c:if>
         <div class="row mb-3">
           <table class="table table-hover">
             <c:forEach var="wishList" items="${wishList}">

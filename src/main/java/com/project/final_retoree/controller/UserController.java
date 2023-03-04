@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.project.final_retoree.bean.WishList;
 import com.project.final_retoree.configurations.PrincipalUser;
@@ -145,19 +146,19 @@ public class UserController {
     //회원 탈퇴
     // @RequestMapping(value = "/withdraw", method = RequestMethod.GET)
     // // 버튼을 통해 넘어왔기 때문에 무조건 get post는 폼에서 post를 지정해줘야 가능함.
-    // public ModelAndView withdraw(HttpSession session, ModelAndView modelAndView){
-        // PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        // String user_id = principal.getUser_id();
-
-    //     MemberVo member = (MemberVo) session.getAttribute(null);
-    //     String user_id = member.getId();
+    //             public ModelAndView withdraw(RedirectAttributes redirectAttr,  ModelAndView modelAndView){
+    //     PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    //     String user_id = principal.getUser_id();
         
     //     try {
-    //         int result = (int) myPageService.withdraw(user_id);
+    //         int result = myPageService.withdraw(user_id);
 
-    //         if( result ==1) {
-    //             modelAndView.setViewName("/로그아웃 페이지 ");
+    //         if(result >0) {
+    //             redirectAttr.addFlashAttribute("msg", "회원탈퇴가 완료되었습니다. 그동안 이용해주셔서 감사합니다.")
+    //             SecurityContextHolder.clearContext();
     //         }
+    //             else
+    //             redirectAttr.addFlashAttribute("msg", "회원정보 삭제에 실패했습니다.");
     //     } catch(Exception e) {
 
     //         modelAndView.addObject("msg", e.getMessage());

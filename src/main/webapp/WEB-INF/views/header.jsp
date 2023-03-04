@@ -113,7 +113,7 @@
               </li>
              
               <li><a class="dropdown-item" href="../myPageVisitReserve">방문예약 확인</a></li>
-              <li><a class="dropdown-item" href="/wishListCar">찜 차량</a></li>
+              <li><a class="dropdown-item" href="../wishListCar">찜 차량</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="/logoutform">로그아웃</a></li>
             </ul>

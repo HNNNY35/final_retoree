@@ -3,10 +3,8 @@ package com.project.final_retoree.controller;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.ibatis.javassist.compiler.ast.Keyword;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -39,23 +37,17 @@ public class MainController {
        
     }
 
+    //특가, 신차급, 국산 & 수입차 
     @GetMapping(value = { "", "/", "/main_search" })
     public ModelAndView mainSearch(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
 
-        // ArrayList<CarInfo> searchBeanList = new ArrayList<>();
-        // searchBeanList.setType(type);
-        // searchBeanList
-
-        // modelAndView.addObject("searchBeanLIst", searchBeanList);
-
-        // Object filterRs = mainService.getFilterList(params);
+       
         Object searchRs = mainService.getSearchList(params);
         Object specialRs = mainService.getSpecialList(params);
         Object newCarRs = mainService.getNewCarList(params);
         Object domesticRs = mainService.getDomesticList(params);
         Object importedRs = mainService.getImportedList(params);
 
-        // modelAndView.addObject("filterRs", filterRs);
         modelAndView.addObject("searchRs", searchRs);
         modelAndView.addObject("specialRs", specialRs);
         modelAndView.addObject("specialRs", specialRs);
