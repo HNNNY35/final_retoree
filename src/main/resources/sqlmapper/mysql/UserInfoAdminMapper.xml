@@ -32,12 +32,16 @@ WHERE USER_ID = #{USER_ID}
     WHERE USER_ID = #{USER_ID}
     </update>
 
+    <delete id="deleteByUSER" parameterType="Map">
+        DELETE FROM USER
+        WHERE USER_ID = #{USER_ID}
+        </delete>
      <!-- call UserInfoAdmin.deleteByUSERID --> 
     <delete id="deleteByUSERID" parameterType="Map">
     DELETE FROM USER_INFO
     WHERE USER_ID = #{USER_ID} 
     </delete>
-  
+    
   <!-- 페이지네이션 -->
   <!-- call UserInfoAdmin.selectListByUID --> 
   <select id="selectListByUID" parameterType="Map" resultType="Map">
@@ -56,4 +60,3 @@ WHERE USER_ID = #{USER_ID}
 </select>
 
 </mapper>
-

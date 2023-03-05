@@ -69,7 +69,7 @@ public class UserInfoAdminController {
         params.put("USER_ID", userId);
         Object resultMap = userInfoAdminService.deleteAndGetList(params);
         modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("admin/user_info_admin");
+        modelAndView.setViewName("redirect:/listPagination/1");
         return modelAndView;
 
     }

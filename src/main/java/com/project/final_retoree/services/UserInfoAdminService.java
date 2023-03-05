@@ -63,9 +63,12 @@ public class UserInfoAdminService {
 
     public Object delete(Object dataMap) {
         String sqlMapId = "UserInfoAdmin.deleteByUSERID";
+        String sqlMapId2 = "UserInfoAdmin.deleteByUSER";
+        userinfoadminDao.delete(sqlMapId2, dataMap);
         Object result = userinfoadminDao.delete(sqlMapId, dataMap);
         return result;
     }
+    
 
     public Object deleteAndGetList(Object dataMap) {
         Object result = this.delete(dataMap);
