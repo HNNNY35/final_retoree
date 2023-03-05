@@ -54,14 +54,16 @@
                   ${resultOnSaleCar.VEH_NUM}
                   </td>
                   <td>
-                    <form action="/car_modify/${resultOnSaleCar.CAR_DTL_ID}" method="get">
+                    <form action="/car_modify" method="post">
+                      <input type="hidden" name="CAR_DTL_ID" value="${resultOnSaleCar.CAR_DTL_ID}">
                       <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
                         수정
                       </button>
                     </form>
                   </td>
                   <td>
-                    <form action="/car_modify/${resultOnSaleCar.CAR_DTL_ID}" method="get">
+                    <form action="/car_sales_status" method="post">
+                      <input type="hidden" name="CAR_DTL_ID" value="${resultOnSaleCar.CAR_DTL_ID}">
                       <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
                         더보기
                       </button>

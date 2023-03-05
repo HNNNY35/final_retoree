@@ -30,7 +30,7 @@ public class CarDetailService {
         return result;
     }
 
-    // 선택된 차량 car_dtl_id 받아서 딜러 정보 조회하고 dealer_id 리턴
+    // 선택된 차량 car_dtl_id 받아서 딜러 정보 조회
     public Object getDealerInfo(Object dataMap){
         String sqlMapId = "CarDetail.selectFromDEALER_INFOByCAR_DTL_ID";
         Object result = carDetailDao.getOne(sqlMapId, dataMap);

@@ -24,7 +24,20 @@
   </head>
   <body>
     <%@ include file="../header.jsp" %>
+    <c:choose>
+      <c:when test="${contactSubmit eq 'yes'}">
+      <script>
+        alert('1:1 문의 등록이 완료되었습니다.');
+      </script>
+      </c:when>
 
+      <c:when test="${reservationSubmit eq 'yes'}">
+      <script>
+        alert('방문예약 신청이 완료되었습니다.');
+      </script>
+      </c:when>
+
+    </c:choose>
     <!-- 차량 사진 -->
     <c:set var="fileNameFront" value="${carImgs.Front}" />
     <c:set var="fileNameSide" value="${carImgs.Side}" />
@@ -381,9 +394,10 @@
               <div class="modal-content">
                 <h2 class="modal-header">리투리카 방문예약신청</h2>
                 <div class="modal-body">
-                  <form action="/car_detail_reservation/{car_dtl_id}" method="POST">
+                  <form action="/car_detail_reservation" method="post">
                     <input type="hidden" name="CAR_DTL_ID" value="${resultMap1.CAR_DTL_ID}">
-                    <input type="hidden" name="USER_ID" value="U001">
+                    <input type="hidden" name="DEALER_ID" value="${resultMap2.DEALER_ID}">
+                    <!-- <input type="hidden" name="USER_ID" value="U001"> -->
                   <h5 class="bg-warning rounded-pill p-2">현재 보고계신 차량은 헛걸음보상 대상차량입니다.</h5>
                   <div>
                     <small >매매상사 방문 시 방문예약한 차량이 없거나,</small>
@@ -444,9 +458,10 @@
                   <div class="modal-content">
                     <h2 class="modal-header">1:1 상담</h2>
                     <div class="modal-body">
-                      <form action="/car_contact/${resultMap2.DEALER_ID}" method="post">
+                      <form action="/car_contact" method="post">
+                        <input type="hidden" name="CAR_DTL_ID" value="${resultMap1.CAR_DTL_ID}">
                         <input type="hidden" name="DEALER_ID" value="${resultMap2.DEALER_ID}">
-                        <input type="hidden" name="USER_ID" value="U001">
+                        <!-- <input type="hidden" name="USER_ID" value="U001"> -->
 
                       <div class="textarea-wrap">
                         <input type="text" name="INQ_TITLE" class="form-control" placeholder="제목" required >

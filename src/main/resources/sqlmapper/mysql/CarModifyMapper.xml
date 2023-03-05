@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CarModify">
+    <!-- call CarModify.selectFromCAR_DETAILE_INFO -->
+    <!-- 딜러ID, CAR_DTL_ID 받아서 수정 페이지에서 조회 -->
+    <select id="selectFromCAR_DETAILE_INFO" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CAR_DETAILE_INFO
+        JOIN CAR_INFO
+        ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
+        JOIN CAR_MAIN_SKELETON
+        ON CAR_INFO.SKELETON_ID = CAR_MAIN_SKELETON.SKELETON_ID
+        JOIN CAR_PANEL
+        ON CAR_INFO.PANER_ID = CAR_PANEL.PANER_ID
+        WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+        AND DEALER_ID = #{DEALER_ID}
+    </select>
+
+
+    <!-- call CarModify.updateCarGeneral -->
+    <!-- 차량 일반 정보 수정 -->
+    <update id="updateCarGeneral" parameterType="Map">
+        UPDATE CAR_INFO
+        SET
+            PRICE = #{PRICE},
+            MODEL_YEAR = #{MODEL_YEAR},
+            FUEL = #{FUEL},
+            ADDR_CITY = #{ADDR_CITY},
+            TRANSMISSION = #{TRANSMISSION},
+            CARGRADE = #{CARGRADE},
+            DRIVEN_DIST = #{DRIVEN_DIST},
+            ACCIDENT_INFO = #{ACCIDENT_INFO},
+            OPTIONS = #{OPTIONS},
+            COLOR = #{COLOR}
+        WHERE CAR_ID = #{CAR_ID}
+    </update>
+
+    <!-- call CarModify.updateCarPANEL -->
+    <!-- 차량 외부 패널 정보 수정 -->
+    <update id="updateCarPANEL" parameterType="Map">
+        UPDATE CAR_PANEL
+        JOIN CAR_INFO
+            ON CAR_PANEL.PANER_ID = CAR_INFO.PANER_ID
+        SET
+            HOOD = #{HOOD},
+            FRONT_FENDER = #{FRONT_FENDER},
+            DOOR = #{DOOR},
+            SIDE_PANEL = #{SIDE_PANEL},
+            TRUNK_LID = #{TRUNK_LID},
+            ROOF_PANEL = #{ROOF_PANEL},
+            QUARTER_PANEL = #{QUARTER_PANEL}
+        WHERE CAR_ID = #{CAR_ID}
+    </update>
+
+    <!-- call CarModify.updateCarSkeleton -->
+    <!-- 차량 주요 골격 정보 수정 -->
+    <update id="updateCarSkeleton" parameterType="Map">
+        UPDATE CAR_MAIN_SKELETON
+        JOIN CAR_INFO
+            ON CAR_MAIN_SKELETON.SKELETON_ID = CAR_INFO.SKELETON_ID
+        SET
+            FRONT_PANEL = #{FRONT_PANEL},
+            CROSS_MEMBER = #{CROSS_MEMBER},
+            INSIDE_PANEL = #{INSIDE_PANEL},
+            SIDE_MEMBER = #{SIDE_MEMBER},
+            WHEEL_HOUSE = #{WHEEL_HOUSE},
+            PACKAGE_TRAY = #{PACKAGE_TRAY},
+            DASH_PANEL = #{DASH_PANEL},
+            FLOOR_PANEL = #{FLOOR_PANEL},
+            FILER_PANEL = #{FILER_PANEL},
+            REAR_PANEL = #{REAR_PANEL},
+            TRUNK_FLOOR = #{TRUNK_FLOOR}
+        WHERE CAR_ID = #{CAR_ID}
+    </update>
+
+</mapper>

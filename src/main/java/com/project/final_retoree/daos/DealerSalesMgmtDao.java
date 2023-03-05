@@ -18,5 +18,10 @@ public class DealerSalesMgmtDao {
     public Object getOne(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectOne(sqlMapId, dataMap);
         return result;
+        }
+    
+    public Object update(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.update(sqlMapId, dataMap);
+        return result;
     }
 }

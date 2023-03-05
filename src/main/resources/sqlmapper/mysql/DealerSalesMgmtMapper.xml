@@ -37,4 +37,63 @@
         WHERE STATUS = 'soldout'
         AND DEALER_ID = #{DEALER_ID}
     </select>
+
+    <!-- call DealerSalesMgmt.selectCarInfo -->
+    <!-- CAR_DTL_ID로 선택된 차량 정보(모델, 차량번호, 가격, 판매상태, 수정일) 가져오기 -->
+    <select id="selectCarInfo" parameterType="Map" resultType="Map">
+        SELECT CAR_DTL_ID, MANUFACTURER, VEH_NUM, MODEL, PRICE, STATUS, SALE_DATE
+        FROM CAR_DETAILE_INFO
+            JOIN CAR_INFO
+            ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
+            JOIN SALE_STATUS
+            ON SALE_STATUS.STATUS_ID = CAR_DETAILE_INFO.STATUS_ID
+        WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+    </select>
+
+    <!-- CAR_DTL_ID로 차량 판매 정보 수정 -->
+    <!-- call DealerSalesMgmt.updateSaleStatus -->
+    <update id="updateSaleStatus" parameterType="Map">
+        UPDATE SALE_STATUS
+        JOIN CAR_DETAILE_INFO
+        ON SALE_STATUS.STATUS_ID = CAR_DETAILE_INFO.STATUS_ID
+        SET STATUS = #{STATUS},
+        SALE_DATE = sysdate()
+        WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+    </update>
+
+    <!-- call DealerSalesMgmt.selectReservation -->
+    <!-- CAR_DTL_ID로 방문예약 리스트 조회 -->
+    <select id="selectReservation" parameterType="Map" resultType="Map">
+        SELECT RSV_DATE, RVS_TIME, RSV_STATUS, RVS_ADDR, NAME, CELL_NUMBER, RESERVATION_ID, RESERVATION.CAR_DTL_ID
+        FROM RESERVATION
+        JOIN USER
+        ON RESERVATION.USER_ID = USER.USER_ID
+        JOIN USER_INFO
+        ON USER.USER_ID = USER_INFO.USER_ID
+        JOIN CAR_DETAILE_INFO
+        ON RESERVATION.CAR_DTL_ID = CAR_DETAILE_INFO.CAR_DTL_ID
+        WHERE RESERVATION.CAR_DTL_ID = #{CAR_DTL_ID}
+    </select>
+
+    <!-- call DealerSalesMgmt.selectReservationInfo -->
+    <!-- RESERVATION_ID로 방문예약 조회 -->
+    <select id="selectReservationInfo" parameterType="Map" resultType="Map">
+        SELECT RSV_DATE, RVS_TIME, RSV_STATUS, RVS_ADDR, NAME, CELL_NUMBER, RESERVATION_ID
+        FROM RESERVATION
+        JOIN USER
+        ON RESERVATION.USER_ID = USER.USER_ID
+        JOIN USER_INFO
+        ON USER.USER_ID = USER_INFO.USER_ID
+        WHERE RESERVATION_ID = #{RESERVATION_ID}
+    </select>
+    
+    <!-- RESERVATION_ID로 방문예약 정보 수정 -->
+    <!-- call DealerSalesMgmt.updateReservation -->
+    <update id="updateReservation" parameterType="Map">
+        UPDATE RESERVATION
+        SET
+        RSV_STATUS = #{RSV_STATUS},
+        RVS_ADDR = #{RVS_ADDR}
+        WHERE RESERVATION_ID = #{RESERVATION_ID}
+    </update>
 </mapper>

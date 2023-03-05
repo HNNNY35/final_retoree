@@ -31,7 +31,7 @@
                                         <a href="/dealer_sales_mgmt/${user.DEALER_ID}">차량관리</a>
                                         <ul>
                                             <li><a href="/car_reg/${user.DEALER_ID}">차량 신규 등록</a></li>
-                                            <li><a href="">판매관리</a></li>
+                                            <li><a href="/dealer_sales_mgmt/${user.DEALER_ID}">판매관리</a></li>
                                         </ul>
                                     </li>
                                     <li>
