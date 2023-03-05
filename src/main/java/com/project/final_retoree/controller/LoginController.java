@@ -9,12 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LoginController {
 
-    // user아이디: yaya35 , 비밀번호: ky123456
-
-    // dealer아이디: onion12 , 비밀번호: yl789456
-
-    // admin아이디: ychkim , 비밀번호: admin1234
-
     // 로그인
     @GetMapping("/loginform")
     public ModelAndView loginform(ModelAndView modelAndView) {

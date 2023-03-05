@@ -34,24 +34,37 @@
              <br>
           <br>  
          <div>
-            <form action = "" method ="post">
+            <form action = "/admin/listSearch/" method ="get">
                     <div class="d-flex flex-row mt-5">
-                        <select class="form-select w-25 mx-2 border-primary" name="searchType" id="searchType">
-                            <option value="SELECT">선택</option>
-                            <option value="ID">아이디</option>
-                            <option value="NAME">이름</option>
-                            <option value="CELL_NUMBER">전화번호</option>
-                            <option value="EMAIL">메일아이디</option>
-                        </select>
-                        <input class="form-control w-25 mx-2 border-primary" type="text" name="searchKeyword" id="searchKeyword"   placeholder="구현 x">
+                    <select class="form-select w-25 mx-2 border-primary" name="searchType" id="">
+                          <option value="SELECT">선택</option>
+                          <option value="NAME" ${keyType == 'NAME' ? 'selected' : ''}>이름</option>
+                          <option value="ID" ${keyType == 'ID' ? 'selected' : ''}>아이디</option>
+                          <option value="BIRTHDAY" ${keyType == 'BIRTHDAY' ? 'selected' : ''}>생일</option>
+                          <option value="CELL_NUMBER" ${keyType == 'CELL_NUMBER' ? 'selected' : ''}>전화번호</option>
+                      </select>
+                        <input type="text" class="form-control w-25 mx-2 border-primary"  name="SERCH_KEYWORD" value="${searchUser}">
                         <button type="submit" id="searchBtn" class="btn btn-outline-primary mx-2">검색</button>
                     </div>
                   </form>
                    <div>
+            <%-- <form action = "/admin/listSearch/" method ="get">
+                    <div class="d-flex flex-row mt-5">
+                        <select class="form-select w-25 mx-2 border-primary" name="searchType" id="">
+                            <option value="SELECT">선택</option>
+                            <option value="NAME">이름</option>
+                            <option value="ID">아이디</option>
+                            <option value="BIRTHDAY">생일</option>
+                            <option value="CELL_NUMBER">전화번호</option>
+                        </select>
+                        <input type="text" class="form-control w-25 mx-2 border-primary"  name="searchKeyword" >
+                        <button type="submit" id="searchBtn" class="btn btn-outline-primary mx-2">검색</button>
+                    </div>
+                  </form>
+                   <div> --%>
           <br>
           <br>  
-           
-          <table class="table table-bordered border-primary border-opacity-25"width="1000">
+          <table class="table table-bordered border-primary border-opacity-25"width="100">
               <thead>
                 <tr>
                   <th scope="col" class="table-primary text-center">이름</th>
@@ -95,7 +108,7 @@
                  <th scope="col"> 
                  <div class="justify-content-center d-flex">
                     <div>
-                     <form action="/useredit/${resultMap.USER_ID}" method="post">
+                     <form action="/useredit/${resultMap.USER_ID}" method="POST">
                            <button type="submit" class="btn btn-sm btn-outline-primary">
                                수정
                             </button>
@@ -114,49 +127,34 @@
                           </tbody>
                         </table>
                         <%-- {resultMap.paginations.totalCount} --%>
-                                <%-- <nav aria-label="Page navigation example"> --%>
-                            <c:set var="_paginations" value="${resultMap.paginations}" />
-                                      <span>총: ${_paginations.totalCount}명</span>
-                                      <ul class="pagination">
+                          <c:set var="_paginations" value="${resultMap.paginations}" />
+                                <%-- ${_paginations}     --%>
+                                <span>총갯수: ${_paginations.totalCount} </span>
+                                <div class="pagination">
+                                <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                  <li class="page-item">
+                                    <a class="page-link" href="/admin/listPagination/${_paginations.previousPage}" aria-label="Previous">
+                                      <span aria-hidden="true">&laquo;</span>
+                                      <span class="sr-only">Pre</span>
+                                    </a>
+                                  </li>
+                                  <%-- for(int i = 0; i > 9; i++){} = blockScale = 5; --%>
+                                 <c:forEach var="i" begin="${_paginations.blockStart}" end="${_paginations.blockEnd}">
                                         <li class="page-item">
-                                          <a class="page-link" href="/admin/listPagination/${_paginations.previousPage}" aria-label="Previous">
-                                            <span aria-hidden="true">&laquo;</span>
-                                            <span class="sr-only">Pre</span>
-                                          </a>
+                                          <a class="page-link" href="/admin/listPagination/${i}">${i}</a>
                                         </li>
-                                        <c:forEach var="i" begin="${_paginations.blockStart}" end="${_paginations.blockEnd}">
-                                          <li class="page-item">
-                                            <a class="page-link" href="/admin/listPagination/${i}?pageScale=5">${i}</a>
-                                          </li>
-                                        </c:forEach>
-                                        <li class="page-item">
-                                          <a class="page-link" href="/admin/listPagination/${_paginations.nextPage}?pageScale=5" aria-label="Next">
-                                            <span class="sr-only">Next</span>
-                                            <span aria-hidden="true">&raquo;</span>
-                                          </a>
-                                        </li>
-                                      </ul>
-                        <%-- <c:set var="_paginations" value="${resultMap.paginations}" />
-                            <span>총: ${_paginations.totalCount}명</span>
-                            <ul class="pagination">
-                              <li class="page-item">
-                                <a class="page-link" href="/admin/listPagination/${_paginations.previousPage}" aria-label="Previous">
-                                  <span aria-hidden="true">&laquo;</span>
-                                  <span class="sr-only">Pre</span>
-                                </a>
-                              </li>
-                              <c:forEach var="i" begin="${_paginations.blockStart}" end="${_paginations.blockEnd}">
-                                <li class="page-item">
-                                  <a class="page-link" href="/admin/listPagination/${i}">${i}</a>
-                                </li>
-                              </c:forEach>
-                              <li class="page-item">
-                                <a class="page-link" href="/admin/listPagination/${_paginations.nextPage}" aria-label="Next">
-                                  <span class="sr-only">Next</span>
-                                  <span aria-hidden="true">&raquo;</span>
-                                </a>
-                              </li>
-                            </ul> --%>
+                                      </c:forEach>
+                                  <li class="page-item">
+                                    <a class="page-link" href="/admin/listPagination/${_paginations.nextPage}" aria-label="Next">
+                                      <span class="sr-only">Next</span>
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                             </a>
+                          </li>
+                        </ul>
                       </nav>
                   </div>
                   </div>
@@ -180,4 +178,3 @@
         </html>
         
                   
-

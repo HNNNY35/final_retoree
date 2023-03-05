@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
     <mapper namespace="UserInfoAdmin">
 
@@ -44,6 +44,15 @@ WHERE USER_ID = #{USER_ID}
     
   <!-- 페이지네이션 -->
   <!-- call UserInfoAdmin.selectListByUID --> 
+  <!-- <select id="selectListByUID" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM USER_INFO
+        <if test="pageScale != null">
+            ORDER BY USER_ID -->
+            <!-- 첫번째 리스트 -->
+            <!-- LIMIT #{pageBegin}, 5
+        </if>
+    </select> -->
   <select id="selectListByUID" parameterType="Map" resultType="Map">
         SELECT *
         FROM USER_INFO
@@ -58,5 +67,82 @@ WHERE USER_ID = #{USER_ID}
     SELECT COUNT(*) as cnt 
     FROM USER_INFO
 </select>
+<!-- 검색 -->
+    <!-- call UserInfoAdmin.Userserach -->
+    <!-- <select id="Userserach" parameterType="Map" resultType="Map">
+    SELECT *
+    FROM USER_INFO
+    WHERE USER_INFO.${searchType} LIKE CONCAT('%', #{searchKeyword}, '%')
+    </select> -->
+
+    <!-- UserInfoAdmin.Userserach -->
+        <!-- <select id="Userserach" parameterType="Map" resultType="Map">
+            <choose>
+                <when test="keyType == 'ID'">
+                    SELECT *
+                    FROM USER_INFO
+                    WHERE REPLACE(ID, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <when test="keyType == 'NAME'">
+                    SELECT *
+                    FROM USER_INFO
+                    WHERE REPLACE(NAME, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <when test="keyType == 'CELL_NUMBER'">
+                    SELECT *
+                    FROM USER_INFO                   
+                    WHERE REPLACE(CELL_NUMBER, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <when test="keyType == 'BIRTHDAY'">
+                    SELECT *
+                    FROM USER_INFO                 
+                    WHERE REPLACE(BIRTHDAY, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <otherwise >
+                    SELECT *
+                    FROM USER_INFO                   
+                    WHERE REPLACE(ID, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                    OR REPLACE(NAME, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                    OR REPLACE(CELL_NUMBER, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                    OR REPLACE(BIRTHDAY, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </otherwise>
+            </choose>
+        </select> -->
+
+    <!-- call UserInfoAdmin.UserSearchCount -->
+    <!-- <select id="UserSearchCount" parameterType="Map" resultType="int">
+         <choose>
+                <when test="keyType == 'ID'">
+                    SELECT count(*) as cnt
+                    FROM USER_INFO                    
+                    WHERE REPLACE(ID, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <when test="keyType == 'NAME'">
+                    SELECT count(*) as cnt
+                    FROM USER_INFO                    
+                    WHERE REPLACE(NAME, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <when test="keyType == 'CELL_NUMBER'">
+                    SELECT count(*) as cnt
+                    FROM USER_INFO                    
+                    WHERE REPLACE(CELL_NUMBER, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <when test="keyType == 'BIRTHDAY'">
+                    SELECT count(*) as cnt
+                    FROM USER_INFO                  
+                    WHERE REPLACE(BIRTHDAY, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </when>
+                <otherwise >
+                    SELECT count(*) as cnt
+                    FROM USER_INFO                    
+                    WHERE REPLACE(ID, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                    OR REPLACE(NAME, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                    OR REPLACE(CELL_NUMBER, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                    OR REPLACE(BIRTHDAY, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
+                </otherwise>
+         </choose>
+
+    </select> -->
+
 
 </mapper>
