@@ -66,4 +66,25 @@ public class DealerSalesMgmtService {
         return result;
     }
 
+    // 1:1 문의 리스트 조회
+    public Object selectContactList(Object dataMap){
+        String sqlMapId = "DealerSalesMgmt.selectContactList";
+        Object result = dealerSalesMgmtDao.getList(sqlMapId, dataMap);
+        return result;
+    }    
+
+    // 1:1 문의 상세 조회
+    public Object selectContact(Object dataMap){
+        String sqlMapId = "DealerSalesMgmt.selectContact";
+        Object result = dealerSalesMgmtDao.getOne(sqlMapId, dataMap);
+        return result;
+    }    
+
+    // 1:1 문의 답변하기
+    public Object updateContact(Object dataMap){
+        String sqlMapId = "DealerSalesMgmt.updateContact";
+        Object result = dealerSalesMgmtDao.update(sqlMapId, dataMap);
+        return result;
+    }    
+
 }

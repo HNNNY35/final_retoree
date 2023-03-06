@@ -35,7 +35,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="">고객관리</a>
+                                        <a href="/dealer_customer_mgmt/${user.DEALER_ID}">고객관리</a>
                                     </li>
                                     <li>
                                         <a href="/dealer_sales/${user.DEALER_ID}">매출내역</a>
