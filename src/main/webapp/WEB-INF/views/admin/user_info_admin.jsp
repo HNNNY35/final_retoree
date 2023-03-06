@@ -113,31 +113,31 @@
                         </c:forEach>
                           </tbody>
                         </table>
-                        <%-- {resultMap.paginations.totalCount} --%>
-                                <%-- <nav aria-label="Page navigation example">
+                                <nav aria-label="Page navigation example">
                         <c:set var="_paginations" value="${resultMap.paginations}" />
                             <span>총: ${_paginations.totalCount}명</span>
                             <ul class="pagination">
                               <li class="page-item">
-                                <a class="page-link" href="/admin/listPagination/${_paginations.previousPage}" aria-label="Previous">
+                                <a class="page-link" href="/listPagination/${_paginations.previousPage}" aria-label="Previous">
                                   <span aria-hidden="true">&laquo;</span>
                                   <span class="sr-only">Pre</span>
                                 </a>
                               </li>
                               <c:forEach var="i" begin="${_paginations.blockStart}" end="${_paginations.blockEnd}">
                                 <li class="page-item">
-                                  <a class="page-link" href="/admin/listPagination/${i}">${i}</a>
+                                  <a class="page-link" href="/listPagination/${i}">${i}</a>
                                 </li>
                               </c:forEach>
                               <li class="page-item">
-                                <a class="page-link" href="/admin/listPagination/${_paginations.nextPage}" aria-label="Next">
+                                <a class="page-link" href="/listPagination/${_paginations.nextPage}" aria-label="Next">
                                   <span class="sr-only">Next</span>
                                   <span aria-hidden="true">&raquo;</span>
                                 </a>
                               </li>
                             </ul>
-                      </nav> --%>
-                      <nav aria-label="Page navigation example">
+                      </nav>
+                      <%-- 다른방법 --%>
+                      <%-- <nav aria-label="Page navigation example">
     <c:set var="_paginations" value="${resultMap.paginations}" />
     <span>총: ${_paginations.totalCount}명</span>
     <ul class="pagination">
@@ -168,7 +168,7 @@
         </c:if>
         <div>${item}</div>
     </c:forEach>
-</nav>
+</nav> --%>
                   </div>
                   </div>
                 </div>
