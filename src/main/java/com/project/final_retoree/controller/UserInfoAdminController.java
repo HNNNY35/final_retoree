@@ -34,7 +34,7 @@ public class UserInfoAdminController {
     public ModelAndView listPagination(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
             ModelAndView modelAndView) {
         params.put("currentPage", Integer.parseInt(currentPage));
-        params.put("pageScale", 5);
+        params.put("pageScale", 10);
         Object resultMap = userInfoAdminService.getListWithPagination(params);
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("admin/user_info_admin");
@@ -83,16 +83,18 @@ public class UserInfoAdminController {
     }
 
     // 검색
-    @RequestMapping(value = "/userSearch/{currentPage}", method = RequestMethod.GET)
-    public ModelAndView userSearch(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
-            ModelAndView modelAndView) {
-        params.put("currentPage", Integer.parseInt(currentPage));
-        Object resultMap = userInfoAdminService.getSearchUserAndGetList(params);
-        Object searchUser = params.get("SERCH_KEYWORD");
-        modelAndView.addObject("resultMap", resultMap);
-        modelAndView.addObject("searchUser", searchUser);
-        modelAndView.setViewName("admin/user_info_search");
-        return modelAndView;
-    }
+    // @RequestMapping(value = "/userSearch/{currentPage}", method =
+    // RequestMethod.GET)
+    // public ModelAndView userSearch(@RequestParam Map<String, Object> params,
+    // @PathVariable String currentPage,
+    // ModelAndView modelAndView) {
+    // params.put("currentPage", Integer.parseInt(currentPage));
+    // Object resultMap = userInfoAdminService.getSearchUserAndGetList(params);
+    // Object searchUser = params.get("SERCH_KEYWORD");
+    // modelAndView.addObject("resultMap", resultMap);
+    // modelAndView.addObject("searchUser", searchUser);
+    // modelAndView.setViewName("admin/user_info_search");
+    // return modelAndView;
+    // }
 
 }

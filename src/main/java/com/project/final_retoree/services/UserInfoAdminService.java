@@ -77,31 +77,31 @@ public class UserInfoAdminService {
     }
 
     // user search
-    public Object getkeyword(Object dataMap) {
-        String sqlMapId = "UserInfoAdmin.searchUser";
-        Object result = userinfoadminDao.getList(sqlMapId, dataMap);
-        return result;
-    }
+    // public Object getkeyword(Object dataMap) {
+    // String sqlMapId = "UserInfoAdmin.searchUser";
+    // Object result = userinfoadminDao.getList(sqlMapId, dataMap);
+    // return result;
+    // }
 
     // user search Count
-    public Object getSerachTotal(Object dataMap) {
-        String sqlMapId = "UserInfoAdmin.UserSearchCount";
-        Object result = userinfoadminDao.getOne(sqlMapId, dataMap);
-        return result;
-    }
+    // public Object getSerachTotal(Object dataMap) {
+    // String sqlMapId = "UserInfoAdmin.UserSearchCount";
+    // Object result = userinfoadminDao.getOne(sqlMapId, dataMap);
+    // return result;
+    // }
 
     // user search
-    public Object getSearchUserAndGetList(Object dataMap) {
-        Map<String, Object> result = new HashMap<String, Object>();
-        int totalCount = (int) this.getSerachTotal(dataMap);
-        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
-        Paginations paginations = new Paginations(totalCount, currentPage);
-        result.put("paginations", paginations);
-        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
-        ((Map<String, Object>) dataMap).put("pageScale", paginations.getPageScale());
-        result.put("resultList", this.getkeyword(dataMap));
-        return result;
-    }
+    // public Object getSearchUserAndGetList(Object dataMap) {
+    // Map<String, Object> result = new HashMap<String, Object>();
+    // int totalCount = (int) this.getSerachTotal(dataMap);
+    // int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+    // Paginations paginations = new Paginations(totalCount, currentPage);
+    // result.put("paginations", paginations);
+    // ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+    // ((Map<String, Object>) dataMap).put("pageScale", paginations.getPageScale());
+    // result.put("resultList", this.getkeyword(dataMap));
+    // return result;
+    // }
 
     // public Object insert(Object dataMap) {
     // String sqlMapId = "UserInfoAdmin.inserWithUID";

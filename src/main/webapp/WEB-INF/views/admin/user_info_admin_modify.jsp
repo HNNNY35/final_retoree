@@ -37,10 +37,10 @@
         <input class="form-control" type="text" id="name" name="NAME" value="${resultMap.NAME}" required><br>
 
         <label for="id">아이디</label>
-        <input class="form-control" type="text" id="id" name="ID" value="${resultMap.ID}" required ><br>
+        <input class="form-control" type="text" id="id" name="ID" value="${resultMap.ID}" readonly><br>
 
         <label for="birthday">생일</label>
-        <input class="form-control" type="text" id="birthday" name="BIRTHDAY" value="${resultMap.BIRTHDAY}" required ><br>
+        <input class="form-control" type="text" id="birthday" name="BIRTHDAY" value="${resultMap.BIRTHDAY}" readonly><br>
 
         <label for="phone">전화번호</label>
         <input class="form-control" type="text" id="phone" name="CELL_NUMBER" value="${resultMap.CELL_NUMBER}" required ><br>
