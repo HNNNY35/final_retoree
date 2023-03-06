@@ -30,24 +30,24 @@
     <%@ include file="../header.jsp" %>      
             <div class="container">
           <h1 class="text-center fw-bold title">회원관리페이지</h1>
-             <!-- 검색창 -->
+            <!-- 검색창 -->
              <br>
           <br>  
-         <div>
-            <form action = "" method ="post">
+         <%-- <div>
+            <form action = "/admin/userSearch/" method ="get">
                     <div class="d-flex flex-row mt-5">
-                        <select class="form-select w-25 mx-2 border-primary" name="searchType" id="searchType">
-                            <option value="SELECT">선택</option>
-                            <option value="ID">아이디</option>
-                            <option value="NAME">이름</option>
-                            <option value="CELL_NUMBER">전화번호</option>
-                            <option value="EMAIL">메일아이디</option>
-                        </select>
-                        <input class="form-control w-25 mx-2 border-primary" type="text" name="searchKeyword" id="searchKeyword"   placeholder="구현 x">
+                    <select class="form-select w-25 mx-2 border-primary" name="keyType" id="keyType">
+                          <option value="SELECT">선택</option>
+                          <option value="NAME" ${keyType == 'NAME' ? 'selected' : ''}>이름</option>
+                          <option value="ID" ${keyType == 'ID' ? 'selected' : ''}>아이디</option>
+                          <option value="BIRTHDAY" ${keyType == 'BIRTHDAY' ? 'selected' : ''}>생일</option>
+                          <option value="CELL_NUMBER" ${keyType == 'CELL_NUMBER' ? 'selected' : ''}>전화번호</option>
+                      </select>
+                        <input type="text" class="form-control w-25 mx-2 border-primary"  name="SERCH_KEYWORD" value="${searchUser}">
                         <button type="submit" id="searchBtn" class="btn btn-outline-primary mx-2">검색</button>
                     </div>
                   </form>
-                   <div>
+                   <div> --%>
           <br>
           <br>  
            

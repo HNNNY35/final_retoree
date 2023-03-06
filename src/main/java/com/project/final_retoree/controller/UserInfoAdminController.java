@@ -49,7 +49,7 @@ public class UserInfoAdminController {
         params.put("USER_ID", userId);
         Object resultMap = userInfoAdminService.getOne(params);
         modelAndView.addObject("resultMap", resultMap);
-        modelAndView.setViewName("admin/user_info_admin_edit");
+        modelAndView.setViewName("admin/user_info_admin_modify");
         return modelAndView;
     }
 
@@ -83,18 +83,16 @@ public class UserInfoAdminController {
     }
 
     // 검색
-    // @RequestMapping(value = "/userSearch/{currentPage}", method =
-    // RequestMethod.GET)
-    // public ModelAndView userSearch(@RequestParam Map<String, Object> params,
-    // @PathVariable String currentPage,
-    // ModelAndView modelAndView) {
-    // params.put("currentPage", Integer.parseInt(currentPage));
-    // Object resultMap = userInfoAdminService.getSearchUserAndGetList(params);
-    // Object searchUser = params.get("SERCH_KEYWORD");
-    // modelAndView.addObject("resultMap", resultMap);
-    // modelAndView.addObject("searchUser", searchUser);
-    // modelAndView.setViewName("admin/user_info_search");
-    // return modelAndView;
-    // }
+    @RequestMapping(value = "/userSearch/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView userSearch(@RequestParam Map<String, Object> params, @PathVariable String currentPage,
+            ModelAndView modelAndView) {
+        params.put("currentPage", Integer.parseInt(currentPage));
+        Object resultMap = userInfoAdminService.getSearchUserAndGetList(params);
+        Object searchUser = params.get("SERCH_KEYWORD");
+        modelAndView.addObject("resultMap", resultMap);
+        modelAndView.addObject("searchUser", searchUser);
+        modelAndView.setViewName("admin/user_info_search");
+        return modelAndView;
+    }
 
 }

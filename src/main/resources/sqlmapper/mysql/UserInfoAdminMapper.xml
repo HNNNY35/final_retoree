@@ -53,6 +53,8 @@ WHERE USER_ID = #{USER_ID}
             <!-- LIMIT #{pageBegin}, 5
         </if>
     </select> -->
+
+  <!-- 페이지네이션 -->
   <select id="selectListByUID" parameterType="Map" resultType="Map">
         SELECT *
         FROM USER_INFO
@@ -63,20 +65,15 @@ WHERE USER_ID = #{USER_ID}
         </if>
     </select>
 
+<!-- 페이지네이션Count -->
 <select id="selectTotal" parameterType="Map"  resultType="Int">
     SELECT COUNT(*) as cnt 
     FROM USER_INFO
 </select>
-<!-- 검색 -->
-    <!-- call UserInfoAdmin.Userserach -->
-    <!-- <select id="Userserach" parameterType="Map" resultType="Map">
-    SELECT *
-    FROM USER_INFO
-    WHERE USER_INFO.${searchType} LIKE CONCAT('%', #{searchKeyword}, '%')
-    </select> -->
 
-    <!-- UserInfoAdmin.Userserach -->
-        <!-- <select id="Userserach" parameterType="Map" resultType="Map">
+     <!-- 검색 -->
+       <!-- UserInfoAdmin.searchUser -->
+        <select id="searchUser" parameterType="Map" resultType="Map">
             <choose>
                 <when test="keyType == 'ID'">
                     SELECT *
@@ -107,10 +104,10 @@ WHERE USER_ID = #{USER_ID}
                     OR REPLACE(BIRTHDAY, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
                 </otherwise>
             </choose>
-        </select> -->
+        </select>
 
     <!-- call UserInfoAdmin.UserSearchCount -->
-    <!-- <select id="UserSearchCount" parameterType="Map" resultType="int">
+    <select id="UserSearchCount" parameterType="Map" resultType="Int">
          <choose>
                 <when test="keyType == 'ID'">
                     SELECT count(*) as cnt
@@ -141,8 +138,8 @@ WHERE USER_ID = #{USER_ID}
                     OR REPLACE(BIRTHDAY, '', '') LIKE CONCAT('%', #{SERCH_KEYWORD}, '%')
                 </otherwise>
          </choose>
+    </select>
 
-    </select> -->
 
 
 </mapper>
