@@ -20,115 +20,121 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
   <body>
     <%@ include file="../header.jsp" %>
     <main>
-      <!-- 방문예약->방문예약확정(필수)확인 및 안심번호로 전화통화 -> 매매단지 방문 및 차량 확인 -->
-      <div class="container temp-box" style="padding: 80px 30px 140px">
-        <h1 class="text-center">나의 방문예약 정보조회</h1>
+      <div class="main-container">
+        <%@ include file="../myPage/myPageSide.jsp" %>
+        <!-- 방문예약->방문예약확정(필수)확인 및 안심번호로 전화통화 -> 매매단지 방문 및 차량 확인 -->
+        <div class="container temp-box" style="padding: 80px 30px 140px">
+          <h1 class="text-center">나의 방문예약 정보조회</h1>
 
-        <!-- 로그인 세션처리  (세션값 아직 없음)-->
+          <!-- 로그인 세션처리  (세션값 아직 없음)-->
 
-        <!-- 방문예약 내역이 있을 때 -->
-        <h2 class="text-center">
-          고객님은 안심번호로 전화통화 후 방문예약이
-          <span style="color: red"></span>되었습니다.
-        </h2>
-        <hr />
+          <!-- 방문예약 내역이 있을 때 -->
+          <c:forEach items="${reservation}" var="reservation">
+            <h3 class="text-center">
+              ${reservation.NAME}님은 안심번호로 전화통화 후
+              <span style="color: red">${reservation.RSV_STATUS}</span
+              >되었습니다.
+            </h3>
+            <hr />
+          </c:forEach>
 
-        <h3>판매자 정보</h3>
-        <table class="table table-bordered text-center">
-          <tr>
-            <th>판매자</th>
-            <th>연락처</th>
-            <th>판매중</th>
-            <th>판매완료</th>
-          </tr>
-          <tr>
-            <td>xxx</td>
-            <td>010-1234-1234</td>
-            <td>10대</td>
-            <td>5대</td>
-          </tr>
-        </table>
-        <hr />
-        <h3 class="pt-3 pb-2">매매단지 오시는 길 안내</h3>
-        <table class="table-tp3">
-          <!-- <caption class="away">판매자 정보</caption> -->
-          <colgroup>
-            <col width="10%" />
-            <col width="40%" />
-            <col width="10%" />
-            <col width="40%" />
-          </colgroup>
-          <tbody>
+          <h3>판매자 정보</h3>
+          <table class="table table-bordered text-center">
             <tr>
-              <th>판매점</th>
-              <td>KH 자동차</td>
-              <th>전화</th>
-              <td>02-1234-1234</td>
+              <th>판매자</th>
+              <th>연락처</th>
+              <th>판매중</th>
+              <th>판매완료</th>
             </tr>
             <tr>
-              <th rowspan="2">영업시간</th>
-              <td rowspan="2" class="time"></td>
-              <th>팩스</th>
-              <td>053-123-1234</td>
+              <td>xxx</td>
+              <td>010-1234-1234</td>
+              <td>10대</td>
+              <td>5대</td>
             </tr>
-            <tr>
-              <th>주소</th>
-              <div class="pb-2">
-                <img
-                  src="../../../../img/지도.png"
-                  alt=""
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-              <td>
-                <a
-                  href="https://map.kakao.com/link/search/서울 강남구 테헤란로14길 6 남도빌딩"
-                  >서울 강남구 테헤란로14길 6 남도빌딩 KH 자동차</a
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        <hr />
-        <h3 class="p-3">차량 확인</h3>
-
-        <div class="container">
-          <div class="row mb-3">
-            <table class="text-center">
+          </table>
+          <hr />
+          <h3 class="pt-3 pb-2">매매단지 오시는 길 안내</h3>
+          <table class="table-tp3">
+            <!-- <caption class="away">판매자 정보</caption> -->
+            <colgroup>
+              <col width="10%" />
+              <col width="40%" />
+              <col width="10%" />
+              <col width="40%" />
+            </colgroup>
+            <tbody>
               <tr>
-                <th></th>
-                <th>차량</th>
-                <th>년도</th>
-                <th>연식</th>
-                <th>가격</th>
-                <th>보러가기</th>
+                <th>판매점</th>
+                <td>KH 자동차</td>
+                <th>전화</th>
+                <td>02-1234-1234</td>
               </tr>
               <tr>
-                <th>
-                  <a href="./car_detail_change.html">
-                    <img
-                      height="100px"
-                      src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png"
-                      alt=""
-                    />
-                  </a>
-                </th>
-                <!-- <td>사진!!!!!!</td> -->
-
-                <td>현대 그랜저 하이브리드</td>
-                <td>2018년식</td>
-                <td>500km</td>
-                <th>2,250만 원</th>
+                <th rowspan="2">영업시간</th>
+                <td rowspan="2" class="time"></td>
+                <th>팩스</th>
+                <td>053-123-1234</td>
+              </tr>
+              <tr>
+                <th>주소</th>
+                <div class="pb-2">
+                  <img
+                    src="../../../../img/지도.png"
+                    alt=""
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
                 <td>
                   <a
-                    class="btn btn-outline-dark"
-                    href="./car_detail_change.html"
-                    >상세 페이지</a
+                    href="https://map.kakao.com/link/search/서울 강남구 테헤란로14길 6 남도빌딩"
+                    >서울 강남구 테헤란로14길 6 남도빌딩 KH 자동차</a
                   >
                 </td>
               </tr>
-            </table>
+            </tbody>
+          </table>
+          <hr />
+          <h3 class="p-3">차량 확인</h3>
+
+          <div class="container">
+            <div class="row mb-3">
+              <table class="text-center">
+                <tr>
+                  <th></th>
+                  <th>차량</th>
+                  <th>년도</th>
+                  <th>연식</th>
+                  <th>가격</th>
+                  <th>보러가기</th>
+                </tr>
+                <tr>
+                  <th>
+                    <a href="./car_detail_change.html">
+                      <img
+                        height="100px"
+                        src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png"
+                        alt=""
+                      />
+                    </a>
+                  </th>
+                  <!-- <td>사진!!!!!!</td> -->
+
+                  <td>현대 그랜저 하이브리드</td>
+                  <td>2018년식</td>
+                  <td>500km</td>
+                  <th>2,250만 원</th>
+                  <td>
+                    <a
+                      class="btn btn-outline-dark"
+                      href="./car_detail_change.html"
+                      >상세 페이지</a
+                    >
+                  </td>
+                </tr>
+              </table>
+            </div>
           </div>
         </div>
         <hr />

@@ -53,10 +53,15 @@ public class MyPageService {
     }
 
     //회원 탈퇴 
-    public Object withdraw(String user_id){
-        int result = MypageDao.withdraw(user_id);
+    public Object withdraw(Object dataMap){
+        String sqlMapId ="Mypage.deleteFromMyInfo";
+
+        Object result = myPageDao.withdraw(sqlMapId, dataMap);
         return result;
     }
+
+
+
     //방문예약 정보 Read
     public Object getReserveList(Object dataMap) {
         String sqlMapId = "Mypage.selectFromReserveList";

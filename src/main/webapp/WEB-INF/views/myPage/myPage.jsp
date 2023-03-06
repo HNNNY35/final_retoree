@@ -26,39 +26,8 @@
     <%@ include file="../header.jsp" %>
     <main>
       <div class="main-container">
-        <div class="side temp-box border" style="height: 350px">
-          <ul>
-            <li>
-              <h4 class="mt-3">
-                <a href="./myPage" style="color: black;" class="text-decoration-none" >마이페이지</a> 
-              </h4>
-            </li>
-            <li>
-              <a href="./wishListCar" class="text-decoration-none">찜 차량</a>
-            </li>
-            <li>
-              <a href="./myPageVisitReserve" class="text-decoration-none">방문 예약</a>
-            </li>
-            <li>
-              <a href="./contact" class="text-decoration-none">1:1 문의 내역</a>
-            </li>
-          </ul>
-
-          <ul >
-            <li>
-              <h5 >회원정보</h5>
-                <!-- 세션 -- -->
-                
-                  <li>
-                    <a href="/myPage_modify" class="text-decoration-none">회원정보수정</a>
-                  
-                  <li>
-                    <a href="/withdraw" class="text-decoration-none">회원 탈퇴</a>
-                  </li>
-                </li>
-            </li>
-          </ul>
-        </div>
+    <%@ include file="./myPageSide.jsp" %>
+        
         <div class="temp-box border mb-5">
           <div class="container mt-3">
             <h1 class="text-center mt-5">마이페이지</h4>

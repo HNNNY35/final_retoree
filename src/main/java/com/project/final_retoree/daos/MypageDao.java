@@ -45,8 +45,8 @@ public class MypageDao {
     }
 
     //회원 탈퇴
-    public Object withdraw(SqlSession session, String user_id){
-        int result = session.delete("deleteFromMyPage", user_id);
+    public Object withdraw(String sqlMapId, Object dataMap){
+        Object result = sqlSessionTemplate.delete(sqlMapId, dataMap);
         return result;
     }
 
@@ -56,10 +56,8 @@ public class MypageDao {
         return result;
     }
 
-    public static int withdraw(String user_id) {
-        return 0;
-    }
-
+   
+    //1:1 상담 예약 
     public Object getContactList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
