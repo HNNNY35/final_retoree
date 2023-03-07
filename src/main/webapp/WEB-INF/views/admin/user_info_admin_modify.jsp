@@ -50,7 +50,7 @@
 
         <label for="auth">권한</label>
         <select class="form-control" id="auth" name="AUTH" required >
-          <option value="AUTH">권한</option>
+          <%-- <option value="AUTH">권한</option> --%>
           <option value="ROLE_USER">USER</option>
           <option value="ROLE_DEALER">DEALER</option>
         </select>
