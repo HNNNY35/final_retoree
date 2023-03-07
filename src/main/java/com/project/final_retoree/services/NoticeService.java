@@ -45,4 +45,9 @@ public class NoticeService {
         Object result = noticeDao.update(sqlMapId, dataMap);
         return result;
     }
+    public Object getOneId(Object dataMap){
+        String sqlMapId = "Dealer.selectFromUserInfoByDEALER_ID";
+        Object result = noticeDao.getOne(sqlMapId, dataMap);
+        return result;
+    }
 }

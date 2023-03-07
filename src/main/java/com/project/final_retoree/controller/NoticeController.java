@@ -45,6 +45,11 @@ public class NoticeController {
 
     @RequestMapping(value = {"/notice"}, method = RequestMethod.POST)
     public String noticePost(@RequestParam Map<String, Object> params) {
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+
+        params.put("USER_ID", user_id);
+        //sql
         params.put("NOTICE_ID", commonUtils.getUniqueSequence());
         params.put("NOTICE_NO", init.initializeNoticeNo());
         params.put("NOTICE_DATE", getDate.getDate());
