@@ -16,13 +16,22 @@ FROM USER_INFO
 WHERE USER_ID = #{USER_ID} 
  </select>
 
-    <!-- DEALER  -->
+   <!-- File -->
+<!--call UserInfoAdmin.insertAttachfile -->
+<insert id="insertAttachfile" parameterType="Map">
+INSERT INTO CIP_ATTACHFILE
+(ATTACHFILE_SEQ, SOURCE_UNIQUE_SEQ, ATTACHFILE_TYPE, ORIGINALFILE_NAME, PHYSICALFILE_NAME, ATTACHFILE_PATH)
+VALUE
+(#{ATTACHFILE_SEQ}, '222','111', '333', '444','111')
+</insert>
+
+ <!-- DEALER  -->
  <!--call UserInfoAdmin.insertDealer -->
  <insert id="insertDealer" parameterType="Map">
   INSERT INTO DEALER_INFO
   (DEALER_ID, BR_NUMBER, ATTACHFILE_SEQ)
   VALUES
-  (#{USER_ID}, #{BR_NUMBER}, '1')
+  (#{USER_ID}, #{BR_NUMBER}, #{ATTACHFILE_SEQ} )
 </insert>
 
        <!-- call UserInfoAdmin.updateByUSERID -->
@@ -146,6 +155,5 @@ WHERE USER_ID = #{USER_ID}
          </choose>
     </select>
 
-<!-- #{ATTACHFILE_SEQ} -->
 
 </mapper>

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.daos.UserInfoAdminDao;
+import com.project.final_retoree.utils.CommonUtils;
 import com.project.final_retoree.utils.Paginations;
 
 @Service
@@ -15,6 +16,9 @@ public class UserInfoAdminService {
 
     @Autowired
     UserInfoAdminDao userinfoadminDao;
+
+    @Autowired
+    CommonUtils commonUtils;
 
     public Object getList(Object dataMap) {
         String sqlMapId = "UserInfoAdmin.selectFromUserinfo";
@@ -48,24 +52,33 @@ public class UserInfoAdminService {
 
     }
 
+    // 딜러 insert
+    public Object insertDealer(Object dataMap) {
+        String sqlMapId = "UserInfoAdmin.insertDealer";
+        Object result = userinfoadminDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    // 딜러 파일 insert
+    public Object DealerFile(Object dataMap) {
+        String sqlMapId = "UserInfoAdmin.insertAttachfile";
+        Object result = userinfoadminDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
     public Object update(Object dataMap) {
         String sqlMapId = "UserInfoAdmin.updateByUSERID";
         Object result = userinfoadminDao.update(sqlMapId, dataMap);
         return result;
     }
 
-    // 딜러 update
+    // 딜러 File update
     public Object updateAndGetList(Object dataMap) {
+        ((Map) dataMap).put("ATTACHFILE_SEQ", commonUtils.getUniqueSequence());
+        this.DealerFile(dataMap);
         Object result = this.insertDealer(dataMap);
         result = this.update(dataMap);
         result = this.getList(dataMap);
-        return result;
-    }
-
-    // 딜러 insert
-    public Object insertDealer(Object dataMap) {
-        String sqlMapId = "UserInfoAdmin.insertDealer";
-        Object result = userinfoadminDao.insert(sqlMapId, dataMap);
         return result;
     }
 
@@ -83,18 +96,6 @@ public class UserInfoAdminService {
         return result;
 
     }
-
-    // public Object insertAndGetList(Object dataMap) {
-    // Object result = this.insertDealer(dataMap);
-    // result = this.getList(dataMap);
-    // return result;
-    // }
-
-    // public Object updateAndGetList(Object dataMap) {
-    // Object result = this.update(dataMap);
-    // result = this.getList(dataMap);
-    // return result;
-    // }
 
     // user search
     // public Object getkeyword(Object dataMap) {
