@@ -47,13 +47,13 @@ public class Car_detailController {
         Object resultMap3 = carDetailService.getDealerSalesCar(dealer_id);
         Object resultMap4 = carDetailService.getDealerSoldOutCar(dealer_id);
 
-        // 상품 찜 여부 확인하기
-        Object resultWishlist =carDetailService.checkWishlist(params);
-        if(resultWishlist == null) {
-            modelAndView.addObject("likeCheck", 0);
-        } else {
-            modelAndView.addObject("likeCheck", 1);
-        }
+        // // 상품 찜 여부 확인하기
+        // Object resultWishlist =carDetailService.checkWishlist(params);
+        // if(resultWishlist == null) {
+        //     modelAndView.addObject("likeCheck", 0);
+        // } else {
+        //     modelAndView.addObject("likeCheck", 1);
+        // }
 
         // car_info의 car_id로 차량 이미지 가져오기
         params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
@@ -89,13 +89,13 @@ public class Car_detailController {
         
         Object resultMap = carDetailService.insertReservation(params);
 
-        // 상품 찜 여부 확인하기
-        Object resultWishlist =carDetailService.checkWishlist(params);
-        if(resultWishlist == null) {
-            modelAndView.addObject("likeCheck", 0);
-        } else {
-            modelAndView.addObject("likeCheck", 1);
-        }
+        // // 상품 찜 여부 확인하기
+        // Object resultWishlist =carDetailService.checkWishlist(params);
+        // if(resultWishlist == null) {
+        //     modelAndView.addObject("likeCheck", 0);
+        // } else {
+        //     modelAndView.addObject("likeCheck", 1);
+        // }
 
         // car_info의 car_id로 차량 이미지 가져오기
         params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
@@ -135,13 +135,13 @@ public class Car_detailController {
         
         Object resultMap = carDetailService.insertContact(params);
 
-        // 상품 찜 여부 확인하기
-        Object resultWishlist =carDetailService.checkWishlist(params);
-        if(resultWishlist == null) {
-            modelAndView.addObject("likeCheck", 0);
-        } else {
-            modelAndView.addObject("likeCheck", 1);
-        }
+        // // 상품 찜 여부 확인하기
+        // Object resultWishlist =carDetailService.checkWishlist(params);
+        // if(resultWishlist == null) {
+        //     modelAndView.addObject("likeCheck", 0);
+        // } else {
+        //     modelAndView.addObject("likeCheck", 1);
+        // }
 
         // car_info의 car_id로 차량 이미지 가져오기
         params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
