@@ -35,10 +35,13 @@ public class Car_detailController {
         params.put("CAR_DTL_ID", car_dtl_id);
 
         // 로그인 한 유저 uid
-        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String user_id = principal.getUser_id();
-
-        params.put("USER_ID", user_id);
+        try {
+            PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            String user_id = principal.getUser_id();
+            params.put("USER_ID", user_id);
+            
+        } catch (Exception e) {
+        }
         
         Object resultMap1 = carDetailService.getCarInfo(params);
         Object resultMap2 = carDetailService.getDealerInfo(params);
