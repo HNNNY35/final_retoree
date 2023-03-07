@@ -50,10 +50,6 @@ VALUE
     WHERE USER_ID = #{USER_ID}
     </update>
 
-    <delete id="deleteByUSER" parameterType="Map">
-        DELETE FROM USER
-        WHERE USER_ID = #{USER_ID}
-        </delete>
      <!-- call UserInfoAdmin.deleteByUSERID --> 
     <delete id="deleteByUSERID" parameterType="Map">
     DELETE FROM USER_INFO
