@@ -31,16 +31,16 @@
     <form action="/userupdate" method="post">
       <div><h1 class="text-center fw-bold mt-5 mb-3">회원관리수정</h1></div>
       <div class="boxcolor">
-      
+      <%-- readonly --%>
       <input type="hidden" name="USER_ID" value="${resultMap.USER_ID}" />
        <label for="name">이름</label>
         <input class="form-control" type="text" id="name" name="NAME" value="${resultMap.NAME}" required><br>
 
         <label for="id">아이디</label>
-        <input class="form-control" type="text" id="id" name="ID" value="${resultMap.ID}" readonly><br>
+        <input class="form-control" type="text" id="id" name="ID" value="${resultMap.ID}" required><br>
 
         <label for="birthday">생일</label>
-        <input class="form-control" type="text" id="birthday" name="BIRTHDAY" value="${resultMap.BIRTHDAY}" readonly><br>
+        <input class="form-control" type="text" id="birthday" name="BIRTHDAY" value="${resultMap.BIRTHDAY}" required><br>
 
         <label for="phone">전화번호</label>
         <input class="form-control" type="text" id="phone" name="CELL_NUMBER" value="${resultMap.CELL_NUMBER}" required ><br>
@@ -50,7 +50,7 @@
 
         <label for="auth">권한</label>
         <select class="form-control" id="auth" name="AUTH" required >
-          <%-- <option value="AUTH">권한</option> --%>
+          <option value="AUTH">권한</option>
           <option value="ROLE_USER">USER</option>
           <option value="ROLE_DEALER">DEALER</option>
         </select>
