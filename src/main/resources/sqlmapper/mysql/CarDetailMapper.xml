@@ -88,12 +88,12 @@
 
     <!-- 찜 여부 확인하기 -->
     <!-- call CarDetail.selectWishlist -->
-    <select id="selectWishlist" parameterType="Map" resultType="Map">
+    <!-- <select id="selectWishlist" parameterType="Map" resultType="Map">
         SELECT *
         FROM WISHLIST
         WHERE CAR_DTL_ID = #{CAR_DTL_ID}
         AND USER_ID = #{USER_ID}
-    </select>
+    </select> -->
 
 
 

@@ -85,13 +85,13 @@ public class CarDetailService {
         return result;
     }
     
-    // 찜 여부 확인하기
-    public Object checkWishlist(Object dataMap) {
-        String sqlMapId = "CarDetail.selectWishlist";
-        Object result = carDetailDao.getOne(sqlMapId, dataMap);
+    // // 찜 여부 확인하기
+    // public Object checkWishlist(Object dataMap) {
+    //     String sqlMapId = "CarDetail.selectWishlist";
+    //     Object result = carDetailDao.getOne(sqlMapId, dataMap);
         
-        return result;
-    }
+    //     return result;
+    // }
 
     // 차량 이미지 가져오기
     public Object selectCarImg(Object dataMap) {
