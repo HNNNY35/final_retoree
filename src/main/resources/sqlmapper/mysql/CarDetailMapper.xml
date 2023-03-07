@@ -90,7 +90,7 @@
     <!-- call CarDetail.selectWishlist -->
     <select id="selectWishlist" parameterType="Map" resultType="Map">
         SELECT *
-        FROM wishlist
+        FROM WISHLIST
         WHERE CAR_DTL_ID = #{CAR_DTL_ID}
         AND USER_ID = #{USER_ID}
     </select>
