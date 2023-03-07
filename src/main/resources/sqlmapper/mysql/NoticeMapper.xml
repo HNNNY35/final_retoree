@@ -6,12 +6,12 @@
     <insert id="insertBoard" parameterType="Map">
         <choose>
             <when test='NOTICE_TOP!="YSE"'>
-                INSERT INTO NOTICE (NOTICE_ID, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_DATE, ADMIN_ID, NOTICE_TOP) 
-                VALUES (#{NOTICE_ID}, #{NOTICE_NO}, #{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_DATE}, 'U003', #{NOTICE_TOP});
+                INSERT INTO NOTICE (NOTICE_ID, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_DATE, NOTICE_TOP) 
+                VALUES (#{NOTICE_ID}, #{NOTICE_NO}, #{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_DATE}, #{NOTICE_TOP});
             </when>
             <otherwise>
-                INSERT INTO NOTICE (NOTICE_ID, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_DATE, ADMIN_ID) 
-                VALUES (#{NOTICE_ID}, #{NOTICE_NO}, #{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_DATE}, 'U003');
+                INSERT INTO NOTICE (NOTICE_ID, NOTICE_NO, NOTICE_TITLE, NOTICE_CONTENT, NOTICE_DATE) 
+                VALUES (#{NOTICE_ID}, #{NOTICE_NO}, #{NOTICE_TITLE}, #{NOTICE_CONTENT}, #{NOTICE_DATE});
             </otherwise>
         </choose>
     </insert>
