@@ -3,9 +3,13 @@ package com.project.final_retoree.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.project.final_retoree.daos.RegisterDao;
 import com.project.final_retoree.utils.CommonUtils;
+
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -51,16 +55,43 @@ public class RegisterService {
         return result;
     }
 
+    public Object insertAdmin(Object dataMap) {
+        String sqlMapId = "Register.insertAdmin";
+        Object result = registerDao.insert(sqlMapId, dataMap);
+        return result;
+    }
+
+    // 딜러 insert
     public Object insertDealer(Object dataMap) {
         String sqlMapId = "Register.insertDealer";
         Object result = registerDao.insert(sqlMapId, dataMap);
         return result;
     }
 
-    public Object insertAdmin(Object dataMap) {
-        String sqlMapId = "Register.insertAdmin";
-        Object result = registerDao.insert(sqlMapId, dataMap);
-        return result;
-    }
+    // // 딜러 ID
+    // public void DealerSignUp(Object dataMap) {
+    // ((Map) dataMap).put("DEALER_ID", commonUtils.getUniqueSequence());
+    // this.insertregister(dataMap);
+    // this.insertDealer(dataMap);
+    // }
+
+    // public Object getList(Object dataMap) {
+    // String sqlMapId = "Register.selectFromDealerinfo";
+    // Object result = registerDao.getList(sqlMapId, dataMap);
+    // return result;
+    // }
+
+    // 딜러 update
+    // public Object update(Object dataMap) {
+    // String sqlMapId = "Register.updateByDealerID";
+    // Object result = registerDao.update(sqlMapId, dataMap);
+    // return result;
+    // }
+
+    // public Object updateAndGetList(Object dataMap) {
+    // this.update(dataMap);
+    // Object result = this.getList(dataMap);
+    // return result;
+    // }
 
 }

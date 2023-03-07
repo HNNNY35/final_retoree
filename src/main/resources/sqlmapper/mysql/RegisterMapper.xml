@@ -74,11 +74,12 @@
 
  <!-- DEALER  -->
  <insert id="insertDealer" parameterType="Map">
-  INSERT INTO DEALER_INFO
+  INSERT INTO DEALER 
   (DEALER_ID)
   VALUES
-  (#{USER_ID})
+  (#{DEALER_ID})
 </insert>
+
 
  <!-- ADMIN  -->
  <insert id="insertAdmin" parameterType="Map">
@@ -95,6 +96,8 @@ INSERT INTO USER_INFO
 VALUE
 (#{USER_ID}, #{NAME}, #{ID}, #{PASSWORD}, #{BIRTHDAY}, #{CELL_NUMBER}, #{EMAIL}, #{ADDR_CITY}, #{ADDR_DISTRICT}, #{TS_CS_ID}, #{AUTH}) 
  </insert>
+
+
 
 
 </mapper>

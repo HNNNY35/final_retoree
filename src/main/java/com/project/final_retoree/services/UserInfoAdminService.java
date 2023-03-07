@@ -54,11 +54,19 @@ public class UserInfoAdminService {
         return result;
     }
 
+    // 딜러 update
     public Object updateAndGetList(Object dataMap) {
-        Object result = this.update(dataMap);
+        Object result = this.insertDealer(dataMap);
+        result = this.update(dataMap);
         result = this.getList(dataMap);
         return result;
+    }
 
+    // 딜러 insert
+    public Object insertDealer(Object dataMap) {
+        String sqlMapId = "UserInfoAdmin.insertDealer";
+        Object result = userinfoadminDao.insert(sqlMapId, dataMap);
+        return result;
     }
 
     public Object delete(Object dataMap) {
@@ -75,6 +83,18 @@ public class UserInfoAdminService {
         return result;
 
     }
+
+    // public Object insertAndGetList(Object dataMap) {
+    // Object result = this.insertDealer(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+    // }
+
+    // public Object updateAndGetList(Object dataMap) {
+    // Object result = this.update(dataMap);
+    // result = this.getList(dataMap);
+    // return result;
+    // }
 
     // user search
     // public Object getkeyword(Object dataMap) {
@@ -100,18 +120,6 @@ public class UserInfoAdminService {
     // ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
     // ((Map<String, Object>) dataMap).put("pageScale", paginations.getPageScale());
     // result.put("resultList", this.getkeyword(dataMap));
-    // return result;
-    // }
-
-    // public Object insert(Object dataMap) {
-    // String sqlMapId = "UserInfoAdmin.inserWithUID";
-    // Object result = userinfoadminDao.insert(sqlMapId, dataMap);
-    // return result;
-    // }
-
-    // public Object insertAndGetList(Object dataMap) {
-    // Object result = this.insert(dataMap);
-    // result = this.getList(dataMap);
     // return result;
     // }
 

@@ -15,7 +15,16 @@ SELECT USER_ID, ID, NAME, BIRTHDAY, CELL_NUMBER, EMAIL, ADDR_CITY, ADDR_DISTRICT
 FROM USER_INFO 
 WHERE USER_ID = #{USER_ID} 
  </select>
-   
+
+    <!-- DEALER  -->
+ <!--call UserInfoAdmin.insertDealer -->
+ <insert id="insertDealer" parameterType="Map">
+  INSERT INTO DEALER_INFO
+  (DEALER_ID, BR_NUMBER, ATTACHRILE_SEQ)
+  VALUES
+  (#{USER_ID}, #{BR_NUMBER}, #{ATTACHRILE_SEQ})
+</insert>
+
        <!-- call UserInfoAdmin.updateByUSERID -->
     <update id="updateByUSERID" parameterType="Map">
     UPDATE USER_INFO
