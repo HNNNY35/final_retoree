@@ -27,9 +27,9 @@ public class MyPageService {
     }
 
     // 찜 해제 삭제
-    public Object dltWishList(WishList wishlist){
+    public Object dltWishList(Object dataMap){
         String sqlMapId = "Mypage.deleteFromWishList";
-        Object result = myPageDao.dltWishList(sqlMapId, wishlist);
+        Object result = myPageDao.dltWishList(sqlMapId, dataMap);
 
         return result;
 
@@ -38,7 +38,7 @@ public class MyPageService {
     public Object getUserInfo(Object dataMap) {
         String sqlMapId = "Mypage.selectFromUserInfo";
         Object result = myPageDao.getUserInfo(sqlMapId, dataMap);
-
+        System.out.println(dataMap);
         return result;
     }
     //유저 정보 수정

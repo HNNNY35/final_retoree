@@ -23,11 +23,11 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       <div class="main-container">
         <%@ include file="../myPage/myPageSide.jsp" %>
         <!-- 방문예약->방문예약확정(필수)확인 및 안심번호로 전화통화 -> 매매단지 방문 및 차량 확인 -->
-        <div class="container temp-box" style="padding: 80px 30px 140px">
-          <h1 class="text-center">나의 방문예약 정보조회</h1>
-
-          <!-- 로그인 세션처리  (세션값 아직 없음)-->
-
+        <div class="temp-box border mb-5 p-3">
+          <div class="container mt-5">
+            <div class="d-flex justify-content-between"></div>
+            <h1>나의 방문 예약 정보 조회</h1>
+            <hr />
           <!-- 방문예약 내역이 있을 때 -->
           <c:forEach items="${reservation}" var="reservation">
             <h3 class="text-center">
@@ -35,9 +35,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <span style="color: red">${reservation.RSV_STATUS}</span
               >되었습니다.
             </h3>
-            <hr />
           </c:forEach>
 
+          <!-- 쿼리문 다시 짜야함 -->
           <h3>판매자 정보</h3>
           <table class="table table-bordered text-center">
             <tr>
@@ -54,6 +54,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             </tr>
           </table>
           <hr />
+
+          <!-- 쿼리문 다시 짜야함 -->
           <h3 class="pt-3 pb-2">매매단지 오시는 길 안내</h3>
           <table class="table-tp3">
             <!-- <caption class="away">판매자 정보</caption> -->
@@ -96,22 +98,24 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             </tbody>
           </table>
           <hr />
+
+          
           <h3 class="p-3">차량 확인</h3>
 
           <div class="container">
             <div class="row mb-3">
               <table class="text-center">
+                <c:forEach var="reservation" items="${reservation}">
                 <tr>
                   <th></th>
                   <th>차량</th>
-                  <th>년도</th>
                   <th>연식</th>
                   <th>가격</th>
                   <th>보러가기</th>
                 </tr>
                 <tr>
                   <th>
-                    <a href="./car_detail_change.html">
+                    <a href="car_detail_change/${reservation.CAR_DTL_ID}">
                       <img
                         height="100px"
                         src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png"
@@ -121,18 +125,18 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   </th>
                   <!-- <td>사진!!!!!!</td> -->
 
-                  <td>현대 그랜저 하이브리드</td>
-                  <td>2018년식</td>
-                  <td>500km</td>
-                  <th>2,250만 원</th>
+                  <td>${reservation.MANUFACTURER} ${reservation.MODEL} ${reservation.DETAILED_MODEL}</td>
+                  <td>${reservation.MODEL_YEAR}</td>
+                  <th>${reservation.PRICE} 만원</th>
                   <td>
                     <a
                       class="btn btn-outline-dark"
-                      href="./car_detail_change.html"
+                      href="car_detail_change/${reservation.CAR_DTL_ID}"
                       >상세 페이지</a
                     >
                   </td>
                 </tr>
+              </c:forEach>
               </table>
             </div>
           </div>
@@ -141,7 +145,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         <h3 class="pt-3">믿고 방문하는 헛걸음 보상제!</h3>
         <div class="text-center pt-3">
           <img
-            src="http://현대차차차.kr/as5/site/kukminhom/img/hoogi_top.png"
+            src="/img/헛걸음보상제.png"
             alt=""
           />
         </div>

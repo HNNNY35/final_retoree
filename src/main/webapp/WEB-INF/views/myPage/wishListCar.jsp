@@ -45,6 +45,7 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         </div>
       </c:if>
         <div class="row mb-3">
+          <form action="dltWishList" method="get">
           <table class="table table-hover">
             <c:forEach var="wishList" items="${wishList}">
               <thead>
@@ -90,20 +91,20 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 </td>
                 <td>
                 <div>
-                  <form action="dltWishList" method="get">
-                    <input type="hidden" name="user_id">  
-                    <input type="hidden" name="wishlist_id" value="W001">  
-                    <button class="btn btn-outline-dark mb-2" onClick="window.location.reload()">
+                    <input type="hidden" name="user_id" id="user_id">   
+                    <input type="hidden" name="wishlist_id" id="wishlist_id" value="${wishList.WISHLIST_ID}">  
+                    <button class="btn btn-outline-dark mb-2" type="submit">
                       찜 해제
                     </button>
-                  </form>
-                </div>
+                  </div>
+                </td>
               </td>
-            </tr>
-          </tbody>
-
+              </tr>
+            </tbody>
+            
           </c:forEach>
         </table>
+      </form>
       </div>
         </div>
         </div>
