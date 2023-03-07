@@ -59,6 +59,10 @@ VALUE
     DELETE FROM USER_INFO
     WHERE USER_ID = #{USER_ID} 
     </delete>
+  <delete id="deleteByUSERID" parameterType="Map">
+    DELETE FROM USER_INFO
+    WHERE USER_ID = #{USER_ID} 
+    </delete>
 
   <!-- 페이지네이션 -->
   <select id="selectListByUID" parameterType="Map" resultType="Map">
