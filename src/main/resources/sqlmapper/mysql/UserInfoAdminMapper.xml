@@ -20,9 +20,9 @@ WHERE USER_ID = #{USER_ID}
  <!--call UserInfoAdmin.insertDealer -->
  <insert id="insertDealer" parameterType="Map">
   INSERT INTO DEALER_INFO
-  (DEALER_ID, BR_NUMBER, ATTACHRILE_SEQ)
+  (DEALER_ID, BR_NUMBER, ATTACHFILE_SEQ)
   VALUES
-  (#{USER_ID}, #{BR_NUMBER}, #{ATTACHRILE_SEQ})
+  (#{USER_ID}, #{BR_NUMBER}, #{ATTACHFILE_SEQ})
 </insert>
 
        <!-- call UserInfoAdmin.updateByUSERID -->
