@@ -34,8 +34,7 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
       <div class="temp-box border mb-5 p-3">
         <div class="container mt-5">
-          <h3 class="text-center">회원 탈퇴</h3>
-          <hr />
+          <h3 class="text-center">회원 탈퇴 (구현중 - 미완성)</h3>
           <div class="notice">
             <div>
               회원탈퇴 ※ 고객님의 개인정보 보호를 위해 비밀번호 인증 후

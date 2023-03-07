@@ -20,7 +20,7 @@
 }
 
 .fontcolor > a {
-  color: rgb(51, 79, 171);
+  /* color: rgb(51, 79, 171); */
 }
 
 .float {
@@ -29,7 +29,7 @@
 }
 select {
   background: #fafafa;
-  color: rgb(72, 72, 210);
+  /* color: rgb(72, 72, 210); */
   border: 1px solid rgb(148, 161, 232);
   padding-left: 8px;
   border-radius: 9px;
@@ -38,7 +38,7 @@ select {
   height: 45px;
 }
 .text {
-  color: rgb(72, 72, 210);
+  /* color: rgb(72, 72, 210); */
   background: #fafafa;
   border: 1px solid rgb(177, 177, 227);
   border-radius: 9px;
@@ -49,7 +49,7 @@ select {
   height: 45px;
 }
 .button {
-  color: rgb(72, 72, 210);
+  /* color: rgb(72, 72, 210); */
   background: #fafafa;
   border: 1px solid rgb(177, 177, 227);
   border-radius: 9px;
@@ -68,11 +68,11 @@ select {
 
 div > a {
   text-decoration: none !important;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0) !important;
 }
 span > a {
   text-decoration: none !important;
-  color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0) !important;
 }
 a:hover {
   text-decoration: none !important;
@@ -129,4 +129,9 @@ a:hover {
 }
 div {
   display: block;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }

@@ -128,17 +128,17 @@
            <hr> 
   <table style="float: left; margin-right:10px;" >
     <c:forEach begin="0" end="2" var="special" items="${specialRs}">
-    <a href="/car_detail_change/${special.CAR_DTL_ID}">
+    <a href="/car_detail_change/${special.CAR_DTL_ID}"></a>
     <tr>
       <div>
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
           <img src="${special.DTL_IMG_CAR}"  width="150px" class="m-2">
-          </a>
+        </a>
         </td>
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
-          <div class="fw-bold ">${special.MANUFACTURER} ${special.MODEL} ${special.DETAILED_MODEL}</div>
+          <div class="fw-bold text-dark">${special.MANUFACTURER} ${special.MODEL} ${special.DETAILED_MODEL}</div>
           <div>
             <span class="fs-5 fw-bold ">
               ${special.PRICE}만원
@@ -148,11 +148,11 @@
               <span>${special.DRIVEN_DIST}km</span>
               <span>${special.FUEL}</span>
               <span>${special.ADDR_CITY}</span>
+            </a>
             </td>
           </div>
         </tr>
       </c:forEach>
-    </a>
     </table>
     <div style="clear:both"></div>
 
@@ -161,32 +161,35 @@
  </div>
       <hr> 
       <table style="float: left; margin-right:10px;">
-        <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
         <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}">
+          <a href="/car_detail_change/${newCar.CAR_DTL_ID}"></a>
         <tr>
          <div>
           <td>
-            <a href="/car_detail_change/${newCar.CAR_DTL_ID}"><img src="${newCar.DTL_IMG_CAR}"  width="150px" class="m-2"> </a>
+            <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
+            <img src="${newCar.DTL_IMG_CAR}"  width="150px" class="m-2"> 
+          </a>
         </td>
           <td>
-            <div class="fw-bold">${newCar.MANUFACTURER} ${newCar.MODEL} ${newCar.DETAILED_MODEL}</div>
+            <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
+            <div class="fw-bold text-dark">${newCar.MANUFACTURER} ${newCar.MODEL} ${newCar.DETAILED_MODEL}</div>
             <div>
               <span class="fs-5 fw-bold text-dark car_price">
               ${newCar.PRICE}만원
                 </span>
-                <div class="fw-normal small ">
+                <div class="fw-normal small text-dark">
                   <span>${newCar.MODEL_YEAR}</span>
                   <span>${newCar.DRIVEN_DIST}km</span>
                   <span>${newCar.FUEL}</span>
                   <span>${newCar.ADDR_CITY}</span>
                 </div>
             </div>
+          </a>
           </td>
         </div>
            </div>
         </tr>
       </c:forEach>
-    </a>
  </table>      
 
  <div style="clear:both"></div>
@@ -205,12 +208,13 @@
       <a href="/car_detail_change/${domestic.CAR_DTL_ID}"><img src="${domestic.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
            </td>
             <td>
-    <div class="fw-bold">${domestic.MANUFACTURER} ${domestic.MODEL} ${domestic.DETAILED_MODEL}</div>
+            <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
+    <div class="fw-bold text-dark">${domestic.MANUFACTURER} ${domestic.MODEL} ${domestic.DETAILED_MODEL}</div>
     <div>
-      <span class="fs-5 fw-bold ">
+      <span class="fs-5 fw-bold text-dark ">
       ${domestic.PRICE}만원
         </span>
-        <div class="fw-normal small ">
+        <div class="fw-normal small text-dark">
           <span>${domestic.MODEL_YEAR}</span>
           <span>${domestic.DRIVEN_DIST}km</span>
           <span>${domestic.FUEL}</span>
@@ -230,7 +234,7 @@
    </div>
         <hr> 
         <table style="float:left; margin-right:10px; margin-bottom: 10px;" >
-          <a href="/car_detail_change/${imported.CAR_DTL_ID}">
+          <a href="/car_detail_change/${imported.CAR_DTL_ID}"></a>
           <c:forEach begin="0" end="2" var="imported" items="${importedRs}">
           <tr>
             <div>
@@ -238,12 +242,13 @@
               <a href="/car_detail_change/${imported.CAR_DTL_ID}"><img src="${imported.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
           </td>
             <td>
-              <div class="fw-bold">${imported.MANUFACTURER} ${imported.MODEL} ${imported.DETAILED_MODEL}</div>
+            <a href="/car_detail_change/${imported.CAR_DTL_ID}">
+              <div class="fw-bold text-dark">${imported.MANUFACTURER} ${imported.MODEL} ${imported.DETAILED_MODEL}</div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
                 ${imported.PRICE}만원
                   </span>
-                  <div class="fw-normal small ">
+                  <div class="fw-normal small text-dark ">
                     <span>${imported.MODEL_YEAR}</span>
                     <span>${imported.DRIVEN_DIST}km</span>
                     <span>${imported.FUEL}</span>
