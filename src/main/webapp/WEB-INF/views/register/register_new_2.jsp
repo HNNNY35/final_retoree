@@ -234,6 +234,8 @@
     </div>
     <!-- 푸터 -->
       <%@ include file="../footer.jsp" %>
+      <%-- 아이디중복 추가 --%>
+     
       
      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script type="text/javascript">

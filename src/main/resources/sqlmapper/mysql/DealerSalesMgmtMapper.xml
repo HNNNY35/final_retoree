@@ -96,4 +96,40 @@
         RVS_ADDR = #{RVS_ADDR}
         WHERE RESERVATION_ID = #{RESERVATION_ID}
     </update>
+
+    <!-- call DealerSalesMgmt.selectContactList -->
+    <!-- DEALER_ID로 1:1상담 리스트 출력 -->
+    <select id="selectContactList" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CONTACT
+        JOIN ANSWER_STATUS
+        ON ANSWER_STATUS.STATUS_ID = CONTACT.STATUS_ID
+        WHERE DEALER_ID = #{DEALER_ID}
+        ORDER BY INQ_DATE DESC
+    </select>
+
+    <!-- call DealerSalesMgmt.selectContact -->
+    <!-- CONTACT_ID 1:1상담 상세보기 출력 -->
+    <select id="selectContact" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CONTACT
+        JOIN ANSWER_STATUS
+        ON ANSWER_STATUS.STATUS_ID = CONTACT.STATUS_ID
+        JOIN USER_INFO
+        ON USER_INFO.USER_ID = CONTACT.USER_ID
+        WHERE DEALER_ID = #{DEALER_ID}
+        AND CONTACT_ID = #{CONTACT_ID}
+    </select>
+
+    <!-- 1:1상담 답변하기 -->
+    <!-- call DealerSalesMgmt.updateContact -->
+    <update id="updateContact" parameterType="Map">
+        UPDATE CONTACT
+        SET
+        ANS_CONTENT = #{ANS_CONTENT},
+        ANS_DATE = sysdate(),
+        STATUS_ID = 'A002'
+        WHERE CONTACT_ID = #{CONTACT_ID}
+    </update>
+
 </mapper>

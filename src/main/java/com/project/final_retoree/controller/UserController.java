@@ -36,6 +36,9 @@ public class UserController {
     @Autowired
     DealerSalesMgmtService dealerSalesMgmtService;
 
+    @Autowired
+    WishList wishList;
+
     private PasswordEncoder encoder;
 
     // 마이페이지
@@ -82,21 +85,22 @@ public class UserController {
     }
 
     // 찜목록 삭제
-    @RequestMapping(value = "/dltWishList")
+    @RequestMapping(value = "/dltWishList" )
      public ModelAndView dltWishList(String wishlist_id, @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
 
              PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
              String user_id = principal.getUser_id();
-
+            //  wishlist_id = wishList.setWishlist_id(wishlist_id);
+             
             params.put("user_id", user_id);
+            params.put("wishlist_id", wishlist_id);
 
             System.out.println(wishlist_id);
             System.out.println(user_id);
             
-            WishList wishlist = new WishList();
-            wishlist.setUser_id(user_id);
-            wishlist.setWishlist_id(wishlist_id);
-            Object dltWishList = myPageService.dltWishList(wishlist);
+            System.out.println(params);
+            
+            Object dltWishList = myPageService.dltWishList(params);
             
             modelAndView.addObject("dltWishList", dltWishList);
             modelAndView.setViewName("myPage/wishListCar");
@@ -137,8 +141,7 @@ public class UserController {
     }
 
     //마이페이지 회원 정보 수정
-    // 에러..
-    @RequestMapping(value= "/myPageEdit", method = RequestMethod.GET)
+    @RequestMapping(value= "/myPageEdit", method = RequestMethod.POST)
     public ModelAndView myPageEdit(Authentication auth, RedirectAttributes rttr, @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
@@ -148,13 +151,13 @@ public class UserController {
         params.put("user_pw", user_pw);
         Object editUserInfo = myPageService.editUserInfo(user_id, params);
         modelAndView.addObject("editUserInfo", editUserInfo);
+            modelAndView.setViewName("main_search");
 
-        if(encoder.matches(user_id, user_pw)){
-        modelAndView.setViewName("myPage/myPage_modify");
-        } else {
-            rttr.addFlashAttribute("msg", "비밀번호를 다시 확인해주세요.");
-            modelAndView.setViewName("myPage/myPage");
-        }
+        // if(encoder.matches(user_id, user_pw)){
+        // modelAndView.setViewName("myPage/myPage_modify");
+        // } else {
+        //     rttr.addFlashAttribute("msg", "비밀번호를 다시 확인해주세요.");
+        // }
         return modelAndView;
     }
 
@@ -218,7 +221,7 @@ public class UserController {
         //판매 완료 차량
          Object soldOutList = dealerSalesMgmtService.getSoldOutCarList(params);
          modelAndView.addObject("soldOutList", soldOutList);
-         
+
         //판매중 차량
          Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
          modelAndView.addObject("salesList", salesList);

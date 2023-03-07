@@ -33,8 +33,7 @@
              <!-- 검색창 -->
              <br>
           <br>  
-         <div>
-            <form action = "/admin/userSearch/" method ="get">
+                    <%-- <form action = "/admin/userSearch/" method ="get">
                     <div class="d-flex flex-row mt-5">
                     <select class="form-select w-25 mx-2 border-primary" name="keyType" id="keyType">
                           <option value="SELECT">선택</option>
@@ -46,8 +45,7 @@
                         <input type="text" class="form-control w-25 mx-2 border-primary"  name="SERCH_KEYWORD" value="${searchUser}">
                         <button type="submit" id="searchBtn" class="btn btn-outline-primary mx-2">검색</button>
                     </div>
-                  </form>
-                   <div>
+                  </form> --%>
           <br>
           <br>  
           <table class="table table-bordered border-primary border-opacity-25"width="100">

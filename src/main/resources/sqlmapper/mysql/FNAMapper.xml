@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CSFNA">
+
+<!-- call CSFNA.insertWithFNA -->
+ <insert id="insertWithFNA" parameterType="Map">
+INSERT INTO CS_FNA (FNA_ID, INQUIRY, ANSWER, INQ_TYPE_ID, ADMIN_ID)
+VALUES (#{FNA_ID}, #{INQUIRY}, #{ANSWER}, #{INQ_TYPE_ID}, #{ADMIN_ID})
+</insert>
+
+<!-- call CSFNA.insertWithINQ -->
+ <insert id="insertWithINQ" parameterType="Map">
+INSERT INTO INQUITY_TYPE (INQ_TYPE_ID, INQ_TYPE)
+VALUES (#{INQ_TYPE_ID}, #{INQ_TYPE})
+</insert>
+
+</mapper>

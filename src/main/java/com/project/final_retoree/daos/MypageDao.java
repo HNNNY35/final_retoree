@@ -25,8 +25,8 @@ public class MypageDao {
     }
 
     //찜 목록 삭제
-    public Object dltWishList(String sqlMapId, WishList wishlist) {
-        Object result = sqlSessionTemplate.delete(sqlMapId, wishlist);
+    public Object dltWishList(String sqlMapId,  Object dataMap) {
+        Object result = sqlSessionTemplate.delete(sqlMapId, dataMap);
         return result;
     }
     

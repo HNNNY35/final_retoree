@@ -138,6 +138,61 @@ public class DealerSalesMgmtController {
         modelAndView.setViewName("dealer/reservationConfirm");
         return modelAndView;
     }
+
+    // 고객관리 페이지
+    @RequestMapping(value = "/dealer_customer_mgmt", method = RequestMethod.GET)
+    public ModelAndView dealerCustomerMgmt(@RequestParam Map<String,Object> params, ModelAndView modelAndView){
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String dealer_id = principal.getUser_id();
+
+        params.put("DEALER_ID", dealer_id);
+        
+        // 딜러 이름 가져오기
+        Object resultDealerName = dealerSalesMgmtService.getDealerName(params);
+        modelAndView.addObject("resultDealerName", resultDealerName);
+        
+        // 1:1상담 리스트 가져오기
+        Object resultContactList = dealerSalesMgmtService.selectContactList(params);
+        modelAndView.addObject("resultContactList", resultContactList);
+
+        modelAndView.setViewName("dealer/dealer_customer_mgmt");
+        return modelAndView;
+    }
+
+    // 1:1 상담 상세보기 및 답변 등록 페이지
+    @RequestMapping(value = "/dealer_contact", method = RequestMethod.POST)
+    public ModelAndView dealerContact(@RequestParam Map<String,Object> params, ModelAndView modelAndView){
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String dealer_id = principal.getUser_id();
+
+        params.put("DEALER_ID", dealer_id);
+        
+        // 1:1 상담 상세보기
+        Object resultContact = dealerSalesMgmtService.selectContact(params);
+        modelAndView.addObject("resultContact", resultContact);
+
+        modelAndView.setViewName("dealer/dealer_contact");
+        return modelAndView;
+    }
     
+    // 1:1상담
+    @RequestMapping(value = "/dealer_contact_submit", method = RequestMethod.POST)
+    public ModelAndView dealerContactSubmit(@RequestParam Map<String,Object> params, ModelAndView modelAndView){
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String dealer_id = principal.getUser_id();
+
+        params.put("DEALER_ID", dealer_id);
+        
+        // 1:1상담 답변 update
+        Object updateContact = dealerSalesMgmtService.updateContact(params);
+        modelAndView.addObject("updateContact", updateContact);
+
+        // 1:1상담 내용 출력
+        Object resultContact = dealerSalesMgmtService.selectContact(params);
+        modelAndView.addObject("resultContact", resultContact);
+
+        modelAndView.setViewName("dealer/dealer_contact_submit");
+        return modelAndView;
+    }
 
 }

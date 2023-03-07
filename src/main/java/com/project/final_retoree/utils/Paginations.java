@@ -1,7 +1,7 @@
 package com.project.final_retoree.utils;
 
 public class Paginations { // bean같은 역할
-    private int pageScale = 5; // 페이지당 게시물 수
+    private int pageScale = 10; // 페이지당 게시물 수
     private int blockScale = 5; // 블록당 페이지수
     private int currentPage; // 현재 페이지 번호
     private int previousPage; // 이전 페이지
@@ -15,20 +15,19 @@ public class Paginations { // bean같은 역할
     private int blockEnd; // 페이지 블록 내에서의 마지막 페이지 번호
     private int totalCount; // 페이지 블록 내에서의 마지막 페이지 번호
 
-    public Paginations(int totalCount, int currentPage) {
+    public Paginations(int totalCount, int currentPage) { // 생성자 ,순서중요
         this.totalCount = totalCount;
         this.currentPage = currentPage;
-        this.setTotalPage(totalCount);
+        this.setTotalpage(totalCount);
         this.setPageRange();
         this.setTotalBlock();
         this.setBlockRange();
-
     }
 
     // 전체 페이지 블록 갯수 계산
     public void setTotalBlock() {
         totalBlock = (int) Math.ceil(totalPage / blockScale);
-    }
+    }// Math.ceil-반올림이 일어남
 
     // 현재 페이지가 몇번째 페이지에 속하는지 계산
     public void setBlockRange() {
@@ -53,12 +52,13 @@ public class Paginations { // bean같은 역할
     }
 
     public void setPageRange() {
-        pageBegin = (this.currentPage - 1) * this.pageScale;
-        pageEnd = Math.min(this.pageBegin + pageScale - 1, this.totalCount);
+        pageBegin = (this.currentPage - 1) * this.pageScale + 1; // 시작점
+        pageEnd = this.pageBegin + pageScale - 1; // 끝점
     }
 
-    public void setTotalPage(int totalCount) {
+    public void setTotalpage(int totalCount) {
         this.totalPage = (int) Math.ceil(totalCount * 1.0 / this.pageScale);
+        // Math.ceil(long이기에 int로 캐스트)
     }
 
     public int getPageScale() {
@@ -79,6 +79,10 @@ public class Paginations { // bean같은 역할
 
     public int getTotalPage() {
         return totalPage;
+    }
+
+    public void setTotalPage(int totalPage) {
+        this.totalPage = totalPage;
     }
 
     public int getTotalCount() {
