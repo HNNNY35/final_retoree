@@ -133,9 +133,9 @@
                 <a class="dropdown-item" href="/listPagination/1">회원관리</a>
               </li>
              
-              <li><a class="dropdown-item" href="../myPageVisitReserve">공지사항관리</a></li>
-              <li><a class="dropdown-item" href="../wishListCar">문의게시판관리</a></li>
-              <li><a class="dropdown-item" href="../wishListCar">이벤트관리</a></li>
+              <li><a class="dropdown-item" href="/notice">공지사항관리</a></li>
+              <li><a class="dropdown-item" href="../cs_main">문의게시판관리</a></li>
+              <li><a class="dropdown-item" href="../event">이벤트관리</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="/logoutform">로그아웃</a></li>
             </ul>
