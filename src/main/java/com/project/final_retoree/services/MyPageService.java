@@ -60,8 +60,6 @@ public class MyPageService {
         return result;
     }
 
-
-
     //방문예약 정보 Read
     public Object getReserveList(Object dataMap) {
         String sqlMapId = "Mypage.selectFromReserveList";

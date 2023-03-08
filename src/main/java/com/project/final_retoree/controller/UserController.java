@@ -214,6 +214,26 @@ public class UserController {
          Object reservation = reservationService.getUserReservation(params);
          modelAndView.addObject("reservation", reservation);
 
+         
+         
+         modelAndView.setViewName("myPage/myPageVisitReserve");
+         return modelAndView;
+ 
+     }
+
+    // 방문 예약 확인(상세페이지)
+    @RequestMapping(value = "/visit_reserve/{reservation_id}", method = RequestMethod.GET)
+    
+    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String reservation_id, ModelAndView modelAndView) throws Exception {
+        
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+        
+        params.put("user_id", user_id);
+        params.put("RESERVATION_ID", reservation_id);
+        Object reservation = reservationService.getUserReservation(params);
+        modelAndView.addObject("reservation", reservation);
+
         //딜러 정보
          Object dealerInfo = dealerSalesMgmtService.getDealerName(params);
          modelAndView.addObject("dealerInfo", dealerInfo);
@@ -226,24 +246,6 @@ public class UserController {
          Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
          modelAndView.addObject("salesList", salesList);
 
-
-         modelAndView.setViewName("myPage/myPageVisitReserve");
-         return modelAndView;
- 
-     }
-
-    // 방문 예약 확인(상세페이지)
-    @RequestMapping(value = "/visit_reserve", method = RequestMethod.GET)
-    
-    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
-                
-        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String user_id = principal.getUser_id();
-
-        params.put("user_id", user_id);
-        Object reservation = reservationService.getUserReservation(params);
-
-        modelAndView.addObject("reservation", reservation);
         modelAndView.setViewName("users_ etc/visit_reserve");
         return modelAndView;
 

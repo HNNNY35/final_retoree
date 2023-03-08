@@ -30,16 +30,40 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             <hr />
           <!-- 방문예약 내역이 있을 때 -->
           <c:forEach items="${reservation}" var="reservation">
-            <h3 class="text-center">
+            <div class="border">
+            <h5 class="text-center m-3">
               ${reservation.NAME}님은 안심번호로 전화통화 후
               <span style="color: red">${reservation.RSV_STATUS}</span
               >되었습니다.
-            </h3>
+            </h5>
+          </div>
+          
+          <h3 class="pt-3 pb-2 m-3">매매단지 오시는 길 안내</h3>
+          <hr>
+            <c:choose>
+            <c:when test= "${reservation.RVS_ADDR eq 'none'}">
+              <div class="text-center">
+                예약 확정 후 주소 안내해드리겠습니다.
+               </div> 
+            </c:when>
+            <c:otherwise>
+              <div>
+               주소 : ${reservation.RVS_ADDR}
+              </div>
+              <div>
+                  <a href="https://www.google.co.kr/maps/place/${reservation.RVS_ADDR}">지도를 보려면 ?</a>
+               </div>
+            </c:otherwise>
+            </c:choose>
+
           </c:forEach>
+          <hr>
 
           <!-- 쿼리문 다시 짜야함 -->
-          <h3>판매자 정보</h3>
+          <!-- <h3>판매자 정보</h3> -->
           <table class="table table-bordered text-center">
+            <c:forEach var="dealer" items="${dealerInfo}">
+            <input type="hidden" id="U002" name="U002">
             <tr>
               <th>판매자</th>
               <th>연락처</th>
@@ -47,63 +71,22 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <th>판매완료</th>
             </tr>
             <tr>
-              <td>xxx</td>
+              <td>${dealer.NAME}</td>
               <td>010-1234-1234</td>
               <td>10대</td>
               <td>5대</td>
             </tr>
+          </c:forEach>
+
           </table>
           <hr />
 
           <!-- 쿼리문 다시 짜야함 -->
-          <h3 class="pt-3 pb-2">매매단지 오시는 길 안내</h3>
-          <table class="table-tp3">
-            <!-- <caption class="away">판매자 정보</caption> -->
-            <colgroup>
-              <col width="10%" />
-              <col width="40%" />
-              <col width="10%" />
-              <col width="40%" />
-            </colgroup>
-            <tbody>
-              <tr>
-                <th>판매점</th>
-                <td>KH 자동차</td>
-                <th>전화</th>
-                <td>02-1234-1234</td>
-              </tr>
-              <tr>
-                <th rowspan="2">영업시간</th>
-                <td rowspan="2" class="time"></td>
-                <th>팩스</th>
-                <td>053-123-1234</td>
-              </tr>
-              <tr>
-                <th>주소</th>
-                <div class="pb-2">
-                  <img
-                    src="../../../../img/지도.png"
-                    alt=""
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
-                <td>
-                  <a
-                    href="https://map.kakao.com/link/search/서울 강남구 테헤란로14길 6 남도빌딩"
-                    >서울 강남구 테헤란로14길 6 남도빌딩 KH 자동차</a
-                  >
-                </td>
-              </tr>
-            </tbody>
-          </table>
-          <hr />
 
           
           <h3 class="p-3">차량 확인</h3>
 
-          <div class="container">
-            <div class="row mb-3">
+            <div class="row">
               <table class="text-center">
                 <c:forEach var="reservation" items="${reservation}">
                 <tr>
@@ -115,7 +98,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 </tr>
                 <tr>
                   <th>
-                    <a href="car_detail_change/${reservation.CAR_DTL_ID}">
+                    <a href="/car_detail_change/${reservation.CAR_DTL_ID}">
                       <img
                         height="100px"
                         src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png"
@@ -131,15 +114,13 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <td>
                     <a
                       class="btn btn-outline-dark"
-                      href="car_detail_change/${reservation.CAR_DTL_ID}"
+                      href="/car_detail_change/${reservation.CAR_DTL_ID}"
                       >상세 페이지</a
                     >
                   </td>
                 </tr>
               </c:forEach>
               </table>
-            </div>
-          </div>
         </div>
         <hr />
         <h3 class="pt-3">믿고 방문하는 헛걸음 보상제!</h3>

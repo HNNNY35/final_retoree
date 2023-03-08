@@ -215,6 +215,7 @@
                           id="address_kakao"
                           name = "addr_city"
                           value="${userInfo.ADDR_CITY}"
+                          readonly
                         />
                       </td>
                     </tr>
@@ -269,8 +270,8 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"
       ></script>
-      <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-      <!-- <script src="/js/myPage_modify.js"></script> -->
+   <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+
       <script>
         function alertUpdate(){
           alert("수정하시겠습니까?")
@@ -310,7 +311,7 @@
                 oncomplete: function (data) {
                   //선택시 입력값 세팅
                   document.getElementById("address_kakao").value = data.address; // 주소 넣기
-                  document.querySelector("input[name=ADDR_DISTRICT]").focus(); //상세입력 포커싱
+                  document.querySelector("input[name=addr_district]").focus(); //상세입력 포커싱
                 },
               }).open();
             });

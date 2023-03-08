@@ -60,9 +60,16 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     </td>
 
                     <td>
-                      <a href="visit_reserve" class="btn btn-outline-dark"
-                        >상세보기</a
+                      <form
+                        action="visit_reserve/${reserve.RESERVATION_ID}"
+                        method="POST"
                       >
+                        <a
+                          href="visit_reserve/${reserve.RESERVATION_ID}"
+                          class="btn btn-outline-dark"
+                          >상세보기</a
+                        >
+                      </form>
                     </td>
                   </tr>
                 </c:forEach>
