@@ -111,9 +111,6 @@ public class CarDetailService {
         }
         
         // 이미지 가져올 때 필요한 것 : 경로, 이미지파일 이름
-        // String directory = (String)((Map<String, Object>)carDetailDao.getOne(sqlMapId, dataMap)).get("PHYSICALFILE_NAME");
-        // String path = commonUtils.getRelativeToAbsolutePath("/src/main/resources/static/files/" + directory + "\\");
-        // results.put("path", path);
         results.put("PHYSICALFILE_NAME", ((Map<String, Object>)carDetailDao.getOne(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
         
         return results;

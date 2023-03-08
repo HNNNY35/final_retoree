@@ -24,20 +24,7 @@
   </head>
   <body>
     <%@ include file="../header.jsp" %>
-    <c:choose>
-      <c:when test="${contactSubmit eq 'yes'}">
-      <script>
-        alert('1:1 문의 등록이 완료되었습니다.');
-      </script>
-      </c:when>
 
-      <c:when test="${reservationSubmit eq 'yes'}">
-      <script>
-        alert('방문예약 신청이 완료되었습니다.');
-      </script>
-      </c:when>
-
-    </c:choose>
     <!-- 차량 사진 -->
     <c:set var="fileNameFront" value="${carImgs.Front}" />
     <c:set var="fileNameSide" value="${carImgs.Side}" />
@@ -409,7 +396,7 @@
                     <div  class="bg-light rounded-pill p-3">
 
                       <label for="reservation_day">
-                        <input type="date" name="RSV_DATE" min="2023-02-08" max="2024-12-31">
+                        <input type="date" name="RSV_DATE" min="2023-02-08" max="2024-12-31" required>
                       </label>
                     </div>
                     <h5 class="pt-5 pb-1">방문 시기</h5>
@@ -418,14 +405,14 @@
                       
                       <label  for="listGroupRadios2">
                         <span class="p-3">
-                          <input class=" form-check-input flex-shrink-0" type="radio" name="RVS_TIME" id="listGroupRadios2" value="am">
+                          <input class=" form-check-input flex-shrink-0" type="radio" name="RVS_TIME" id="listGroupRadios2" value="am" required>
                           <span>
                             오전
                           </span>
                         </label></span>
                         <label for="listGroupRadios3">
                   <span class="p-3">
-                    <input class="form-check-input flex-shrink-0" type="radio" name="RVS_TIME" id="listGroupRadios3" value="pm">
+                    <input class="form-check-input flex-shrink-0" type="radio" name="RVS_TIME" id="listGroupRadios3" value="pm" required>
                     <span>
                       오후
                     </span>
