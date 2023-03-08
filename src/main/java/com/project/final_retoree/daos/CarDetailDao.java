@@ -25,4 +25,8 @@ public class CarDetailDao {
         return result;
         }
 
+    public Object delete(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.delete(sqlMapId, dataMap);
+        return result;
+        }
 }

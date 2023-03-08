@@ -1,6 +1,9 @@
 package com.project.final_retoree.controller;
 
+import java.util.HashMap;
 import java.util.Map;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -40,7 +43,17 @@ public class Car_detailController {
             String user_id = principal.getUser_id();
             params.put("USER_ID", user_id);
             
+            // 상품 찜 여부 확인하기
+            Object resultWishlist =carDetailService.checkWishlist(params);
+            if(resultWishlist == null) {
+                modelAndView.addObject("likeCheck", 0);
+            } else {
+                modelAndView.addObject("likeCheck", 1);
+            }
+            modelAndView.addObject("resultWishlist", resultWishlist);
         } catch (Exception e) {
+            // 로그인되지 않았을 경우
+            modelAndView.addObject("likeCheck", 2);
         }
         
         Object resultMap1 = carDetailService.getCarInfo(params);
@@ -50,13 +63,6 @@ public class Car_detailController {
         Object resultMap3 = carDetailService.getDealerSalesCar(dealer_id);
         Object resultMap4 = carDetailService.getDealerSoldOutCar(dealer_id);
 
-        // // 상품 찜 여부 확인하기
-        // Object resultWishlist =carDetailService.checkWishlist(params);
-        // if(resultWishlist == null) {
-        //     modelAndView.addObject("likeCheck", 0);
-        // } else {
-        //     modelAndView.addObject("likeCheck", 1);
-        // }
 
         // car_info의 car_id로 차량 이미지 가져오기
         params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
@@ -67,13 +73,12 @@ public class Car_detailController {
         modelAndView.addObject("resultMap3", resultMap3);
         modelAndView.addObject("resultMap4", resultMap4);
         modelAndView.addObject("carImgs", carImgs);
-        // modelAndView.addObject("resultWishlist", resultWishlist);
         modelAndView.setViewName("car/car_detail_change");
 
         return modelAndView;
     }
     
-    // 방문예약 submit시 방문예약 insert후 차량 상세 페이지로
+    // 방문예약 submit시 방문예약 insert후 방문예약 신청 완료 페이지로
     @RequestMapping(value = "/car_detail_reservation", method = RequestMethod.POST)
     public ModelAndView car_detail_reservation(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {        
         
@@ -96,7 +101,7 @@ public class Car_detailController {
         return modelAndView;
     }
 
-    // 1:1상담 입력시 insert후 차량 상세 페이지로
+    // 1:1상담 입력시 insert후 상담 제출 완료 페이지로
     @RequestMapping(value = "/car_contact", method = RequestMethod.POST)
     public ModelAndView car_contact(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         
@@ -120,8 +125,96 @@ public class Car_detailController {
         return modelAndView;
     }
     
-    // 찜하기
+    // 찜하기 추가
+    // @RequestMapping(value = "/insertHeart", method = RequestMethod.POST)
+    // public Object insertHeart(@RequestParam Map<String, Object> params, HttpSession session) {
 
+    //         // 로그인 한 유저 uid
+    //         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    //         String user_id = principal.getUser_id();
+            
+    //         params.put("USER_ID", user_id);
+            
+    //         Object resultMap = carDetailService.insertWishlist(params);
+            
+    //         Object resultWishlist =carDetailService.checkWishlist(params);
+            
+    //         Map result = new HashMap<String, String>;
+
+    //         result.put("likeCheck", 1);
+
+    //         return result;
+    // }
+
+        // 찜 insert하고 차량 상세페이지 
+        @RequestMapping(value = "/add_wishlist", method = RequestMethod.POST)
+        public ModelAndView add_wishlist(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+            // 로그인 한 유저 uid
+            PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            String user_id = principal.getUser_id();
+                
+            params.put("USER_ID", user_id);
     
+            // 찜 insert후 1 리턴
+            Object likeCheck = carDetailService.insertWishlist(params);
+                
+            // 차량 상세페이지 정보들
+            Object resultMap1 = carDetailService.getCarInfo(params);
+            Object resultMap2 = carDetailService.getDealerInfo(params);
+            
+            Object dealer_id = ((Map<String, Object>)resultMap2).get("DEALER_ID");
+            Object resultMap3 = carDetailService.getDealerSalesCar(dealer_id);
+            Object resultMap4 = carDetailService.getDealerSoldOutCar(dealer_id);
 
+            // car_info의 car_id로 차량 이미지 가져오기
+            params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
+            Object carImgs = carDetailService.selectCarImg(params);
+            
+            modelAndView.addObject("resultMap1", resultMap1);
+            modelAndView.addObject("resultMap2", resultMap2);
+            modelAndView.addObject("resultMap3", resultMap3);
+            modelAndView.addObject("resultMap4", resultMap4);
+            modelAndView.addObject("carImgs", carImgs);
+
+            modelAndView.addObject("likeCheck", likeCheck);
+                
+            modelAndView.setViewName("car/car_detail_change");
+            return modelAndView;
+        }
+
+        // 찜 delete하고 차량 상세페이지 
+        @RequestMapping(value = "/remove_wishlist", method = RequestMethod.POST)
+        public ModelAndView remove_wishlist(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+            // 로그인 한 유저 uid
+            PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+            String user_id = principal.getUser_id();
+                
+            params.put("USER_ID", user_id);
+    
+            // 찜 delete
+            Object likeCheck = carDetailService.deleteWishlist(params);
+                
+            // 차량 상세페이지 정보들
+            Object resultMap1 = carDetailService.getCarInfo(params);
+            Object resultMap2 = carDetailService.getDealerInfo(params);
+            
+            Object dealer_id = ((Map<String, Object>)resultMap2).get("DEALER_ID");
+            Object resultMap3 = carDetailService.getDealerSalesCar(dealer_id);
+            Object resultMap4 = carDetailService.getDealerSoldOutCar(dealer_id);
+
+            // car_info의 car_id로 차량 이미지 가져오기
+            params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>)resultMap1).get("CAR_ID"));
+            Object carImgs = carDetailService.selectCarImg(params);
+            
+            modelAndView.addObject("resultMap1", resultMap1);
+            modelAndView.addObject("resultMap2", resultMap2);
+            modelAndView.addObject("resultMap3", resultMap3);
+            modelAndView.addObject("resultMap4", resultMap4);
+            modelAndView.addObject("carImgs", carImgs);
+
+            modelAndView.addObject("likeCheck", "0");
+                
+            modelAndView.setViewName("car/car_detail_change");
+            return modelAndView;
+        }
 }

@@ -206,14 +206,16 @@
                 </div>
               </div>
 
-              <strong class="add" id="inputList">
-                찜하기
-                <span style="display: inline-block">
-                  <a>
-                <c:choose>
-                  <c:when test="${likeCheck eq '0' or empty likeCheck}">
-                    <i class="material-icons rounded-circle bg-light"
-                    style="
+                <strong class="add" id="inputList">
+                  찜하기
+                  <span style="display: inline-block">
+                    <c:choose>
+                      <c:when test="${likeCheck eq '0'}">
+                        <form action="/add_wishlist" method="post">
+                          <input type="hidden" name="CAR_DTL_ID" value="${resultMap1.CAR_DTL_ID}">
+                          <button type="submit" class="rounded-circle bg-light border-0 p-0">
+                              <i class="material-icons"
+                            style="
                       width: 3rem;
                       height: 3rem;
                       display: flex;
@@ -223,26 +225,47 @@
                     id="heart"
                     >favorite_border</i
                     >
+                </button>
+                </form>
                   </c:when>
-                  <c:otherwise>
-                    <i class="material-icons rounded-circle bg-light"
-                    style="
+                  <c:when test="${likeCheck eq '1'}">
+                    <form action="/remove_wishlist" method="post">
+                      <input type="hidden" name="CAR_DTL_ID" value="${resultMap1.CAR_DTL_ID}">
+                      <button type="submit" class="rounded-circle bg-light border-0 p-0">
+                        <i class="material-icons"
+                      style="
                       width: 3rem;
                       height: 3rem;
                       display: flex;
                       justify-content: center;
                       align-items: center;
-                      FILL : 1;
                       "
-                    id="heart"
-                    >favorite_border</i
+                    id="heartFill"
+                    >favorite</i
                     >
-                  </c:otherwise>
+                  </button>
+                  </form>
+                  </c:when>
+                  <c:when test="${likeCheck eq '2'}">
+                    <a href="javascript:login_need();">
+                      <i class="material-icons rounded-circle bg-light"
+                      style="
+                  width: 3rem;
+                  height: 3rem;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  "
+                id="heartNotLogin"
+                >favorite_border</i
+                >
+              </a>
+                  </c:when>
                 </c:choose>
-                  </a>
-                  </span>
-
-                </strong>
+              
+            </span>
+            
+          </strong>
                 <c:set var="price" value="${resultMap1.PRICE}" />
               <h4 style="font-weight: 700; margin-top: 10px">
                 판매가격
@@ -770,6 +793,12 @@
     </body>
 
   <script src="/js/car_detail.js"></script>
+  <script type="text/javascript" src="/js/car_wishlist.js"></script>
+  <script>
+  function login_need() {
+    alert('로그인하셔야 이용할 수 있는 기능입니다.');
+  }
+  </script>
 
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

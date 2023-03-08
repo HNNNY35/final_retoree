@@ -85,14 +85,7 @@ public class CarDetailService {
         return result;
     }
     
-    // // 찜 여부 확인하기
-    // public Object checkWishlist(Object dataMap) {
-    //     String sqlMapId = "CarDetail.selectWishlist";
-    //     Object result = carDetailDao.getOne(sqlMapId, dataMap);
-        
-    //     return result;
-    // }
-
+    
     // 차량 이미지 가져오기
     public Object selectCarImg(Object dataMap) {
         String sqlMapId = "CarDetail.selectCarImg";
@@ -106,7 +99,7 @@ public class CarDetailService {
             ((Map<String, Object>) dataMap).put("IMG_INFO", imgFiles[i]);
             result = carDetailDao.getOne(sqlMapId, dataMap);
             String fileName = (String)(((Map<String, Object>)result).get("ORIGINALFILE_NAME"));
-
+            
             results.put(imgFiles[i], fileName);
         }
         
@@ -115,5 +108,31 @@ public class CarDetailService {
         
         return results;
     }
+
+    // 찜 여부 확인하기
+    public Object checkWishlist(Object dataMap) {
+        String sqlMapId = "CarDetail.selectWishlist";
+        Object result = carDetailDao.getOne(sqlMapId, dataMap);
+        
+        return result;
+    }
     
+    // 찜하기
+    public Object insertWishlist(Object dataMap) {
+        // wishlist_id 생성
+        ((Map<String, Object>) dataMap).put("WISHLIST_ID", commonUtils.getUniqueSequence());
+        
+        String sqlMapId = "CarDetail.insertWishList";
+        Object result = carDetailDao.insert(sqlMapId, dataMap);
+
+        return result;
+    }
+
+    // 찜제거하기
+    public Object deleteWishlist(Object dataMap) {
+        String sqlMapId = "CarDetail.deleteWishList";
+        Object result = carDetailDao.delete(sqlMapId, dataMap);
+
+        return result;
+    }
 }

@@ -88,13 +88,28 @@
 
     <!-- 찜 여부 확인하기 -->
     <!-- call CarDetail.selectWishlist -->
-    <!-- <select id="selectWishlist" parameterType="Map" resultType="Map">
+    <select id="selectWishlist" parameterType="Map" resultType="Map">
         SELECT *
         FROM WISHLIST
         WHERE CAR_DTL_ID = #{CAR_DTL_ID}
         AND USER_ID = #{USER_ID}
-    </select> -->
+    </select>
 
-
+    <!-- USER_ID와 CAR_DTL_ID로 찜하기 -->
+    <!-- call CarDetail.insertWishList -->
+    <insert id = "insertWishList" parameterType="Map">
+        INSERT INTO WISHLIST
+        (WISHLIST_ID, CAR_DTL_ID, USER_ID)
+        VALUE
+        (#{WISHLIST_ID}, #{CAR_DTL_ID}, #{USER_ID})
+    </insert>
+    
+    <!-- USER_ID와 CAR_DTL_ID로 찜제거하기 -->
+    <!-- call CarDetail.deleteWishList -->
+    <insert id = "deleteWishList" parameterType="Map">
+        DELETE FROM WISHLIST
+        WHERE CAR_DTL_ID = #{CAR_DTL_ID}
+        AND USER_ID = #{USER_ID}
+    </insert>
 
 </mapper>

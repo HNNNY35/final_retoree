@@ -45,6 +45,16 @@
   color: cornflowerblue;
 }
 
+#heartFill {
+  cursor: pointer;
+  color: cornflowerblue;
+}
+
+#heartNotLogin {
+  cursor: pointer;
+  color: rgb(187, 187, 187);
+}
+
 .box {
   width: 100px;
   height: 100px;
