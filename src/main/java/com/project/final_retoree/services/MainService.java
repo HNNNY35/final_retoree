@@ -1,6 +1,8 @@
 package com.project.final_retoree.services;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,4 +70,26 @@ public class MainService {
         return result;
     }
 
-}
+
+    public Object selectCarImg(Object dataMap) {
+        String sqlMapId = "CarDetail.selectCarImg";
+        
+        Object result = null;
+        Map results = new HashMap<String, String>();
+        
+        String imgFiles = "Front";
+        
+            ((Map<String, Object>) dataMap).put("IMG_INFO", imgFiles);
+            result = mainDao.getSpecialList(sqlMapId, dataMap);
+            String fileName = (String)(((Map<String, Object>)result).get("ORIGINALFILE_NAME"));
+            
+            results.put(imgFiles, fileName);
+        
+        
+        // 이미지 가져올 때 필요한 것 : 경로, 이미지파일 이름
+        results.put("PHYSICALFILE_NAME", ((Map<String, Object>)mainDao.getSpecialList(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
+        
+        return results;
+        }
+    }
+
