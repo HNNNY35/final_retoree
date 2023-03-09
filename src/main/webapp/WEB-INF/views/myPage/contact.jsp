@@ -46,11 +46,6 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             <c:forEach var="contact" items="${contact}">
               <thead>
                 <tr>
-                  <th>
-                    <span class="chk-box chk-basic on">
-                      <input type="checkbox" id="register-car-chk1" name="checkAll" value="">
-                      <label for="register-car-chk1" style="cursor: pointer;"></label></span>
-                  </th>
                   <th>문의일자</th>
                   <th>문의유형</th>
                   <th>제목</th>
@@ -58,28 +53,48 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <th>답변상태</th>
                 </tr>
                 </thead>
-                <tbody>
-              <tr>
-              <td>
-                <span class="chk-box chk-basic on">
-                  <input type="checkbox" id="" name="" value="">
-                  <label for="" style="cursor: pointer;"></label></span>
-                </td>
-                <td>
-                  ${contact.INQ_DATE}
-              </td>
 
-              <td>
-                ${contact.INQ_TITLE}
-              </td>
-              <td>
-                ${contact.INQ_CONTENT}
-                </td>
-                <td >
-                    ${contact.ANS_DATE}
-                </td>
+                <tbody>
+                <tr>
+               
+                      <td>
+                        ${contact.INQ_DATE}
+                      </td>
+                      <td>
+                        ${contact.INQ_TITLE}
+                      </td>
+                      <td>
+                        ${contact.INQ_CONTENT}
+                      </td>
                 <td>
-                    ${contact.ANS_CONTENT}
+                  <c:choose>
+                  <c:when test="${contact.ANS_DATE eq 'none'}">
+                    미답변
+                  </div> 
+                </c:when>
+                <c:otherwise>
+                  ${contact.ANS_DATE}
+                </c:otherwise>
+              </c:choose>
+            </td>
+            <td>
+              <c:choose>
+                <c:when test="${contact.ANS_CONTENT eq 'none'}">
+                  미답변
+                </c:when>
+                <c:otherwise>
+                  <div>
+                    <ul class="cs_ul">
+                      <li class="cs_li">
+                        <a class="btn" data-bs-toggle="collapse" href="#qa1" role="button" aria-expanded="false">답변완료</a>
+                      </c:otherwise>
+                    </c:choose>
+                    
+                    <div class="collapse" id="qa1">
+                        <div class="card card-body">
+                      ${contact.ANS_CONTENT}
+                      </div>
+              </div>
               </td>
             </tr>
           </tbody>

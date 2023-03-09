@@ -178,7 +178,7 @@ public class UserController {
         params.put("user_id", user_id);
         params.put("user_pw", user_pw);
         
-        if(sessionStatus.isComplete()==false) sessionStatus.isComplete();
+        // if(sessionStatus.isComplete()==false) sessionStatus.isComplete();
 
         Object result = myPageService.withdraw(params);
         modelAndView.addObject("result", result);
@@ -246,7 +246,7 @@ public class UserController {
          Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
          modelAndView.addObject("salesList", salesList);
 
-        modelAndView.setViewName("users_ etc/visit_reserve");
+        modelAndView.setViewName("myPage/visit_reserve");
         return modelAndView;
 
     }
