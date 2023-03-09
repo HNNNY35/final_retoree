@@ -26,7 +26,7 @@
      <%@ include file="./header.jsp" %>
     
     <main>
-      <div class="container">
+      <div class="container m-auto">
       
       <!-- 사진 -->
       
@@ -41,7 +41,7 @@
     <c:set var="pathDomestic" value="${carImgDomestic.PHYSICALFILE_NAME}" />
     <c:set var="pathImported" value="${carImgImported.PHYSICALFILE_NAME}" /> -->
 
-      <div class="container">
+      <div class="container m-auto">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
             <a
@@ -134,12 +134,13 @@
         </form>
       </div>
 <!-- 차 -->
+<br>
       <div class="fs-4 fw-bold">
        특가
       </div>
            <hr> 
 <c:forEach begin="0" end="2" var="special" items="${specialRs}" varStatus="loop">
-  <table style="float: left; margin-right:10px;" >
+  <table style="float: left; margin-right:5px;" >
     <a href="/car_detail_change/${special.CAR_DTL_ID}">
     <tr>
       <div class="container m-auto">
@@ -179,7 +180,7 @@
  </div>
       <hr> 
       <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}" varStatus="loop">
-      <table style="float: left; margin-right:10px;">
+      <table style="float: left; margin-right:5px;">
           <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
         <tr>
       <div class="container m-auto">
@@ -219,10 +220,10 @@
  </div>
  <hr> 
    <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}" varStatus="loop">      
-     <table style="float: left; margin-right:10px;">
+     <table style="float: left;">
       <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
       <tr>
-        <div class="container">
+        <div class="container m-auto">
           <div>
             <td>
       <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
@@ -241,7 +242,8 @@
           <span>${domestic.DRIVEN_DIST}km</span>
           <span>${domestic.FUEL}</span>
           <span>${domestic.ADDR_CITY}</span>
-        </div>
+       
+        </div>px;
         </div>
         </td>
       </div>
@@ -256,10 +258,10 @@
    </div>
         <hr> 
         <c:forEach begin="0" end="2" var="imported" items="${importedRs}" varStatus="loop">
-        <table style="float:left; margin-right:10px; margin-bottom: 10px;" >
+        <table style="float:left; margin-right:5px; margin-bottom: 10px;" >
           <a href="/car_detail_change/${imported.CAR_DTL_ID}"></a>
           <tr>
-          <div class="container">
+          <div class="container m-auto">
             <div>
             <td>
               <a href="/car_detail_change/${imported.CAR_DTL_ID}">
