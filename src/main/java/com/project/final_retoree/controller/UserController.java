@@ -44,9 +44,9 @@ public class UserController {
     @Autowired
     WishList wishList;
 
-   
+    @Autowired
+    private PasswordEncoder passwordEncoder;
 
-    private PasswordEncoder encoder;
 
     // 마이페이지
     @RequestMapping(value = "/myPage")
@@ -174,46 +174,51 @@ public class UserController {
         return modelAndView;
     }
 
-   
-
 
     @RequestMapping(value = "/withdraw")
-    // 버튼을 통해 넘어왔기 때문에 무조건 get post는 폼에서 post를 지정해줘야 가능함.
-     public ModelAndView withdraw( @RequestParam Map<String, Object> params, ModelAndView modelAndView){
-// , SessionStatus sessionStatus
+    public ModelAndView withdrawGet( @RequestParam Map<String, Object> params, ModelAndView modelAndView){
+
         //id, pw 얻기                                
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
         String user_pw = principal.getPassword();
-        
+
         //담기
         params.put("user_id", user_id);
         params.put("user_pw", user_pw);
-        
-        // if(sessionStatus.isComplete()==false) sessionStatus.isComplete();
 
-        Object result = Boolean.parseBoolean(String.valueOf(myPageService.withdraw(params)));
-        modelAndView.addObject("result", result);
-    
-        try {
-            if((boolean) result) {
-                myPageService.withdraw(user_id);
-                SecurityContextHolder.clearContext();
+        modelAndView.setViewName("myPage/withdraw");
 
-            modelAndView.setViewName("main_search");
+        return modelAndView;
+    }
+    @RequestMapping(value= "/withdraw", method = RequestMethod.POST)
+    public ModelAndView withdrawPost(@RequestParam Map<String, Object> params, ModelAndView modelAndView){
+        // 비밀번호 확인
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+        String user_pw = (String) params.get("password");
 
-                // return "redirect:/myPage/withdraw";
-            } else {
+        if (passwordEncoder.matches(user_pw, principal.getPassword())){
+
+            // 세션 제거
+            SecurityContextHolder.clearContext();
+            // user 제거
+            myPageService.deleteUser(user_id);
+            // delete
+            myPageService.delete(user_id);
+            modelAndView.setViewName("redirect:/main_search");
+            return modelAndView;
+
+        }else {
                 modelAndView.addObject("msg", "비밀번호가 일치하지 않습니다."); 
                 modelAndView.addObject("user", myPageService.getUserInfo(user_id)); 
-                modelAndView.setViewName("myPage/withdraw"); }
-                // redirectAttr.addFlashAttribute("msg", "회원정보 삭제에 실패했습니다.");
-            }
-            catch(Exception e) {
-                e.printStackTrace() ;
-            }
-            return modelAndView;
+                modelAndView.setViewName("myPage/withdraw");
+                return modelAndView;
         }
+
+        
+    }
+ 
 
     //방문 예약 페이지
      @RequestMapping(value = "/myPageVisitReserve", method = RequestMethod.GET)
