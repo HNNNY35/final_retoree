@@ -59,34 +59,57 @@ public class MainController {
         Object importedRs = mainService.getImportedList(params);
 
         System.out.println();
-        try {
-         params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)specialRs).get(0).get("CAR_ID"));
-         Object carImgs = mainService.selectCarImg(params);
-         modelAndView.addObject("carImgSpecial", carImgs);
 
+        // 지금은 데이터 양이 많지 않아 for문으로 돌려도 되지만 데이터가 많을땐 db에서 경로를 join하여 가져와야한다
+        try {
+            int i = 0;
+            // forEach문 사용하여 specialRs를 list에 담
+            for( Map<String, Object> list :(ArrayList<Map<String, Object>>)specialRs){
+                Map<String, Object> car_id = new HashMap<>();
+                car_id.put("SOURCE_UNIQUE_SEQ", list.get("CAR_ID"));
+                Object carImgs = searchService.selectCarImg(car_id);
+                (((ArrayList<Map<String, Object>>)specialRs).get(i)).put("carImgs", (Map<String, Object>)carImgs);
+                i++;
+            }
         } catch (Exception e) {
             System.out.println("special empty");
         }
+    
         try {
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)newCarRs).get(0).get("CAR_ID"));
-            Object carImgs = mainService.selectCarImg(params);
-            modelAndView.addObject("carImgNewCar", carImgs);
+            int i = 0;
+            for( Map<String, Object> list :(ArrayList<Map<String, Object>>)newCarRs){
+                Map<String, Object> car_id = new HashMap<>();
+                car_id.put("SOURCE_UNIQUE_SEQ", list.get("CAR_ID"));
+                Object carImgs = searchService.selectCarImg(car_id);
+                (((ArrayList<Map<String, Object>>)newCarRs).get(i)).put("carImgs", (Map<String, Object>)carImgs);
+                i++;
+            }
         } catch (Exception e) {
             System.out.println("New car empty");
         }
 
         try {
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)domesticRs).get(0).get("CAR_ID"));
-            Object carImgs = mainService.selectCarImg(params);
-            modelAndView.addObject("carImgDomestic", carImgs);
+            int i = 0;
+            for( Map<String, Object> list :(ArrayList<Map<String, Object>>)domesticRs){
+                Map<String, Object> car_id = new HashMap<>();
+                car_id.put("SOURCE_UNIQUE_SEQ", list.get("CAR_ID"));
+                Object carImgs = searchService.selectCarImg(car_id);
+                (((ArrayList<Map<String, Object>>)domesticRs).get(i)).put("carImgs", (Map<String, Object>)carImgs);
+                i++;
+            }
         } catch (Exception e) {
             System.out.println("Domestic empty");
 
         }
         try {
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)importedRs).get(0).get("CAR_ID"));
-            Object carImgs = mainService.selectCarImg(params);
-            modelAndView.addObject("carImgImported", carImgs);
+            int i = 0;
+            for( Map<String, Object> list :(ArrayList<Map<String, Object>>)importedRs){
+                Map<String, Object> car_id = new HashMap<>();
+                car_id.put("SOURCE_UNIQUE_SEQ", list.get("CAR_ID"));
+                Object carImgs = searchService.selectCarImg(car_id);
+                (((ArrayList<Map<String, Object>>)importedRs).get(i)).put("carImgs", (Map<String, Object>)carImgs);
+                i++;
+            }
         } catch (Exception e) {
             System.out.println("Imported empty");
 

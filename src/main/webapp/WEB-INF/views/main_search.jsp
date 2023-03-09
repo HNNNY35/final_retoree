@@ -29,8 +29,8 @@
       <div class="container">
       
       <!-- 사진 -->
-      carImgsSpecial
-    <c:set var="fileNameFrontSpecial" value="${carImgSpecial.Front}" />
+      
+    <!-- <c:set var="fileNameFrontSpecial" value="${carImgSpecial.Front}" />
     <c:set var="fileNameFrontNewCar" value="${carImgNewCar.Front}" />
     <c:set var="fileNameFrontDomestic" value="${carImgDomestic.Front}" />
     <c:set var="fileNameFrontImported" value="${carImgImported.Front}" />
@@ -39,7 +39,7 @@
     <c:set var="pathSpecial" value="${carImgSpecial.PHYSICALFILE_NAME}" />
     <c:set var="pathNewCar" value="${carImgNewCar.PHYSICALFILE_NAME}" />
     <c:set var="pathDomestic" value="${carImgDomestic.PHYSICALFILE_NAME}" />
-    <c:set var="pathImported" value="${carImgImported.PHYSICALFILE_NAME}" />
+    <c:set var="pathImported" value="${carImgImported.PHYSICALFILE_NAME}" /> -->
 
       <div class="container">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
@@ -138,15 +138,16 @@
        특가
       </div>
            <hr> 
+<c:forEach begin="0" end="2" var="special" items="${specialRs}" varStatus="loop">
   <table style="float: left; margin-right:10px;" >
-    <c:forEach begin="0" end="2" var="special" items="${specialRs}">
-    <a href="/car_detail_change/${special.CAR_DTL_ID}"></a>
+    <a href="/car_detail_change/${special.CAR_DTL_ID}">
     <tr>
-      <div>
+      <div class="container">
+        <div>
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
           <img 
-          src="/files/${carImgSpecial.PHYSICALFILE_NAME}/${fileNameFrontSpecial}" 
+          src="/files/${special.carImgs.PHYSICALFILE_NAME}/${special.carImgs.Front}" 
            width="150px" class="m-2">
         </a>
         </td>
@@ -154,20 +155,23 @@
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
           <div class="fw-bold text-dark">${special.MANUFACTURER} ${special.MODEL} ${special.DETAILED_MODEL}</div>
           <div>
-            <span class="fs-5 fw-bold ">
+            <span class="fs-5 fw-bold text-dark">
               ${special.PRICE}만원
             </span>
-            <div class="fw-normal small">
+            <div class="fw-normal small text-dark">
               <span>${special.MODEL_YEAR}</span>
               <span>${special.DRIVEN_DIST}km</span>
               <span>${special.FUEL}</span>
               <span>${special.ADDR_CITY}</span>
-            </a>
+            </div>
+            </div>
             </td>
-          </div>
+            </div>
+            </div>
         </tr>
-      </c:forEach>
-    </table>
+        </a>
+      </table>
+    </c:forEach>
     <div style="clear:both"></div>
 
 <div class="fs-4 fw-bold mt-4">
@@ -175,13 +179,14 @@
  </div>
       <hr> 
       <table style="float: left; margin-right:10px;">
-        <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}">
+        <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}" varStatus="loop">
           <a href="/car_detail_change/${newCar.CAR_DTL_ID}"></a>
         <tr>
          <div>
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
-            <img src="/files/${carImgNewCar.PHYSICALFILE_NAME}/${fileNameFrontNewCar}" width="150px" class="m-2"> 
+            <img src="/files/${newCar.carImgs.PHYSICALFILE_NAME}/${newCar.carImgs.Front}" 
+             width="150px" class="m-2"> 
           </a>
         </td>
           <td>
@@ -212,14 +217,16 @@
   인기 국산차
  </div>
  <hr> 
-   <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}">      
+   <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}" varStatus="loop">      
      <table style="float: left; margin-right:10px;">
       <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
       <tr>
         <div class="container">
           <div>
             <td>
-      <a href="/car_detail_change/${domestic.CAR_DTL_ID}"><img src="/files/${carImgDomestic.PHYSICALFILE_NAME}/${fileNameFrontDomestic}"  width="150px" class="m-2"></a>
+      <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
+       <img src="/files/${domestic.carImgs.PHYSICALFILE_NAME}/${domestic.carImgs.Front}" 
+        width="150px" class="m-2"></a>
            </td>
             <td>
             <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
@@ -249,11 +256,12 @@
         <hr> 
         <table style="float:left; margin-right:10px; margin-bottom: 10px;" >
           <a href="/car_detail_change/${imported.CAR_DTL_ID}"></a>
-          <c:forEach begin="0" end="2" var="imported" items="${importedRs}">
+          <c:forEach begin="0" end="2" var="imported" items="${importedRs}" varStatus="loop">
           <tr>
             <div>
             <td>
-              <a href="/car_detail_change/${imported.CAR_DTL_ID}"><img src="/files/${carImgImported.PHYSICALFILE_NAME}/${fileNameFrontImported}"  width="150px" class="m-2"></a>
+              <a href="/car_detail_change/${imported.CAR_DTL_ID}">
+                <img src="/files/${imported.carImgs.PHYSICALFILE_NAME}/${imported.carImgs.Front}"  width="150px" class="m-2"></a>
           </td>
             <td>
             <a href="/car_detail_change/${imported.CAR_DTL_ID}">
