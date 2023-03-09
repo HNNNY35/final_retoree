@@ -178,10 +178,11 @@
   신차급
  </div>
       <hr> 
+      <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}" varStatus="loop">
       <table style="float: left; margin-right:10px;">
-        <c:forEach begin="0" end="2" var="newCar" items="${newCarRs}" varStatus="loop">
-          <a href="/car_detail_change/${newCar.CAR_DTL_ID}"></a>
+          <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
         <tr>
+      <div class="container">
          <div>
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
@@ -203,13 +204,13 @@
                   <span>${newCar.ADDR_CITY}</span>
                 </div>
             </div>
-          </a>
           </td>
         </div>
-           </div>
-        </tr>
+      </div>
+    </tr>
+    </a>
+  </table>      
       </c:forEach>
- </table>      
 
  <div style="clear:both"></div>
 
@@ -254,10 +255,11 @@
     인기 수입차
    </div>
         <hr> 
+        <c:forEach begin="0" end="2" var="imported" items="${importedRs}" varStatus="loop">
         <table style="float:left; margin-right:10px; margin-bottom: 10px;" >
           <a href="/car_detail_change/${imported.CAR_DTL_ID}"></a>
-          <c:forEach begin="0" end="2" var="imported" items="${importedRs}" varStatus="loop">
           <tr>
+          <div class="container">
             <div>
             <td>
               <a href="/car_detail_change/${imported.CAR_DTL_ID}">
@@ -280,12 +282,10 @@
             </td>
           </div>
               </div>
-            </td>
-          </div>
-          </tr>
-        </c:forEach>
-      </a>
+            </tr>
+          </a>
         </table>
+        </c:forEach>
         <div style="clear:both"></div>
 
 </main>
