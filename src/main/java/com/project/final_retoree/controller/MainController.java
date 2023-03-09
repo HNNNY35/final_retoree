@@ -44,7 +44,7 @@ public class MainController {
     }
 
     //특가, 신차급, 국산 & 수입차 
-    @GetMapping(value = {"/main_search"})
+    @GetMapping(value = {"","/","/main_search"})
     public ModelAndView mainSearch(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
        
         //차량 검색(이미지 필요 x)
