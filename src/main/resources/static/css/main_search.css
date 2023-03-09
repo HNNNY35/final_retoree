@@ -29,16 +29,17 @@
 }
 select {
   background: #fafafa;
-  /* color: rgb(72, 72, 210); */
+  color: rgb(72, 72, 210);
   border: 1px solid rgb(148, 161, 232);
   padding-left: 8px;
   border-radius: 9px;
   margin-right: 20px;
   width: 100px;
   height: 45px;
+  vertical-align: middle;
 }
 .text {
-  /* color: rgb(72, 72, 210); */
+  color: rgb(72, 72, 210);
   background: #fafafa;
   border: 1px solid rgb(177, 177, 227);
   border-radius: 9px;
@@ -49,7 +50,7 @@ select {
   height: 45px;
 }
 .button {
-  /* color: rgb(72, 72, 210); */
+  color: rgb(72, 72, 210);
   background: #fafafa;
   border: 1px solid rgb(177, 177, 227);
   border-radius: 9px;
@@ -58,6 +59,7 @@ select {
   margin-top: 3px;
   width: 50px;
   height: 45px;
+  vertical-align: middle;
 }
 .navmenu {
   margin-bottom: 10px;

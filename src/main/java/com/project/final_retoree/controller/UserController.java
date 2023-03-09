@@ -47,15 +47,14 @@ public class UserController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-
     // 마이페이지
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // user_id ==> 나중에 세션으로 받아와야함
-        
+
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
-         
+
         params.put("user_id", user_id);
 
         Object wishList = myPageService.getWishList(params);
@@ -71,25 +70,24 @@ public class UserController {
         return modelAndView;
 
     }
-    
-    //찜한 차량 페이지
+
+    // 찜한 차량 페이지
     @RequestMapping(value = "/wishListCar")
     public ModelAndView wishListCar(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-        // user_id ==> 나중에 세션으로 받아와야함 
+        // user_id ==> 나중에 세션으로 받아와야함
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
 
         params.put("user_id", user_id);
         Object wishList = myPageService.getWishList(params);
         try {
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)wishList).get("CAR_ID"));
+            params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>) wishList).get("CAR_ID"));
             Object carImgs = mainService.selectCarImg(params);
             modelAndView.addObject("carImgs", carImgs);
         } catch (Exception e) {
             System.out.println("empty");
         }
 
-       
         modelAndView.addObject("wishList", wishList);
 
         modelAndView.setViewName("myPage/wishListCar");
@@ -98,45 +96,46 @@ public class UserController {
     }
 
     // 찜목록 삭제
-    @RequestMapping(value = "/dltWishList" )
-     public ModelAndView dltWishList(String wishlist_id, @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+    @RequestMapping(value = "/dltWishList")
+    public ModelAndView dltWishList(String wishlist_id, @RequestParam Map<String, Object> params,
+            ModelAndView modelAndView) {
 
-             PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-             String user_id = principal.getUser_id();
-            //  wishlist_id = wishList.setWishlist_id(wishlist_id);
-             
-            params.put("user_id", user_id);
-            params.put("wishlist_id", wishlist_id);
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+        // wishlist_id = wishList.setWishlist_id(wishlist_id);
 
-            System.out.println(wishlist_id);
-            System.out.println(user_id);
-            
-            System.out.println(params);
-            
-            Object dltWishList = myPageService.dltWishList(params);
-            
-            modelAndView.addObject("dltWishList", dltWishList);
-            modelAndView.setViewName("myPage/wishListCar");
-            return modelAndView;
-        }
+        params.put("user_id", user_id);
+        params.put("wishlist_id", wishlist_id);
 
-     //1:1 상담 문의 내역
+        System.out.println(wishlist_id);
+        System.out.println(user_id);
+
+        System.out.println(params);
+
+        Object dltWishList = myPageService.dltWishList(params);
+
+        modelAndView.addObject("dltWishList", dltWishList);
+        modelAndView.setViewName("myPage/wishListCar");
+        return modelAndView;
+    }
+
+    // 1:1 상담 문의 내역
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public ModelAndView contact(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
-    
-            PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-            String user_id = principal.getUser_id();               
 
-            params.put("user_id", user_id);
-            Object contact = myPageService.getContactList(user_id, params);
-    
-            modelAndView.addObject("contact", contact);
-            modelAndView.setViewName("myPage/contact");
-            return modelAndView;
-    
-        }   
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
 
-    //마이페이지 유저 정보 확인
+        params.put("user_id", user_id);
+        Object contact = myPageService.getContactList(user_id, params);
+
+        modelAndView.addObject("contact", contact);
+        modelAndView.setViewName("myPage/contact");
+        return modelAndView;
+
+    }
+
+    // 마이페이지 유저 정보 확인
     @RequestMapping(value = "/myPage_modify")
     public ModelAndView myPage_modify(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -144,7 +143,7 @@ public class UserController {
 
         params.put("user_id", user_id);
         Object userInfo = myPageService.getUserInfo(params);
-    
+
         System.out.println(user_id);
 
         modelAndView.addObject("userInfo", userInfo);
@@ -153,9 +152,10 @@ public class UserController {
 
     }
 
-    //마이페이지 회원 정보 수정
-    @RequestMapping(value= "/myPageEdit", method = RequestMethod.POST)
-    public ModelAndView myPageEdit(Authentication auth, RedirectAttributes rttr, @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
+    // 마이페이지 회원 정보 수정
+    @RequestMapping(value = "/myPageEdit", method = RequestMethod.POST)
+    public ModelAndView myPageEdit(Authentication auth, RedirectAttributes rttr,
+            @RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
         String user_pw = principal.getPassword();
@@ -164,26 +164,25 @@ public class UserController {
         params.put("user_pw", user_pw);
         Object editUserInfo = myPageService.editUserInfo(user_id, params);
         modelAndView.addObject("editUserInfo", editUserInfo);
-            modelAndView.setViewName("main_search");
+        modelAndView.setViewName("main_search");
 
         // if(encoder.matches(user_id, user_pw)){
         // modelAndView.setViewName("myPage/myPage_modify");
         // } else {
-        //     rttr.addFlashAttribute("msg", "비밀번호를 다시 확인해주세요.");
+        // rttr.addFlashAttribute("msg", "비밀번호를 다시 확인해주세요.");
         // }
         return modelAndView;
     }
 
-
     @RequestMapping(value = "/withdraw")
-    public ModelAndView withdrawGet( @RequestParam Map<String, Object> params, ModelAndView modelAndView){
+    public ModelAndView withdrawGet(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
 
-        //id, pw 얻기                                
+        // id, pw 얻기
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
         String user_pw = principal.getPassword();
 
-        //담기
+        // 담기
         params.put("user_id", user_id);
         params.put("user_pw", user_pw);
 
@@ -191,14 +190,15 @@ public class UserController {
 
         return modelAndView;
     }
-    @RequestMapping(value= "/withdraw", method = RequestMethod.POST)
-    public ModelAndView withdrawPost(@RequestParam Map<String, Object> params, ModelAndView modelAndView){
+
+    @RequestMapping(value = "/withdraw", method = RequestMethod.POST)
+    public ModelAndView withdrawPost(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // 비밀번호 확인
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
         String user_pw = (String) params.get("password");
 
-        if (passwordEncoder.matches(user_pw, principal.getPassword())){
+        if (passwordEncoder.matches(user_pw, principal.getPassword())) {
 
             // 세션 제거
             SecurityContextHolder.clearContext();
@@ -206,78 +206,75 @@ public class UserController {
             myPageService.deleteUser(user_id);
             // delete
             myPageService.delete(user_id);
-            modelAndView.setViewName("redirect:/main_search");
+            modelAndView.setViewName("myPage/withdrawConfirm");
             return modelAndView;
 
-        }else {
-                modelAndView.addObject("msg", "비밀번호가 일치하지 않습니다."); 
-                modelAndView.addObject("user", myPageService.getUserInfo(user_id)); 
-                modelAndView.setViewName("myPage/withdraw");
-                return modelAndView;
+        } else {
+            modelAndView.addObject("msg", "비밀번호가 일치하지 않습니다.");
+            modelAndView.addObject("user", myPageService.getUserInfo(user_id));
+            modelAndView.setViewName("myPage/withdraw");
+            return modelAndView;
         }
 
-        
     }
- 
 
-    //방문 예약 페이지
-     @RequestMapping(value = "/myPageVisitReserve", method = RequestMethod.GET)
+    // 방문 예약 페이지
+    @RequestMapping(value = "/myPageVisitReserve", method = RequestMethod.GET)
 
-     public ModelAndView myPageVisit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView) throws Exception {
+    public ModelAndView myPageVisit_reserve(@RequestParam Map<String, Object> params, ModelAndView modelAndView)
+            throws Exception {
 
-         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-         String user_id = principal.getUser_id();
- 
-         params.put("user_id", user_id);
-         
-         try {
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)wishList).get("CAR_ID"));
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String user_id = principal.getUser_id();
+
+        params.put("user_id", user_id);
+
+        try {
+            params.put("SOURCE_UNIQUE_SEQ", ((Map<String, Object>) wishList).get("CAR_ID"));
             Object carImgs = mainService.selectCarImg(params);
             modelAndView.addObject("carImgs", carImgs);
         } catch (Exception e) {
             System.out.println("empty");
         }
 
-         //방문 예약 정보
-         Object reservation = reservationService.getUserReservation(params);
-         modelAndView.addObject("reservation", reservation);
+        // 방문 예약 정보
+        Object reservation = reservationService.getUserReservation(params);
+        modelAndView.addObject("reservation", reservation);
 
-         
-         
-         modelAndView.setViewName("myPage/myPageVisitReserve");
-         return modelAndView;
- 
-     }
+        modelAndView.setViewName("myPage/myPageVisitReserve");
+        return modelAndView;
+
+    }
 
     // 방문 예약 확인(상세페이지)
     @RequestMapping(value = "/visit_reserve/{reservation_id}", method = RequestMethod.GET)
-    
-    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String reservation_id, ModelAndView modelAndView) throws Exception {
-        
+
+    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String reservation_id,
+            ModelAndView modelAndView) throws Exception {
+
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
-        
+
         params.put("user_id", user_id);
         params.put("RESERVATION_ID", reservation_id);
         Object reservation = reservationService.getUserReservation(params);
         modelAndView.addObject("reservation", reservation);
 
-        //딜러 정보
-         Object dealerInfo = dealerSalesMgmtService.getDealerName(params);
-         modelAndView.addObject("dealerInfo", dealerInfo);
+        // 딜러 정보
+        Object dealerInfo = dealerSalesMgmtService.getDealerName(params);
+        modelAndView.addObject("dealerInfo", dealerInfo);
 
-        //판매 완료 차량
-         Object soldOutList = dealerSalesMgmtService.getSoldOutCarList(params);
-         modelAndView.addObject("soldOutList", soldOutList);
+        // 판매 완료 차량
+        Object soldOutList = dealerSalesMgmtService.getSoldOutCarList(params);
+        modelAndView.addObject("soldOutList", soldOutList);
 
-        //판매중 차량
-         Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
-         modelAndView.addObject("salesList", salesList);
+        // 판매중 차량
+        Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
+        modelAndView.addObject("salesList", salesList);
 
         modelAndView.setViewName("myPage/visit_reserve");
         return modelAndView;
 
     }
 
-                                        
 }

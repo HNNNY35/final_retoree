@@ -109,3 +109,8 @@ tbody > tr > td {
 .notice {
   border: 1px solid black;
 }
+
+.form {
+  border-radius: 5px;
+  height: 40px;
+}

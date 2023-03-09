@@ -95,7 +95,7 @@
                       <!-- 검색 후 search 화면단 이동 -->
                     <!-- div는 영역 / span은 글자만이어서 span 안에 js는 잘 사용하지 않음.-->
                     <!-- div로 교체 -->
-                      <div class="float">
+                      <div class="float" style="vertical-align: middle;">
                       <select name="manufacturer" id="manufacturer" onchange="itemChange()">  
                         <option selected>제조사</option>
                         <optgroup name="manufacturer" id="manufacturer" label="국산">국산
@@ -113,17 +113,17 @@
                       </select>
                   </div>
 
-                    <div class="float">
+                    <div class="float" style="vertical-align: middle;">
                       <select name="model" id="model">
                         <option selected>모델</option>
                       </select>  
                   </div>
 
-                  <div class="float">
+                  <div class="float" style="vertical-align: middle;">
                     <input type="text" name="keyword" placeholder="차량명을 입력하세요"  class="text bg-white" id="">
                   </div>
 
-                    <div class="float">
+                    <div class="float" style="vertical-align: middle;">
                       <button type="submit" onclick="getSearchList()" value="검색"  class="button">검색</button>         
                     </div>
                     

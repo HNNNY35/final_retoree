@@ -28,46 +28,56 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
   <body>
     <%@ include file="../header.jsp" %>
+    <main>
+      <div class="main-container">
+        <%@ include file="./myPageSide.jsp" %>
 
-    <div class="main-container">
-      <%@ include file="./myPageSide.jsp" %>
+        <div class="mb-5">
+          <div class="container mt-5">
+            <h3 class="text-center mb-3">회원 탈퇴</h3>
+          </div>
+          <hr />
+          <div class="m-5">
+            <div class="notice p-2">
+              <div>
+                ※ 고객님의 개인정보 보호를 위해 비밀번호 인증 후 회원탈퇴를 하실
+                수 있으며, 아래의 안내사항을 확인해주시기 바랍니다.
+              </div>
+              <br />
+              <div>
+                1. 30일간 회원가입 불가능 회원탈퇴 후 30일 동안은 회원가입이
+                불가능합니다. 탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가
+                불가하오니 신중하게 선택하시기 바랍니다.
+              </div>
+              <br />
+              <div>
+                2. 차량 정보와 이용 중인 서비스 차량정보와 이용 중인 유료 광고
+                상품 및 프리미엄 서비스 등 유료서비스 등에 대한 정보와 데이터는
+                모두 삭제됩니다.
+              </div>
+              <br />
 
-      <div class="temp-box border mb-5 p-3">
-        <div class="container mt-5">
-          <h3 class="text-center">회원 탈퇴 (구현중 - 미완성)</h3>
-          <div class="notice">
-            <div>
-              회원탈퇴 ※ 고객님의 개인정보 보호를 위해 비밀번호 인증 후
-              회원탈퇴를 하실 수 있으며, 아래의 안내사항을 확인해주시기
-              바랍니다.
-            </div>
-            <div>
-              1. 30일간 회원가입 불가능 회원탈퇴 후 30일 동안은 회원가입이
-              불가능합니다. 탈퇴한 아이디는 본인과 타인 모두 재사용 및 복구가
-              불가하오니 신중하게 선택하시기 바랍니다.
-            </div>
-            <div>
-              2. 차량 정보와 이용 중인 서비스 차량정보와 이용 중인 유료 광고
-              상품 및 프리미엄 서비스 등 유료서비스 등에 대한 정보와 데이터는
-              모두 삭제됩니다. * 미정산 금액이 있는 경우, 정산 후 탈퇴가
-              가능합니다.
+              <div>* 미정산 금액이 있는 경우, 정산 후 탈퇴가 가능합니다.</div>
             </div>
           </div>
 
           <!-- 아이디 / 비밀번호 확인 -->
-          <div>
+          <div class="mt-5">
             <form action="/withdraw" method="post">
               <!-- <label for="username">아이디</label> -->
-              <p>비밀번호를 확인</p>
+              <div class="text-center mb-3">비밀번호를 입력해주세요.</div>
 
               <!-- <label for="password">비밀번호</label> -->
-              <input
-                type="password"
-                id="password"
-                name="password"
-                placeholder="PASSWORD"
-                required
-              />
+              <div class="text-center mb-3">
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="PASSWORD"
+                  required
+                  class="form text-center"
+                />
+              </div>
 
               <div class="text-center">
                 <button
@@ -78,13 +88,13 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 >
                   확인
                 </button>
-                <div>${msg}</div>
+                <div style="color: rgb(59, 155, 121)">${msg}</div>
               </div>
             </form>
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <div class="mb-5"></div>
 
     <%@ include file="../footer.jsp" %>
@@ -105,8 +115,8 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
   <script>
     $(document).ready(function () {
       $("#btnDelete").click(function () {
-        if (confirm("삭제하시겠습니까?")) {
-          document.form1.action = "/withdraw";
+        if (confirm("탈퇴하시겠습니까?")) {
+          document.form1.action = "/withdrawConfirm";
           document.form1.submit();
         }
       });
