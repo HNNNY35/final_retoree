@@ -29,6 +29,9 @@
       <div class="container">
       
       <!-- 사진 -->
+    <c:set var="fileNameFront" value="${carImgs.Front}" />
+    <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
+
       <div class="container">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-indicators">
@@ -133,7 +136,9 @@
       <div>
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
-          <img src="${special.DTL_IMG_CAR}"  width="150px" class="m-2">
+          <img 
+          src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" 
+           width="150px" class="m-2">
         </a>
         </td>
         <td>
@@ -167,7 +172,7 @@
          <div>
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
-            <img src="${newCar.DTL_IMG_CAR}"  width="150px" class="m-2"> 
+            <img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" width="150px" class="m-2"> 
           </a>
         </td>
           <td>
@@ -205,7 +210,7 @@
         <div class="container">
           <div>
             <td>
-      <a href="/car_detail_change/${domestic.CAR_DTL_ID}"><img src="${domestic.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
+      <a href="/car_detail_change/${domestic.CAR_DTL_ID}"><img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"  width="150px" class="m-2"></a>
            </td>
             <td>
             <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
@@ -239,7 +244,7 @@
           <tr>
             <div>
             <td>
-              <a href="/car_detail_change/${imported.CAR_DTL_ID}"><img src="${imported.DTL_IMG_CAR}"  width="150px" class="m-2"></a>
+              <a href="/car_detail_change/${imported.CAR_DTL_ID}"><img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"  width="150px" class="m-2"></a>
           </td>
             <td>
             <a href="/car_detail_change/${imported.CAR_DTL_ID}">
