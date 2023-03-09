@@ -60,4 +60,15 @@
             ]]>
         </if> 
     </select>
+
+    <!-- 차량 UID(CAR_ID)로 이미지 가져오기 -->
+    <!-- call Search.selectCarImg -->
+    <select id="selectCarImg" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CIP_ATTACHFILE
+        JOIN CAR_IMG
+        ON CIP_ATTACHFILE.ATTACHFILE_SEQ = CAR_IMG.ATTACHFILE_SEQ
+        WHERE SOURCE_UNIQUE_SEQ = #{SOURCE_UNIQUE_SEQ}
+        AND IMG_INFO = #{IMG_INFO}
+    </select>
 </mapper>

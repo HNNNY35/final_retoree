@@ -14,5 +14,9 @@ public class SearchDao {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);
         return result;
     }
+    public Object getOne(String sqlMapId, Object dataMap) {
+        Object result = sqlSessionTemplate.selectOne(sqlMapId, dataMap);
+        return result;
+    }
 
 }

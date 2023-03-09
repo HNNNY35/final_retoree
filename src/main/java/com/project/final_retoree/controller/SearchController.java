@@ -1,6 +1,7 @@
 package com.project.final_retoree.controller;
 
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,19 @@ public class SearchController {
     @RequestMapping(value = {"/search"}, method = RequestMethod.GET)
     public ModelAndView searchGet(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object resultMap = searchService.getList(params);
+
+        //이미지 삽입
+        try {
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)resultMap).get(0).get("CAR_ID"));
+            Object carImgs = searchService.selectCarImg(params);
+            modelAndView.addObject("carImgs", carImgs);
+        } catch (Exception e) {
+            System.out.println("empty");
+        }
+
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("users_ etc/search");
+        
         return modelAndView;
 
     }
@@ -29,6 +41,17 @@ public class SearchController {
     @RequestMapping(value = {"/search"}, method = RequestMethod.POST)
     public ModelAndView searchPost(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         Object resultMap = searchService.getListWithFilter(params);
+
+        //이미지 삽입
+        try {
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)resultMap).get(0).get("CAR_ID"));
+            Object carImgs = searchService.selectCarImg(params);
+            modelAndView.addObject("carImgs", carImgs);
+        } catch (Exception e) {
+            System.out.println("empty");
+        }
+        
+
         modelAndView.addObject("resultMap", resultMap);
         modelAndView.setViewName("users_ etc/search");
         return modelAndView;

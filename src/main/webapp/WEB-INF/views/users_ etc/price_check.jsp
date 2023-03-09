@@ -21,6 +21,10 @@
         <!-- 바꾼 헤더 -->
         <%@ include file="../header.jsp" %>
 
+
+        <!-- 차량 사진 -->
+        <c:set var="fileNameFront" value="${carImgs.Front}" />
+        <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
         <div
             class="container">
             <!-- 본문 타이틀 -->
@@ -206,7 +210,7 @@
                                 <td>
                                     <!-- 차량 이미지 -->
                                     <a href="">
-                                        <img src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png" alt="" width="150px" class="m-2">
+                                        <img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" alt="" width="150px" class="m-2">
                                     </a>
                                 </td>
                                 <td>

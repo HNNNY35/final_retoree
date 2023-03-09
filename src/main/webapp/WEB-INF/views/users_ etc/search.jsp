@@ -20,6 +20,10 @@
         <%-- <script type="text/javascript" src="./js/search.js"></script> --%>
         <%@ include file="../header.jsp" %>
         <!-- header -->
+
+        <!-- 차량 사진 -->
+        <c:set var="fileNameFront" value="${carImgs.Front}" />
+        <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
         <!-- 좌측 검색필터 -->
             <main>
                 <div
@@ -181,7 +185,7 @@
                                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                                 <div class="col">
                                     <div class="card h-100">
-                                        <img src="https://cdn.autobell.co.kr/picture/sellcar/prd/carImg/cb1bf635-35e0-4bf8-bebd-060b001bf99f/live360/images/thumb/img_0_0_0_M.jpg" class="card-img-top" alt="...">
+                                        <img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <div>
                                                 <a href="/car_detail_change/${resultData.CAR_DTL_ID}" class="card-text fw-normal small text-primary text-decoration-none">D-AUTO MALL 드림디오토</a>
