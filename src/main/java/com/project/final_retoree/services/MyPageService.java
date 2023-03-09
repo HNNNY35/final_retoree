@@ -83,4 +83,17 @@ public class MyPageService {
         Object result = myPageDao.getContactList(sqlMapId, dataMap);
         return result;
     }
+
+    public Object delete(String user_id){
+        String sqlMapId = "Mypage.deleteFromUserId";
+        Object result = myPageDao.delete(sqlMapId, user_id);
+        return result;
+    }
+    public Object deleteUser(String user_id){
+        String sqlMapId = "Mypage.deleteUserFromUserId";
+        Object result = myPageDao.delete(sqlMapId, user_id);
+        return result;
+    }
+
+
 }

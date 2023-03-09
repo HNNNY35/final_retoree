@@ -59,8 +59,8 @@ public class MypageDao {
         map.put("user_id", user_id);
         map.put("user_pw", user_pw);
 
-        int count = sqlSessionTemplate.selectOne("Mypage.checkPw", map);
-        if(count ==1) result = true;
+        Object count = sqlSessionTemplate.selectOne("Mypage.checkPw", map);
+        if((int)count ==1) result = true;
         return result;
     }
     
@@ -77,5 +77,9 @@ public class MypageDao {
         return result;
     }
 
+    public Object delete(String sqlMapId, String user_id) {
+        Object result = sqlSessionTemplate.delete(sqlMapId, user_id);
+        return result;
+    }
 
 }

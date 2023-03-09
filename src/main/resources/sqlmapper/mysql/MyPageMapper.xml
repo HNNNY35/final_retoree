@@ -84,5 +84,20 @@ FROM USER_INFO
 WHERE USER_ID = #{user_id}
 AND PASSWORD = #{user_pw}
 </select>
-</mapper>
 
+
+<!--call Mypage.deleteFromUserId   -->
+<delete id = "deleteFromUserId" parameterType="String">
+    DELETE
+    FROM USER_INFO
+    WHERE USER_ID = #{user_id} 
+</delete>
+
+<!--call Mypage.deleteUserFromUserId   -->
+<delete id = "deleteUserFromUserId" parameterType="String">
+    DELETE
+    FROM USER
+    WHERE USER_ID = #{user_id} 
+</delete>
+
+</mapper>

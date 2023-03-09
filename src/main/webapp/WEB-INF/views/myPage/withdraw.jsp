@@ -56,9 +56,9 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
           <!-- 아이디 / 비밀번호 확인 -->
           <div>
-            <form action="/form1" method="post">
+            <form action="/withdraw" method="post">
               <!-- <label for="username">아이디</label> -->
-              <input id="id" name="id" value="${user.id}" readonly />
+              <p>비밀번호를 확인</p>
 
               <!-- <label for="password">비밀번호</label> -->
               <input
