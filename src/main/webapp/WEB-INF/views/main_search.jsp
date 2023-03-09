@@ -142,7 +142,7 @@
   <table style="float: left; margin-right:10px;" >
     <a href="/car_detail_change/${special.CAR_DTL_ID}">
     <tr>
-      <div class="container">
+      <div class="container m-auto">
         <div>
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
@@ -182,7 +182,7 @@
       <table style="float: left; margin-right:10px;">
           <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
         <tr>
-      <div class="container">
+      <div class="container m-auto">
          <div>
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
