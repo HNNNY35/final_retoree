@@ -19,7 +19,7 @@
     <div class="col-3">
                     <div class="card">
                         <div class="card-header text-center">
-                            <a href="" class="h5 text-black">마이페이지</a>
+                            <a href="/dealer/mypage" class="h5 text-black">마이페이지</a>
                         </div>
                         <div class="card-body">
                             <div class="myPageMenu">

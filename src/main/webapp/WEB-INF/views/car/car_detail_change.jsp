@@ -793,7 +793,6 @@
     </body>
 
   <script src="/js/car_detail.js"></script>
-  <script type="text/javascript" src="/js/car_wishlist.js"></script>
   <script>
   function login_need() {
     alert('로그인하셔야 이용할 수 있는 기능입니다.');
