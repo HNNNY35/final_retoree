@@ -30,7 +30,7 @@
    <%@ include file="../header.jsp" %>
     <main>
       <div class="main-container">
-       <%@ include file="./myPageSide.jsp" %>
+       <%@ include file="../myPageSide.jsp" %>
         <!-- class="temp-box" -->
         <div class="container">
           <form action="./myPageEdit" method="post">

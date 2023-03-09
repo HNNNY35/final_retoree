@@ -26,7 +26,7 @@
     <%@ include file="../header.jsp" %>
     <main>
       <div class="main-container">
-    <%@ include file="./myPageSide.jsp" %>
+    <%@ include file="../myPageSide.jsp" %>
         
         <div class="temp-box border mb-5">
           <div class="container mt-3">

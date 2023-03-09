@@ -9,6 +9,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/visit_reserve.css" />
+    <link rel="stylesheet" href="/css/mypage.css" />
+
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -21,7 +23,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ include file="../header.jsp" %>
     <main>
       <div class="main-container">
-        <%@ include file="../myPage/myPageSide.jsp" %>
+        <%@ include file="../myPageSide.jsp" %>
         <!-- 방문예약->방문예약확정(필수)확인 및 안심번호로 전화통화 -> 매매단지 방문 및 차량 확인 -->
         <div class="temp-box border mb-5 p-3">
           <div class="container mt-5">

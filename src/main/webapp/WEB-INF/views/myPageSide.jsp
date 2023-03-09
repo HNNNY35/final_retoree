@@ -27,13 +27,13 @@
         <h4 class="mt-3"><a href="./myPage" style="color: black;" class="text-decoration-none" >마이페이지</a> </h4>
       </li>
       <li>
-        <a href="./wishListCar" class="text-decoration-none">찜 차량</a>
+        <a href="/wishListCar" class="text-decoration-none">찜 차량</a>
       </li>
       <li>
-        <a href="./myPageVisitReserve" class="text-decoration-none">방문 예약</a>
+        <a href="/myPageVisitReserve" class="text-decoration-none">방문 예약</a>
       </li>
       <li>
-        <a href="./contact" class="text-decoration-none">1:1 문의 내역</a>
+        <a href="/contact" class="text-decoration-none">1:1 문의 내역</a>
       </li>
     </ul>
     <ul >

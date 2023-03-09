@@ -30,7 +30,7 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ include file="../header.jsp" %>
     <main>
       <div class="main-container">
-        <%@ include file="./myPageSide.jsp" %>
+        <%@ include file="../myPageSide.jsp" %>
 
         <div class="mb-5">
           <div class="container mt-5">
