@@ -74,10 +74,10 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 </td>
               <!-- <td>사진!!!!!!</td> -->
               <td><a href="/car_detail_change/${wishList.CAR_DTL_ID}">
-                <img  src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" />
+                <img  src="/files/${wishList.carImgs.PHYSICALFILE_NAME}/${fileNameFront}" />
               </a>
               </td>
-              <td> <a href="/car_detail_change/${wishList.CAR_DTL_ID}">
+              <td> <a href="/car_detail_change/${wishList.CAR_DTL_ID}" class="text-dark">
                 ${wishList.MANUFACTURER} ${wishList.MODEL}
                 ${wishList.DETAILED_MODEL} 
               </a>
