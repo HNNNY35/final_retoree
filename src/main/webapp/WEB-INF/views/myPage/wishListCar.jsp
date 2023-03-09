@@ -45,7 +45,7 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
         </div>
       </c:if>
         <div class="row mb-3">
-          <form action="dltWishList" method="get">
+         
           <table class="table table-hover">
             <c:forEach var="wishList" items="${wishList}">
               <thead>
@@ -84,18 +84,21 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 </td>
                 <td >
                   <div>
-                  <button class="btn btn-outline-dark mb-2">
-                    구매문의
-                  </button>
+                    <a href="/car_detail_change/${wishList.CAR_DTL_ID}" class="btn btn-outline-dark mb-2" onclick="contact()">
+                      구매문의
+                    </a>
+                 
                 </div>
                 </td>
                 <td>
                 <div>
+                  <form action="dltWishList" method="get">
                     <input type="hidden" name="user_id" id="user_id">   
                     <input type="hidden" name="wishlist_id" id="wishlist_id" value="${wishList.WISHLIST_ID}">  
                     <button class="btn btn-outline-dark mb-2" type="submit">
                       찜 해제
                     </button>
+                  </form>
                   </div>
                 </td>
               </td>
@@ -104,7 +107,6 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             
           </c:forEach>
         </table>
-      </form>
       </div>
         </div>
         </div>
@@ -123,5 +125,11 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
       alert("찜 해제 되었습니다.")
       window.location.href = ""
     } 
+  </script>
+  <script>
+    function contact(){
+      alert("구매문의는 차량 페이지에서 가능합니다.")
+    }
+
   </script>
 </html>
