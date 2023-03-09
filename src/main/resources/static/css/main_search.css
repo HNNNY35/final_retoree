@@ -136,8 +136,8 @@ a {
   color: black;
 }
 
-.carname {
-  /* margin: 100px; */
+/* .carname {
+  margin: 100px;
   display: inline-block;
   color: black;
   width: 50%;
@@ -145,4 +145,4 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-}
+} */
