@@ -29,6 +29,11 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             <h1>나의 방문 예약 정보 조회</h1>
             <hr />
           <!-- 방문예약 내역이 있을 때 -->
+
+    <c:set var="fileNameFront" value="${carImgs.Front}" />
+    <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
+
+
           <c:forEach items="${reservation}" var="reservation">
             <div class="border">
             <h5 class="text-center m-3">
@@ -101,7 +106,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     <a href="/car_detail_change/${reservation.CAR_DTL_ID}">
                       <img
                         height="100px"
-                        src="http://file.carisyou.com/upload/2019/11/27/FILE_201911270320073070.png"
+                        src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
                         alt=""
                       />
                     </a>

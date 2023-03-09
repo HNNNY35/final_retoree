@@ -9,11 +9,15 @@ import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.bean.CarInfo;
 import com.project.final_retoree.daos.MainDao;
+import com.project.final_retoree.utils.CommonUtils;
 
 @Service
 public class MainService {
     @Autowired
     MainDao mainDao;
+
+    @Autowired
+    CommonUtils commonUtils;
 
     // 메인 검색
     public List<CarInfo> getSearchBeanList(CarInfo carInfo) throws Exception {
@@ -29,12 +33,6 @@ public class MainService {
             Object result = mainDao.getSearchCarList(sqlMapId, dataMap);
             return result;
         }
-
-    //    public Object getFilterList(Object dataMap) {
-    //     String sqlMapId = "Main.selectFromMainSearchFilter";
-    //     Object result = mainDao.getFilterList(sqlMapId, dataMap);
-    //     return result;
-    //    }
 
     public Object getSearchList(Object dataMap) {
         String sqlMapId = "Main.selectFromMainSearch";
@@ -70,7 +68,7 @@ public class MainService {
         return result;
     }
 
-
+    //차 이미지 가져오기
     public Object selectCarImg(Object dataMap) {
         String sqlMapId = "CarDetail.selectCarImg";
         

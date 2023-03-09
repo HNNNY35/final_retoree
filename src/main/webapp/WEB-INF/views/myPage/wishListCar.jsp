@@ -44,8 +44,11 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
           </div> 
         </div>
       </c:if>
+
+      <c:set var="fileNameFront" value="${carImgs.Front}" />
+     <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
+
         <div class="row mb-3">
-         
           <table class="table table-hover">
             <c:forEach var="wishList" items="${wishList}">
               <thead>
@@ -71,7 +74,7 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                 </td>
               <!-- <td>사진!!!!!!</td> -->
               <td><a href="/car_detail_change/${wishList.CAR_DTL_ID}">
-                <img src="${wishList.DTL_IMG_CAR}" width="100" height="95" />
+                <img  src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" />
               </a>
               </td>
               <td> <a href="/car_detail_change/${wishList.CAR_DTL_ID}">

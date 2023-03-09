@@ -22,6 +22,7 @@ import com.project.final_retoree.bean.MemberVo;
 import com.project.final_retoree.bean.WishList;
 import com.project.final_retoree.configurations.PrincipalUser;
 import com.project.final_retoree.services.DealerSalesMgmtService;
+import com.project.final_retoree.services.MainService;
 import com.project.final_retoree.services.MyPageService;
 import com.project.final_retoree.services.ReservationService;
 
@@ -33,6 +34,9 @@ public class UserController {
 
     @Autowired
     MyPageService myPageService;
+
+    @Autowired
+    MainService mainService;
 
     @Autowired
     DealerSalesMgmtService dealerSalesMgmtService;
@@ -48,7 +52,7 @@ public class UserController {
     @RequestMapping(value = "/myPage")
     public ModelAndView myPage(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
         // user_id ==> 나중에 세션으로 받아와야함
-
+        
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
          
@@ -77,9 +81,15 @@ public class UserController {
 
         params.put("user_id", user_id);
         Object wishList = myPageService.getWishList(params);
+        try {
+            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)wishList).get("CAR_ID"));
+            Object carImgs = mainService.selectCarImg(params);
+            modelAndView.addObject("carImgs", carImgs);
+        } catch (Exception e) {
+            System.out.println("empty");
+        }
 
-        System.out.println(user_id);
-        System.out.println(wishList);
+       
         modelAndView.addObject("wishList", wishList);
 
         modelAndView.setViewName("myPage/wishListCar");
@@ -214,6 +224,14 @@ public class UserController {
          String user_id = principal.getUser_id();
  
          params.put("user_id", user_id);
+         
+         try {
+            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)wishList).get("CAR_ID"));
+            Object carImgs = mainService.selectCarImg(params);
+            modelAndView.addObject("carImgs", carImgs);
+        } catch (Exception e) {
+            System.out.println("empty");
+        }
 
          //방문 예약 정보
          Object reservation = reservationService.getUserReservation(params);
