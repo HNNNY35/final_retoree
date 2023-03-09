@@ -76,5 +76,13 @@ DELETE
 FROM USER_INFO
 WHERE ID = #{id} AND PASSWORD = #{password}
 </delete>
+
+<!-- 비밀번호 체크 -->
+<select id = "checkPw" parameterType ="Map" resultType="Map">
+SELECT COUNT(*)
+FROM USER_INFO
+WHERE USER_ID = #{user_id}
+AND PASSWORD = ${user_pw}
+</select>
 </mapper>
 

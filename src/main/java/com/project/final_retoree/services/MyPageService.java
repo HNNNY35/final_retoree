@@ -1,6 +1,8 @@
 package com.project.final_retoree.services;
 
+import java.util.HashMap;
 import java.util.Map;
+import org.apache.ibatis.session.SqlSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.bean.WishList;
 import com.project.final_retoree.daos.MypageDao;
+
 
 @Service
 public class MyPageService {
@@ -18,7 +21,9 @@ public class MyPageService {
     WishList wishlist;
     @Autowired
     BCryptPasswordEncoder bcryptPasswordEncoder;
-
+    @Autowired
+    SqlSession sqlSession;
+    
     //찜 목록
     public Object getWishList(Object dataMap) {
         String sqlMapId = "Mypage.selectFromWishList";
@@ -59,6 +64,12 @@ public class MyPageService {
         Object result = myPageDao.withdraw(sqlMapId, dataMap);
         return result;
     }
+
+    //비밀번호 체크
+    public boolean checkPw(String user_id, String user_pw){
+            return myPageDao.checkPw(user_id, user_pw);
+    }
+  
 
     //방문예약 정보 Read
     public Object getReserveList(Object dataMap) {

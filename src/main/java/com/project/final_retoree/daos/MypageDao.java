@@ -1,5 +1,8 @@
 package com.project.final_retoree.daos;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.ibatis.session.SqlSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +53,17 @@ public class MypageDao {
         return result;
     }
 
+    public boolean checkPw(String user_id, String user_pw){
+        boolean result = false;
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("user_id", user_id);
+        map.put("user_pw", user_pw);
+
+        int count = sqlSessionTemplate.selectOne("Mypage.checkPw", map);
+        if(count ==1) result = true;
+        return result;
+    }
+    
     //방문 예약 정보
     public Object getReserveList(String sqlMapId, Object dataMap) {
         Object result = sqlSessionTemplate.selectList(sqlMapId, dataMap);

@@ -18,6 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.project.final_retoree.bean.MemberVo;
 import com.project.final_retoree.bean.WishList;
 import com.project.final_retoree.configurations.PrincipalUser;
 import com.project.final_retoree.services.DealerSalesMgmtService;
@@ -38,6 +39,8 @@ public class UserController {
 
     @Autowired
     WishList wishList;
+
+   
 
     private PasswordEncoder encoder;
 
@@ -164,11 +167,10 @@ public class UserController {
    
 
 
-    @RequestMapping(value = "/withdraw", method = RequestMethod.GET)
+    @RequestMapping(value = "/withdraw")
     // 버튼을 통해 넘어왔기 때문에 무조건 get post는 폼에서 post를 지정해줘야 가능함.
-     public ModelAndView withdraw(RedirectAttributes redirectAttr, @RequestParam Map<String, Object> params, 
-                                     ModelAndView modelAndView, SessionStatus sessionStatus){
-
+     public ModelAndView withdraw( @RequestParam Map<String, Object> params,   ModelAndView modelAndView){
+// , SessionStatus sessionStatus
         //id, pw 얻기                                
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
@@ -180,25 +182,28 @@ public class UserController {
         
         // if(sessionStatus.isComplete()==false) sessionStatus.isComplete();
 
-        Object result = myPageService.withdraw(params);
+        Object result = Boolean.parseBoolean(String.valueOf(myPageService.withdraw(params)));
         modelAndView.addObject("result", result);
     
         try {
-            if(result == null ) {
-                redirectAttr.addFlashAttribute("msg", "회원탈퇴가 완료되었습니다. 그동안 이용해주셔서 감사합니다.");
+            if((boolean) result) {
+                myPageService.withdraw(user_id);
                 SecurityContextHolder.clearContext();
+
+            modelAndView.setViewName("main_search");
+
+                // return "redirect:/myPage/withdraw";
+            } else {
+                modelAndView.addObject("msg", "비밀번호가 일치하지 않습니다."); 
+                modelAndView.addObject("user", myPageService.getUserInfo(user_id)); 
+                modelAndView.setViewName("myPage/withdraw"); }
+                // redirectAttr.addFlashAttribute("msg", "회원정보 삭제에 실패했습니다.");
             }
-                else
-                redirectAttr.addFlashAttribute("msg", "회원정보 삭제에 실패했습니다.");
-        
-        } catch(Exception e) {
-            
+            catch(Exception e) {
+                e.printStackTrace() ;
             }
-            modelAndView.setViewName("myPage/withdraw");
             return modelAndView;
-    }
-
-
+        }
 
     //방문 예약 페이지
      @RequestMapping(value = "/myPageVisitReserve", method = RequestMethod.GET)
@@ -251,5 +256,5 @@ public class UserController {
 
     }
 
-   
+                                        
 }

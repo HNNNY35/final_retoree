@@ -56,15 +56,9 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
           <!-- 아이디 / 비밀번호 확인 -->
           <div>
-            <form action="/withdraw" method="GET">
+            <form action="/form1" method="post">
               <!-- <label for="username">아이디</label> -->
-              <input
-                type="text"
-                id="id"
-                name="id"
-                placeholder="ID"
-                value="${id}"
-              />
+              <input id="id" name="id" value="${user.id}" readonly />
 
               <!-- <label for="password">비밀번호</label> -->
               <input
@@ -77,12 +71,14 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
               <div class="text-center">
                 <button
+                  id="btnDelete"
                   type="submit"
                   class="btn btn-primary mb-3 mt-2 signin"
                   onclick="withdraw();"
                 >
                   확인
                 </button>
+                <div>${msg}</div>
               </div>
             </form>
           </div>
@@ -98,11 +94,22 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
     crossorigin="anonymous"
   ></script>
-  <script>
+  <!-- <script>
     function withdraw() {
       if (window.confirm("${msg}")) {
         location.href = "/main_search";
       }
     }
+  </script> -->
+
+  <script>
+    $(document).ready(function () {
+      $("#btnDelete").click(function () {
+        if (confirm("삭제하시겠습니까?")) {
+          document.form1.action = "/withdraw";
+          document.form1.submit();
+        }
+      });
+    });
   </script>
 </html>
