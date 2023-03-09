@@ -5,9 +5,12 @@ import javax.crypto.EncryptedPrivateKeyInfo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.firewall.DefaultHttpFirewall;
+import org.springframework.security.web.firewall.HttpFirewall;
 
 @Configuration
 public class SecurityConfiguraion {
@@ -42,4 +45,13 @@ public class SecurityConfiguraion {
         return new BCryptPasswordEncoder();
     }
    
+    // @Override
+    // public void configure(WebSecurity web) throws Exception {
+    //     web.httpFirewall((null))
+    // }
+    
+    @Bean
+    public HttpFirewall defauHttpFirewall(){
+        return new DefaultHttpFirewall();
+    }
 }

@@ -3,6 +3,7 @@ package com.project.final_retoree.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -43,26 +44,69 @@ public class MainController {
     }
 
     //특가, 신차급, 국산 & 수입차 
-    @GetMapping(value = { "", "/", "/main_search" })
+    @GetMapping(value = {"/main_search"})
     public ModelAndView mainSearch(@RequestParam Map<String, Object> params, ModelAndView modelAndView) {
-
        
+        //차량 검색(이미지 필요 x)
         Object searchRs = mainService.getSearchList(params);
+        //특가
         Object specialRs = mainService.getSpecialList(params);
+        //신차급
         Object newCarRs = mainService.getNewCarList(params);
+        //국산차
         Object domesticRs = mainService.getDomesticList(params);
+        //수입차
         Object importedRs = mainService.getImportedList(params);
 
+        System.out.println();
         try {
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)specialRs).get("CAR_ID"));
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)newCarRs).get("CAR_ID"));
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)domesticRs).get("CAR_ID"));
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)importedRs).get("CAR_ID"));
-            Object carImgs = mainService.selectCarImg(params);
-            modelAndView.addObject("carImgs", carImgs);
+         params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)specialRs).get(0).get("CAR_ID"));
+         Object carImgs = mainService.selectCarImg(params);
+         modelAndView.addObject("carImgSpecial", carImgs);
+
         } catch (Exception e) {
-            System.out.println("empty");
+            System.out.println("special empty");
         }
+        try {
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)newCarRs).get(0).get("CAR_ID"));
+            Object carImgs = mainService.selectCarImg(params);
+            modelAndView.addObject("carImgNewCar", carImgs);
+        } catch (Exception e) {
+            System.out.println("New car empty");
+        }
+
+        try {
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)domesticRs).get(0).get("CAR_ID"));
+            Object carImgs = mainService.selectCarImg(params);
+            modelAndView.addObject("carImgDomestic", carImgs);
+        } catch (Exception e) {
+            System.out.println("Domestic empty");
+
+        }
+        try {
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)importedRs).get(0).get("CAR_ID"));
+            Object carImgs = mainService.selectCarImg(params);
+            modelAndView.addObject("carImgImported", carImgs);
+        } catch (Exception e) {
+            System.out.println("Imported empty");
+
+        }
+        // try {
+            // 빨간줄 뜸
+            
+            //try-catch 안쓰면 java.lang.ClassCastException: class java.util.ArrayList cannot be cast to class java.util.Map 
+            // (java.util.ArrayList and java.util.Map are in module java.base of loader 'bootstrap')
+            
+            // ArrayList<String> list = 
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)specialRs).get(0).get("CAR_ID"));
+            // params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)newCarRs).get(0).get("CAR_ID"));
+            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)domesticRs).get(0).get("CAR_ID"));
+            // params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)importedRs).get(0).get("CAR_ID"));
+
+           
+        // } catch (Exception e) {
+        //     System.out.println("empty");
+        // }
 
         modelAndView.addObject("searchRs", searchRs);
         modelAndView.addObject("specialRs", specialRs);

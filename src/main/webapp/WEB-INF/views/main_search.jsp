@@ -29,8 +29,17 @@
       <div class="container">
       
       <!-- 사진 -->
-    <c:set var="fileNameFront" value="${carImgs.Front}" />
-    <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
+      carImgsSpecial
+    <c:set var="fileNameFrontSpecial" value="${carImgSpecial.Front}" />
+    <c:set var="fileNameFrontNewCar" value="${carImgNewCar.Front}" />
+    <c:set var="fileNameFrontDomestic" value="${carImgDomestic.Front}" />
+    <c:set var="fileNameFrontImported" value="${carImgImported.Front}" />
+
+
+    <c:set var="pathSpecial" value="${carImgSpecial.PHYSICALFILE_NAME}" />
+    <c:set var="pathNewCar" value="${carImgNewCar.PHYSICALFILE_NAME}" />
+    <c:set var="pathDomestic" value="${carImgDomestic.PHYSICALFILE_NAME}" />
+    <c:set var="pathImported" value="${carImgImported.PHYSICALFILE_NAME}" />
 
       <div class="container">
         <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
@@ -137,7 +146,7 @@
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
           <img 
-          src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" 
+          src="/files/${carImgSpecial.PHYSICALFILE_NAME}/${fileNameFrontSpecial}" 
            width="150px" class="m-2">
         </a>
         </td>
@@ -172,7 +181,7 @@
          <div>
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
-            <img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" width="150px" class="m-2"> 
+            <img src="/files/${carImgNewCar.PHYSICALFILE_NAME}/${fileNameFrontNewCar}" width="150px" class="m-2"> 
           </a>
         </td>
           <td>
@@ -210,7 +219,7 @@
         <div class="container">
           <div>
             <td>
-      <a href="/car_detail_change/${domestic.CAR_DTL_ID}"><img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"  width="150px" class="m-2"></a>
+      <a href="/car_detail_change/${domestic.CAR_DTL_ID}"><img src="/files/${carImgDomestic.PHYSICALFILE_NAME}/${fileNameFrontDomestic}"  width="150px" class="m-2"></a>
            </td>
             <td>
             <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
@@ -244,7 +253,7 @@
           <tr>
             <div>
             <td>
-              <a href="/car_detail_change/${imported.CAR_DTL_ID}"><img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"  width="150px" class="m-2"></a>
+              <a href="/car_detail_change/${imported.CAR_DTL_ID}"><img src="/files/${carImgImported.PHYSICALFILE_NAME}/${fileNameFrontImported}"  width="150px" class="m-2"></a>
           </td>
             <td>
             <a href="/car_detail_change/${imported.CAR_DTL_ID}">

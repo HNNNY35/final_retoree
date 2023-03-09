@@ -179,7 +179,7 @@ public class UserController {
 
     @RequestMapping(value = "/withdraw")
     // 버튼을 통해 넘어왔기 때문에 무조건 get post는 폼에서 post를 지정해줘야 가능함.
-     public ModelAndView withdraw( @RequestParam Map<String, Object> params,   ModelAndView modelAndView){
+     public ModelAndView withdraw( @RequestParam Map<String, Object> params, ModelAndView modelAndView){
 // , SessionStatus sessionStatus
         //id, pw 얻기                                
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
