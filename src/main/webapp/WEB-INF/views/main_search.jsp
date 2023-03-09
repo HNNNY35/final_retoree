@@ -148,7 +148,7 @@
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
           <img 
           src="/files/${special.carImgs.PHYSICALFILE_NAME}/${special.carImgs.Front}" 
-           width="150px" class="m-2">
+           width="150px" height="100px" class="m-2">
         </a>
         </td>
         <td>
@@ -187,7 +187,7 @@
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
             <img src="/files/${newCar.carImgs.PHYSICALFILE_NAME}/${newCar.carImgs.Front}" 
-             width="150px" class="m-2"> 
+             width="150px" height="100px" class="m-2"> 
           </a>
         </td>
           <td>
@@ -227,7 +227,7 @@
             <td>
       <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
        <img src="/files/${domestic.carImgs.PHYSICALFILE_NAME}/${domestic.carImgs.Front}" 
-        width="150px" class="m-2"></a>
+        width="150px" height="100px" class="m-2"></a>
            </td>
             <td>
             <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
@@ -263,7 +263,8 @@
             <div>
             <td>
               <a href="/car_detail_change/${imported.CAR_DTL_ID}">
-                <img src="/files/${imported.carImgs.PHYSICALFILE_NAME}/${imported.carImgs.Front}"  width="150px" class="m-2"></a>
+                <img src="/files/${imported.carImgs.PHYSICALFILE_NAME}/${imported.carImgs.Front}"
+                  width="150px" height="100px" class="m-2"></a>
           </td>
             <td>
             <a href="/car_detail_change/${imported.CAR_DTL_ID}">
