@@ -154,7 +154,7 @@
         </td>
         <td>
           <a href="/car_detail_change/${special.CAR_DTL_ID}">
-          <div class="fw-bold text-dark">${special.MANUFACTURER} ${special.MODEL} ${special.DETAILED_MODEL}</div>
+          <div class="fw-bold text-dark carname">${special.MANUFACTURER} ${special.MODEL} ${special.DETAILED_MODEL}</div>
           <div>
             <span class="fs-5 fw-bold text-dark">
               ${special.PRICE}만원
@@ -193,7 +193,7 @@
         </td>
           <td>
             <a href="/car_detail_change/${newCar.CAR_DTL_ID}">
-            <div class="fw-bold text-dark">${newCar.MANUFACTURER} ${newCar.MODEL} ${newCar.DETAILED_MODEL}</div>
+            <div class="fw-bold text-dark carname">${newCar.MANUFACTURER} ${newCar.MODEL} ${newCar.DETAILED_MODEL}</div>
             <div>
               <span class="fs-5 fw-bold text-dark car_price">
               ${newCar.PRICE}만원
@@ -232,7 +232,7 @@
            </td>
             <td>
             <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
-    <div class="fw-bold text-dark">${domestic.MANUFACTURER} ${domestic.MODEL} ${domestic.DETAILED_MODEL}</div>
+    <div class="fw-bold text-dark carname">${domestic.MANUFACTURER} ${domestic.MODEL} ${domestic.DETAILED_MODEL}</div>
     <div>
       <span class="fs-5 fw-bold text-dark ">
       ${domestic.PRICE}만원
@@ -243,7 +243,7 @@
           <span>${domestic.FUEL}</span>
           <span>${domestic.ADDR_CITY}</span>
        
-        </div>px;
+        </div>
         </div>
         </td>
       </div>
@@ -270,7 +270,7 @@
           </td>
             <td>
             <a href="/car_detail_change/${imported.CAR_DTL_ID}">
-              <div class="fw-bold text-dark">${imported.MANUFACTURER} ${imported.MODEL} ${imported.DETAILED_MODEL}</div>
+              <div class="fw-bold text-dark carname">${imported.MANUFACTURER} ${imported.MODEL} ${imported.DETAILED_MODEL}</div>
               <div>
                 <span class="fs-5 fw-bold text-dark">
                 ${imported.PRICE}만원

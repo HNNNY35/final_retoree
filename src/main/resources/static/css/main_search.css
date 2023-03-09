@@ -135,3 +135,14 @@ a {
   text-decoration: none;
   color: black;
 }
+
+.carname {
+  /* margin: 100px; */
+  display: inline-block;
+  color: black;
+  width: 50%;
+  font-weight: bolder !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
