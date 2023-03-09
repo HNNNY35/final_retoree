@@ -41,7 +41,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                   <tr>
                     <th>분류</th>
                     <td>
-                      <input type="text" name="ORIGIN" id="ORIGIN" class="form-select" value="${resultMap.ORIGIN}" disabled>
+                      <input type="text" name="ORIGIN" id="ORIGIN" class="form-select" value="${resultMap.ORIGIN}">
                     </td>
                   </tr>
                   <tr>
