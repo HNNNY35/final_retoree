@@ -122,28 +122,6 @@
                                             <input type="range" name="distanceDriven" id="distanceDriven" class="form-range" min="0" max="300000" step="1000" value="0" oninput="document.getElementById('value1').innerHTML=this.value;">
                                             <div class="p-1" id="value1"></div>
                                         </div>
-                                        <div>
-
-                                            <div class="filterName">사고정보</div>
-                                            <div>
-                                                <button class="btn btn-light btn-sm">무사고</button>
-                                                <button class="btn btn-light btn-sm">외부패널 교환</button>
-                                                <button class="btn btn-light btn-sm">사고</button>
-                                            </div>
-                                        </div>
-                                        <div class="filterName">추가옵션</div>
-                                        <div>
-                                            <button class="btn btn-light btn-sm">선루프</button>
-                                            <button class="btn btn-light btn-sm">내비게이션</button>
-                                        </div>
-                                        <div class="filterName">색상</div>
-                                        <div>
-                                            <button class="btn btn-light btn-sm">검정색</button>
-                                            <button class="btn btn-light btn-sm">검정투톤</button>
-                                            <button class="btn btn-light btn-sm">은색</button>
-                                            <button class="btn btn-light btn-sm">더보기</button>
-                                        </div>
-
                                     </div>
                                 </form>
                             </div>
@@ -206,7 +184,7 @@
                                 <td>
                                     <!-- 차량 이미지 -->
                                     <a href="">
-                                        <img src="/files/${resultData.carImgs.PHYSICALFILE_NAME}/${resultData.carImgs.Front}" alt="" width="150px" class="m-2">
+                                        <img src="/files/${resultData.carImgs.PHYSICALFILE_NAME}/${resultData.carImgs.Front}" alt="" width="150px" class="m-2" height="125">
                                     </a>
                                 </td>
                                 <td>
