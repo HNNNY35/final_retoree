@@ -39,6 +39,28 @@ public class DealerSalesMgmtController {
         modelAndView.setViewName("dealer/dealer_sales_mgmt");
         return modelAndView;
     }
+
+    // pagination
+    @RequestMapping(value = "/dealer_sales_mgmt/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView dealer_sales_mgmt(@RequestParam Map<String,Object> params, @PathVariable String currentPage, ModelAndView modelAndView){
+        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String dealer_id = principal.getUser_id();
+        params.put("DEALER_ID", dealer_id);
+
+        params.put("currentPage", Integer.parseInt(currentPage));
+        params.put("pageScale", 10);
+        
+        // 딜러 이름 가져오기
+        Object resultDealerName = dealerSalesMgmtService.getDealerName(params);
+        modelAndView.addObject("resultDealerName", resultDealerName);
+        
+        // 판매중 리스트 가져오기
+        Object resultOnSaleCar = dealerSalesMgmtService.getOnSaleCarListWithPagination(params);
+        modelAndView.addObject("resultOnSaleCar", resultOnSaleCar);
+        
+        modelAndView.setViewName("dealer/dealer_sales_mgmt");
+        return modelAndView;
+    }
     
     // 딜러 매출내역 페이지
     // url : http://localhost:8080/dealer_sales/U002

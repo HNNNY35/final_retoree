@@ -13,9 +13,27 @@
     </select>
 
     <!-- call DealerSalesMgmt.selectFromOnSaleCARByDEALER_ID -->
-    <!-- DEALER_ID로 판매중인 차량 조회 -->
+    <!-- DEALER_ID로 판매중인 차량 조회 pagination -->
     <select id="selectFromOnSaleCARByDEALER_ID" parameterType="Map" resultType="Map">
         SELECT MANUFACTURER, MODEL, VEH_NUM, STATUS, CAR_DETAILE_INFO.CAR_DTL_ID
+        FROM CAR_DETAILE_INFO
+        JOIN CAR_INFO
+        ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
+        JOIN SALE_STATUS
+        ON CAR_DETAILE_INFO.STATUS_ID = SALE_STATUS.STATUS_ID
+        WHERE STATUS = 'sale'
+        AND DEALER_ID = #{DEALER_ID}
+        ORDER BY SALE_DATE desc
+        <if test="pageScale != null">
+            <!-- 첫번째 리스트 -->
+            LIMIT #{pageBegin}, #{pageScale}
+        </if>
+    </select>
+
+    <!-- call DealerSalesMgmt.selectOnSaleTotal -->
+    <!-- DEALER_ID로 판매중인 차량 수 -->
+    <select id="selectOnSaleTotal" parameterType="Map" resultType="int">
+        SELECT COUNT(*) AS cnt
         FROM CAR_DETAILE_INFO
         JOIN CAR_INFO
         ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
@@ -36,6 +54,7 @@
         ON CAR_DETAILE_INFO.CAR_ID = CAR_INFO.CAR_ID
         WHERE STATUS = 'soldout'
         AND DEALER_ID = #{DEALER_ID}
+        ORDER BY SALE_DATE desc
     </select>
 
     <!-- call DealerSalesMgmt.selectCarInfo -->

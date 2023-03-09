@@ -28,10 +28,10 @@
                                         <a href="/dealer/modify/${user.DEALER_ID}">딜러 정보 수정</a>
                                     </li>
                                     <li>
-                                        <a href="/dealer_sales_mgmt">차량관리</a>
+                                        <a href="/dealer_sales_mgmt/1">차량관리</a>
                                         <ul>
                                             <li><a href="/car_reg">차량 신규 등록</a></li>
-                                            <li><a href="/dealer_sales_mgmt">판매관리</a></li>
+                                            <li><a href="/dealer_sales_mgmt/1">판매관리</a></li>
                                         </ul>
                                     </li>
                                     <li>

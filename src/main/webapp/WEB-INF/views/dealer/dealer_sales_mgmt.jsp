@@ -28,8 +28,10 @@
         <div class="col-9">
           <h3 class="pt-3">${resultDealerName.NAME}님의 판매현황입니다.</h3>
           <hr />
+          <c:set var="_pagination" value="${resultOnSaleCar.paginations}"/>
           <div>
               <h4>판매중</h4>
+              <span> 총 ${_pagination.totalCount}대</span>
           </div>
           <table class="table table-hover sales">
             <thead>
@@ -41,7 +43,7 @@
               </tr>
             </thead>
             <tbody>
-              <c:forEach items="${resultOnSaleCar}" var="resultOnSaleCar" varStatus="loop">
+              <c:forEach items="${resultOnSaleCar.resultList}" var="resultOnSaleCar" varStatus="loop">
                 <tr>
                   <td>
                     <form action="/car_detail_change/${resultOnSaleCar.CAR_DTL_ID}" method="get">
@@ -73,6 +75,26 @@
               </c:forEach>
           </tbody>
           </table>
+          <!-- pagination -->
+            <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-center">
+                <li class="page-item">
+                  <a class="page-link text-black" href="/dealer_sales_mgmt/${_pagination.previousPage}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only"></span>
+                  </a>
+                </li>
+                <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
+                  <li class="page-item"><a class="page-link text-black" href="/dealer_sales_mgmt/${i}">${i}</a></li>
+                </c:forEach>
+                <li class="page-item">
+                  <a class="page-link text-black" href="/dealer_sales_mgmt/${_pagination.nextPage}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only"></span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           <br />
         </div>
 </div>

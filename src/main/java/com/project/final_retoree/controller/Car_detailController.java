@@ -125,26 +125,6 @@ public class Car_detailController {
         return modelAndView;
     }
     
-    // 찜하기 추가
-    // @RequestMapping(value = "/insertHeart", method = RequestMethod.POST)
-    // public Object insertHeart(@RequestParam Map<String, Object> params, HttpSession session) {
-
-    //         // 로그인 한 유저 uid
-    //         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    //         String user_id = principal.getUser_id();
-            
-    //         params.put("USER_ID", user_id);
-            
-    //         Object resultMap = carDetailService.insertWishlist(params);
-            
-    //         Object resultWishlist =carDetailService.checkWishlist(params);
-            
-    //         Map result = new HashMap<String, String>;
-
-    //         result.put("likeCheck", 1);
-
-    //         return result;
-    // }
 
         // 찜 insert하고 차량 상세페이지 
         @RequestMapping(value = "/add_wishlist", method = RequestMethod.POST)

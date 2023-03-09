@@ -1,9 +1,13 @@
 package com.project.final_retoree.services;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.daos.DealerSalesMgmtDao;
+import com.project.final_retoree.utils.Paginations;
 
 @Service
 public class DealerSalesMgmtService {
@@ -17,10 +21,35 @@ public class DealerSalesMgmtService {
         return result;
     }
 
+    
+    // dealer_id로 딜러의 판매중인 차량 리스트 + pagination
+    public Object getOnSaleCarListWithPagination(Object dataMap){
+        Map<String, Object> result = new HashMap<String, Object>();
+
+        int totalCount = (int) this.getOnSaleTotal(dataMap);
+        int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
+
+        Paginations paginations = new Paginations(totalCount, currentPage);
+
+        result.put("paginations", paginations);
+
+        ((Map<String, Object>)dataMap).put("pageBegin", paginations.getPageBegin());
+        result.put("resultList", this.getOnSaleCarList(dataMap));
+        
+        return result;
+    }
+    
     // dealer_id로 딜러의 판매중인 차량 리스트
     public Object getOnSaleCarList(Object dataMap){
         String sqlMapId = "DealerSalesMgmt.selectFromOnSaleCARByDEALER_ID";
         Object result = dealerSalesMgmtDao.getList(sqlMapId, dataMap);
+        return result;
+    }
+    
+    // dealer_id로 딜러의 판매중인 차량 수
+    public Object getOnSaleTotal(Object dataMap){
+        String sqlMapId = "DealerSalesMgmt.selectOnSaleTotal";
+        Object result = dealerSalesMgmtDao.getOne(sqlMapId, dataMap);
         return result;
     }
 
