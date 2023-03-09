@@ -258,9 +258,9 @@ public class UserController {
         params.put("user_id", user_id);
         // params.put("RESERVATION_ID", reservation_id);
 
-        Object reservation = reservationService.getUserReservation(params);
         params.get("reservation_id");
 
+        Object reservation = reservationService.getUserReservation(params);
         modelAndView.addObject("reservation", reservation);
 
         // 딜러 정보

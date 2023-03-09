@@ -36,7 +36,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
 
 
-          <c:forEach items="${reservation}" var="reservation" begin="0" end="0">
+    <input type="hidden" id="reservation_id" name="reservation_id" value="${reservation.reservation_id}">
+    <input type="hidden" id="user_id" name="user_id" value="user_id">
+
             <div class="border">
             <h5 class="text-center m-3">
               ${reservation.NAME}님은 안심번호로 전화통화 후
@@ -57,19 +59,17 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <div>
                주소 : ${reservation.RVS_ADDR}
               </div>
-              <div>
-                  <a href="https://www.google.co.kr/maps/place/${reservation.RVS_ADDR}">지도를 보려면 ?</a>
+              <div class="mt-2">
+                  <a href="https://www.google.co.kr/maps/place/${reservation.RVS_ADDR}">지도로 주소를 확인하세요.</a>
                </div>
             </c:otherwise>
             </c:choose>
 
-          </c:forEach>
           <hr>
 
           <!-- 쿼리문 다시 짜야함 -->
           <!-- <h3>판매자 정보</h3> -->
           <table class="table table-bordered text-center">
-            <c:forEach var="dealer" items="${dealerInfo}">
             <input type="hidden" id="U002" name="U002">
             <tr>
               <th>판매자</th>
@@ -83,7 +83,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <td>10대</td>
               <td>5대</td>
             </tr>
-          </c:forEach>
 
           </table>
           <hr />
@@ -95,7 +94,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
             <div class="row">
               <table class="text-center">
-                <c:forEach var="reservation" items="${reservation}" begin="0" end="0">
                 <tr>
                   <th></th>
                   <th>차량</th>
@@ -126,7 +124,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     >
                   </td>
                 </tr>
-              </c:forEach>
               </table>
         </div>
         <hr />

@@ -90,12 +90,12 @@
             <div class="col col-lg-5 mt-5">
               <h2 class=" text-center fw-bold mb-5 choice">원하는 차를 찾아보세요!</h2>
               <div class="d-flex justify-content-evenly mb-5">           
-                  <div>
-                      <div style="text-align: right;">전체 매물 차량 : <span style="color: cornflowerblue;">${searchRs.size()}</span>  대</div>             
+                  <div style="vertical-align:middle">
+                      <div class="mb-3" style="text-align: right;">전체 매물 차량 : <span style="color: cornflowerblue;">${searchRs.size()}</span>  대</div>             
                       <!-- 검색 후 search 화면단 이동 -->
                     <!-- div는 영역 / span은 글자만이어서 span 안에 js는 잘 사용하지 않음.-->
                     <!-- div로 교체 -->
-                      <div class="float" style="vertical-align: middle;">
+                      <div class="float" >
                       <select name="manufacturer" id="manufacturer" onchange="itemChange()">  
                         <option selected>제조사</option>
                         <optgroup name="manufacturer" id="manufacturer" label="국산">국산
@@ -113,17 +113,17 @@
                       </select>
                   </div>
 
-                    <div class="float" style="vertical-align: middle;">
+                    <div class="float" >
                       <select name="model" id="model">
                         <option selected>모델</option>
                       </select>  
                   </div>
 
-                  <div class="float" style="vertical-align: middle;">
+                  <div class="float" >
                     <input type="text" name="keyword" placeholder="차량명을 입력하세요"  class="text bg-white" id="">
                   </div>
 
-                    <div class="float" style="vertical-align: middle;">
+                    <div class="float" >
                       <button type="submit" onclick="getSearchList()" value="검색"  class="button">검색</button>         
                     </div>
                     
