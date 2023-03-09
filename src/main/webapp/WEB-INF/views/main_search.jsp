@@ -242,12 +242,12 @@
           <span>${domestic.FUEL}</span>
           <span>${domestic.ADDR_CITY}</span>
         </div>
-    </div>
-           </td>
+        </div>
+        </td>
       </div>
-  </div>
-  </tr>
-</a>
+      </div>
+       </tr>
+      </a>
 </table>
 </c:forEach>
 <div style="clear:both"></div>
