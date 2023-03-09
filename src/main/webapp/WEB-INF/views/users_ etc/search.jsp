@@ -21,9 +21,6 @@
         <%@ include file="../header.jsp" %>
         <!-- header -->
 
-        <!-- 차량 사진 -->
-        <c:set var="fileNameFront" value="${carImgs.Front}" />
-        <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
         <!-- 좌측 검색필터 -->
             <main>
                 <div
@@ -185,7 +182,7 @@
                                 <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                                 <div class="col">
                                     <div class="card h-100">
-                                        <img src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}" class="card-img-top" alt="...">
+                                        <img src="/files/${resultData.carImgs.PHYSICALFILE_NAME}/${resultData.carImgs.Front}" class="card-img-top" alt="...">
                                         <div class="card-body">
                                             <div>
                                                 <a href="/car_detail_change/${resultData.CAR_DTL_ID}" class="card-text fw-normal small text-primary text-decoration-none">D-AUTO MALL 드림디오토</a>

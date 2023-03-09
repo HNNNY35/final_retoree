@@ -1,6 +1,7 @@
 package com.project.final_retoree.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,14 @@ public class CheckPriceController {
         Object manufAndModel = checkPriceService.getFirstManufAndModel(params);
         //이미지 삽입
         try {
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)resultMap).get(0).get("CAR_ID"));
-            Object carImgs = checkPriceService.selectCarImg(params);
-            modelAndView.addObject("carImgs", carImgs);
+            int i = 0;
+            for( Map<String, Object> list :(ArrayList<Map<String, Object>>)resultMap){
+                Map<String, Object> car_id = new HashMap<>();
+                car_id.put("SOURCE_UNIQUE_SEQ", list.get("CAR_ID"));
+                Object carImgs = checkPriceService.selectCarImg(car_id);
+                (((ArrayList<Map<String, Object>>)resultMap).get(i)).put("carImgs", (Map<String, Object>)carImgs);
+                i++;
+            }
         } catch (Exception e) {
             System.out.println("empty");
         }
@@ -49,9 +55,14 @@ public class CheckPriceController {
 
         //이미지 삽입
         try {
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)resultMap).get(0).get("CAR_ID"));
-            Object carImgs = checkPriceService.selectCarImg(params);
-            modelAndView.addObject("carImgs", carImgs);
+            int i = 0;
+            for( Map<String, Object> list :(ArrayList<Map<String, Object>>)resultMap){
+                Map<String, Object> car_id = new HashMap<>();
+                car_id.put("SOURCE_UNIQUE_SEQ", list.get("CAR_ID"));
+                Object carImgs = checkPriceService.selectCarImg(car_id);
+                (((ArrayList<Map<String, Object>>)resultMap).get(i)).put("carImgs", (Map<String, Object>)carImgs);
+                i++;
+            }
         } catch (Exception e) {
             System.out.println("empty");
         }
