@@ -9,15 +9,14 @@ import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.bean.CarInfo;
 import com.project.final_retoree.daos.MainDao;
-import com.project.final_retoree.utils.CommonUtils;
+
 
 @Service
 public class MainService {
     @Autowired
     MainDao mainDao;
 
-    @Autowired
-    CommonUtils commonUtils;
+   
 
     // 메인 검색
     public List<CarInfo> getSearchBeanList(CarInfo carInfo) throws Exception {
@@ -69,31 +68,27 @@ public class MainService {
     }
 
     //차 이미지 가져오기
+
     public Object selectCarImg(Object dataMap) {
-        String sqlMapId = "CarDetail.selectCarImg";
+        String sqlMapId = "Search.selectCarImg";
         
         Object result = null;
         Map results = new HashMap<String, String>();
         
-        String imgFiles = "Front";
+        String[] imgFiles = {"Front", "Side", "Inside", "Tire", "Navi", "Trunk"};
         
-            ((Map<String, Object>) dataMap).put("IMG_INFO", imgFiles);
-            result = mainDao.getSpecialList(sqlMapId, dataMap);
-            result = mainDao.getNewCarList(sqlMapId, dataMap);
-            result = mainDao.getDomesticList(sqlMapId, dataMap);
-            result = mainDao.getImportedList(sqlMapId, dataMap);
+        for(int i = 0; i < imgFiles.length; i++) {
+            ((Map<String, Object>) dataMap).put("IMG_INFO", imgFiles[i]);
+            result = mainDao.getOne(sqlMapId, dataMap);
             String fileName = (String)(((Map<String, Object>)result).get("ORIGINALFILE_NAME"));
             
-            results.put(imgFiles, fileName);
-        
+            results.put(imgFiles[i], fileName);
+        }
         
         // 이미지 가져올 때 필요한 것 : 경로, 이미지파일 이름
-        results.put("PHYSICALFILE_NAME", ((Map<String, Object>)mainDao.getSpecialList(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
-        results.put("PHYSICALFILE_NAME", ((Map<String, Object>)mainDao.getNewCarList(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
-        results.put("PHYSICALFILE_NAME", ((Map<String, Object>)mainDao.getDomesticList(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
-        results.put("PHYSICALFILE_NAME", ((Map<String, Object>)mainDao.getImportedList(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
+        results.put("PHYSICALFILE_NAME", ((Map<String, Object>)mainDao.getOne(sqlMapId, dataMap)).get("PHYSICALFILE_NAME"));
         
         return results;
-        }
+    }
     }
 

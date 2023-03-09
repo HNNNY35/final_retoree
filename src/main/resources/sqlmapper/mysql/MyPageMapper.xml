@@ -74,7 +74,7 @@ WHERE USER_ID = #{user_id}
 <delete id = "deleteFromMyInfo" parameterType="Map">
 DELETE
 FROM USER_INFO
-WHERE ID = #{id} AND PASSWORD = #{password}
+WHERE ID = #{id} 
 </delete>
 
 <!-- 비밀번호 체크 -->
@@ -82,7 +82,7 @@ WHERE ID = #{id} AND PASSWORD = #{password}
 SELECT COUNT(*)
 FROM USER_INFO
 WHERE USER_ID = #{user_id}
-AND PASSWORD = ${user_pw}
+AND PASSWORD = #{user_pw}
 </select>
 </mapper>
 
