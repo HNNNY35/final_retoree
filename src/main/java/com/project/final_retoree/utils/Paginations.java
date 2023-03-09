@@ -52,8 +52,8 @@ public class Paginations { // bean같은 역할
     }
 
     public void setPageRange() {
-        pageBegin = (this.currentPage - 1) * this.pageScale + 1; // 시작점
-        pageEnd = this.pageBegin + pageScale - 1; // 끝점
+        pageBegin = (this.currentPage - 1) * this.pageScale; // 시작점
+        pageEnd = this.pageBegin + pageScale; // 끝점
     }
 
     public void setTotalpage(int totalCount) {
