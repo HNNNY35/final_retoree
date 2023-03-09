@@ -20,8 +20,9 @@ public class UserInfoAdminService {
     @Autowired
     CommonUtils commonUtils;
 
+    // pagination
     public Object getList(Object dataMap) {
-        String sqlMapId = "UserInfoAdmin.selectFromUserinfo";
+        String sqlMapId = "UserInfoAdmin.selectListByUID";
         Object result = userinfoadminDao.getList(sqlMapId, dataMap);
         return result;
     }
@@ -33,7 +34,8 @@ public class UserInfoAdminService {
         int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
         Paginations paginations = new Paginations(totalCount, currentPage);
         result.put("paginations", paginations);
-        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin()); // 파라미터추가
+        ((Map<String, Object>) dataMap).put("pageBegin", paginations.getPageBegin());
+        // 파라미터추가
         result.put("resultList", this.getList(dataMap));
         return result;
     }
