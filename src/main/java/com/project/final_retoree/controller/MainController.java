@@ -91,22 +91,11 @@ public class MainController {
             System.out.println("Imported empty");
 
         }
-        // try {
-            // 빨간줄 뜸
+        
             
-            //try-catch 안쓰면 java.lang.ClassCastException: class java.util.ArrayList cannot be cast to class java.util.Map 
-            // (java.util.ArrayList and java.util.Map are in module java.base of loader 'bootstrap')
-            
-            // ArrayList<String> list = 
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)specialRs).get(0).get("CAR_ID"));
-            // params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)newCarRs).get(0).get("CAR_ID"));
-            params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)domesticRs).get(0).get("CAR_ID"));
-            // params.put("SOURCE_UNIQUE_SEQ", (String)((ArrayList<Map<String, Object>>)importedRs).get(0).get("CAR_ID"));
 
            
-        // } catch (Exception e) {
-        //     System.out.println("empty");
-        // }
+    
 
         modelAndView.addObject("searchRs", searchRs);
         modelAndView.addObject("specialRs", specialRs);
