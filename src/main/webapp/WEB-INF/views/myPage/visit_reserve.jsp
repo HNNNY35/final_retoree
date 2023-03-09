@@ -34,7 +34,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
 
 
-          <c:forEach items="${reservation}" var="reservation">
+          <c:forEach items="${reservation}" var="reservation" begin="0" end="0">
             <div class="border">
             <h5 class="text-center m-3">
               ${reservation.NAME}님은 안심번호로 전화통화 후
@@ -93,7 +93,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
             <div class="row">
               <table class="text-center">
-                <c:forEach var="reservation" items="${reservation}">
+                <c:forEach var="reservation" items="${reservation}" begin="0" end="0">
                 <tr>
                   <th></th>
                   <th>차량</th>
@@ -106,7 +106,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     <a href="/car_detail_change/${reservation.CAR_DTL_ID}">
                       <img
                         height="100px"
-                        src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
+                        src="/files/${reservation.carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
                         alt=""
                       />
                     </a>

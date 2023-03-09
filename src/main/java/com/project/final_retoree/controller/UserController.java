@@ -256,8 +256,11 @@ public class UserController {
         String user_id = principal.getUser_id();
 
         params.put("user_id", user_id);
-        params.put("RESERVATION_ID", reservation_id);
+        // params.put("RESERVATION_ID", reservation_id);
+
         Object reservation = reservationService.getUserReservation(params);
+        params.get("reservation_id");
+
         modelAndView.addObject("reservation", reservation);
 
         // 딜러 정보
