@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.project.final_retoree.daos.DealerSalesMgmtDao;
-import com.project.final_retoree.utils.Paginations;
+import com.project.final_retoree.utils.Paginations_dealer;
 
 @Service
 public class DealerSalesMgmtService {
@@ -29,7 +29,7 @@ public class DealerSalesMgmtService {
         int totalCount = (int) this.getOnSaleTotal(dataMap);
         int currentPage = (int) ((Map<String, Object>) dataMap).get("currentPage");
 
-        Paginations paginations = new Paginations(totalCount, currentPage);
+        Paginations_dealer paginations = new Paginations_dealer(totalCount, currentPage);
 
         result.put("paginations", paginations);
 

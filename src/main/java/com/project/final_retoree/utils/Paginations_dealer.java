@@ -1,6 +1,6 @@
 package com.project.final_retoree.utils;
 
-public class Paginations { // bean같은 역할
+public class Paginations_dealer { // bean같은 역할
     private int pageScale = 10; // 페이지당 게시물 수
     private int blockScale = 5; // 블록당 페이지수
     private int currentPage; // 현재 페이지 번호
@@ -15,7 +15,7 @@ public class Paginations { // bean같은 역할
     private int blockEnd; // 페이지 블록 내에서의 마지막 페이지 번호
     private int totalCount; // 페이지 블록 내에서의 마지막 페이지 번호
 
-    public Paginations(int totalCount, int currentPage) { // 생성자 ,순서중요
+    public Paginations_dealer(int totalCount, int currentPage) { // 생성자 ,순서중요
         this.totalCount = totalCount;
         this.currentPage = currentPage;
         this.setTotalpage(totalCount);
