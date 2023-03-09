@@ -10,6 +10,18 @@
     <title>리투리카</title>
     <link rel="stylesheet" href="/css/main_search.css" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <style>
+.carname {
+  /* margin: 100px; */
+  display: inline-block;
+  color: black;
+  width: 50%;
+  font-weight: bolder !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+    </style>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -220,7 +232,7 @@
  </div>
  <hr> 
    <c:forEach begin="0" end="2" var="domestic" items="${domesticRs}" varStatus="loop">      
-     <table style="float: left;">
+     <table style="float: left;  margin-right:5px;">
       <a href="/car_detail_change/${domestic.CAR_DTL_ID}">
       <tr>
         <div class="container m-auto">
