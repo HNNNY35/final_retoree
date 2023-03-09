@@ -54,7 +54,7 @@ public class MainController {
         Object importedRs = mainService.getImportedList(params);
 
         try {
-            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)specialRs).get("CAR_ID"));
+            params.put("SOURCE_UNIQUE_SEQ",((Map<String, Object>)domesticRs).get("CAR_ID"));
             Object carImgs = mainService.selectCarImg(params);
             modelAndView.addObject("carImgs", carImgs);
         } catch (Exception e) {
