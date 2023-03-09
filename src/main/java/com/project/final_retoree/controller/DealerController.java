@@ -32,6 +32,10 @@ public class DealerController {
         modelAndView.addObject("user", user);
         Object resultMap = dealerService.getList(params);
         modelAndView.addObject("resultMap", resultMap);
+        
+        Object resultContactList = dealerService.selectContactList(params);
+        modelAndView.addObject("resultContactList", resultContactList);
+        
         modelAndView.setViewName("dealer/dealer_main");
         return modelAndView;
     }

@@ -20,4 +20,16 @@
         parameterType="Map"> UPDATE USER_INFO SET PASSWORD = #{PASSWORD}, CELL_NUMBER =
         #{CELL_NUMBER}, EMAIL = #{EMAIL}, ADDR_CITY = #{ADDR_CITY}, ADDR_DISTRICT = #{ADDR_DISTRICT}
         WHERE USER_ID = #{USER_ID} </update>
+
+    <!-- call Dealer.selectContactList -->
+    <!-- DEALER_ID로 1:1상담 리스트 출력 -->
+    <select id="selectContactList" parameterType="Map" resultType="Map">
+        SELECT *
+        FROM CONTACT
+        JOIN ANSWER_STATUS
+        ON ANSWER_STATUS.STATUS_ID = CONTACT.STATUS_ID
+        WHERE DEALER_ID = #{USER_ID}
+        ORDER BY INQ_DATE DESC
+        LIMIT 3
+    </select>
 </mapper>

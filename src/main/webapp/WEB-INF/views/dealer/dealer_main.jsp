@@ -53,7 +53,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     
                     <div>
                         <h5>차량관리</h5>
-                        <div class="my-3">최근 등록한 차량</div>
+                        <div class="my-3 fw-bold">최근 등록한 차량</div>
                         <div class="container">
                         <c:forEach items="${resultMap}" var="resultData" varStatus="loop">
                             <div class="d-flex dealer_cards">
@@ -77,7 +77,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                                 </div>
                         </c:forEach>
 
-                                <a href="" class="btn btn-outline-light d-flex align-items-center text-black">더보기</a>
+                                <a href="/dealer_sales_mgmt/1" class="btn btn-outline-light d-flex align-items-center text-black">더보기</a>
                             </div>
                         </div>
                         <hr/>
@@ -85,36 +85,39 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%-- 반복 끝 --%>
                     <!-- 고객 관리 부분 -->
                     <div>
+                        <br>
                         <h5>고객관리</h5>
                         <table class="table">
+                            <colgroup>
+                                <col width="50%" />
+                                <col width="25%" />
+                                <col width="25%" />
+                              </colgroup>
                             <thead>
                                 <tr>
-                                    <th colspan="4">최근 1:1 상담 내역</th>
+                                    <th colspan="3">최근 1:1 상담 내역</th>
                                 </tr>
-                                <tr>
-                                    <th colspan="2">제목</th>
-                                    <th>아이디</th>
+                                <tr class="text-center">
+                                    <th>제목</th>
                                     <th>작성일</th>
+                                    <th>답변상태</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <c:forEach items="${resultContactList}" var="resultContactList" varStatus="loop">
                                 <tr>
-                                    <td colspan="2">할부문의 드립니다. 미구현</td>
-                                    <td>asdf</td>
-                                    <td>2023-02-03</td>
+                                    <td>
+                                    <form action="/dealer_contact" method="post">
+                                        <input type="hidden" name="CONTACT_ID" value="${resultContactList.CONTACT_ID}">
+                                        <button class="btn btn-link viewPopup text-black text-decoration-none p-0">
+                                            ${resultContactList.INQ_TITLE}
+                                        </button>
+                                        </form>
+                                    </td>
+                                    <td>${resultContactList.INQ_DATE}</td>
+                                    <td class="text-center">${resultContactList.STATUS}</td>
                                 </tr>
-
-                                <tr>
-                                    <td colspan="2">구매문의</td>
-                                    <td>qwerty</td>
-                                    <td>2023-02-01</td>
-                                </tr>
-
-                                <tr>
-                                    <td colspan="2">방문 예약</td>
-                                    <td>kyrt</td>
-                                    <td>2023-02-01</td>
-                                </tr>
+                            </c:forEach>
                             </tbody>
                         </table>
                     </div>

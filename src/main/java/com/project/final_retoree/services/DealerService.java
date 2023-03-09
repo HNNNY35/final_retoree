@@ -42,5 +42,11 @@ public class DealerService {
         return result;
     }
 
+    // 1:1 문의 리스트 조회
+    public Object selectContactList(Object dataMap){
+        String sqlMapId = "Dealer.selectContactList";
+        Object result = commonDao.getList(sqlMapId, dataMap);
+        return result;
+    }
     
 }
