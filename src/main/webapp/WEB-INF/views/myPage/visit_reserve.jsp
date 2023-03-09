@@ -9,8 +9,6 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/css/header.css" />
     <link rel="stylesheet" href="/css/visit_reserve.css" />
-    <link rel="stylesheet" href="/css/mypage.css" />
-
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -35,10 +33,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <c:set var="fileNameFront" value="${carImgs.Front}" />
     <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
 
-
-    <input type="hidden" id="reservation_id" name="reservation_id" value="${reservation.reservation_id}">
-    <input type="hidden" id="user_id" name="user_id" value="user_id">
-
+<input type="hidden" name="reservation_id" value="${reservation.RESERVATION_ID}">
+<input type="hidden" name="user_id" value="${reservation.USER_ID}">
             <div class="border">
             <h5 class="text-center m-3">
               ${reservation.NAME}님은 안심번호로 전화통화 후
@@ -59,8 +55,8 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <div>
                주소 : ${reservation.RVS_ADDR}
               </div>
-              <div class="mt-2">
-                  <a href="https://www.google.co.kr/maps/place/${reservation.RVS_ADDR}">지도로 주소를 확인하세요.</a>
+              <div>
+                  <a href="https://www.google.co.kr/maps/place/${reservation.RVS_ADDR}">지도를 보려면 ?</a>
                </div>
             </c:otherwise>
             </c:choose>
@@ -106,7 +102,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
                     <a href="/car_detail_change/${reservation.CAR_DTL_ID}">
                       <img
                         height="100px"
-                        src="/files/${reservation.carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
+                        src="/files/${carImgs.PHYSICALFILE_NAME}/${fileNameFront}"
                         alt=""
                       />
                     </a>

@@ -251,16 +251,16 @@ public class UserController {
 
     public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String reservation_id,
             ModelAndView modelAndView) throws Exception {
+        params.put("RESERVATION_ID", reservation_id);
 
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String user_id = principal.getUser_id();
 
         params.put("user_id", user_id);
-        // params.put("RESERVATION_ID", reservation_id);
 
-        params.get("reservation_id");
+        // params.get("reservation_id");
 
-        Object reservation = reservationService.getUserReservation(params);
+        Object reservation = reservationService.getUserDetailReservation(params);
         modelAndView.addObject("reservation", reservation);
 
         // 딜러 정보

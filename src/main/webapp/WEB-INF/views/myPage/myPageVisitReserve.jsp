@@ -46,13 +46,13 @@ prefix="c" %> <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             </c:if>
             <div class="row">
               <table class="table table-hover">
-                <c:forEach var="reserve" items="${reservation}">
-                  <thead class="text-center">
-                    <th>방문 예정 일자</th>
-                    <th>차량</th>
-                    <th>조회</th>
-                  </thead>
-                  <tr class="text-center">
+                <thead class="text-center">
+                  <th>방문 예정 일자</th>
+                  <th>차량</th>
+                  <th>조회</th>
+                </thead>
+                <tr class="text-center">
+                    <c:forEach var="reserve" items="${reservation}">
                     <td>${reserve.RSV_DATE}</td>
                     <td>
                       ${reserve.MANUFACTURER} ${reserve.MODEL}

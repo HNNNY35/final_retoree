@@ -40,6 +40,25 @@ WHERE RESERVATION.USER_ID = #{user_id}
 </select>
 
 
+<!-- 방문 예약 상세 READ -->
+<!--call Mypage.selectFromDetailReserveList   -->
+ <select id ="selectFromDetailReserveList" parameterType="Map" resultType="Map">
+SELECT RESERVATION_ID, RSV_DATE,RSV_STATUS, RVS_ADDR, RESERVATION.CAR_DTL_ID, RESERVATION.USER_ID, MANUFACTURER, MODEL, DETAILED_MODEL, PRICE, MODEL_YEAR, USER_INFO.NAME
+FROM RESERVATION
+JOIN CAR_DETAILE_INFO
+ON CAR_DETAILE_INFO.CAR_DTL_ID = RESERVATION.CAR_DTL_ID
+JOIN CAR_INFO
+ON CAR_INFO.CAR_ID = CAR_DETAILE_INFO.CAR_ID
+JOIN USER_INFO
+ON RESERVATION.USER_ID = USER_INFO.USER_ID
+WHERE USER_INFO.USER_ID = #{user_id}
+AND RESERVATION_ID = #{reservation_id}
+
+
+<!-- 이름,딜러 정보,매매단지 정보,차량 정보 -->
+</select>
+
+
 <!--상담 문의 내역 READ  -->
 <!--call Mypage.selectFromContact   -->
 <select id = "selectFromContact" parameterType ="Map" resultType="Map">
