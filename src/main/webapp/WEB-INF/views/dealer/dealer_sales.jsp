@@ -38,7 +38,7 @@
               </tr>
             </thead>
             <tbody>
-              <c:forEach items="${resultSoltOutCar}" var="resultSoltOutCar" varStatus="loop">
+              <c:forEach items="${resultSoltOutCar.resultList}" var="resultSoltOutCar" varStatus="loop">
                 <tr>
                   <td>${resultSoltOutCar.SALE_DATE}</td>
                   <td>
@@ -53,6 +53,27 @@
               </c:forEach>
             </tbody>
           </table>
+          <c:set var="_pagination" value="${resultSoltOutCar.paginations}"/>
+          <!-- pagination -->
+          <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link text-black" href="/dealer_sales/${_pagination.previousPage}" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+              <c:forEach var="i" begin="${_pagination.blockStart}" end="${_pagination.blockEnd}">
+                <li class="page-item"><a class="page-link text-black" href="/dealer_sales/${i}">${i}</a></li>
+              </c:forEach>
+              <li class="page-item">
+                <a class="page-link text-black" href="/dealer_sales/${_pagination.nextPage}" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                  <span class="sr-only"></span>
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
 </div>
 </div>

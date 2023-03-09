@@ -62,22 +62,25 @@ public class DealerSalesMgmtController {
         return modelAndView;
     }
     
-    // 딜러 매출내역 페이지
+    // 딜러 매출내역 페이지 + pagination
     // url : http://localhost:8080/dealer_sales/U002
     // @RequestMapping(value = "/dealer_sales/{dealer_id}", method = RequestMethod.GET)
-    @RequestMapping(value = "/dealer_sales", method = RequestMethod.GET)
-    public ModelAndView dealer_sales(@RequestParam Map<String,Object> params, ModelAndView modelAndView){
+    @RequestMapping(value = "/dealer_sales/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView dealer_sales(@RequestParam Map<String,Object> params, @PathVariable String currentPage, ModelAndView modelAndView){
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String dealer_id = principal.getUser_id();
 
         params.put("DEALER_ID", dealer_id);
+
+        params.put("currentPage", Integer.parseInt(currentPage));
+        params.put("pageScale", 10);
         
         // 딜러 이름 가져오기
         Object resultDealerName = dealerSalesMgmtService.getDealerName(params);
         modelAndView.addObject("resultDealerName", resultDealerName);
 
         // 판매완료 리스트 가져오기
-        Object resultSoltOutCar = dealerSalesMgmtService.getSoldOutCarList(params);
+        Object resultSoltOutCar = dealerSalesMgmtService.getSoldOutCarListWithPagination(params);
         modelAndView.addObject("resultSoltOutCar", resultSoltOutCar);
         
         modelAndView.setViewName("dealer/dealer_sales");
@@ -162,19 +165,22 @@ public class DealerSalesMgmtController {
     }
 
     // 고객관리 페이지
-    @RequestMapping(value = "/dealer_customer_mgmt", method = RequestMethod.GET)
-    public ModelAndView dealerCustomerMgmt(@RequestParam Map<String,Object> params, ModelAndView modelAndView){
+    @RequestMapping(value = "/dealer_customer_mgmt/{currentPage}", method = RequestMethod.GET)
+    public ModelAndView dealerCustomerMgmt(@RequestParam Map<String,Object> params, @PathVariable String currentPage, ModelAndView modelAndView){
         PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         String dealer_id = principal.getUser_id();
 
         params.put("DEALER_ID", dealer_id);
-        
+
+        params.put("currentPage", Integer.parseInt(currentPage));
+        params.put("pageScale", 10);
+
         // 딜러 이름 가져오기
         Object resultDealerName = dealerSalesMgmtService.getDealerName(params);
         modelAndView.addObject("resultDealerName", resultDealerName);
         
         // 1:1상담 리스트 가져오기
-        Object resultContactList = dealerSalesMgmtService.selectContactList(params);
+        Object resultContactList = dealerSalesMgmtService.selectContactListWithPagination(params);
         modelAndView.addObject("resultContactList", resultContactList);
 
         modelAndView.setViewName("dealer/dealer_customer_mgmt");

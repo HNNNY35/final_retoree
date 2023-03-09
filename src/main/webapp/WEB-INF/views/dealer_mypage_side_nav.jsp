@@ -35,10 +35,10 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="/dealer_customer_mgmt">고객관리</a>
+                                        <a href="/dealer_customer_mgmt/1">고객관리</a>
                                     </li>
                                     <li>
-                                        <a href="/dealer_sales">매출내역</a>
+                                        <a href="/dealer_sales/1">매출내역</a>
                                     </li>
                                 </ul>
                             </div>
