@@ -20,7 +20,7 @@
 
 ### 구현 화면
 
-![깃허브 이미지]()
+![깃허브 이미지](image.png)
 
 ### ERD
 
@@ -53,14 +53,14 @@
   
  ### 차량 정보 수정
   
- - [CarModifyMapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/CarModifyMapper.xml)
- - [Mapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/CarDetailMapper.xml)
- - [Mapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/CarDetailMapper.xml)
+ - [Mapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/CarModifyMapper.xml)
+ - [Controller.java](https://github.com/HNNNY35/final_retoree/blob/master/src/main/java/com/project/final_retoree/controller/CarModifyController.java)
+ - [Service.java](https://github.com/HNNNY35/final_retoree/blob/master/src/main/java/com/project/final_retoree/services/CarModifyService.java)
  
   ### 판매 관리(방문 예약 확정, 판매 상태 변경)
- - [DealerSalesMgmtMapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/DealerSalesMgmtMapper.xml)
- - [Mapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/CarDetailMapper.xml)
- - [Mapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/CarDetailMapper.xml)
+ - [Mapper.xml](https://github.com/HNNNY35/final_retoree/blob/master/src/main/resources/sqlmapper/mysql/DealerSalesMgmtMapper.xml)
+ - [Controller.java](https://github.com/HNNNY35/final_retoree/blob/master/src/main/java/com/project/final_retoree/controller/DealerSalesMgmtController.java)
+ - [Service.java](https://github.com/HNNNY35/final_retoree/blob/master/src/main/java/com/project/final_retoree/services/DealerSalesMgmtService.java)
   
 </details>
 
