@@ -219,7 +219,6 @@
 ### 👩‍💻 김다솜
 
 ```
-// 인증된 사용자가 가진 권한 정보를 collections에 담아 반환하는 메서드
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
 
