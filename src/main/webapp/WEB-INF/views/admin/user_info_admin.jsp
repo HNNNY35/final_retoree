@@ -118,39 +118,7 @@
                               </li>
                             </ul>
                       </nav>
-                      <%-- 다른방법 --%>
-                      <%-- <nav aria-label="Page navigation example">
-    <c:set var="_paginations" value="${resultMap.paginations}" />
-    <span>총: ${_paginations.totalCount}명</span>
-    <ul class="pagination">
-        <li class="page-item">
-            <a class="page-link" href="/admin/listPagination/${_paginations.previousPage}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Pre</span>
-            </a>
-        </li>
-       <c:forEach var="i" begin="${_paginations.blockStart}" end="${_paginations.blockEnd}">
-    <li class="page-item ${i == _paginations.currentPage ? 'active' : ''}">
-        <a class="page-link" href="/admin/listPagination/${i}">${i}</a>
-    </li>
-</c:forEach>
-        <li class="page-item">
-            <a class="page-link" href="/admin/listPagination/${_paginations.nextPage}" aria-label="Next">
-                <span class="sr-only">Next</span>
-                <span aria-hidden="true">&raquo;</span>
-            </a>
-        </li>
-    </ul>
-    
-    <c:set var="items" value="${resultMap.items}" />
-    <c:forEach var="item" items="${items}" varStatus="status">
-        <c:if test="${status.index % 10 == 0}">
-            <c:set var="pageIndex" value="${status.index / 10 + 1}" />
-            <div>--- Page ${pageIndex} ---</div>
-        </c:if>
-        <div>${item}</div>
-    </c:forEach>
-</nav> --%>
+  
                   </div>
                   </div>
                 </div>

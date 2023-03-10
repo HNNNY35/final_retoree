@@ -61,14 +61,6 @@ public class UserInfoAdminController {
         modelAndView.setViewName("redirect:/listPagination/1");
         return modelAndView;
     }
-    // @RequestMapping(value = "/userupdate", method = RequestMethod.POST)
-    // public ModelAndView userupdate(@RequestParam Map<String, Object> params,
-    // ModelAndView modelAndView) {
-    // Object resultMap = userInfoAdminService.updateAndGetList(params);
-    // modelAndView.addObject("resultMap", resultMap);
-    // modelAndView.setViewName("admin/user_info_admin");
-    // return modelAndView;
-    // }
 
     // 회원정보삭제
     @RequestMapping(value = "/userdelete/{userId}", method = RequestMethod.POST)
@@ -81,20 +73,5 @@ public class UserInfoAdminController {
         return modelAndView;
 
     }
-
-    // 검색
-    // @RequestMapping(value = "/userSearch/{currentPage}", method =
-    // RequestMethod.GET)
-    // public ModelAndView userSearch(@RequestParam Map<String, Object> params,
-    // @PathVariable String currentPage,
-    // ModelAndView modelAndView) {
-    // params.put("currentPage", Integer.parseInt(currentPage));
-    // Object resultMap = userInfoAdminService.getSearchUserAndGetList(params);
-    // Object searchUser = params.get("SERCH_KEYWORD");
-    // modelAndView.addObject("resultMap", resultMap);
-    // modelAndView.addObject("searchUser", searchUser);
-    // modelAndView.setViewName("admin/user_info_search");
-    // return modelAndView;
-    // }
 
 }
