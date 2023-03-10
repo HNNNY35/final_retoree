@@ -20,7 +20,7 @@
 
 ### ERD
 
-- 이미지 또는 pdf 링크
+- [ERD](https://github.com/HNNNY35/final_retoree/blob/master/DataBases/table_schemas/merge_erd_3.png)
 
 ### 팀원 및 구현 기능
 
