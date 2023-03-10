@@ -178,6 +178,33 @@
 ### 👩‍💻 김해인
 
 ```
+String[] imgFiles = {"Front", "Side", "Inside", "Tire", "Navi", "Trunk"};
+int idx = 0;
+
+
+ * 이미지파일 insert
+attachfile = new HashMap<>();
+attachfile.put("ATTACHFILE_SEQ", commonUtils.getUniqueSequence());
+attachfile.put("SOURCE_UNIQUE_SEQ", params.get("CAR_ID"));
+attachfile.put("ORIGINALFILE_NAME", originalFileName);
+attachfile.put("PHYSICALFILE_NAME", physicalFileName);
+attachfile.put("IMG_INFO", imgFiles[idx]);
+idx = idx + 1;
+
+attachfiles.add(attachfile);
+
+
+ * 이미지파일 select
+String[] imgFiles = {"Front", "Side", "Inside", "Tire", "Navi", "Trunk"};
+        
+for(int i = 0; i < imgFiles.length; i++) {
+  ((Map<String, Object>) dataMap).put("IMG_INFO", imgFiles[i]);
+  result = carDetailDao.getOne(sqlMapId, dataMap);
+  String fileName = (String)(((Map<String, Object>)result).get("ORIGINALFILE_NAME"));
+            
+  results.put(imgFiles[i], fileName);
+  }
+
 
 ```
 
