@@ -1,5 +1,6 @@
 package com.project.final_retoree.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpSession;
@@ -247,37 +248,38 @@ public class UserController {
     }
 
     // 방문 예약 확인(상세페이지)
-    @RequestMapping(value = "/visit_reserve/{reservation_id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/visit_reserve", method = RequestMethod.GET)
 
-    public ModelAndView visit_reserve(@RequestParam Map<String, Object> params, @PathVariable String reservation_id,
+    public ModelAndView visit_reserve(@RequestParam(value="reservation_id", required=true) String reservation_id,
             ModelAndView modelAndView) throws Exception {
-        params.put("RESERVATION_ID", reservation_id);
 
-        PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        String user_id = principal.getUser_id();
+    PrincipalUser principal = (PrincipalUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+    String user_id = principal.getUser_id();
 
-        params.put("user_id", user_id);
+    Map<String, Object> params = new HashMap<>();
+    params.put("RESERVATION_ID", reservation_id);
+    params.put("user_id", user_id);
 
-        // params.get("reservation_id");
 
         Object reservation = reservationService.getUserDetailReservation(params);
         modelAndView.addObject("reservation", reservation);
-
         // 딜러 정보
-        Object dealerInfo = dealerSalesMgmtService.getDealerName(params);
-        modelAndView.addObject("dealerInfo", dealerInfo);
+        // Object dealerInfo = dealerSalesMgmtService.getDealerName(params);
+        // modelAndView.addObject("dealerInfo", dealerInfo);
 
-        // 판매 완료 차량
-        Object soldOutList = dealerSalesMgmtService.getSoldOutCarList(params);
-        modelAndView.addObject("soldOutList", soldOutList);
+        // // 판매 완료 차량
+        // Object soldOutList = dealerSalesMgmtService.getSoldOutCarList(params);
+        // modelAndView.addObject("soldOutList", soldOutList);
 
-        // 판매중 차량
-        Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
-        modelAndView.addObject("salesList", salesList);
+        // // 판매중 차량
+        // Object salesList = dealerSalesMgmtService.getOnSaleCarList(params);
+        // modelAndView.addObject("salesList", salesList);
 
-        modelAndView.setViewName("myPage/visit_reserve");
+        
+
+        modelAndView.setViewName("/myPage/visit_reserve");
         return modelAndView;
 
-    }
 
+    }
 }

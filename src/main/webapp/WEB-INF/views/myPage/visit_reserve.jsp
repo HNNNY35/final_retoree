@@ -30,6 +30,15 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
             <hr />
           <!-- 방문예약 내역이 있을 때 -->
 
+          <!-- <form action="/visit_reserve" method="GET">
+            <label for="reservation_id">예약 ID:</label>
+            <input type="text" name="reservation_id" id="reservation_id" />
+            <input type="submit" value="조회" />
+        </form>
+         -->
+        <c:if test="${not empty reservation}">
+            <!-- 예약 정보를 보여주는 HTML 코드 -->
+        </c:if>
     <c:set var="fileNameFront" value="${carImgs.Front}" />
     <c:set var="path" value="${carImgs.PHYSICALFILE_NAME}" />
 
@@ -65,7 +74,7 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 
           <!-- 쿼리문 다시 짜야함 -->
           <!-- <h3>판매자 정보</h3> -->
-          <table class="table table-bordered text-center">
+          <!-- <table class="table table-bordered text-center">
             <input type="hidden" id="U002" name="U002">
             <tr>
               <th>판매자</th>
@@ -80,12 +89,9 @@ uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
               <td>5대</td>
             </tr>
 
-          </table>
+          </table> -->
           <hr />
 
-          <!-- 쿼리문 다시 짜야함 -->
-
-          
           <h3 class="p-3">차량 확인</h3>
 
             <div class="row">

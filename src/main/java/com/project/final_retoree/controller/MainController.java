@@ -115,11 +115,6 @@ public class MainController {
 
         }
         
-            
-
-           
-    
-
         modelAndView.addObject("searchRs", searchRs);
         modelAndView.addObject("specialRs", specialRs);
         modelAndView.addObject("newCarRs", newCarRs);
