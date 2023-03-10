@@ -18,6 +18,10 @@
 
 - [중고차거래 중개 사이트 구현 영상]()
 
+### 구현 화면
+
+![깃허브 이미지](https://user-images.githubusercontent.com/111328143/224199111-1d87b5a6-f353-4519-b176-a29d7c6dd868.PNG)
+
 ### ERD
 
 - [ERD](https://github.com/HNNNY35/final_retoree/blob/master/DataBases/table_schemas/merge_erd_3.png)
