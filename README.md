@@ -20,7 +20,8 @@
 
 ### 구현 화면
 
-![깃허브 이미지](image.png)
+(image.png)![KakaoTalk_20230310_113317975](https://user-images.githubusercontent.com/111328143/224208532-8e2c4714-6d2f-45fd-9f5d-4c2fc00eb8d9.png)
+
 
 ### ERD
 
