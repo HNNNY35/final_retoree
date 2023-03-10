@@ -20,7 +20,7 @@
 
 ### 구현 화면
 
-![깃허브 이미지](https://1drv.ms/i/s!AuKhZnqf6c-MgmfcVsgEHuz_KPaS?e=yL3DnH)
+![깃허브 이미지](image.png)
 
 ### ERD
 
