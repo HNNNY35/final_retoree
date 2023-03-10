@@ -20,7 +20,8 @@
 
 ### 구현 화면
 
-![깃허브 이미지](image.png)
+![깃허브 이미지](![주요화면](https://user-images.githubusercontent.com/111333632/224203450-d7a4890d-1152-491e-9e20-ed843bd73ebe.png)
+)
 
 ### ERD
 
