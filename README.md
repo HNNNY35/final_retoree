@@ -14,7 +14,7 @@
 
 ### 구현 영상
 
-- [중고차거래 중개 사이트 구현 영상]()
+- [중고차거래 중개 사이트 구현 영상](https://www.youtube.com/watch?v=eFJFn9SuabQ)
 
 ### 구현 화면
 
